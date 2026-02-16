@@ -33,6 +33,8 @@ The User API lets you retrieve and update the currently authenticated user's pro
 | `locale` | string | ISO 3166-1 alpha-2 country code for locale |
 | `country` | string | ISO 3166-1 alpha-2 country code |
 | `isOnboarded` | boolean | Whether the user has completed onboarding |
+| `referral` | string \| null | How the user heard about Shootstack |
+| `specialties` | string[] | Photography specialties |
 | `profilePicture` | object \| null | Profile picture metadata |
 
 ## Enums
@@ -43,6 +45,34 @@ The User API lets you retrieve and update the currently authenticated user's pro
     | ----- | ----------- |
     | `en` | English |
     | `nl` | Dutch |
+  </Accordion>
+  <Accordion title="Referral">
+    | Value | Description |
+    | ----- | ----------- |
+    | `friend` | Friend or colleague |
+    | `google` | Google search |
+    | `instagram` | Instagram |
+    | `facebook` | Facebook |
+    | `youtube` | YouTube |
+    | `podcast` | Podcast |
+    | `blog` | Blog or article |
+    | `other` | Other |
+  </Accordion>
+  <Accordion title="Specialty">
+    | Value | Description |
+    | ----- | ----------- |
+    | `wedding` | Wedding photography |
+    | `portrait` | Portrait photography |
+    | `branding` | Branding photography |
+    | `family` | Family photography |
+    | `newborn` | Newborn photography |
+    | `boudoir` | Boudoir photography |
+    | `fashion` | Fashion photography |
+    | `event` | Event photography |
+    | `commercial` | Commercial photography |
+    | `real_estate` | Real estate photography |
+    | `sports` | Sports photography |
+    | `other` | Other |
   </Accordion>
   <Accordion title="Profile picture content types">
     | Type | MIME |

@@ -110,13 +110,36 @@
                     "description": "IANA timezone identifier.",
                     "maxLength": 80,
                     "example": "America/New_York"
+                  },
+                  "is_onboarded": {
+                    "type": "boolean",
+                    "description": "Whether the user has completed onboarding.",
+                    "example": true
+                  },
+                  "referral": {
+                    "type": "string",
+                    "description": "How the user heard about Shootstack.",
+                    "enum": ["friend", "google", "instagram", "facebook", "youtube", "podcast", "blog", "other"],
+                    "example": "google"
+                  },
+                  "specialties": {
+                    "type": "array",
+                    "description": "Photography specialties.",
+                    "items": {
+                      "type": "string",
+                      "enum": ["wedding", "portrait", "branding", "family", "newborn", "boudoir", "fashion", "event", "commercial", "real_estate", "sports", "other"]
+                    },
+                    "example": ["wedding", "portrait"]
                   }
                 }
               },
               "example": {
                 "first_name": "Jane",
                 "last_name": "Smith",
-                "timezone": "America/New_York"
+                "timezone": "America/New_York",
+                "is_onboarded": true,
+                "referral": "google",
+                "specialties": ["wedding", "portrait"]
               }
             }
           }
