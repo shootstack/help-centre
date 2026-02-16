@@ -1,0 +1,384 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "{Domain} API",
+    "description": "{Brief description of the domain}",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.shootstack.com/v3/app-client"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/{resources}": {
+      "get": {
+        "operationId": "list{Resources}",
+        "summary": "List {resources}",
+        "description": "Retrieve all {resources}.",
+        "x-mint": {
+          "title": "List {resources}"
+        },
+        "tags": ["{Domain}"],
+        "responses": {
+          "200": {
+            "description": "{Resource} list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/{Resource}"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      },
+      "post": {
+        "operationId": "create{Resource}",
+        "summary": "Create {resource}",
+        "description": "Create a new {resource}.",
+        "x-mint": {
+          "title": "Create {resource}"
+        },
+        "tags": ["{Domain}"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["name"],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The {resource} name.",
+                    "maxLength": 80,
+                    "example": "Example Name"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "{Resource} created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/{Resource}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          }
+        }
+      }
+    },
+    "/{resources}/{id}": {
+      "get": {
+        "operationId": "get{Resource}",
+        "summary": "Retrieve {resource}",
+        "description": "Retrieve a single {resource}.",
+        "x-mint": {
+          "title": "Retrieve {resource}"
+        },
+        "tags": ["{Domain}"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The {resource} ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "{Resource} object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/{Resource}"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update{Resource}",
+        "summary": "Update {resource}",
+        "description": "Update an existing {resource}.",
+        "x-mint": {
+          "title": "Update {resource}"
+        },
+        "tags": ["{Domain}"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The {resource} ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The {resource} name.",
+                    "maxLength": 80,
+                    "example": "Updated Name"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "{Resource} updated successfully"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete{Resource}",
+        "summary": "Delete {resource}",
+        "description": "Delete an existing {resource}.",
+        "x-mint": {
+          "title": "Delete {resource}"
+        },
+        "tags": ["{Domain}"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The {resource} ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "{Resource} deleted successfully"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "{Resource}": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier."
+          },
+          "name": {
+            "type": "string",
+            "description": "The {resource} name."
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp."
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update timestamp."
+          }
+        }
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Authentication required",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": { "type": "boolean", "example": false },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "string", "example": "UNAUTHORIZED" },
+                    "message": { "type": "string", "example": "Authentication required" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "BadRequest": {
+        "description": "Invalid request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": { "type": "boolean", "example": false },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "string", "example": "BAD_REQUEST" },
+                    "message": { "type": "string", "example": "Validation failed" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Resource not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": { "type": "boolean", "example": false },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "string", "example": "NOT_FOUND" },
+                    "message": { "type": "string", "example": "Resource not found" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Conflict": {
+        "description": "Resource conflict",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": { "type": "boolean", "example": false },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "string", "example": "CONFLICT" },
+                    "message": { "type": "string", "example": "Resource limit exceeded" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Access denied",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": { "type": "boolean", "example": false },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "string", "example": "FORBIDDEN" },
+                    "message": { "type": "string", "example": "Access denied" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Authentication via Clerk session token"
+      }
+    }
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "User API",
+    "description": "Manage the authenticated user",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.shootstack.com/v3/app-client"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/users/me": {
+      "get": {
+        "operationId": "getUser",
+        "summary": "Retrieve user",
+        "description": "Retrieve the authenticated user.",
+        "x-mint": {
+          "title": "Retrieve user"
+        },
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "User object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "507f1f77bcf86cd799439011",
+                    "email": "jane@example.com",
+                    "firstName": "Jane",
+                    "lastName": "Smith",
+                    "timezone": "America/New_York",
+                    "locale": "US",
+                    "country": "US",
+                    "isOnboarded": true,
+                    "profilePicture": null
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateUser",
+        "summary": "Update user",
+        "description": "Update the authenticated user.",
+        "x-mint": {
+          "title": "Update user"
+        },
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "description": "The user's first name.",
+                    "maxLength": 40,
+                    "example": "Jane"
+                  },
+                  "last_name": {
+                    "type": "string",
+                    "description": "The user's last name.",
+                    "maxLength": 40,
+                    "example": "Smith"
+                  },
+                  "locale": {
+                    "type": "string",
+                    "description": "ISO 3166-1 alpha-2 country code for locale preference.",
+                    "example": "US"
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "ISO 3166-1 alpha-2 country code.",
+                    "example": "US"
+                  },
+                  "timezone": {
+                    "type": "string",
+                    "description": "IANA timezone identifier.",
+                    "maxLength": 80,
+                    "example": "America/New_York"
+                  }
+                }
+              },
+              "example": {
+                "first_name": "Jane",
+                "last_name": "Smith",
+                "timezone": "America/New_York"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "User updated successfully"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the user."
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "The user's email address."
+          },
+          "firstName": {
+            "type": "string",
+            "description": "The user's first name."
+          },
+          "lastName": {
+            "type": "string",
+            "description": "The user's last name."
+          },
+          "timezone": {
+            "type": "string",
+            "description": "IANA timezone identifier."
+          },
+          "locale": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2 country code for locale preference."
+          },
+          "country": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2 country code."
+          },
+          "isOnboarded": {
+            "type": "boolean",
+            "description": "Whether the user has completed onboarding."
+          },
+          "profilePicture": {
+            "$ref": "#/components/schemas/ProfilePicture"
+          }
+        }
+      },
+      "ProfilePicture": {
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "sourceKey": {
+            "type": "string",
+            "description": "Storage key for the profile picture."
+          },
+          "name": {
+            "type": "string",
+            "description": "Original filename."
+          },
+          "contentType": {
+            "type": "string",
+            "description": "MIME type of the image."
+          },
+          "width": {
+            "type": "integer",
+            "description": "Image width in pixels."
+          },
+          "height": {
+            "type": "integer",
+            "description": "Image height in pixels."
+          },
+          "size": {
+            "type": "integer",
+            "description": "File size in bytes."
+          },
+          "focalPoint": {
+            "type": "object",
+            "nullable": true,
+            "description": "Focal point coordinates for cropping."
+          }
+        }
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Authentication required",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "UNAUTHORIZED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Authentication required"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "BadRequest": {
+        "description": "Invalid request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "BAD_REQUEST"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Validation failed"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Authentication via Clerk session token"
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+---
+title: Overview
+description: Manage the authenticated user
+---
+
+The User API lets you retrieve and update the currently authenticated user's profile information.
+
+## Progress
+
+| Endpoint | Method | Status |
+| -------- | ------ | ------ |
+| `/users/me` | GET | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/users/me` | PATCH | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+
+## Rules
+
+| Rule | Value |
+| ---- | ----- |
+| Max users | 5,000 per workspace |
+| Data retention | 30 days after deletion |
+| Dispute strikes | 2 max |
+| Spam strikes | 2 max |
+
+## User object
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| `id` | string | Unique identifier for the user |
+| `email` | string | The user's email address |
+| `firstName` | string | The user's first name |
+| `lastName` | string | The user's last name |
+| `timezone` | string | IANA timezone identifier |
+| `locale` | string | ISO 3166-1 alpha-2 country code for locale |
+| `country` | string | ISO 3166-1 alpha-2 country code |
+| `isOnboarded` | boolean | Whether the user has completed onboarding |
+| `profilePicture` | object \| null | Profile picture metadata |
+
+## Enums
+
+<AccordionGroup>
+  <Accordion title="Locale">
+    | Value | Description |
+    | ----- | ----------- |
+    | `en` | English |
+    | `nl` | Dutch |
+  </Accordion>
+  <Accordion title="Profile picture content types">
+    | Type | MIME |
+    | ---- | ---- |
+    | JPEG | `image/jpeg` |
+    | PNG | `image/png` |
+    | WebP | `image/webp` |
+  </Accordion>
+  <Accordion title="Profile picture constraints">
+    | Rule | Value |
+    | ---- | ----- |
+    | Max file size | 10 MB |
+    | Max width | 2,048 px |
+    | Max height | 2,048 px |
+  </Accordion>
+</AccordionGroup>

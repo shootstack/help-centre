@@ -3,7 +3,7 @@
   "theme": "maple",
   "name": "Shootstack",
   "colors": {
-    "primary": "#0E0E10",
+    "primary": "#71717b",
     "light": "#F4F4F5",
     "dark": "#0E0E10"
   },
@@ -63,21 +63,25 @@
       },
       {
         "tab": "API reference",
-        "hidden": true,
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Overview",
             "pages": [
               "api-reference/introduction"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "User",
+            "openapi": "api-reference/openapi/user.json",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/user/overview",
+              {
+                "group": "Endpoints",
+                "pages": [
+                  "GET /users/me",
+                  "PATCH /users/me"
+                ]
+              }
             ]
           }
         ]
@@ -85,33 +89,23 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
+    "light": "/logo/dark.svg",
     "dark": "/logo/light.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
+      "label": "Open app",
       "href": "https://dashboard.mintlify.com"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
   },
   "footer": {
     "socials": {
@@ -127,8 +121,8 @@
   "background": {
     "decoration": "gradient",
     "color": {
-      "light": "#F4F4F5",
-      "dark": "#0E0E10"
+      "light": "#fff",
+      "dark": "#000"
     }
   },
   "appearance": {
