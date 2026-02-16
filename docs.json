@@ -125,7 +125,11 @@
   },
   "description": "The next generation of photo delivery, built for photographers.",
   "background": {
-    "decoration": "gradient"
+    "decoration": "gradient",
+    "color": {
+      "light": "#F4F4F5",
+      "dark": "#0E0E10"
+    }
   },
   "appearance": {
     "default": "system"
