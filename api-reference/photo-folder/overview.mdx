@@ -1,0 +1,74 @@
+---
+title: Overview
+description: Manage photo folders within a project
+---
+
+The Photo Folder API lets you create, retrieve, update, and delete photo folders. Photo folders belong to a project and contain photos that can be organized with auto or manual sorting.
+
+## Progress
+
+| Endpoint | Method | Status |
+| -------- | ------ | ------ |
+| `/photo-folders` | POST | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id` | GET | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id` | PATCH | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id` | DELETE | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id/auto-sorting` | PATCH | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id/manual-sorting` | PATCH | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id/sorting-photos` | GET | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id/sorting-photos` | PATCH | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id/duplicate` | POST | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id/copy` | POST | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id/move` | POST | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/photo-folders/:photo_folder_id/delete-photos` | POST | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+
+## Rules
+
+| Rule | Value |
+| ---- | ----- |
+| Max photos | 2,500 per photo folder |
+| Max sorting photos | 500 per photo folder |
+| Max upload batch | 50 per request |
+| Max delete batch | 500 per request |
+| Max copy/move batch | 500 per request |
+| Max duplicate photos | 500 per folder |
+
+## Photo folder object
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| `id` | string | Unique identifier for the photo folder |
+| `projectId` | string | ID of the parent project |
+| `isWatermarked` | boolean | Whether photos in this folder have a watermark applied |
+| `name` | string | The photo folder name |
+| `photoCount` | integer | Number of photos in this folder |
+| `photoSize` | integer | Total photo size in bytes |
+| `autoSorting` | object | Auto sorting configuration (only on retrieve) |
+| `autoSorting.sortBy` | string | Field to sort by |
+| `autoSorting.sortOrder` | string | Sort direction |
+| `manualSorting` | boolean | Whether manual sorting is enabled (only on retrieve) |
+| `updatedAt` | string | ISO 8601 timestamp |
+| `createdAt` | string | ISO 8601 timestamp |
+
+## Enums
+
+<AccordionGroup>
+  <Accordion title="Sort by">
+    | Value | Description |
+    | ----- | ----------- |
+    | `name` | Sort by photo name |
+    | `creationDate` | Sort by photo creation date |
+  </Accordion>
+  <Accordion title="Sort order">
+    | Value | Description |
+    | ----- | ----------- |
+    | `asc` | Ascending |
+    | `desc` | Descending |
+  </Accordion>
+  <Accordion title="Upload duplicate handling">
+    | Value | Description |
+    | ----- | ----------- |
+    | `skip` | Skip duplicate photos |
+    | `replace` | Replace existing duplicates |
+  </Accordion>
+</AccordionGroup>

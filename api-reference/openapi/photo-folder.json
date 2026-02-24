@@ -1,0 +1,1216 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Photo Folder API",
+    "description": "Manage photo folders within a project",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.shootstack.com/v3/app-client"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/photo-folders": {
+      "post": {
+        "operationId": "createPhotoFolder",
+        "summary": "Create photo folder",
+        "description": "Create a new photo folder in a project.\n\nReturns `409 Conflict` if the project already has 25 photo folders.",
+        "x-mint": {
+          "title": "Create photo folder"
+        },
+        "tags": ["Photo Folder"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["project_id", "name"],
+                "properties": {
+                  "project_id": {
+                    "type": "string",
+                    "description": "The parent project ID."
+                  },
+                  "watermark_id": {
+                    "type": "string",
+                    "description": "ID of the watermark to apply to photos in this folder."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "The photo folder name.",
+                    "maxLength": 40,
+                    "example": "Ceremony"
+                  },
+                  "manual_sorting": {
+                    "type": "boolean",
+                    "description": "Whether to enable manual sorting.",
+                    "example": false
+                  }
+                }
+              },
+              "example": {
+                "project_id": "507f1f77bcf86cd799439011",
+                "name": "Ceremony"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Photo folder created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/PhotoFolderBasic"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "607f1f77bcf86cd799439012",
+                    "projectId": "507f1f77bcf86cd799439011",
+                    "isWatermarked": false,
+                    "name": "Ceremony",
+                    "photoCount": 0,
+                    "photoSize": 0,
+                    "updatedAt": "2026-02-17T09:00:00.000Z",
+                    "createdAt": "2026-02-17T09:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          }
+        }
+      }
+    },
+    "/photo-folders/{photo_folder_id}": {
+      "get": {
+        "operationId": "getPhotoFolder",
+        "summary": "Retrieve photo folder",
+        "description": "Retrieve a single photo folder with its sorting configuration.",
+        "x-mint": {
+          "title": "Retrieve photo folder"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The photo folder ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Photo folder object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/PhotoFolder"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "607f1f77bcf86cd799439012",
+                    "projectId": "507f1f77bcf86cd799439011",
+                    "isWatermarked": false,
+                    "name": "Ceremony",
+                    "photoCount": 120,
+                    "photoSize": 524288000,
+                    "autoSorting": {
+                      "sortBy": "creationDate",
+                      "sortOrder": "asc"
+                    },
+                    "manualSorting": false,
+                    "updatedAt": "2026-02-16T15:00:00.000Z",
+                    "createdAt": "2026-01-10T09:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updatePhotoFolder",
+        "summary": "Update photo folder",
+        "description": "Update an existing photo folder.",
+        "x-mint": {
+          "title": "Update photo folder"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The photo folder ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The photo folder name.",
+                    "maxLength": 40,
+                    "example": "Reception"
+                  }
+                }
+              },
+              "example": {
+                "name": "Reception"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Photo folder updated successfully"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deletePhotoFolder",
+        "summary": "Delete photo folder",
+        "description": "Delete an existing photo folder and all its photos.",
+        "x-mint": {
+          "title": "Delete photo folder"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The photo folder ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Photo folder deleted successfully"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/photo-folders/{photo_folder_id}/auto-sorting": {
+      "patch": {
+        "operationId": "updateAutoSorting",
+        "summary": "Update auto sorting",
+        "description": "Update the automatic sorting configuration for a photo folder.",
+        "x-mint": {
+          "title": "Update auto sorting"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The photo folder ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sort_by": {
+                    "type": "string",
+                    "description": "Field to sort photos by.",
+                    "enum": ["name", "creationDate"],
+                    "example": "creationDate"
+                  },
+                  "sort_order": {
+                    "type": "string",
+                    "description": "Sort direction.",
+                    "enum": ["asc", "desc"],
+                    "example": "asc"
+                  }
+                }
+              },
+              "example": {
+                "sort_by": "creationDate",
+                "sort_order": "asc"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Auto sorting updated successfully"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/photo-folders/{photo_folder_id}/manual-sorting": {
+      "patch": {
+        "operationId": "updateManualSorting",
+        "summary": "Update manual sorting",
+        "description": "Enable or disable manual sorting for a photo folder.\n\nReturns `409 Conflict` if enabling manual sorting would exceed the 500 sorting photo limit.",
+        "x-mint": {
+          "title": "Update manual sorting"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The photo folder ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["manual_sorting"],
+                "properties": {
+                  "manual_sorting": {
+                    "type": "boolean",
+                    "description": "Whether to enable manual sorting.",
+                    "example": true
+                  }
+                }
+              },
+              "example": {
+                "manual_sorting": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Manual sorting updated successfully"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          }
+        }
+      }
+    },
+    "/photo-folders/{photo_folder_id}/sorting-photos": {
+      "get": {
+        "operationId": "getSortingPhotos",
+        "summary": "List sorting photos",
+        "description": "Retrieve photos in a photo folder for sorting purposes.",
+        "x-mint": {
+          "title": "List sorting photos"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The photo folder ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sorting photos list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SortingPhoto"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": [
+                    {
+                      "id": "807f1f77bcf86cd799439014",
+                      "sourceKey": "workspaces/ws123/photos/807f1f77bcf86cd799439014.jpg",
+                      "status": "success",
+                      "name": "DSC_0421.jpg",
+                      "contentType": "image/jpeg",
+                      "width": 6000,
+                      "height": 4000,
+                      "size": 8388608,
+                      "webWidth": 2400,
+                      "webHeight": 1600,
+                      "webSize": 524288,
+                      "creationDate": "2026-01-15T14:30:00.000Z",
+                      "uploadDate": "2026-01-20T09:00:00.000Z"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateSortingPhotos",
+        "summary": "Update sorting photos",
+        "description": "Reorder photos in a photo folder by providing the photo IDs in the desired order.",
+        "x-mint": {
+          "title": "Update sorting photos"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The photo folder ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["photo_ids"],
+                "properties": {
+                  "photo_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Ordered list of photo IDs representing the desired sort order."
+                  }
+                }
+              },
+              "example": {
+                "photo_ids": [
+                  "807f1f77bcf86cd799439014",
+                  "807f1f77bcf86cd799439015",
+                  "807f1f77bcf86cd799439016"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Sorting photos updated successfully"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/photo-folders/{photo_folder_id}/duplicate": {
+      "post": {
+        "operationId": "duplicatePhotoFolder",
+        "summary": "Duplicate photo folder",
+        "description": "Duplicate a photo folder and all its photos into the same project.\n\n**Limits:** Up to 500 photos per folder.\n\nReturns `409 Conflict` if the project already has 25 photo folders or the folder has more than 500 photos.",
+        "x-mint": {
+          "title": "Duplicate photo folder"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The photo folder ID to duplicate.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name for the new photo folder. Defaults to the original name with a copy suffix.",
+                    "maxLength": 40,
+                    "example": "Ceremony (Copy)"
+                  },
+                  "watermark_id": {
+                    "type": "string",
+                    "description": "ID of the watermark to apply to photos in the new folder."
+                  }
+                }
+              },
+              "example": {
+                "name": "Ceremony (Copy)"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Duplicated photo folder",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/PhotoFolderBasic"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "617f1f77bcf86cd799439099",
+                    "projectId": "507f1f77bcf86cd799439011",
+                    "isWatermarked": false,
+                    "name": "Ceremony (Copy)",
+                    "photoCount": 120,
+                    "photoSize": 524288000,
+                    "updatedAt": "2026-02-21T09:00:00.000Z",
+                    "createdAt": "2026-02-21T09:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          }
+        }
+      }
+    },
+    "/photo-folders/{photo_folder_id}/copy": {
+      "post": {
+        "operationId": "copyPhotos",
+        "summary": "Copy photos",
+        "description": "Copy a batch of photos from one photo folder to another.\n\nThe original photos remain in the source folder. The copied photos are created as new records in the target folder and inherit the original file data. See [Photos](/api-reference/photo/overview) for photo details.\n\n**Limits:** Up to 500 photos per request.\n\nReturns `400 Bad Request` if the target folder is in a different project or is the same as the source folder. Returns `409 Conflict` if the target folder's photo limit would be exceeded.",
+        "x-mint": {
+          "title": "Copy photos"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The source photo folder ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["target_photo_folder_id", "photo_ids"],
+                "properties": {
+                  "target_photo_folder_id": {
+                    "type": "string",
+                    "description": "ID of the destination photo folder."
+                  },
+                  "photo_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "maxItems": 500,
+                    "description": "IDs of the photos to copy."
+                  }
+                }
+              },
+              "example": {
+                "target_photo_folder_id": "617f1f77bcf86cd799439020",
+                "photo_ids": [
+                  "807f1f77bcf86cd799439014",
+                  "807f1f77bcf86cd799439015"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Copy result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/PhotoBatchResult"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "copiedPhotoCount": 2,
+                    "copiedPhotoSize": 16777216
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          }
+        }
+      }
+    },
+    "/photo-folders/{photo_folder_id}/delete-photos": {
+      "post": {
+        "operationId": "deletePhotos",
+        "summary": "Delete photos",
+        "description": "Delete multiple photos from a photo folder in a single request.\n\nSee [Photos](/api-reference/photo/overview) for photo details.\n\n**Limits:** Up to 500 photos per request.",
+        "x-mint": {
+          "title": "Delete photos"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The photo folder ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["photo_ids"],
+                "properties": {
+                  "photo_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "maxItems": 500,
+                    "description": "IDs of the photos to delete."
+                  }
+                }
+              },
+              "example": {
+                "photo_ids": [
+                  "807f1f77bcf86cd799439014",
+                  "807f1f77bcf86cd799439015"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Photos deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/DeletePhotosResult"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "deletedPhotoCount": 2,
+                    "deletedPhotoSize": 16777216
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/photo-folders/{photo_folder_id}/move": {
+      "post": {
+        "operationId": "movePhotos",
+        "summary": "Move photos",
+        "description": "Move a batch of photos from one photo folder to another.\n\nThe photos are removed from the source folder and added to the target folder. See [Photos](/api-reference/photo/overview) for photo details.\n\n**Limits:** Up to 500 photos per request.\n\nReturns `400 Bad Request` if the target folder is in a different project or is the same as the source folder. Returns `409 Conflict` if the target folder's photo limit would be exceeded.",
+        "x-mint": {
+          "title": "Move photos"
+        },
+        "tags": ["Photo Folder"],
+        "parameters": [
+          {
+            "name": "photo_folder_id",
+            "in": "path",
+            "required": true,
+            "description": "The source photo folder ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["target_photo_folder_id", "photo_ids"],
+                "properties": {
+                  "target_photo_folder_id": {
+                    "type": "string",
+                    "description": "ID of the destination photo folder."
+                  },
+                  "photo_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "maxItems": 500,
+                    "description": "IDs of the photos to move."
+                  }
+                }
+              },
+              "example": {
+                "target_photo_folder_id": "617f1f77bcf86cd799439020",
+                "photo_ids": [
+                  "807f1f77bcf86cd799439014",
+                  "807f1f77bcf86cd799439015"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Move result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/PhotoBatchResult"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "movedPhotoCount": 2,
+                    "movedPhotoSize": 16777216
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PhotoFolder": {
+        "type": "object",
+        "description": "Full photo folder object returned by the retrieve endpoint.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the photo folder."
+          },
+          "projectId": {
+            "type": "string",
+            "description": "ID of the parent project."
+          },
+          "isWatermarked": {
+            "type": "boolean",
+            "description": "Whether photos in this folder have a watermark applied."
+          },
+          "name": {
+            "type": "string",
+            "description": "The photo folder name."
+          },
+          "photoCount": {
+            "type": "integer",
+            "description": "Number of photos in this folder."
+          },
+          "photoSize": {
+            "type": "integer",
+            "description": "Total photo size in bytes."
+          },
+          "autoSorting": {
+            "type": "object",
+            "description": "Auto sorting configuration.",
+            "properties": {
+              "sortBy": {
+                "type": "string",
+                "enum": ["name", "creationDate"],
+                "description": "Field to sort photos by."
+              },
+              "sortOrder": {
+                "type": "string",
+                "enum": ["asc", "desc"],
+                "description": "Sort direction."
+              }
+            }
+          },
+          "manualSorting": {
+            "type": "boolean",
+            "description": "Whether manual sorting is enabled."
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update timestamp."
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp."
+          }
+        }
+      },
+      "PhotoFolderBasic": {
+        "type": "object",
+        "description": "Photo folder object returned by the create and duplicate endpoints.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the photo folder."
+          },
+          "projectId": {
+            "type": "string",
+            "description": "ID of the parent project."
+          },
+          "isWatermarked": {
+            "type": "boolean",
+            "description": "Whether photos in this folder have a watermark applied."
+          },
+          "name": {
+            "type": "string",
+            "description": "The photo folder name."
+          },
+          "photoCount": {
+            "type": "integer",
+            "description": "Number of photos in this folder."
+          },
+          "photoSize": {
+            "type": "integer",
+            "description": "Total photo size in bytes."
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update timestamp."
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp."
+          }
+        }
+      },
+      "DeletePhotosResult": {
+        "type": "object",
+        "description": "Result of a batch delete operation.",
+        "properties": {
+          "deletedPhotoCount": {
+            "type": "integer",
+            "description": "Number of photos deleted."
+          },
+          "deletedPhotoSize": {
+            "type": "integer",
+            "description": "Total size of deleted photos in bytes."
+          }
+        }
+      },
+      "PhotoBatchResult": {
+        "type": "object",
+        "description": "Result of a batch copy or move operation.",
+        "properties": {
+          "copiedPhotoCount": {
+            "type": "integer",
+            "description": "Number of photos copied (copy endpoint only)."
+          },
+          "copiedPhotoSize": {
+            "type": "integer",
+            "description": "Total size of copied photos in bytes (copy endpoint only)."
+          },
+          "movedPhotoCount": {
+            "type": "integer",
+            "description": "Number of photos moved (move endpoint only)."
+          },
+          "movedPhotoSize": {
+            "type": "integer",
+            "description": "Total size of moved photos in bytes (move endpoint only)."
+          }
+        }
+      },
+      "SortingPhoto": {
+        "type": "object",
+        "description": "Photo object returned by the sorting photos endpoint.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the photo."
+          },
+          "sourceKey": {
+            "type": "string",
+            "description": "Storage key for the original photo."
+          },
+          "status": {
+            "type": "string",
+            "enum": ["no_status", "success", "failed"],
+            "description": "Processing status of the photo."
+          },
+          "name": {
+            "type": "string",
+            "description": "Original filename."
+          },
+          "contentType": {
+            "type": "string",
+            "description": "MIME type of the photo."
+          },
+          "width": {
+            "type": "integer",
+            "description": "Original image width in pixels."
+          },
+          "height": {
+            "type": "integer",
+            "description": "Original image height in pixels."
+          },
+          "size": {
+            "type": "integer",
+            "description": "Original file size in bytes."
+          },
+          "webWidth": {
+            "type": "integer",
+            "description": "Web-optimized image width in pixels."
+          },
+          "webHeight": {
+            "type": "integer",
+            "description": "Web-optimized image height in pixels."
+          },
+          "webSize": {
+            "type": "integer",
+            "description": "Web-optimized file size in bytes."
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Photo creation date from EXIF data."
+          },
+          "uploadDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date the photo was uploaded."
+          }
+        }
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Authentication required",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "UNAUTHORIZED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Authentication required"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "BadRequest": {
+        "description": "Invalid request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "BAD_REQUEST"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Validation failed"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Resource not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "NOT_FOUND"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Resource not found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Conflict": {
+        "description": "Resource conflict",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "CONFLICT"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Resource limit exceeded"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Authentication via Clerk session token"
+      }
+    }
+  }
+}

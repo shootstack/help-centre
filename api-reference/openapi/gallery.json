@@ -1,0 +1,971 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Gallery API",
+    "description": "Manage galleries within a project",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.shootstack.com/v3/app-client"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/galleries": {
+      "post": {
+        "operationId": "createGallery",
+        "summary": "Create gallery",
+        "description": "Create a new gallery in a [project](/api-reference/project/overview). Returns `409 Conflict` if the project already has 25 galleries.",
+        "x-mint": {
+          "title": "Create gallery"
+        },
+        "tags": ["Gallery"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["project_id", "name"],
+                "properties": {
+                  "project_id": {
+                    "type": "string",
+                    "description": "The parent project ID."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "The gallery name.",
+                    "maxLength": 40,
+                    "example": "Wedding Day"
+                  }
+                }
+              },
+              "example": {
+                "project_id": "507f1f77bcf86cd799439011",
+                "name": "Wedding Day"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Gallery created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/GalleryBasic"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "607f1f77bcf86cd799439012",
+                    "projectId": "507f1f77bcf86cd799439011",
+                    "name": "Wedding Day",
+                    "cover": null,
+                    "updatedAt": "2026-02-23T09:00:00.000Z",
+                    "createdAt": "2026-02-23T09:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          }
+        }
+      }
+    },
+    "/galleries/{gallery_id}": {
+      "get": {
+        "operationId": "getGallery",
+        "summary": "Retrieve gallery",
+        "description": "Retrieve a single gallery with all configuration fields.",
+        "x-mint": {
+          "title": "Retrieve gallery"
+        },
+        "tags": ["Gallery"],
+        "parameters": [
+          {
+            "name": "gallery_id",
+            "in": "path",
+            "required": true,
+            "description": "The gallery ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Gallery object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Gallery"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "607f1f77bcf86cd799439012",
+                    "projectId": "507f1f77bcf86cd799439011",
+                    "name": "Wedding Day",
+                    "cover": {
+                      "id": "707f1f77bcf86cd799439013",
+                      "sourceKey": "workspaces/ws123/covers/707f1f77bcf86cd799439013.jpg",
+                      "name": "cover.jpg",
+                      "contentType": "image/jpeg",
+                      "width": 2400,
+                      "height": 1600,
+                      "size": 524288,
+                      "focalPoint": {
+                        "x": 50,
+                        "y": 50
+                      }
+                    },
+                    "coverTemplateId": "60af1f77bcf86cd799439020",
+                    "colorPaletteId": "60bf1f77bcf86cd799439021",
+                    "fontId": "60cf1f77bcf86cd799439022",
+                    "photoFolderIds": [
+                      "617f1f77bcf86cd799439030",
+                      "617f1f77bcf86cd799439031"
+                    ],
+                    "extraCovers": [],
+                    "theme": "system",
+                    "coverTitle": "Sarah & James",
+                    "coverSubTitle": "June 15, 2026",
+                    "intro": "<p>Welcome to our wedding gallery</p>",
+                    "gridLayout": "column",
+                    "gridPhotoSize": "medium",
+                    "gridPhotoSpacing": 10,
+                    "updatedAt": "2026-02-23T12:00:00.000Z",
+                    "createdAt": "2026-02-23T09:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateGallery",
+        "summary": "Update gallery",
+        "description": "Update an existing gallery.",
+        "x-mint": {
+          "title": "Update gallery"
+        },
+        "tags": ["Gallery"],
+        "parameters": [
+          {
+            "name": "gallery_id",
+            "in": "path",
+            "required": true,
+            "description": "The gallery ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cover_template_id": {
+                    "type": "string",
+                    "description": "Cover template ID."
+                  },
+                  "color_palette_id": {
+                    "type": "string",
+                    "description": "Color palette ID."
+                  },
+                  "font_id": {
+                    "type": "string",
+                    "description": "Font ID."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "The gallery name.",
+                    "maxLength": 40,
+                    "example": "Reception"
+                  },
+                  "theme": {
+                    "type": "string",
+                    "description": "Gallery color theme.",
+                    "enum": ["system", "light", "dark"]
+                  },
+                  "cover_title": {
+                    "type": "string",
+                    "description": "Title displayed on the gallery cover.",
+                    "maxLength": 80,
+                    "example": "Sarah & James"
+                  },
+                  "cover_sub_title": {
+                    "type": "string",
+                    "description": "Subtitle displayed on the gallery cover.",
+                    "maxLength": 300,
+                    "example": "June 15, 2026"
+                  },
+                  "intro": {
+                    "type": "string",
+                    "description": "Introduction HTML text for the gallery.",
+                    "maxLength": 1200,
+                    "example": "<p>Welcome to our wedding gallery</p>"
+                  },
+                  "grid_layout": {
+                    "type": "string",
+                    "description": "Photo grid layout style.",
+                    "enum": ["column", "row", "grid"]
+                  },
+                  "grid_photo_size": {
+                    "type": "string",
+                    "description": "Photo size in the grid.",
+                    "enum": ["small", "medium", "large"]
+                  },
+                  "grid_photo_spacing": {
+                    "type": "integer",
+                    "description": "Spacing between photos in the grid.",
+                    "minimum": 0,
+                    "maximum": 100,
+                    "example": 10
+                  }
+                }
+              },
+              "example": {
+                "name": "Reception",
+                "theme": "dark",
+                "grid_layout": "row",
+                "grid_photo_spacing": 8
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Gallery updated successfully"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteGallery",
+        "summary": "Delete gallery",
+        "description": "Delete an existing gallery.",
+        "x-mint": {
+          "title": "Delete gallery"
+        },
+        "tags": ["Gallery"],
+        "parameters": [
+          {
+            "name": "gallery_id",
+            "in": "path",
+            "required": true,
+            "description": "The gallery ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Gallery deleted successfully"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/galleries/{gallery_id}/photos": {
+      "get": {
+        "operationId": "listGalleryPhotos",
+        "summary": "List gallery photos",
+        "description": "Retrieve a paginated list of [photos](/api-reference/photo/overview) across all photo folders in a gallery.",
+        "x-mint": {
+          "title": "List gallery photos"
+        },
+        "tags": ["Gallery"],
+        "parameters": [
+          {
+            "name": "gallery_id",
+            "in": "path",
+            "required": true,
+            "description": "The gallery ID.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "description": "Page number for pagination.",
+            "schema": {
+              "type": "integer",
+              "example": 1
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": true,
+            "description": "Number of results per page.",
+            "schema": {
+              "type": "integer",
+              "example": 20
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter photos by filename.",
+            "schema": {
+              "type": "string",
+              "maxLength": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Gallery photos list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/GalleryPhoto"
+                      }
+                    },
+                    "pagination": {
+                      "$ref": "#/components/schemas/Pagination"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": [
+                    {
+                      "id": "807f1f77bcf86cd799439014",
+                      "sourceKey": "workspaces/ws123/photos/807f1f77bcf86cd799439014.jpg",
+                      "name": "DSC_0421.jpg",
+                      "contentType": "image/jpeg",
+                      "width": 6000,
+                      "height": 4000,
+                      "size": 8388608,
+                      "focalPoint": {
+                        "x": 50,
+                        "y": 50
+                      }
+                    }
+                  ],
+                  "pagination": {
+                    "totalDocs": 120,
+                    "totalPages": 6,
+                    "page": 1,
+                    "limit": 20,
+                    "hasNextPage": true,
+                    "hasPrevPage": false
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/galleries/{gallery_id}/photo-folders": {
+      "patch": {
+        "operationId": "updateGalleryPhotoFolders",
+        "summary": "Update gallery photo folders",
+        "description": "Replace the list of [photo folders](/api-reference/photo-folder/overview) linked to this gallery. Pass the full array of photo folder IDs that should be associated with the gallery.",
+        "x-mint": {
+          "title": "Update gallery photo folders"
+        },
+        "tags": ["Gallery"],
+        "parameters": [
+          {
+            "name": "gallery_id",
+            "in": "path",
+            "required": true,
+            "description": "The gallery ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["photo_folder_ids"],
+                "properties": {
+                  "photo_folder_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "maxItems": 25,
+                    "description": "IDs of the photo folders to link to this gallery."
+                  }
+                }
+              },
+              "example": {
+                "photo_folder_ids": [
+                  "617f1f77bcf86cd799439030",
+                  "617f1f77bcf86cd799439031",
+                  "617f1f77bcf86cd799439032"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Gallery photo folders updated successfully"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    },
+    "/galleries/{gallery_id}/cover": {
+      "patch": {
+        "operationId": "updateGalleryCover",
+        "summary": "Update gallery cover",
+        "description": "Set a [photo](/api-reference/photo/overview) as the gallery cover image. A cover is generated from the specified photo and returned in the response.",
+        "x-mint": {
+          "title": "Update gallery cover"
+        },
+        "tags": ["Gallery"],
+        "parameters": [
+          {
+            "name": "gallery_id",
+            "in": "path",
+            "required": true,
+            "description": "The gallery ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["photo_id"],
+                "properties": {
+                  "photo_id": {
+                    "type": "string",
+                    "description": "ID of the photo to use as the gallery cover."
+                  }
+                }
+              },
+              "example": {
+                "photo_id": "807f1f77bcf86cd799439014"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Gallery cover updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/Cover"
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": "707f1f77bcf86cd799439013",
+                    "sourceKey": "workspaces/ws123/covers/707f1f77bcf86cd799439013.jpg",
+                    "name": "DSC_0421.jpg",
+                    "contentType": "image/jpeg",
+                    "width": 2400,
+                    "height": 1600,
+                    "size": 524288,
+                    "focalPoint": {
+                      "x": 50,
+                      "y": 50
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Gallery": {
+        "type": "object",
+        "description": "Full gallery object returned by the retrieve endpoint.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the gallery."
+          },
+          "projectId": {
+            "type": "string",
+            "description": "ID of the parent project."
+          },
+          "name": {
+            "type": "string",
+            "description": "The gallery name."
+          },
+          "cover": {
+            "oneOf": [
+              { "$ref": "#/components/schemas/Cover" },
+              { "type": "null" }
+            ],
+            "description": "Cover image metadata."
+          },
+          "coverTemplateId": {
+            "type": ["string", "null"],
+            "description": "Cover template ID."
+          },
+          "colorPaletteId": {
+            "type": ["string", "null"],
+            "description": "Color palette ID."
+          },
+          "fontId": {
+            "type": ["string", "null"],
+            "description": "Font ID."
+          },
+          "photoFolderIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "IDs of photo folders linked to this gallery."
+          },
+          "extraCovers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cover"
+            },
+            "description": "Additional cover images."
+          },
+          "theme": {
+            "type": ["string", "null"],
+            "enum": ["system", "light", "dark", null],
+            "description": "Gallery color theme."
+          },
+          "coverTitle": {
+            "type": ["string", "null"],
+            "description": "Title displayed on the gallery cover."
+          },
+          "coverSubTitle": {
+            "type": ["string", "null"],
+            "description": "Subtitle displayed on the gallery cover."
+          },
+          "intro": {
+            "type": ["string", "null"],
+            "description": "Introduction HTML text for the gallery."
+          },
+          "gridLayout": {
+            "type": ["string", "null"],
+            "enum": ["column", "row", "grid", null],
+            "description": "Photo grid layout style."
+          },
+          "gridPhotoSize": {
+            "type": ["string", "null"],
+            "enum": ["small", "medium", "large", null],
+            "description": "Photo size in the grid."
+          },
+          "gridPhotoSpacing": {
+            "type": ["integer", "null"],
+            "description": "Spacing between photos in the grid."
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update timestamp."
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp."
+          }
+        }
+      },
+      "GalleryBasic": {
+        "type": "object",
+        "description": "Gallery object returned by the create endpoint.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the gallery."
+          },
+          "projectId": {
+            "type": "string",
+            "description": "ID of the parent project."
+          },
+          "name": {
+            "type": "string",
+            "description": "The gallery name."
+          },
+          "cover": {
+            "oneOf": [
+              { "$ref": "#/components/schemas/Cover" },
+              { "type": "null" }
+            ],
+            "description": "Cover image metadata."
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Last update timestamp."
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp."
+          }
+        }
+      },
+      "GalleryPhoto": {
+        "type": "object",
+        "description": "Photo object returned by the gallery photos endpoint.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the photo."
+          },
+          "sourceKey": {
+            "type": ["string", "null"],
+            "description": "Storage key for the original photo."
+          },
+          "name": {
+            "type": ["string", "null"],
+            "description": "Original filename."
+          },
+          "contentType": {
+            "type": ["string", "null"],
+            "description": "MIME type of the photo."
+          },
+          "width": {
+            "type": ["integer", "null"],
+            "description": "Original image width in pixels."
+          },
+          "height": {
+            "type": ["integer", "null"],
+            "description": "Original image height in pixels."
+          },
+          "size": {
+            "type": ["integer", "null"],
+            "description": "Original file size in bytes."
+          },
+          "focalPoint": {
+            "type": "object",
+            "description": "Focal point coordinates.",
+            "properties": {
+              "x": {
+                "type": ["number", "null"],
+                "description": "Horizontal focal point position."
+              },
+              "y": {
+                "type": ["number", "null"],
+                "description": "Vertical focal point position."
+              }
+            }
+          }
+        }
+      },
+      "Cover": {
+        "type": "object",
+        "description": "Cover image metadata.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the cover."
+          },
+          "sourceKey": {
+            "type": ["string", "null"],
+            "description": "Storage key for the cover image."
+          },
+          "name": {
+            "type": ["string", "null"],
+            "description": "Original filename."
+          },
+          "contentType": {
+            "type": ["string", "null"],
+            "description": "MIME type of the cover image."
+          },
+          "width": {
+            "type": ["integer", "null"],
+            "description": "Image width in pixels."
+          },
+          "height": {
+            "type": ["integer", "null"],
+            "description": "Image height in pixels."
+          },
+          "size": {
+            "type": ["integer", "null"],
+            "description": "File size in bytes."
+          },
+          "focalPoint": {
+            "type": "object",
+            "description": "Focal point coordinates.",
+            "properties": {
+              "x": {
+                "type": ["number", "null"],
+                "description": "Horizontal focal point position."
+              },
+              "y": {
+                "type": ["number", "null"],
+                "description": "Vertical focal point position."
+              }
+            }
+          }
+        }
+      },
+      "Pagination": {
+        "type": "object",
+        "description": "Pagination metadata.",
+        "properties": {
+          "totalDocs": {
+            "type": "integer",
+            "description": "Total number of documents."
+          },
+          "totalPages": {
+            "type": "integer",
+            "description": "Total number of pages."
+          },
+          "page": {
+            "type": "integer",
+            "description": "Current page number."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Number of results per page."
+          },
+          "hasNextPage": {
+            "type": "boolean",
+            "description": "Whether there is a next page."
+          },
+          "hasPrevPage": {
+            "type": "boolean",
+            "description": "Whether there is a previous page."
+          }
+        }
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Authentication required",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "UNAUTHORIZED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Authentication required"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "BadRequest": {
+        "description": "Invalid request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "BAD_REQUEST"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Validation failed"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Resource not found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "NOT_FOUND"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Resource not found"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Conflict": {
+        "description": "Resource conflict",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "example": false
+                },
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "example": "CONFLICT"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Resource limit exceeded"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Authentication via Clerk session token"
+      }
+    }
+  }
+}

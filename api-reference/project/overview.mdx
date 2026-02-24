@@ -1,0 +1,88 @@
+---
+title: Overview
+description: Manage projects within a workspace
+---
+
+The Project API lets you create, list, update, and delete projects. Projects are the top-level organizational unit that contain photo folders and galleries.
+
+## Progress
+
+| Endpoint | Method | Status |
+| -------- | ------ | ------ |
+| `/projects` | POST | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/projects` | GET | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/projects/search` | GET | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/projects/favorites` | GET | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/projects/:project_id` | GET | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/projects/:project_id` | PATCH | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/projects/:project_id` | DELETE | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+| `/projects/:project_id/cover` | PATCH | <Badge icon="circle-check" size="sm" color="green">Done</Badge> |
+
+## Rules
+
+| Rule | Value |
+| ---- | ----- |
+| Max projects | 1,000 per workspace |
+| Max photo folders | 25 per project |
+| Max galleries | 25 per project |
+| Max custom fields | 25 per project |
+| Max favorites | 10 |
+
+## Project object
+
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| `id` | string | Unique identifier for the project |
+| `photoFolderIds` | string[] | IDs of photo folders in this project |
+| `galleryIds` | string[] | IDs of galleries in this project |
+| `cover` | object \| null | Cover image metadata |
+| `photoFolders` | object[] | Photo folders (only on retrieve) |
+| `galleries` | object[] | Galleries (only on retrieve) |
+| `name` | string | The project name |
+| `status` | string | The project status |
+| `isFavorite` | boolean | Whether the project is marked as a favorite |
+| `taskCount` | integer | Number of tasks in this project |
+| `noteCount` | integer | Number of notes in this project |
+| `photoFolderCount` | integer | Number of photo folders |
+| `galleryCount` | integer | Number of galleries |
+| `galleryShareCount` | integer | Number of gallery shares |
+| `photoCount` | integer | Total number of photos |
+| `photoSize` | integer | Total photo storage size in bytes |
+| `updatedAt` | string | ISO 8601 timestamp |
+| `createdAt` | string | ISO 8601 timestamp |
+
+## Enums
+
+<AccordionGroup>
+  <Accordion title="Status">
+    | Value | Description |
+    | ----- | ----------- |
+    | `no_status` | No status set (default) |
+    | `todo` | Planned, not started |
+    | `in_progress` | Currently in progress |
+    | `done` | Completed |
+  </Accordion>
+  <Accordion title="Cover content types">
+    | Type | MIME |
+    | ---- | ---- |
+    | JPEG | `image/jpeg` |
+    | PNG | `image/png` |
+    | WebP | `image/webp` |
+    | GIF | `image/gif` |
+  </Accordion>
+  <Accordion title="Cover constraints">
+    | Rule | Value |
+    | ---- | ----- |
+    | Max file size | 100 MB |
+    | Max width | 15,000 px |
+    | Max height | 15,000 px |
+    | Max filename length | 100 characters |
+  </Accordion>
+  <Accordion title="Sort options">
+    | Value | Description |
+    | ----- | ----------- |
+    | `name` | Sort by project name |
+    | `updatedAt` | Sort by last updated |
+    | `createdAt` | Sort by creation date |
+  </Accordion>
+</AccordionGroup>

@@ -55,7 +55,8 @@
                     "locale": "US",
                     "country": "US",
                     "isOnboarded": true,
-                    "profilePicture": null
+                    "referral": "google",
+                    "specialties": ["wedding", "portrait"]
                   }
                 }
               }
@@ -196,43 +197,17 @@
             "type": "boolean",
             "description": "Whether the user has completed onboarding."
           },
-          "profilePicture": {
-            "$ref": "#/components/schemas/ProfilePicture"
-          }
-        }
-      },
-      "ProfilePicture": {
-        "type": "object",
-        "nullable": true,
-        "properties": {
-          "sourceKey": {
+          "referral": {
             "type": "string",
-            "description": "Storage key for the profile picture."
-          },
-          "name": {
-            "type": "string",
-            "description": "Original filename."
-          },
-          "contentType": {
-            "type": "string",
-            "description": "MIME type of the image."
-          },
-          "width": {
-            "type": "integer",
-            "description": "Image width in pixels."
-          },
-          "height": {
-            "type": "integer",
-            "description": "Image height in pixels."
-          },
-          "size": {
-            "type": "integer",
-            "description": "File size in bytes."
-          },
-          "focalPoint": {
-            "type": "object",
             "nullable": true,
-            "description": "Focal point coordinates for cropping."
+            "description": "How the user heard about Shootstack."
+          },
+          "specialties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Photography specialties."
           }
         }
       }

@@ -29,6 +29,8 @@ Create `api-reference/openapi/{domain}.json`. See [openapi-template.json](refere
 Key requirements:
 - Match validation rules exactly from `diamond-server/src/api/app/{domain}/{domain}-validations.js`
 - Match response fields from `diamond-server/src/api/app/{domain}/{domain}-mapper.js`
+- Match endpoint order from `diamond-server/src/api/app/{domain}/{domain}-routes.js`
+- Match error responses from `@throws` in `diamond-server/src/services/{domain}-service.js`
 - Include `x-mint.title` for each operation
 - Add realistic examples for request/response bodies
 
@@ -55,8 +57,8 @@ Add to `docs.json` under `navigation.tabs[1].groups`:
     {
       "group": "Endpoints",
       "pages": [
-        "GET /{resources}",
         "POST /{resources}",
+        "GET /{resources}",
         "GET /{resources}/{id}",
         "PATCH /{resources}/{id}",
         "DELETE /{resources}/{id}"
@@ -103,14 +105,32 @@ Include these in OpenAPI specs:
 | 404 | `#/components/responses/NotFound` |
 | 409 | `#/components/responses/Conflict` |
 
+## Error Responses
+
+Check `@throws` JSDoc annotations in `diamond-server/src/services/{domain}-service.js`. For each thrown error:
+- Add the matching error code to the endpoint's `responses` in the OpenAPI spec
+- Add a callout in the endpoint `description` with the business rule, e.g.: `Returns \`409 Conflict\` if the workspace already has 1,000 projects.`
+
+## Business Rule Callouts
+
+When an endpoint has limits or constraints from `{Domain}Rules`, mention them directly in the OpenAPI endpoint `description` field. Format as a sentence at the end of the description: `Returns \`{code} {reason}\` if {condition}.`
+
+## Cross-domain Links
+
+When an endpoint references another domain (e.g., copy photos references the Photo domain), add a markdown link to that domain's overview page in the endpoint `description`: `See [Photos](/api-reference/photo/overview) for photo details.`
+
 ## Checklist
 
 When adding/updating API docs:
 
 - [ ] OpenAPI spec matches actual validation rules (maxLength, required, etc.)
 - [ ] Response schema matches mapper output
+- [ ] Endpoint order matches routes file
 - [ ] Examples are realistic
 - [ ] Progress table includes all endpoints
 - [ ] Rules section matches `{Domain}Rules` from model
 - [ ] Enums match model exports
 - [ ] Navigation updated in `docs.json`
+- [ ] Error responses match `@throws` in service
+- [ ] Business rules called out in endpoint description
+- [ ] Cross-domain links added where applicable
