@@ -40,7 +40,7 @@
                     "data": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/{Resource}"
+                        "$ref": "#/components/schemas/Resource"
                       }
                     }
                   }
@@ -93,7 +93,7 @@
                       "example": true
                     },
                     "data": {
-                      "$ref": "#/components/schemas/{Resource}"
+                      "$ref": "#/components/schemas/Resource"
                     }
                   }
                 }
@@ -145,7 +145,7 @@
                       "example": true
                     },
                     "data": {
-                      "$ref": "#/components/schemas/{Resource}"
+                      "$ref": "#/components/schemas/Resource"
                     }
                   }
                 }
@@ -247,7 +247,7 @@
   },
   "components": {
     "schemas": {
-      "{Resource}": {
+      "Resource": {
         "type": "object",
         "properties": {
           "id": {

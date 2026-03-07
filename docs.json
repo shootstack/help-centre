@@ -74,7 +74,7 @@
             "group": "User",
             "openapi": "api-reference/openapi/user.json",
             "pages": [
-              "api-reference/user/overview",
+              "api-reference/overview/user",
               {
                 "group": "Endpoints",
                 "pages": [
@@ -88,7 +88,7 @@
             "group": "Project",
             "openapi": "api-reference/openapi/project.json",
             "pages": [
-              "api-reference/project/overview",
+              "api-reference/overview/project",
               {
                 "group": "Endpoints",
                 "pages": [
@@ -108,7 +108,7 @@
             "group": "Photo Folder",
             "openapi": "api-reference/openapi/photo-folder.json",
             "pages": [
-              "api-reference/photo-folder/overview",
+              "api-reference/overview/photo-folder",
               {
                 "group": "Endpoints",
                 "pages": [
@@ -132,7 +132,7 @@
             "group": "Photo",
             "openapi": "api-reference/openapi/photo.json",
             "pages": [
-              "api-reference/photo/overview",
+              "api-reference/overview/photo",
               {
                 "group": "Endpoints",
                 "pages": [
@@ -149,7 +149,7 @@
             "group": "Gallery",
             "openapi": "api-reference/openapi/gallery.json",
             "pages": [
-              "api-reference/gallery/overview",
+              "api-reference/overview/gallery",
               {
                 "group": "Endpoints",
                 "pages": [
@@ -159,7 +159,8 @@
                   "DELETE /galleries/{gallery_id}",
                   "GET /galleries/{gallery_id}/photos",
                   "PATCH /galleries/{gallery_id}/photo-folders",
-                  "PATCH /galleries/{gallery_id}/cover"
+                  "PATCH /galleries/{gallery_id}/cover",
+                  "GET /galleries/{gallery_id}/preview-token"
                 ]
               }
             ]

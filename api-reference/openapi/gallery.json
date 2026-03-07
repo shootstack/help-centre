@@ -584,6 +584,67 @@
           }
         }
       }
+    },
+    "/galleries/{gallery_id}/preview-token": {
+      "get": {
+        "operationId": "getGalleryPreviewToken",
+        "summary": "Get gallery preview token",
+        "description": "Generate a temporary preview token for the gallery. The token expires after 1 hour and can be used to preview the gallery without authentication.",
+        "x-mint": {
+          "title": "Get gallery preview token"
+        },
+        "tags": ["Gallery"],
+        "parameters": [
+          {
+            "name": "gallery_id",
+            "in": "path",
+            "required": true,
+            "description": "The gallery ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Preview token generated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "previewToken": {
+                          "type": "string",
+                          "description": "Temporary preview token for the gallery."
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "previewToken": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        }
+      }
     }
   },
   "components": {
