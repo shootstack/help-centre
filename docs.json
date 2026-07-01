@@ -1,217 +1,72 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
-  "name": "Shootstack",
-  "colors": {
-    "primary": "#71717b",
-    "light": "#F4F4F5",
-    "dark": "#0E0E10"
-  },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "icon": "book-open-cover",
-          "href": "https://mintlify.com/docs"
-        },
-        {
-          "anchor": "Blog",
-          "icon": "newspaper",
-          "href": "https://mintlify.com/blog"
-        }
-      ]
+    "$schema": "https://mintlify.com/docs.json",
+    "theme": "maple",
+    "name": "Shootstack Help",
+    "colors": {
+        "primary": "#71717b",
+        "light": "#F4F4F5",
+        "dark": "#0E0E10"
     },
-    "tabs": [
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
+    "favicon": "/favicon.svg",
+    "navigation": {
+        "global": {
+            "anchors": [
+                {
+                    "anchor": "App",
+                    "icon": "grid-2",
+                    "href": "https://app.shootstack.com"
+                },
+                {
+                    "anchor": "Website",
+                    "icon": "globe",
+                    "href": "https://shootstack.com"
+                }
             ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
+        },
+        "tabs": [
+            {
+                "tab": "Help center",
+                "groups": [
+                    {
+                        "group": "Getting started",
+                        "pages": ["index", "getting-started/welcome"]
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "User",
-            "openapi": "api-reference/openapi/user.json",
-            "pages": [
-              "api-reference/overview/user",
-              {
-                "group": "Endpoints",
-                "pages": [
-                  "GET /users/me",
-                  "PATCH /users/me"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Project",
-            "openapi": "api-reference/openapi/project.json",
-            "pages": [
-              "api-reference/overview/project",
-              {
-                "group": "Endpoints",
-                "pages": [
-                  "POST /projects",
-                  "GET /projects",
-                  "GET /projects/search",
-                  "GET /projects/favorites",
-                  "GET /projects/{project_id}",
-                  "PATCH /projects/{project_id}",
-                  "DELETE /projects/{project_id}",
-                  "PATCH /projects/{project_id}/cover"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Photo Folder",
-            "openapi": "api-reference/openapi/photo-folder.json",
-            "pages": [
-              "api-reference/overview/photo-folder",
-              {
-                "group": "Endpoints",
-                "pages": [
-                  "POST /photo-folders",
-                  "GET /photo-folders/{photo_folder_id}",
-                  "PATCH /photo-folders/{photo_folder_id}",
-                  "DELETE /photo-folders/{photo_folder_id}",
-                  "PATCH /photo-folders/{photo_folder_id}/auto-sorting",
-                  "PATCH /photo-folders/{photo_folder_id}/manual-sorting",
-                  "GET /photo-folders/{photo_folder_id}/sorting-photos",
-                  "PATCH /photo-folders/{photo_folder_id}/sorting-photos",
-                  "POST /photo-folders/{photo_folder_id}/duplicate",
-                  "POST /photo-folders/{photo_folder_id}/copy",
-                  "POST /photo-folders/{photo_folder_id}/move",
-                  "POST /photo-folders/{photo_folder_id}/delete-photos"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Photo",
-            "openapi": "api-reference/openapi/photo.json",
-            "pages": [
-              "api-reference/overview/photo",
-              {
-                "group": "Endpoints",
-                "pages": [
-                  "GET /photos",
-                  "GET /photos/{photo_id}",
-                  "DELETE /photos/{photo_id}",
-                  "POST /photos/upload",
-                  "POST /photos/{photo_id}/download"
-                ]
-              }
-            ]
-          },
-          {
-            "group": "Gallery",
-            "openapi": "api-reference/openapi/gallery.json",
-            "pages": [
-              "api-reference/overview/gallery",
-              {
-                "group": "Endpoints",
-                "pages": [
-                  "POST /galleries",
-                  "GET /galleries/{gallery_id}",
-                  "PATCH /galleries/{gallery_id}",
-                  "DELETE /galleries/{gallery_id}",
-                  "GET /galleries/{gallery_id}/photos",
-                  "PATCH /galleries/{gallery_id}/photo-folders",
-                  "PATCH /galleries/{gallery_id}/cover",
-                  "GET /galleries/{gallery_id}/preview-token"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "logo": {
-    "light": "/logo/dark.svg",
-    "dark": "/logo/light.svg"
-  },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Open app",
-      "href": "https://dashboard.mintlify.com"
+    },
+    "logo": {
+        "light": "/logo/dark.svg",
+        "dark": "/logo/light.svg"
+    },
+    "navbar": {
+        "primary": {
+            "type": "button",
+            "label": "Open app",
+            "href": "https://app.shootstack.com"
+        }
+    },
+    "contextual": {
+        "options": ["copy", "view", "chatgpt", "claude"]
+    },
+    "footer": {
+        "socials": {
+            "github": "https://github.com/shootstack",
+            "website": "https://shootstack.com"
+        }
+    },
+    "seo": {
+        "indexing": "navigable"
+    },
+    "description": "Help and guides for Shootstack customers.",
+    "background": {
+        "decoration": "gradient",
+        "color": {
+            "light": "#fff",
+            "dark": "#000"
+        }
+    },
+    "appearance": {
+        "default": "system"
     }
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude"
-    ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
-  },
-  "seo": {
-    "indexing": "navigable"
-  },
-  "description": "The next generation of photo delivery, built for photographers.",
-  "background": {
-    "decoration": "gradient",
-    "color": {
-      "light": "#fff",
-      "dark": "#000"
-    }
-  },
-  "appearance": {
-    "default": "system"
-  },
-  "api": {
-    "playground": {
-      "display": "simple"
-    }
-  }
 }

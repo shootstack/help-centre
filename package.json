@@ -1,0 +1,9 @@
+{
+    "name": "shootstack-help-centre",
+    "private": true,
+    "scripts": {
+        "dev": "mint dev --port 3333",
+        "validate": "mint validate",
+        "broken-links": "mint broken-links"
+    }
+}

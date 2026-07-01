@@ -1,34 +1,25 @@
-> **Customize this file**: Tailor this template to your project by noting specific contribution types you're looking for, adding a Code of Conduct, or adjusting the writing guidelines to match your style.
+# Contribute to the help center
 
-# Contribute to the documentation
+Thank you for contributing to Shootstack's public help documentation.
 
-Thank you for your interest in contributing to our documentation! This guide will help you get started.
+## Local development
 
-## How to contribute
-
-### Option 1: Edit directly on GitHub
-
-1. Navigate to the page you want to edit
-2. Click the "Edit this file" button (the pencil icon)
-3. Make your changes and submit a pull request
-
-### Option 2: Local development
-
-1. Fork and clone this repository
+1. Clone [github.com/shootstack/help-centre](https://github.com/shootstack/help-centre)
 2. Install the Mintlify CLI: `npm i -g mint`
 3. Create a branch for your changes
-4. Make changes
-5. Navigate to the docs directory and run `mint dev`
-6. Preview your changes at `http://localhost:3000`
-7. Commit your changes and submit a pull request
+4. Run `npm run dev` from the repo root
+5. Preview at `http://localhost:3333`
+6. Open a pull request
 
-For more details on local development, see our [development guide](development.mdx).
+See [development.mdx](development.mdx) for more detail.
 
 ## Writing guidelines
 
-- **Use active voice**: "Run the command" not "The command should be run"
-- **Address the reader directly**: Use "you" instead of "the user"
-- **Keep sentences concise**: Aim for one idea per sentence
-- **Lead with the goal**: Start instructions with what the user wants to accomplish
-- **Use consistent terminology**: Don't alternate between synonyms for the same concept
-- **Include examples**: Show, don't just tell
+- Use active voice and address the reader as "you"
+- Keep sentences concise and lead with the goal
+- Use Shootstack product terminology consistently
+- Include examples where they help
+
+## API documentation
+
+App API reference docs are maintained separately in `diamond-docs/` (not this repo's public site).
