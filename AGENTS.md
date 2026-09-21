@@ -1,25 +1,35 @@
-# help-centre Agent Guide
+> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
+> For Mintlify product knowledge (components, configuration, writing standards),
+> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
 
-Public **Shootstack Help Center** (Mintlify). Customer-facing guides and support content — not API reference.
+# Documentation project instructions
 
-Internal App API documentation lives in `diamond-docs/` (local sandbox, port 3334).
+## About this project
 
-## Project shape
-
-- Site config: `docs.json`
-- Help pages: `*.mdx`, `getting-started/*.mdx`
+- This is a documentation site built on [Mintlify](https://mintlify.com)
+- Pages are MDX files with YAML frontmatter
+- Configuration lives in `docs.json`
+- Run `npm run dev` (port **3333**) to preview
+- Run `mint validate` and `mint broken-links` before committing
 
 ## Terminology
 
 Use Diamond product terms: Gallery, Media folder (Photo folder), Project, Workspace, Contact, Photo, Favorites.
 
-## Working style
+Address the reader as **you**. American English. Never call a gallery an album or collection.
 
-- Use Mintlify skills in `.agents/skills/mintlify*` for MDX components and navigation
-- Run `npm run dev` (port 3333) to preview
-- Run `mint validate` and `mint broken-links` before committing
+## Style preferences
 
-## Boundaries
+{/* Add any project-specific style rules below */}
 
-- Do not add OpenAPI specs or endpoint reference pages here — that belongs in `diamond-docs/`
-- Keep copy customer-facing; link to the app and support email where helpful
+- Use active voice and second person ("you")
+- Keep sentences concise — one idea per sentence
+- Use sentence case for headings
+- Bold for UI elements: Click **Settings**
+- Code formatting for file names, commands, paths, and code references
+
+## Content boundaries
+
+- Customer-facing help only. Do not add OpenAPI specs or endpoint reference pages.
+- Link to the Shootstack app and [support@shootstack.com](mailto:support@shootstack.com).
+- Do not invent product behavior. If a flow is unclear, ask.

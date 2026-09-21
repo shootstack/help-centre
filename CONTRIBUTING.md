@@ -9,17 +9,13 @@ Thank you for contributing to Shootstack's public help documentation.
 3. Create a branch for your changes
 4. Run `npm run dev` from the repo root
 5. Preview at `http://localhost:3333`
-6. Open a pull request
-
-See [development.mdx](development.mdx) for more detail.
+6. Run `npm run validate` and `npm run broken-links`
+7. Open a pull request
 
 ## Writing guidelines
 
 - Use active voice and address the reader as "you"
 - Keep sentences concise and lead with the goal
-- Use Shootstack product terminology consistently
+- Use Shootstack product terminology: Gallery, Media folder, Project, Workspace, Contact, Photo, Favorites
 - Include examples where they help
-
-## API documentation
-
-App API reference docs are maintained separately in `diamond-docs/` (not this repo's public site).
+- Add new articles to `docs.json` under the matching group, and give new groups a `root` page

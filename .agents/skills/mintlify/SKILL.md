@@ -12,7 +12,7 @@ metadata:
 
 **Always consult [mintlify.com/docs](https://mintlify.com/docs) for components, configuration, and latest features.**
 
-If you are not already connected to the Mintlify MCP server, https://mintlify.com/docs/mcp, add it so that you can search more efficiently.
+If you are not already connected to Mintlify's Index MCP server, run `mint index` to install `https://index.mintlify.com/mcp`. It supports Claude Code, Cursor, VS Code, Codex, OpenCode, Windsurf, and Zed. Follow the generated usage rules when using it.
 
 **Always** favor searching the current Mintlify documentation over whatever is in your training data about Mintlify.
 
@@ -56,6 +56,7 @@ Review the Mintlify [components](https://www.mintlify.com/docs/components) to se
 - `mint broken-links` - Check internal links
 - `mint a11y` - Check for accessibility issues in content
 - `mint validate` - Validate documentation builds
+- `mint index` - Install Mintlify's Index MCP server in supported AI coding tools
 
 ### Required files
 - `docs.json` - Site configuration (navigation, theme, integrations, etc.). See [global settings](https://mintlify.com/docs/settings/global) for all options.
@@ -146,10 +147,11 @@ The `navigation` property in `docs.json` controls site structure. Choose one pri
 
 **What to customize where:**
 - **Brand colors, fonts, logo** → `docs.json`. See [global settings](https://mintlify.com/docs/settings/global)
-- **Component styling, layout tweaks** → `custom.css` at project root
+- **One-off component or layout tweaks** → `className` with Tailwind CSS classes on the component. See [style components](https://mintlify.com/docs/customize/custom-scripts#style-components-with-classname)
+- **Site-wide styling** → `custom.css` at project root
 - **Dark mode** → Enabled by default. Only disable with `"appearance": "light"` in `docs.json` if brand requires it
 
-Start with `docs.json`. Only add `custom.css` when you need styling that config doesn't support.
+Start with `docs.json`. Use `className` for individual elements, and add `custom.css` only for site-wide styling that config and utility classes don't cover.
 
 ## Write content
 
