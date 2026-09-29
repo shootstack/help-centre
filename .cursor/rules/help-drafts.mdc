@@ -1,0 +1,35 @@
+---
+description: Unpublished page conventions for help-centre/drafts/ and *.draft.mdx — Mintlify ignores these until a page is ready
+globs:
+  - drafts/**/*
+  - "**/*.draft.mdx"
+---
+
+# Drafts Layer Conventions
+
+`drafts/` and any `*.draft.mdx` file are listed in `.mintignore`. Nothing here
+is built, validated, or searchable. Use it for a page that is not ready for
+navigation. Article maps live in
+`.cursor/skills/guides-architecture/maps/`, not here.
+
+## Structure
+
+```text
+drafts/<anything>.mdx           # draft pages awaiting review
+<tab>/<page>.draft.mdx          # draft next to its final location
+```
+
+## Patterns
+
+- A draft page keeps its final frontmatter so promoting it is a rename plus
+  a navigation entry.
+- Promote by moving the file out of `drafts/` (or dropping `.draft`), adding
+  it to `config/navigation/index.json`, and running `npm run validate`.
+
+## Boundaries
+
+- Nothing in `drafts/` is linked from a published page; `mint broken-links`
+  does not see it.
+- No secrets or customer data, even though it is unpublished; the repo is
+  shared.
+- Do not let a draft outlive its usefulness. Delete a draft once it is promoted.

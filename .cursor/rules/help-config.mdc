@@ -1,0 +1,69 @@
+---
+description: Site configuration conventions — docs.json is a thin shell that $refs config/ for branding, site settings, and navigation
+globs:
+  - docs.json
+  - config/**/*.json
+  - .mintignore
+---
+
+# Config Layer Conventions
+
+`docs.json` is the Mintlify entry point and stays a shell. Real settings live in
+`config/` and are pulled in with `$ref`.
+
+## Structure
+
+```text
+docs.json                      # name, description, favicon, $ref navigation + site
+config/site.json               # styling, contextual, navbar, footer, seo, redirects, interaction, $ref branding
+config/branding.json           # theme, colors, logo, fonts, icons, background, appearance
+config/navigation/index.json   # tabs: Academy, Guides, Troubleshooting
+.mintignore                    # drafts/, *.draft.mdx, .cursor/
+```
+
+## Patterns
+
+Navigation has three tabs and two shapes:
+
+```json
+{ "tab": "Academy", "icon": "graduation-cap", "pages": ["academy/index", "academy/introduction"] }
+```
+
+```json
+{
+  "tab": "Guides",
+  "icon": "book-open",
+  "groups": [
+    {
+      "group": "Guides",
+      "pages": [
+        "guides/introduction/overview",
+        { "group": "Projects", "expanded": false, "pages": ["guides/projects/overview", "guides/projects/status"] }
+      ]
+    }
+  ]
+}
+```
+
+- Academy and Troubleshooting use a flat `pages` list. Guides nests one
+  `group` per core feature inside a single wrapper group, with
+  `expanded: false`, so each section collapses in the sidebar. Introduction
+  is a single page in that wrapper, not a group. A top-level group cannot
+  collapse, so do not add feature groups beside the wrapper. Overview page
+  first. `interaction.drilldown` stays `false` so opening a group does not
+  navigate.
+- Page entries are paths without extension. Every `.mdx` outside `.mintignore`
+  must appear here or it is a hidden page.
+- Redirects go in `config/site.json` as `{ "source", "destination" }` and are
+  added whenever a page path changes.
+- `branding.json` keeps `icons.library` on `lucide` for Mintlify's own chrome.
+  Icons you choose (tabs, cards, page icons) are paths under `/assets/icons/`.
+- `seo.indexing` stays `navigable`; hidden pages are not indexed.
+
+## Boundaries
+
+- Do not put navigation, colors, or navbar content directly in `docs.json`.
+- Do not hand-edit the Academy `pages` list; `npm run sync-academy` owns it.
+- Never create `mint.json`; it is deprecated.
+- Custom domain, preview settings, and GitHub app wiring are dashboard tasks,
+  not config edits.

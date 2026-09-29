@@ -1,0 +1,63 @@
+---
+description: Academy tab conventions — the lesson catalog in snippets/academy-lessons.js is the source of truth; pages, sidebar tags, and navigation are generated
+globs:
+  - academy/**/*.mdx
+  - snippets/academy-lessons.js
+  - snippets/academy-grid.jsx
+  - scripts/sync-academy.mjs
+  - academy.css
+---
+
+# Academy Layer Conventions
+
+`academy/` holds video lessons. The catalog in `snippets/academy-lessons.js`
+owns lesson order, titles, descriptions, and durations; `npm run sync-academy`
+writes everything derived from it. Shared voice rules are in `help-mdx-copy.mdc`.
+
+## Structure
+
+```text
+snippets/academy-lessons.js   # catalog: { slug, title, description, duration }
+snippets/academy-grid.jsx     # <AcademyGrid lessons /> card grid
+scripts/sync-academy.mjs      # generates the three outputs below
+academy/index.mdx             # overview grid; lessons block between markers
+academy/<slug>.mdx            # one lesson page per catalog entry
+config/navigation/index.json  # Academy tab pages, rewritten by the script
+academy.css                   # card outline and sidebar duration tag styling
+```
+
+## Patterns
+
+Add or change a lesson:
+
+1. Edit `snippets/academy-lessons.js`. `slug` is kebab-case and unique;
+   `duration` is `m:ss` or `mm:ss`.
+2. Run `npm run sync-academy`. It stubs a missing `academy/<slug>.mdx`,
+   rewrites `title`, `description`, and `tag` in every lesson's frontmatter,
+   regenerates the `academy-lessons:start` / `end` block in `academy/index.mdx`,
+   and rewrites the Academy `pages` list.
+3. Write the lesson body below the frontmatter: the video embed, then
+   `## What you will learn` as three short bullets.
+
+```js
+{
+  slug: 'sharing',
+  title: 'Sharing a gallery',
+  description: 'A short video about sharing a gallery.',
+  duration: '2:47',
+},
+```
+
+- Lesson pages use `mode: wide`. The `tag` field is the duration and renders
+  as the sidebar time via `academy.css`.
+- `npm run validate` runs `sync-academy --check` first and fails when the
+  generated files are out of date.
+
+## Boundaries
+
+- Do not hand-edit the lessons block in `academy/index.mdx`, the `tag` field,
+  or the Academy `pages` list. The next sync overwrites them.
+- Do not remove the `academy-lessons:start` / `end` markers.
+- Lesson bodies stay short: a video and what it covers. Step-by-step
+  instructions belong in Guides; link there instead.
+- `academy-grid.jsx` is layout only. Lesson data always arrives via props.

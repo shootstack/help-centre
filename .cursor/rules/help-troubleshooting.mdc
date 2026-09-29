@@ -1,0 +1,63 @@
+---
+description: Troubleshooting tab conventions — one question per article, answered directly, linking to the Guides steps
+globs:
+  - troubleshooting/**/*.mdx
+---
+
+# Troubleshooting Layer Conventions
+
+`troubleshooting/` holds question-and-answer articles. Each article answers one
+question a photographer types into search. Shared voice rules are in
+`help-mdx-copy.mdc`.
+
+## Structure
+
+```text
+troubleshooting/
+├── index.mdx                 # sidebarTitle: Overview
+└── <question-slug>.mdx       # kebab-case, from the question's key nouns
+```
+
+- Pages are a flat `pages` list under the Troubleshooting tab in
+  `config/navigation/index.json`, `troubleshooting/index` first.
+- `title` is the question in plain words, sentence case, question mark
+  optional (`Why can't my client download photos`).
+- `description` is the one-sentence answer or the cause.
+
+## Patterns
+
+```mdx
+---
+title: Why can't my client download photos
+description: Downloads are off for the gallery share, or the PIN was not entered.
+---
+
+<Accordion title="Downloads are turned off for this share">
+  Open the gallery share, then **Settings**. Turn on **Downloads**.
+</Accordion>
+
+<Accordion title="The client did not enter the download PIN">
+  ...
+</Accordion>
+
+## Related
+
+- [Gallery shares overview](/guides/gallery-shares/overview)
+```
+
+- Lead with the most common cause. One `<Accordion>` per cause; the title is
+  the cause, the body is the fix in one to three sentences.
+- A single-cause article skips `<Accordion>` and answers in prose.
+- Point to the Guides article for the full steps instead of repeating
+  them.
+- End with how to reach support when the fix does not apply:
+  [support@shootstack.com](mailto:support@shootstack.com).
+
+## Boundaries
+
+- No feature walkthroughs. If the answer needs more than three steps, write a
+  Guides article and link it.
+- No internal causes (server errors, queue names, status codes). Describe
+  what the photographer or client sees.
+- No `<Steps>` here unless the fix is genuinely sequential and has no
+  article in Guides.

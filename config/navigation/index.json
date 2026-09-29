@@ -1,0 +1,82 @@
+{
+    "directory": "card",
+    "tabs": [
+        {
+            "tab": "Academy",
+            "icon": "/assets/icons/graduation-cap.svg",
+            "pages": [
+                "academy/index",
+                "academy/introduction",
+                "academy/workspace",
+                "academy/galleries",
+                "academy/sharing"
+            ]
+        },
+        {
+            "tab": "Guides",
+            "icon": "/assets/icons/book-open-01.svg",
+            "groups": [
+                {
+                    "group": "Guides",
+                    "pages": [
+                        "guides/introduction/overview",
+                        {
+                            "group": "Projects",
+                            "icon": "/assets/icons/album-01.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/projects/overview",
+                                "guides/projects/status",
+                                "guides/projects/favorites"
+                            ]
+                        },
+                        {
+                            "group": "Media folders",
+                            "icon": "/assets/icons/folder-01.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/media-folders/overview",
+                                "guides/media-folders/upload",
+                                "guides/media-folders/sort",
+                                "guides/media-folders/view",
+                                "guides/media-folders/download",
+                                "guides/media-folders/organize"
+                            ]
+                        },
+                        {
+                            "group": "Galleries",
+                            "icon": "/assets/icons/dashboard-square-02.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/galleries/overview",
+                                "guides/galleries/folders",
+                                "guides/galleries/design",
+                                "guides/galleries/cover"
+                            ]
+                        },
+                        {
+                            "group": "Gallery shares",
+                            "icon": "/assets/icons/sent.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/gallery-shares/overview",
+                                "guides/gallery-shares/security",
+                                "guides/gallery-shares/favorites",
+                                "guides/gallery-shares/downloads",
+                                "guides/gallery-shares/reviews"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "tab": "Troubleshooting",
+            "icon": "/assets/icons/message-question.svg",
+            "pages": [
+                "troubleshooting/index",
+                "troubleshooting/common-question"
+            ]
+        }
+    ]
+}

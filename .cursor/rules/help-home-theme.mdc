@@ -1,0 +1,48 @@
+---
+description: Home page and theme override conventions — index.mdx custom layout, root CSS overrides, and search.js entry hooks
+globs:
+  - index.mdx
+  - style.css
+  - academy.css
+  - search.js
+---
+
+# Home Page and Theme Conventions
+
+The home page is a `mode: custom` MDX layout built with Tailwind classes.
+Mintlify loads every root-level `.css` and `.js` file automatically, so
+`style.css`, `academy.css`, and `search.js` need no registration.
+
+## Structure
+
+```text
+index.mdx      # mode: custom; search + Ask AI entry, three tab cards, "Get started" list
+style.css      # app shell colors, topbar pills, sidebar tweaks (theme.css overrides)
+academy.css    # Academy card outline and sidebar duration tag
+search.js      # wires data-search-trigger / data-assistant-trigger to Mintlify's own buttons
+```
+
+## Patterns
+
+- `index.mdx` uses Tailwind utilities with `dark:` variants for every color.
+  Icons come from the built-in `<Icon icon="..." />` (Lucide).
+- The custom search and Ask AI buttons carry `data-search-trigger` and
+  `data-assistant-trigger`; `search.js` forwards clicks to Mintlify's
+  `#search-bar-entry` and `#assistant-entry` (and their `-mobile` variants).
+- The "Get started" list links to the first Guides pages in reading
+  order. Update it when the Introduction or first feature group changes.
+- CSS overrides target Mintlify's stable ids and classes
+  (`#content-container`, `.nav-logo`, `#search-bar-entry`) and use
+  `!important` only where the theme already sets the property. Keep a comment
+  above each block naming what it overrides and why.
+- Light and dark values sit next to each other: `.selector {}` then
+  `.dark .selector {}`.
+
+## Boundaries
+
+- No content in `index.mdx` beyond entry points; articles live in the tabs.
+- No feature-specific CSS in `style.css`; Academy styling stays in
+  `academy.css`, and a new feature file gets its own `<name>.css`.
+- No DOM changes in `search.js` other than click forwarding. Do not replace
+  Mintlify's search or assistant.
+- Do not add a third root JS file without a comment explaining what it hooks.

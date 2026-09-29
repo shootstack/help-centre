@@ -1,0 +1,55 @@
+{
+    "interaction": {
+        "drilldown": false
+    },
+    "styling": {
+        "eyebrows": "breadcrumbs"
+    },
+    "contextual": {
+        "options": [
+            "copy",
+            "view",
+            "assistant",
+            "mcp",
+            "add-mcp"
+        ]
+    },
+    "navbar": {
+        "links": [
+            {
+                "label": "Get support",
+                "href": "/troubleshooting"
+            }
+        ],
+        "primary": {
+            "type": "button",
+            "label": "Open app",
+            "href": "https://app.shootstack.com"
+        }
+    },
+    "footer": {
+        "socials": {
+            "instagram": "https://www.instagram.com/shootstack/",
+            "facebook": "https://www.facebook.com/shootstack",
+            "linkedin": "https://www.linkedin.com/company/shootstack/",
+            "youtube": "https://www.youtube.com/@shootstack",
+            "website": "https://shootstack.com"
+        }
+    },
+    "seo": {
+        "indexing": "navigable"
+    },
+    "redirects": [
+        { "source": "/fundamentals", "destination": "/guides/introduction/overview" },
+        { "source": "/fundamentals/introduction", "destination": "/guides/introduction/overview" },
+        { "source": "/fundamentals/introduction/overview", "destination": "/guides/introduction/overview" },
+        { "source": "/fundamentals/projects", "destination": "/guides/projects/overview" },
+        { "source": "/fundamentals/projects/overview", "destination": "/guides/projects/overview" },
+        { "source": "/fundamentals/projects/status", "destination": "/guides/projects/status" },
+        { "source": "/fundamentals/projects/favorites", "destination": "/guides/projects/favorites" },
+        { "source": "/guides", "destination": "/guides/introduction/overview" },
+        { "source": "/guides/introduction", "destination": "/guides/introduction/overview" },
+        { "source": "/guides/projects", "destination": "/guides/projects/overview" }
+    ],
+    "$ref": "./branding.json"
+}

@@ -18,4 +18,4 @@ Thank you for contributing to Shootstack's public help documentation.
 - Keep sentences concise and lead with the goal
 - Use Shootstack product terminology: Gallery, Media folder, Project, Workspace, Contact, Photo, Favorites
 - Include examples where they help
-- Add new articles to `docs.json` under the matching group, and give new groups a `root` page
+- Guides articles live in `guides/<section>/` and are listed in that section's nested `group` under the Guides tab in `config/navigation/index.json`, Overview first. Troubleshooting articles go in that tab's `pages` list. Add or change an Academy lesson in `snippets/academy-lessons.js`, run `npm run sync-academy`, then write the lesson body. Do not hand-edit the Academy overview list, sidebar times, or Academy page order.

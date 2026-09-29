@@ -1,10 +1,14 @@
 {
     "name": "shootstack-help-centre",
     "private": true,
+    "type": "module",
     "scripts": {
-        "dev": "mint dev --port 3333",
-        "dev:open": "mint dev --port 3333",
-        "validate": "mint validate",
+        "sync-academy": "node scripts/sync-academy.mjs",
+        "sync-app-help": "node scripts/sync-app-help.mjs",
+        "dev": "node scripts/sync-academy.mjs && mint dev --port 3333",
+        "dev:open": "node scripts/sync-academy.mjs && mint dev --port 3333",
+        "lint-guides": "node scripts/lint-guides.mjs",
+        "validate": "node scripts/sync-academy.mjs --check && node scripts/sync-app-help.mjs --check && node scripts/lint-guides.mjs && mint validate",
         "broken-links": "mint broken-links",
         "a11y": "mint a11y"
     }

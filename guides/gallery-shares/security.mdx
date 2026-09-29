@@ -1,0 +1,94 @@
+---
+title: Set a password and expiry
+sidebarTitle: Security
+description: Require a password, set an expiration date, or leave the gallery open.
+---
+
+A password and an expiration date decide who can open a gallery share, and until when. You set them when you create the link, and you can change them on the share later. Leave both off to keep the gallery open to anyone with the link.
+
+## Require a password
+
+A new gallery share has no password, so anyone with the link can open it.
+
+<Steps>
+  <Step title="Open Security">
+    On the gallery, click **Share gallery**, then **Create link**. **Share gallery** opens on **Security**.
+    {/* TODO screenshot: Share gallery dialog on the Security step
+    <Frame>
+      <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/security-password-1.png" alt="Share gallery dialog on Security, with Password protected off" />
+      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/security-password-1-dark.png" alt="Share gallery dialog on Security, with Password protected off" />
+    </Frame>
+    */}
+  </Step>
+  <Step title="Turn on password protection">
+    Turn on **Password protected**. Keep the password that appears, click **Generate** for a new one, or type your own. Then give it to your client.
+    {/* TODO screenshot: Password field with Generate
+    <Frame>
+      <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/security-password-2.png" alt="Password protected on, with a password filled in and Generate" />
+      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/security-password-2-dark.png" alt="Password protected on, with a password filled in and Generate" />
+    </Frame>
+    */}
+  </Step>
+  <Step title="Create the link">
+    Click **Next**. On **Overview**, check the password, then click **Create link**.
+  </Step>
+</Steps>
+
+To change it later, open the share from the project's **Gallery shares** list. It opens on **Info**, where you can change **Password protected** and **Password** on the **Security settings** card. Changes save right away.
+
+{/* TODO screenshot: Security settings card on Info
+<Frame>
+  <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/security-password-3.png" alt="Security settings card with Password protected and Password" />
+  <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/security-password-3-dark.png" alt="Security settings card with Password protected and Password" />
+</Frame>
+*/}
+
+On the **Gallery shares** list, **Access type** shows Password for a protected share and Public for an open one.
+
+## Set an expiration date
+
+Without an expiration date, the gallery stays open.
+
+<Steps>
+  <Step title="Turn on the expiration date">
+    On **Security**, turn on **Expiration date**. On a share you already created, it's called **Expires** under **Security settings**.
+    {/* TODO screenshot: Expiration date switch on Security
+    <Frame>
+      <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/security-expiry-1.png" alt="Security step with the Expiration date switch" />
+      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/security-expiry-1-dark.png" alt="Security step with the Expiration date switch" />
+    </Frame>
+    */}
+  </Step>
+  <Step title="Pick the day">
+    Choose the day the gallery should close. It closes when that day begins, so pick the day after the last day your clients should see the photos.
+    {/* TODO screenshot: Expiration date calendar
+    <Frame>
+      <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/security-expiry-2.png" alt="Calendar open on Select an expiration date" />
+      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/security-expiry-2-dark.png" alt="Calendar open on Select an expiration date" />
+    </Frame>
+    */}
+  </Step>
+</Steps>
+
+Always pick a day once the switch is on. With no date, your clients can't open the link. On a new link, click **Next**, then **Create link** on **Overview**. On **Info**, **Expiration date** saves as you change it, and turning the switch off opens the gallery again.
+
+## What the client sees
+
+When the share has a password, your client lands on **Welcome to your gallery**. They type the password in **Gallery password** and click **Access gallery**.
+
+{/* TODO screenshot: Client password page
+<Frame>
+  <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/security-client-1.png" alt="Welcome to your gallery with Gallery password and Access gallery" />
+  <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/security-client-1-dark.png" alt="Welcome to your gallery with Gallery password and Access gallery" />
+</Frame>
+*/}
+
+From the expiration date on, your client sees **Gallery no longer available**.
+
+A download PIN is separate from this password. See [Allow downloads](/guides/gallery-shares/downloads).
+
+## Related
+
+- [Gallery shares](/guides/gallery-shares/overview)
+- [Allow downloads](/guides/gallery-shares/downloads)
+- [Galleries](/guides/galleries/overview)

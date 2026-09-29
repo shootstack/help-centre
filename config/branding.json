@@ -1,0 +1,27 @@
+{
+    "theme": "almond",
+    "colors": {
+        "primary": "#18181b",
+        "light": "#e4e4e7",
+        "dark": "#18181b"
+    },
+    "logo": {
+        "light": "/assets/logo/dark.svg",
+        "dark": "/assets/logo/light.svg"
+    },
+    "fonts": {
+        "family": "Noto Sans"
+    },
+    "icons": {
+        "library": "lucide"
+    },
+    "background": {
+        "color": {
+            "light": "#ffffff",
+            "dark": "#0b0b0d"
+        }
+    },
+    "appearance": {
+        "default": "system"
+    }
+}

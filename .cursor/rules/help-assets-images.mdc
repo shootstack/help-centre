@@ -1,0 +1,60 @@
+---
+description: Static asset conventions for help-centre/assets/ — brand files, Hugeicons, and article screenshots
+globs:
+  - assets/**/*
+---
+
+# Assets and Images Conventions
+
+Everything static lives under `assets/`. Brand files are referenced from
+config. `assets/icons/` holds stroke-rounded Hugeicons SVGs copied from
+`@hugeicons-pro/core-stroke-rounded`, the same set diamond-app renders.
+`assets/images/` holds article screenshots referenced from MDX.
+
+## Structure
+
+```text
+assets/
+├── favicon.svg
+├── logo/
+│   ├── light.svg          # used on dark backgrounds (branding.json logo.dark)
+│   └── dark.svg           # used on light backgrounds (branding.json logo.light)
+├── icons/
+│   └── <hugeicon-name>.svg    # album-01.svg is Album01Icon, the Projects sidebar icon
+└── images/
+    └── <tab>/<section>/<article>-<task>-<n>.png
+        # assets/images/guides/projects/overview-create-1.png
+        # assets/images/guides/projects/overview-create-1-dark.png
+```
+
+## Patterns
+
+- Brand files are SVG and are referenced only from `docs.json` and
+  `config/branding.json` with root paths (`/assets/logo/dark.svg`).
+- Icon files use a `0 0 24 24` viewBox and `stroke="oklch(0.552 0.016 285.938)"`,
+  the app's `muted-foreground` (zinc-500), the same in light and dark. Do not
+  use `currentColor`: Mintlify loads these files as images, so it would render
+  black. The file name is the Hugeicons export in kebab-case without the
+  `Icon` suffix (`Album01Icon` → `album-01.svg`).
+  Reference them as `/assets/icons/<name>.svg` on navigation, cards, and page `icon`
+  fields. Mintlify's built-in chrome stays Lucide; only icons you set
+  explicitly use this folder.
+- Screenshots are PNG, captured from `https://diamond.shootstack.com` at desktop width
+  in both light and dark appearance, cropped to the relevant panel, with the
+  target control visible. Keep them under roughly 2500 px wide.
+- File name encodes where it is used: `<article>-<task>-<n>.png` for light and
+  `<article>-<task>-<n>-dark.png` for dark, so a rename of the article renames
+  both images.
+- Reference both from MDX inside one `<Frame>`. The light image uses
+  `className="block dark:hidden"`. The dark image uses
+  `className="hidden dark:block"` and the same `alt` text. See `help-mdx-copy.mdc`.
+- Replacing a screenshot keeps the same filenames so no MDX changes.
+
+## Boundaries
+
+- No images embedded from external CDNs in articles.
+- No screenshots containing real client names, emails, or photos. Use demo
+  workspace data.
+- Do not add a top-level `icons/` or `images/` folder. Both live under `assets/`.
+- `.gitignore` excludes stray root `dark.svg` / `light.svg`; logos belong
+  under `assets/logo/`.
