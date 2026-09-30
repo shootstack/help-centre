@@ -5,7 +5,7 @@ Write to `maps/<section>.md` in this skill. Keep every article block complete; t
 The "UI strings" block is a spelling reference so the writer copies labels verbatim. It is not a list of things the article must mention; toasts, statuses, and error strings belong there for accuracy but stay out of the article.
 
 ```markdown
-# <Section UI label> — Guides article map
+# <Section UI label>: Guides article map
 
 Group: <Section UI label>            (as shown in the app, plural)
 Slug: guides/<section>/        (kebab-case of the UI label)
@@ -16,7 +16,7 @@ Sources reviewed: <date>, diamond-app <short commit>, diamond-server <short comm
 ### 1. <Title>
 - File: guides/<section>/<slug>.mdx
 - sidebarTitle: Overview
-- description: <one sentence, at most 20 words, the outcome in a photographer's words; no bold, arrows, or click path — see help-mdx-copy.mdc Frontmatter>
+- description: <one sentence, at most 20 words, the outcome in a photographer's words; no bold, arrows, or click path: see help-mdx-copy.mdc Frontmatter>
 - Reader goal: <one sentence>
 - H2 outline:
   - <H2>

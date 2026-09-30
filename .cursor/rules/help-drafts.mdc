@@ -1,5 +1,5 @@
 ---
-description: Unpublished page conventions for help-centre/drafts/ and *.draft.mdx — Mintlify ignores these until a page is ready
+description: Unpublished page conventions for help-centre/drafts/ and *.draft.mdx: Mintlify ignores these until a page is ready
 globs:
   - drafts/**/*
   - "**/*.draft.mdx"
@@ -10,7 +10,7 @@ globs:
 `drafts/` and any `*.draft.mdx` file are listed in `.mintignore`. Nothing here
 is built, validated, or searchable. Use it for a page that is not ready for
 navigation. Article maps live in
-`.cursor/skills/guides-architecture/maps/`, not here.
+`.agents/skills/guides-architecture/maps/`, not here.
 
 ## Structure
 

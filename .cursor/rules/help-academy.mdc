@@ -1,5 +1,5 @@
 ---
-description: Academy tab conventions — the lesson catalog in snippets/academy-lessons.js is the source of truth; pages, sidebar tags, and navigation are generated
+description: Academy tab conventions: the lesson catalog in snippets/academy-lessons.js is the source of truth; pages, sidebar tags, and navigation are generated
 globs:
   - academy/**/*.mdx
   - snippets/academy-lessons.js
@@ -12,7 +12,8 @@ globs:
 
 `academy/` holds video lessons. The catalog in `snippets/academy-lessons.js`
 owns lesson order, titles, descriptions, and durations; `npm run sync-academy`
-writes everything derived from it. Shared voice rules are in `help-mdx-copy.mdc`.
+writes everything derived from it. Copy mechanics are in `help-mdx-copy.mdc`;
+tone of voice in `.agents/skills/voice-review/tone.md`.
 
 ## Structure
 

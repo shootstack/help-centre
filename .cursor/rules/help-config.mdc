@@ -1,5 +1,5 @@
 ---
-description: Site configuration conventions — docs.json is a thin shell that $refs config/ for branding, site settings, and navigation
+description: Site configuration conventions: docs.json is a thin shell that $refs config/ for branding, site settings, and navigation
 globs:
   - docs.json
   - config/**/*.json

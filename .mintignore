@@ -6,5 +6,5 @@
 drafts/
 *.draft.mdx
 
-# Cursor skills (not published pages)
+# Cursor rules and skill stubs (not published pages); .agents/ is ignored by default
 .cursor/

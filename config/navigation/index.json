@@ -65,6 +65,39 @@
                                 "guides/gallery-shares/downloads",
                                 "guides/gallery-shares/reviews"
                             ]
+                        },
+                        {
+                            "group": "Contacts",
+                            "icon": "/assets/icons/user-account.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/contacts/overview",
+                                "guides/contacts/details",
+                                "guides/contacts/filter",
+                                "guides/contacts/favorites",
+                                "guides/contacts/files"
+                            ]
+                        },
+                        {
+                            "group": "Notes",
+                            "icon": "/assets/icons/file-empty-02.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/notes/overview",
+                                "guides/notes/write",
+                                "guides/notes/templates",
+                                "guides/notes/filter"
+                            ]
+                        },
+                        {
+                            "group": "Tasks",
+                            "icon": "/assets/icons/checkmark-square-02.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/tasks/overview",
+                                "guides/tasks/complete",
+                                "guides/tasks/filter"
+                            ]
                         }
                     ]
                 }

@@ -1,5 +1,5 @@
 ---
-description: Writing voice, terminology, and Mintlify component conventions for every MDX page in help-centre
+description: Copy mechanics for every MDX page in help-centre: frontmatter, terminology, bold labels, what stays out, components, links. Tone of voice is defined in .agents/skills/voice-review/tone.md
 globs:
   - "**/*.mdx"
 ---
@@ -7,8 +7,11 @@ globs:
 # MDX Copy Conventions
 
 Every page is read by a photographer, usually mid-task. Write for scanning, not
-for reading front to back. Tab-specific shapes live in `help-guides.mdc`,
-`help-academy.mdc`, and `help-troubleshooting.mdc`.
+for reading front to back. This file is the mechanics every page follows. How
+a page sounds is defined once, in `.agents/skills/voice-review/tone.md`; run
+the `voice-review` skill on every page you write or rewrite. Tab-specific
+shapes live in `help-guides.mdc`, `help-academy.mdc`, and
+`help-troubleshooting.mdc`.
 
 ## Frontmatter
 
@@ -21,50 +24,21 @@ for reading front to back. Tab-specific shapes live in `help-guides.mdc`,
 - `mode: wide` only for grid pages (Academy overview); `mode: custom` only
   for the home page.
 
-## Voice
-
-The reader is a photographer, not a developer. Write the way you would
-explain the app to a colleague over their shoulder: calm, helpful,
-professional. Short sentences, plain words, contractions welcome (`you'll`,
-`can't`, `don't`). Say `your clients`, `your shoot`, `your photos`.
+## Grammar and terminology
 
 - Second person, present tense, active voice. `You` does the action;
   `Shootstack` is the actor for system behavior (`Shootstack opens the project`).
-- Say why when it helps. One short clause of purpose per job, or per step
-  whose reason is not obvious (`pick a watermark if these are proofing photos
-  you want to protect`). Never a paragraph of explanation.
-- American English. Sentence case for headings and titles.
-- One idea per sentence. Cut filler (`in order to`, `it's important to note`)
-  and editorializing (`simply`, `easily`, `just`).
-- No marketing words (`powerful`, `seamless`, `robust`). No emoji.
+- American English. Sentence case for headings and titles. No emoji.
 - Diamond terms only: Gallery, Media folder, Project, Workspace, Contact,
   Photo, Favorites, Gallery share. Never album, collection, or client area.
 - UI labels in **bold**, copied verbatim from `diamond-app/public/locales/en`.
   Never paraphrase a button. Bold is for controls the reader clicks and the
   screen or dialog they are on. Not for statuses, toasts, or messages.
+- `npm run lint-guides` rejects filler (`in order to`), editorializing
+  (`simply`, `just`), marketing words, `the user`, non-Diamond terms, and
+  arrow chains. Everything else about wording is in `tone.md`.
 
-### Sounds like a person
-
-A sentence can follow every rule above and still read like a spec. These
-patterns are the usual cause:
-
-- Restating the heading as a purpose. `Open these settings when you want to
-  change the look` under "Open design settings" says nothing. If the heading
-  already says why, skip the sentence.
-- Vague judgments. `Create one when the gallery looks right` leaves the reader
-  guessing. Name the moment (`once your edits are in the gallery`) or cut it.
-- Step bodies that carry reference facts. A step is the action, then why or
-  what you see. Defaults and other places the same control appears go in
-  only if the reader needs them to act.
-- Step titles that are not actions. `Read a row` is not something you do.
-- Pointing words. Say `the share`, not `that share` or `on that share`.
-- Long UI paths. At most two locations in one sentence; longer paths become
-  steps.
-
-Read the sentence out loud. If a photographer standing next to you would ask
-"what do you mean?", rewrite it.
-
-### What stays out
+## What stays out
 
 Research returns every string the UI can show. Most of it is reference, not
 content. Leave out:

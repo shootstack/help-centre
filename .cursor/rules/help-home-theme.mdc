@@ -1,5 +1,5 @@
 ---
-description: Home page and theme override conventions — index.mdx custom layout, root CSS overrides, and search.js entry hooks
+description: Home page and theme override conventions: index.mdx custom layout, root CSS overrides, and search.js entry hooks
 globs:
   - index.mdx
   - style.css

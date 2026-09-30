@@ -1,5 +1,5 @@
 ---
-description: Static asset conventions for help-centre/assets/ — brand files, Hugeicons, and article screenshots
+description: Static asset conventions for help-centre/assets/: brand files, Hugeicons, and article screenshots
 globs:
   - assets/**/*
 ---

@@ -11,22 +11,23 @@ const guidesDir = path.join(root, 'guides');
 const shapeExempt = new Set(['introduction']);
 
 const bannedPhrases = [
-  [/are you sure/i, 'pasted dialog copy ("Are you sure") — say what is deleted in plain words'],
-  [/\bsuccessfully\b/i, 'toast copy ("successfully") — leave success toasts out'],
+  [/are you sure/i, 'pasted dialog copy ("Are you sure"): say what is deleted in plain words'],
+  [/\bsuccessfully\b/i, 'toast copy ("successfully"): leave success toasts out'],
   [/\bin order to\b/i, 'filler ("in order to")'],
   [/it'?s important to note/i, 'filler ("it\'s important to note")'],
   [/\b(simply|easily|seamless(ly)?|powerful|robust)\b/i, 'marketing or editorializing word'],
   [/\bjust\b/i, 'editorializing ("just")'],
-  [/\b(album|collection|client area)s?\b/i, 'non-Diamond term — use Gallery, Media folder, Gallery share'],
-  [/\bthe user\b/i, '"the user" — talk to the photographer as "you"'],
+  [/\b(album|collection|client area)s?\b/i, 'non-Diamond term: use Gallery, Media folder, Gallery share'],
+  [/\bthe user\b/i, '"the user": talk to the photographer as "you"'],
   [/\b(entity|entities|schema|atom|endpoint)\b/i, 'technical noun'],
   [/\bAPI\b/, 'technical noun (API)'],
-  [/\bthere is no \*\*/i, 'describes what a dialog lacks — leave it out'],
-  [/→|->/, 'arrow chain — write the path as a sentence or as steps'],
+  [/\bthere is no \*\*/i, 'describes what a dialog lacks: leave it out'],
+  [/→|->/, 'arrow chain: write the path as a sentence or as steps'],
+  [/\u2014/, 'em dash (U+2014): use a period, comma, or colon'],
 ];
 
 const softPhrases = [
-  [/\bwhen you want to\b/i, '"when you want to" often restates the heading — keep only if it adds a real moment'],
+  [/\bwhen you want to\b/i, '"when you want to" often restates the heading: keep only if it adds a real moment'],
 ];
 const descriptionMaxWords = 20;
 
@@ -99,7 +100,7 @@ function lintFile(file) {
       continue;
     }
     if (trimmed.startsWith('{/*')) {
-      if (/^\{\/\*\s*TODO\s*\*\/\}/.test(trimmed)) report(n, 'empty TODO — say what is unverified');
+      if (/^\{\/\*\s*TODO\s*\*\/\}/.test(trimmed)) report(n, 'empty TODO: say what is unverified');
       if (trimmed.startsWith('{/* TODO screenshot:')) {
         checkPlaceholder(lines, i, section, slug, report);
       }
@@ -122,14 +123,14 @@ function lintFile(file) {
       stepsOpenLine = n;
       stepCount = 0;
     } else if (/^<\/Steps>/.test(trimmed)) {
-      if (stepCount > 5) report(stepsOpenLine, `${stepCount} steps in one block — at most 5`);
-      if (stepCount < 2) report(stepsOpenLine, 'Steps block with fewer than 2 steps — use one sentence of prose');
+      if (stepCount > 5) report(stepsOpenLine, `${stepCount} steps in one block: at most 5`);
+      if (stepCount < 2) report(stepsOpenLine, 'Steps block with fewer than 2 steps: use one sentence of prose');
       stepsOpenLine = 0;
     } else if (/^<Step\b/.test(trimmed)) {
       stepCount++;
       const title = /title="([^"]*)"/.exec(trimmed)?.[1] ?? '';
       if (!title) report(n, 'Step without a title');
-      else if (/^(in|on|at|under|from) /i.test(title)) report(n, `Step title "${title}" names a location — name the action`);
+      else if (/^(in|on|at|under|from) /i.test(title)) report(n, `Step title "${title}" names a location: name the action`);
     }
 
     if (/^<Note>/.test(trimmed)) inNote = true;
@@ -171,13 +172,13 @@ function lintFile(file) {
       if (re.test(trimmed)) warn(n, msg);
     }
     for (const label of statusLabels) {
-      if (trimmed.includes(`**${label}**`)) report(n, `bold status "${label}" — statuses stay out`);
+      if (trimmed.includes(`**${label}**`)) report(n, `bold status "${label}": statuses stay out`);
     }
     if (inNote && /"[^"]{12,}"/.test(trimmed)) {
-      report(n, 'quoted UI message inside <Note> — state the limit and what to do instead');
+      report(n, 'quoted UI message inside <Note>: state the limit and what to do instead');
     }
-    if (/\]\(\.\.?\//.test(trimmed)) report(n, 'relative link — use a root-relative path');
-    if (/\]\(https?:\/\/[^)]*shootstack[^)]*\)/.test(trimmed)) warn(n, 'absolute Shootstack URL — internal pages use root-relative paths');
+    if (/\]\(\.\.?\//.test(trimmed)) report(n, 'relative link: use a root-relative path');
+    if (/\]\(https?:\/\/[^)]*shootstack[^)]*\)/.test(trimmed)) warn(n, 'absolute Shootstack URL: internal pages use root-relative paths');
   }
 
   if (pendingDeleteWarning && !sawWarningSinceH2) {
@@ -186,21 +187,21 @@ function lintFile(file) {
 
   if (!shapeExempt.has(section)) {
     if (!relatedLine) warn(lines.length, 'no "## Related" section');
-    else if (relatedLinks < 2 || relatedLinks > 4) report(relatedLine, `Related has ${relatedLinks} link(s) — use 2 to 4`);
+    else if (relatedLinks < 2 || relatedLinks > 4) report(relatedLine, `Related has ${relatedLinks} link(s): use 2 to 4`);
   }
 
   const budget = isOverview ? budgets.overview : budgets.task;
   if (proseWords.length > budget) {
-    warn(1, `${proseWords.length} words of prose — budget is about ${isOverview ? 500 : 350}`);
+    warn(1, `${proseWords.length} words of prose: budget is about ${isOverview ? 500 : 350}`);
   }
 }
 
 function checkDescription(description, n, report) {
   const words = description.split(/\s+/).filter(Boolean).length;
   if (words > descriptionMaxWords) {
-    report(n, `description is ${words} words — at most ${descriptionMaxWords}, say the outcome, not every section`);
+    report(n, `description is ${words} words: at most ${descriptionMaxWords}, say the outcome, not every section`);
   }
-  if (description.includes('**')) report(n, 'bold in description — it is a plain search snippet');
+  if (description.includes('**')) report(n, 'bold in description: it is a plain search snippet');
   for (const [re, msg] of bannedPhrases) {
     if (re.test(description)) report(n, `description: ${msg}`);
   }

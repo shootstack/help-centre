@@ -1,5 +1,5 @@
 ---
-description: Troubleshooting tab conventions — one question per article, answered directly, linking to the Guides steps
+description: Troubleshooting tab conventions: one question per article, answered directly, linking to the Guides steps
 globs:
   - troubleshooting/**/*.mdx
 ---
@@ -7,8 +7,8 @@ globs:
 # Troubleshooting Layer Conventions
 
 `troubleshooting/` holds question-and-answer articles. Each article answers one
-question a photographer types into search. Shared voice rules are in
-`help-mdx-copy.mdc`.
+question a photographer types into search. Copy mechanics are in
+`help-mdx-copy.mdc`; tone of voice in `.agents/skills/voice-review/tone.md`.
 
 ## Structure
 
