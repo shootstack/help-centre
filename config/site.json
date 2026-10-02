@@ -8,10 +8,7 @@
     "contextual": {
         "options": [
             "copy",
-            "view",
-            "assistant",
-            "mcp",
-            "add-mcp"
+            "view"
         ]
     },
     "navbar": {

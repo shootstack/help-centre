@@ -16,10 +16,10 @@ Mintlify loads every root-level `.css` and `.js` file automatically, so
 ## Structure
 
 ```text
-index.mdx      # mode: custom; search + Ask AI entry, three tab cards, "Get started" list
+index.mdx      # mode: custom; search entry, three tab cards, "Get started" list
 style.css      # app shell colors, topbar pills, sidebar tweaks (theme.css overrides)
 academy.css    # Academy card outline and sidebar duration tag
-search.js      # wires data-search-trigger / data-assistant-trigger to Mintlify's own buttons
+search.js      # wires data-search-trigger to Mintlify's own search button
 sidebar.js     # empty Settings sidebar title; Mintlify drops a group with no pages
 ```
 
@@ -27,9 +27,9 @@ sidebar.js     # empty Settings sidebar title; Mintlify drops a group with no pa
 
 - `index.mdx` uses Tailwind utilities with `dark:` variants for every color.
   Icons come from the built-in `<Icon icon="..." />` (Lucide).
-- The custom search and Ask AI buttons carry `data-search-trigger` and
-  `data-assistant-trigger`; `search.js` forwards clicks to Mintlify's
-  `#search-bar-entry` and `#assistant-entry` (and their `-mobile` variants).
+- The custom search button carries `data-search-trigger`; `search.js`
+  forwards clicks to Mintlify's `#search-bar-entry` (and its `-mobile`
+  variant).
 - The "Get started" list walks through one shoot: what Shootstack is,
   create a project, upload photos, design a gallery, then share it.
   Update the links when those articles move.
@@ -46,5 +46,5 @@ sidebar.js     # empty Settings sidebar title; Mintlify drops a group with no pa
 - No feature-specific CSS in `style.css`; Academy styling stays in
   `academy.css`, and a new feature file gets its own `<name>.css`.
 - No DOM changes in `search.js` other than click forwarding. Do not replace
-  Mintlify's search or assistant.
+  Mintlify's search.
 - Do not add a third root JS file without a comment explaining what it hooks.

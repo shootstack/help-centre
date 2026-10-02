@@ -82,9 +82,8 @@ img.nav-logo {
     max-width: none !important;
 }
 
-/* Topbar pills: search, Ask AI, secondary CTA (Get support). */
+/* Topbar pills: search and navbar links. */
 #search-bar-entry,
-#assistant-entry,
 li.navbar-link > :is(a, button) {
     background-color: rgb(249 250 251) !important; /* gray-50 */
     box-shadow: inset 0 0 0 1px rgb(243 244 246) !important; /* gray-100 ring */
@@ -109,12 +108,11 @@ li.navbar-link > :is(a, button) {
     }
 }
 
-/* Hide the topbar search and assistant entries when the homepage entry is shown. */
-#search-bar-entry,
-#assistant-entry {
+/* Hide the topbar search when the homepage search is shown. */
+#search-bar-entry {
     transition: opacity 0.15s ease-out;
 
-    body:has(#custom-homepage-assistant-entry) & {
+    body:has([data-search-trigger]) & {
         opacity: 0;
         pointer-events: none;
     }

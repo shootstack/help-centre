@@ -27,7 +27,7 @@ help-centre/
 │   └── images/               # screenshots: <tab>/<section>/<article>-<task>-<n>.png and -dark.png
 ├── index.mdx                 # home page (mode: custom)
 ├── style.css, academy.css    # theme overrides
-├── search.js                 # wires the home search / Ask AI buttons
+├── search.js                 # wires the home search button
 ├── sidebar.js                # empty Settings title; Mintlify drops a group with no pages
 ├── academy/                  # video lessons, generated from snippets/academy-lessons.js
 ├── guides/                   # step-by-step guides, one folder per core feature
