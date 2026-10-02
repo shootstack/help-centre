@@ -1,7 +1,6 @@
 {
-    "$schema": "https://mintlify.com/docs.json",
-    "name": "Shootstack Help",
-    "description": "Help and guides for Shootstack customers.",
+    "name": "Shootstack Help Center",
+    "description": "Video lessons, step-by-step guides, and answers for Shootstack.",
     "favicon": "/assets/favicon.svg",
     "navigation": {
         "$ref": "./config/navigation/index.json"

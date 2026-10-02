@@ -7,10 +7,14 @@
     },
     "logo": {
         "light": "/assets/logo/dark.svg",
-        "dark": "/assets/logo/light.svg"
+        "dark": "/assets/logo/light.svg",
+        "href": "https://shootstack.com"
     },
     "fonts": {
-        "family": "Noto Sans"
+        "family": "Noto Sans Variable",
+        "source": "/assets/fonts/noto-sans-latin-wght-normal.woff2",
+        "format": "woff2",
+        "weight": 400
     },
     "icons": {
         "library": "lucide"

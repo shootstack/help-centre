@@ -18,7 +18,7 @@ docs.json                      # name, description, favicon, $ref navigation + s
 config/site.json               # styling, contextual, navbar, footer, seo, redirects, interaction, $ref branding
 config/branding.json           # theme, colors, logo, fonts, icons, background, appearance
 config/navigation/index.json   # tabs: Academy, Guides, Troubleshooting
-.mintignore                    # drafts/, *.draft.mdx, .cursor/
+.mintignore                    # drafts, tooling, and local indexes (not published)
 ```
 
 ## Patterns

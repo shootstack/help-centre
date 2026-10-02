@@ -49,6 +49,8 @@ Add or change a lesson:
 },
 ```
 
+- An empty catalog is valid. Sync then lists only `academy/index`, and the
+  overview shows a coming-soon state instead of the grid.
 - Lesson pages use `mode: wide`. The `tag` field is the duration and renders
   as the sidebar time via `academy.css`.
 - `npm run validate` runs `sync-academy --check` first and fails when the

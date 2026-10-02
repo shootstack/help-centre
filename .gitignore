@@ -1,3 +1,11 @@
+# Dependencies
+node_modules
+
+# Local environment
+.env
+.env.*
+!.env.example
+
 # Code intelligence (local-only)
 .claude
 .gitnexus

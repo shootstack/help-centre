@@ -1,6 +1,6 @@
 # Mintlify automatically ignores these files and directories:
-# .git, .github, .claude, .agents, .idea, node_modules,
-# README.md, LICENSE.md, CHANGELOG.md, CONTRIBUTING.md
+# .git, .github, .claude, .agents, .idea, .vscode, .cursor, .mintlify,
+# node_modules, README.md, LICENSE.md, CHANGELOG.md, CONTRIBUTING.md
 
 # Draft content
 drafts/
@@ -8,3 +8,13 @@ drafts/
 
 # Cursor rules and skill stubs (not published pages); .agents/ is ignored by default
 .cursor/
+
+# Local code indexes. Git does not track them, but mint dev serves the working
+# tree, and .json inside them is a public file type.
+.gitnexus/
+.codegraph/
+
+# Repo instructions and tooling. A root AGENTS.md is served at /agents.md.
+AGENTS.md
+skills-lock.json
+package.json

@@ -23,6 +23,7 @@ help-centre/
 │   ├── favicon.svg
 │   ├── logo/
 │   ├── icons/                # stroke-rounded Hugeicons, same set as diamond-app
+│   ├── fonts/                # Noto Sans Variable (same files as diamond-app), not Google Fonts
 │   └── images/               # screenshots: <tab>/<section>/<article>-<task>-<n>.png and -dark.png
 ├── index.mdx                 # home page (mode: custom)
 ├── style.css, academy.css    # theme overrides

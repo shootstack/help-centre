@@ -1,7 +1,7 @@
 ---
 title: Academy
 sidebarTitle: Overview
-description: Get started with Shootstack in a few short videos.
+description: Short video lessons are coming soon.
 mode: wide
 ---
 
@@ -9,33 +9,34 @@ import { AcademyGrid } from "/snippets/academy-grid.jsx";
 
 {/* Written from snippets/academy-lessons.js. Run npm run sync-academy after editing the catalog. */}
 {/* academy-lessons:start */}
-export const academyLessons = [
-  {
-    slug: "introduction",
-    title: "Introduction",
-    description: "A short video that walks through Shootstack.",
-    duration: "3:29",
-  },
-  {
-    slug: "workspace",
-    title: "Your workspace",
-    description: "A short video about the workspace.",
-    duration: "4:02",
-  },
-  {
-    slug: "galleries",
-    title: "Galleries",
-    description: "A short video about galleries.",
-    duration: "5:18",
-  },
-  {
-    slug: "sharing",
-    title: "Sharing a gallery",
-    description: "A short video about sharing a gallery.",
-    duration: "2:47",
-  },
-];
+export const academyLessons = [];
 
 {/* academy-lessons:end */}
 
-<AcademyGrid lessons={academyLessons} />
+{academyLessons.length > 0 ? (
+  <AcademyGrid lessons={academyLessons} />
+) : (
+  <div className="flex flex-col items-center gap-4 mx-auto py-16 max-w-md text-center not-prose">
+    <div className="flex justify-center items-center bg-gray-100 dark:bg-white/5 rounded-2xl size-12">
+      <Icon
+        src="/assets/icons/graduation-cap.svg"
+        size={22}
+        className="text-gray-700 dark:text-gray-300"
+      />
+    </div>
+    <div className="flex flex-col gap-2">
+      <h2 className="font-semibold text-gray-900 dark:text-gray-50 text-xl tracking-tight">
+        Coming soon
+      </h2>
+      <p className="text-gray-600 dark:text-gray-400 text-sm text-balance">
+        Short video lessons will live here. Until then, the Guides walk through each part of Shootstack.
+      </p>
+    </div>
+    <a
+      href="/guides/introduction/overview"
+      className="font-medium text-gray-900 dark:text-gray-50 text-sm underline-offset-4 hover:underline"
+    >
+      Open the Guides
+    </a>
+  </div>
+)}

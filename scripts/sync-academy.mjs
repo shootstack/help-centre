@@ -66,8 +66,8 @@ function record(relativePath, next, current) {
 }
 
 function assertLessons(lessons) {
-  if (!Array.isArray(lessons) || lessons.length === 0) {
-    throw new Error('academyLessons must be a non-empty array');
+  if (!Array.isArray(lessons)) {
+    throw new Error('academyLessons must be an array');
   }
 
   const slugs = new Set();
@@ -130,6 +130,8 @@ function withOverviewLessons(source, lessons) {
 }
 
 function lessonsExport(lessons) {
+  if (lessons.length === 0) return 'export const academyLessons = [];';
+
   const entries = lessons
     .map(
       (lesson) => `  {

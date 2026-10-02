@@ -30,8 +30,9 @@ sidebar.js     # empty Settings sidebar title; Mintlify drops a group with no pa
 - The custom search and Ask AI buttons carry `data-search-trigger` and
   `data-assistant-trigger`; `search.js` forwards clicks to Mintlify's
   `#search-bar-entry` and `#assistant-entry` (and their `-mobile` variants).
-- The "Get started" list links to the first Guides pages in reading
-  order. Update it when the Introduction or first feature group changes.
+- The "Get started" list walks through one shoot: what Shootstack is,
+  create a project, upload photos, design a gallery, then share it.
+  Update the links when those articles move.
 - CSS overrides target Mintlify's stable ids and classes
   (`#content-container`, `.nav-logo`, `#search-bar-entry`) and use
   `!important` only where the theme already sets the property. Keep a comment

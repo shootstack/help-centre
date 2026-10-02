@@ -5,11 +5,7 @@
             "tab": "Academy",
             "icon": "/assets/icons/graduation-cap.svg",
             "pages": [
-                "academy/index",
-                "academy/introduction",
-                "academy/workspace",
-                "academy/galleries",
-                "academy/sharing"
+                "academy/index"
             ]
         },
         {
@@ -184,8 +180,7 @@
             "tab": "Troubleshooting",
             "icon": "/assets/icons/message-question.svg",
             "pages": [
-                "troubleshooting/index",
-                "troubleshooting/common-question"
+                "troubleshooting/index"
             ]
         }
     ]
