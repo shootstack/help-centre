@@ -50,7 +50,7 @@ Open **<Sidebar entry>** in the workspace menu to see every <object> in your wor
 </Steps>
 
 <Note>
-<One limit a photographer plans around, with the number. For example: A project holds up to 25 media folders. Skip name length and other field validation.>
+<One limit a photographer plans around, with the number. For example: A project holds up to 25 media folders. Skip name length and other field validation. Skip a safety cap a photographer will not reach in normal use, including a 15,000-pixel side.>
 </Note>
 
 ## Open a <object>

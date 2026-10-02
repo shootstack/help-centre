@@ -58,7 +58,7 @@ Add one placeholder under each step where a screenshot would show the control, a
 
 ### 5. Register in navigation
 
-In `config/navigation/index.json`, find the Guides tab, then the nested `group` inside the wrapper whose name matches the section UI label. Append `guides/<section>/<slug>` in sidebar order from the brief. If the group does not exist yet, add it inside that wrapper's `pages`, with `expanded: false`, after the last existing group and with this article as its only page. Overview is always first in a group. Do not add a top-level group; those stay expanded.
+In `config/navigation/index.json`, find the Guides tab, then the nested `group` inside the wrapper whose name matches the section UI label. Append `guides/<section>/<slug>` in sidebar order from the brief. If the group does not exist yet, add it inside the matching wrapper's `pages`, with `expanded: false`, and with this article as its only page. Gallery delivery holds Projects, Media folders, Galleries, and Gallery shares. Contact management holds Contacts and Emails. Productivity holds Notes and Tasks. Settings stays empty until its articles exist. Overview is always first in a group. Do not add a top-level group; those stay expanded.
 
 If the article replaces an older page at a different path, add a redirect in `config/site.json` (`redirects: [{ source, destination }]`).
 

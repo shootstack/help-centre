@@ -20,7 +20,7 @@ Tasks is a workspace list under **Tasks**. The same tasks also appear on a proje
   - Delete a task
   - On a project or contact
 - UI strings (spelling reference, verbatim): **Tasks**, **New**, **Create task**, **Cancel**, placeholders **What needs to be done?**, **Set due date**, **Select a project**, **Select a contact**, date presets **Today**, **Tomorrow**, **Next week**, **Open**, **Update task**, **Delete**, **Delete task**, "Are you sure? This will delete this task. This action cannot be undone.", empty **No tasks found** / **No tasks found. Create a new task to get started.**, columns **Task**, **Due date**, **Project**, **Contact**, **Actions**, project and contact tab tooltip **New task**, sidebar **Tasks**
-- Limits to mention: 5000 tasks per workspace: "You have reached the maximum number of tasks. The maximum is 5000 tasks."; 500 open tasks: "You have reached the maximum number of open tasks. The maximum is 500 open tasks." Both show as an alert in the create dialog.
+- Limits to mention: none
 - Writer notes: There is no title field. The words the photographer types are the description, and the column is labeled **Task**. The form has placeholders and no field labels. **New** is on the Tasks header. The empty state uses **Create task**. Click a row, or choose **Open** from the row ⋯ menu or a right-click, to open **Update task**. Create does not toast success. Update toasts "Task updated successfully". Delete toasts "Task deleted successfully" and shows the description above the confirmation. Due date cannot be in the past (`disablePast` on create and update). The presets are **Today**, **Tomorrow**, and **Next week**. The date, project, and contact controls can be cleared; those resets have no text label. Creating from a project preselects that project. Creating from a contact preselects that contact. The project or contact can still be changed or cleared. The sidebar **Tasks** badge counts open tasks and hides at zero. A project or contact **Tasks** tab badge counts every task on that record, including completed ones. **New task** on the project and contact tab toolbar is an icon on every tab of that overlay, not only the Tasks tab. On a narrow screen the nested Tasks header shows the plus icon without the word **New**. There is no search.
 - Cross-links: /guides/tasks/complete, /guides/tasks/filter; project and contact pickers point at Projects and Contacts. The preference **Task due reminder** ("Get reminded one day before a task is due.") lives on the Notifications settings page, not in this group.
 - Sources:
@@ -47,7 +47,7 @@ Tasks is a workspace list under **Tasks**. The same tasks also appear on a proje
   - Show open or completed tasks
   - How open tasks are grouped
 - UI strings (spelling reference, verbatim): checkbox **Completed**, **Mark as complete**, **Mark as incomplete**, **Open tasks**, **Completed tasks**, tooltips **Switch to completed tasks**, **Switch to open tasks**, groups **Today**, **Upcoming**, **No due date**, **Open**, **Completed**, due-date text **Today**, "Due {{count}} day ago" / "Due {{count}} days ago", "Due in {{count}} day" / "Due in {{count}} days"
-- Limits to mention: 500 open tasks: marking a completed task incomplete toasts "You have reached the maximum number of open tasks. The maximum is 500 open tasks."
+- Limits to mention: none
 - Writer notes: The checkbox and **Mark as complete** / **Mark as incomplete** both toast "Task updated successfully". On the workspace Tasks page the toolbar button is labeled with the list you are looking at. On the open list it reads **Open tasks** (tooltip **Switch to completed tasks**). On the completed list it reads **Completed tasks** (tooltip **Switch to open tasks**). The open list is grouped **Today**, then **Upcoming**, then **No due date**. Overdue tasks sit in **Today**; there is no Overdue group. A due date within the next 7 days reads "Due in N days". A date further out shows the calendar date. The completed workspace list is not grouped. Project and contact task tables have no open/completed toggle. They group the same table into **Open** and **Completed**, with completed tasks included in the tab badge.
 - Cross-links: /guides/tasks/overview, /guides/tasks/filter
 - Sources:
@@ -91,7 +91,7 @@ Tasks is a workspace list under **Tasks**. The same tasks also appear on a proje
 - An Overdue group: overdue rows are inside **Today**
 - Favorites for tasks: sidebar favorites are projects and contacts only
 - A client-facing task page: no task surface in diamond-site
-- Plan-based task limits: 5000 and 500 are fixed in `TaskRules`
+- Workspace task caps: 5000 tasks and 500 open tasks are safety ceilings in `TaskRules`. Do not mention them
 - Description length (500), the required-description message, and the profanity check: field validation, not a planning limit
 - Keyboard shortcuts: none on these pages
 - A task preview card: `src/components/task/` has tables, badges, and dialogs only

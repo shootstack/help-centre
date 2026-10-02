@@ -77,7 +77,11 @@ A project name can be up to 64 characters.
 - `<Note>` holds one limit, its number, and what to do about it. Only limits
   a photographer plans around: how many, how big, how often (25 folders per
   project, 500 photos per batch, 100 MB per file). Skip field validation such
-  as name length or allowed characters. No quoted error messages.
+  as name length or allowed characters. Skip a safety cap a photographer
+  will not reach in normal use, such as thousands of notes, projects,
+  contacts, or tasks, a large template or file collection, or a 15,000-pixel
+  side.
+  No quoted error messages.
 - `<Warning>` sits directly above the delete `<Steps>` and says in plain
   words what is deleted and that it can't be undone. Never paste the dialog.
 - `<Tip>` only for a shortcut or faster path that exists in code. No other
@@ -97,11 +101,16 @@ A project name can be up to 64 characters.
 
 ## Navigation
 
-Register every page in the matching nested `group` inside the Guides wrapper
-in `config/navigation/index.json`, with `expanded: false`, Overview first,
-then sidebar order from the article map. Add the group inside that wrapper's
-`pages` when its first article exists. An empty group fails `mint validate`.
-Moving a page adds a redirect in `config/site.json`.
+Register every page in the matching nested `group` in
+`config/navigation/index.json`, with `expanded: false`, Overview first,
+then sidebar order from the article map. Introduction stays in the `Guides`
+wrapper. `Gallery delivery` holds Projects, Media folders, Galleries, and
+Gallery shares. `Contact management` holds Contacts and Emails.
+`Productivity` holds Notes and Tasks. `Settings` is the empty wrapper for
+workspace, branding, and account settings. Add a new group inside the
+wrapper it belongs to when its first article exists. An empty group other
+than Settings fails `mint validate`. Moving a page adds a redirect in
+`config/site.json`.
 
 ## Boundaries
 

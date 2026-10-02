@@ -20,6 +20,7 @@ index.mdx      # mode: custom; search + Ask AI entry, three tab cards, "Get star
 style.css      # app shell colors, topbar pills, sidebar tweaks (theme.css overrides)
 academy.css    # Academy card outline and sidebar duration tag
 search.js      # wires data-search-trigger / data-assistant-trigger to Mintlify's own buttons
+sidebar.js     # empty Settings sidebar title; Mintlify drops a group with no pages
 ```
 
 ## Patterns

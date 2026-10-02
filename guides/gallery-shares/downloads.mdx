@@ -4,33 +4,25 @@ sidebarTitle: Downloads
 description: Choose what your clients can download, lock downloads with a PIN, and see what they took.
 ---
 
-Choose what your clients can download from a gallery share, and see what they took. Set a PIN and limits on the share's **Info** tab, where changes save right away, or on the **Download** step when you create the link.
+Choose what your clients can download from a gallery share, and see what they took. Set a PIN and the limits on **Download** when you create the link.
 
 ## Require a download PIN
 
-A PIN keeps downloads locked until your clients enter it. They aren't asked for one until you turn on **PIN protected**.
+Clients aren't asked for a PIN until you turn on **PIN protected**.
 
 <Steps>
-  <Step title="Open download PIN settings">
-    On **Info**, open **Download PIN settings**.
+  <Step title="Open Download">
+    On the gallery, click **Share gallery**, then **Create link**. Click **Next** until you reach **Download**.
   </Step>
   <Step title="Turn on PIN protection">
     Turn on **PIN protected**.
-    {/* TODO screenshot: Download PIN settings with PIN protected on
     <Frame>
-      <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/downloads-pin-1.png" alt="Download PIN settings card with PIN protected switched on" />
-      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/downloads-pin-1-dark.png" alt="Download PIN settings card with PIN protected switched on" />
+      <img className="dark:hidden block" src="/assets/images/guides/gallery-shares/downloads-pin-1.png" alt="Download settings with PIN protected switched on" />
+      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/downloads-pin-1-dark.png" alt="Download settings with PIN protected switched on" />
     </Frame>
-    */}
   </Step>
   <Step title="Enter the PIN">
-    In **PIN**, enter a 4-digit PIN. Clients type it in **Unlock downloads** before they download.
-    {/* TODO screenshot: PIN field with four digits
-    <Frame>
-      <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/downloads-pin-2.png" alt="PIN field with four digits under Download PIN settings" />
-      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/downloads-pin-2-dark.png" alt="PIN field with four digits under Download PIN settings" />
-    </Frame>
-    */}
+    Enter a 4-digit PIN in the boxes that appear. Clients type it in **Unlock downloads** before they download.
   </Step>
 </Steps>
 
@@ -39,14 +31,12 @@ A PIN keeps downloads locked until your clients enter it. They aren't asked for 
 A new share already lets clients download the whole gallery at once, with **Gallery download limit** set to 5.
 
 <Steps>
-  <Step title="Open gallery download settings">
-    On **Info**, open **Gallery download settings**.
-    {/* TODO screenshot: Gallery download settings with the limit at 5
+  <Step title="Find gallery downloads">
+    On **Download**, find **Allow gallery download**.
     <Frame>
-      <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/downloads-gallery-1.png" alt="Gallery download settings with Allow gallery download on, Gallery download limit at 5, and Original file and Web optimized file checked" />
-      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/downloads-gallery-1-dark.png" alt="Gallery download settings with Allow gallery download on, Gallery download limit at 5, and Original file and Web optimized file checked" />
+      <img className="dark:hidden block" src="/assets/images/guides/gallery-shares/downloads-gallery-1.png" alt="Download settings with Allow gallery download on, Gallery download limit at 5, and Original file and Web optimized file checked" />
+      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/downloads-gallery-1-dark.png" alt="Download settings with Allow gallery download on, Gallery download limit at 5, and Original file and Web optimized file checked" />
     </Frame>
-    */}
   </Step>
   <Step title="Leave gallery download on">
     Leave **Allow gallery download** on. Turn it off if clients should not take the whole gallery.
@@ -68,14 +58,12 @@ A share allows up to 50 gallery downloads, even with **Gallery download limit** 
 A new share already lets clients download photos one at a time, with **Photo download limit** off.
 
 <Steps>
-  <Step title="Open photo download settings">
-    On **Info**, open **Photo download settings**.
-    {/* TODO screenshot: Photo download settings with the limit off
+  <Step title="Find photo downloads">
+    On **Download**, find **Allow photo download**.
     <Frame>
-      <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/downloads-photo-1.png" alt="Photo download settings with Allow photo download on and Photo download limit off" />
-      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/downloads-photo-1-dark.png" alt="Photo download settings with Allow photo download on and Photo download limit off" />
+      <img className="dark:hidden block" src="/assets/images/guides/gallery-shares/downloads-photo-1.png" alt="Download settings with Allow photo download on and Photo download limit off" />
+      <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/downloads-photo-1-dark.png" alt="Download settings with Allow photo download on and Photo download limit off" />
     </Frame>
-    */}
   </Step>
   <Step title="Leave photo download on">
     Leave **Allow photo download** on. Turn it off if clients should not save photos one at a time.
@@ -94,23 +82,23 @@ A share allows up to 500 photo downloads, even with **Photo download limit** off
 
 A photo with a watermark can't be downloaded. See [Media folders](/guides/media-folders/overview).
 
+To change these later, open the share from the project's **Gallery shares** list. On **Info**, use **Download PIN settings** for the PIN. Use **Gallery download settings** or **Photo download settings** for what clients can take. Changes save right away.
+
 ## See download activity
 
-Open **Gallery downloads** to see each time a client downloaded the whole gallery, and **Photo downloads** to see each single photo. Each row shows whether they took the original or the web version. A gallery download can take a moment to prepare.
+Open **Gallery downloads** or **Photo downloads** to see what a client took, and whether it was the original or the web version. A gallery download can take a moment to prepare.
 
-{/* TODO screenshot: Gallery downloads table
 <Frame>
-  <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/downloads-activity-1.png" alt="Gallery downloads table with download type showing original or web" />
+  <img className="dark:hidden block" src="/assets/images/guides/gallery-shares/downloads-activity-1.png" alt="Gallery downloads table with download type showing original or web" />
   <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/downloads-activity-1-dark.png" alt="Gallery downloads table with download type showing original or web" />
 </Frame>
-*/}
 
-{/* TODO screenshot: Photo downloads table
-<Frame>
-  <img className="block dark:hidden" src="/assets/images/guides/gallery-shares/downloads-activity-2.png" alt="Photo downloads table with photo name and download type showing original or web" />
-  <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/downloads-activity-2-dark.png" alt="Photo downloads table with photo name and download type showing original or web" />
-</Frame>
-*/}
+<div className="mt-8">
+  <Frame>
+    <img className="dark:hidden block" src="/assets/images/guides/gallery-shares/downloads-activity-2.png" alt="Photo downloads table with photo name and download type showing original or web" />
+    <img className="hidden dark:block" src="/assets/images/guides/gallery-shares/downloads-activity-2-dark.png" alt="Photo downloads table with photo name and download type showing original or web" />
+  </Frame>
+</div>
 
 These downloads use your plan's monthly bandwidth. When it's used up, wait until next month or upgrade your plan.
 

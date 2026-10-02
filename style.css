@@ -166,19 +166,34 @@ toc-item[data-active-deepest] > a::before {
     pointer-events: none;
 }
 
-/* Feature groups are nested so they collapse in the sidebar. The wrapper
-   group only exists for that, and its label repeats the Guides tab. */
+/* Feature groups are nested so they collapse. The first wrapper repeats the
+   Guides tab, so its header stays hidden. Later wrappers are the small
+   titles: Gallery delivery, Contact management, Productivity, Settings.
+   Mintlify puts those in .mt-6. */
 #sidebar-content .sidebar-group-header {
     display: none !important;
 }
 
-/* space-y-px on the group list is 1px. Separate each feature dropdown. */
-#sidebar-content ul.sidebar-group > li + li {
-    margin-top: 0.75rem !important;
+#sidebar-content .mt-6 > .sidebar-group-header {
+    display: flex !important;
+    margin-bottom: 0.5rem !important;
+    padding-left: 0.875rem !important;
+    color: #71717a;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1rem;
 }
 
-.breadcrumb-item[data-breadcrumb-title='Guides'] {
-    display: none !important;
+#sidebar-content .mt-6 > .sidebar-group-header h3 {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+.dark #sidebar-content .mt-6 > .sidebar-group-header {
+    color: #a1a1aa;
 }
 
 /* Footer: Mintlify has no config switch for the attribution link. */

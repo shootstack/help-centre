@@ -20,7 +20,7 @@ Sources reviewed: 2026-09-26, diamond-app 702f16c5, diamond-server 1d901c6
   - Delete a project
   - Inside a project
 - UI strings (spelling reference, verbatim): **Projects**, **New**, **Create project**, **Name**, **Enter project name**, **Open**, **Rename**, **Enter new project name**, **Rename project to**, **Choose photo**, **Upload cover photo**, **Change focal point**, **Done**, **Search project...**, **Delete**, **Delete project**, "Are you sure? This will delete this project and all its photos and galleries. This action cannot be undone.", tabs **Content**, **Gallery shares**, **Tasks**, **Notes**, **Activity**
-- Limits to mention: name max 64 characters (`MAX_NAME`); 1000 projects per workspace: "You have reached the maximum number of projects. The maximum is 1000 projects."; search runs at 2+ characters
+- Limits to mention: none. Name max 64 characters (`MAX_NAME`) is field validation. Search runs at 2+ characters.
 - Cross-links: /guides/projects/status, /guides/projects/favorites; tabs point to Media folders, Galleries, Gallery shares, Tasks, Notes sections when they exist
 - Sources:
   - diamond-app/src/pages/projects/(root)/_layouts/HeaderLayout.jsx (New, search icon, `/` shortcut)
@@ -82,7 +82,7 @@ Sources reviewed: 2026-09-26, diamond-app 702f16c5, diamond-server 1d901c6
 - Favorites section or tab on the Projects page: favorites only appear in the sidebar group and as a star
 - **Learn more** button in the empty state: rendered without a click handler (project.json `project_entity_grid.empty.learn_more_button`)
 - Changing the cover from the list card menu: cover is set only from the Content sidebar; the card menu only offers **Change focal point** once a cover exists
-- Plan-based project limits: the 1000 cap is fixed, not per plan
+- The 1000-project workspace cap: it is a safety ceiling in `ProjectRules`, not a limit a photographer plans around. Do not mention it
 - Success toasts for create, status change, and starring: `showSuccessMsg` is off for these; only delete and sidebar unfavorite toast
 - **Done** saving the focal point: dragging saves automatically (800 ms debounce, UpdateProjectCoverFp.jsx); **Done** only closes the dialog
 - **Upload cover photo** dropzone when a cover already exists: it renders only while the project has no cover

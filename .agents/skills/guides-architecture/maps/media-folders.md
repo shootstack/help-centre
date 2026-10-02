@@ -42,8 +42,8 @@ Media folders live only inside a project's Content tab: the left sidebar row **M
   - File types and size
   - When an upload is blocked
 - UI strings (spelling reference, verbatim): **Upload**, **Upload photos**, **Drag and drop photos here to upload**, **Browse photos**, **Skip duplicates** / **Skip**, **Replace duplicates** / **Replace**, "Up to {{maxBatch}} photos at a time, max {{maxSize}} per file.", queue badges **Pending**, **Added**, **Uploading**, **Finished**, **Canceled**, **Error**, **Aborted**, **Skipped**, **Replaced**, **Invalid**, **Invalid file**, **Cancel upload**, **Retry failed**
-- Limits to mention: 100 MB per file (formatBytes → "100 MB"); JPEG, PNG, and WebP only: "Content type is invalid". Auto-sort folders hold 2,500 photos: "This folder has too many photos. The maximum is {{max}} photos." Manual-sort folders hold 500 (the create checkbox says "Manual sorting supports up to {{max}} photos."). Storage full: "Your photo storage is full. Upgrade your plan or delete photos to free space." A processed file over 15,000 px on a side shows "Couldn't process photo" or "Dimensions exceed {{max}} px" (formatNumber → "15,000").
-- Writer notes: **Upload** opens an overlay and returns to the folder on close. Default duplicate behavior is **Skip**. Uploads are sent in groups of 50 automatically; do not write that as a limit the photographer has to manage. The storage sentence does not include a gigabyte number; leave plan sizes out of this article. Dimensions are checked after processing, not in the file picker.
+- Limits to mention: 100 MB per file (formatBytes → "100 MB"); JPEG, PNG, and WebP only: "Content type is invalid". Auto-sort folders hold 2,500 photos: "This folder has too many photos. The maximum is {{max}} photos." Manual-sort folders hold 500 (the create checkbox says "Manual sorting supports up to {{max}} photos."). Storage full: "Your photo storage is full. Upgrade your plan or delete photos to free space."
+- Writer notes: **Upload** opens an overlay and returns to the folder on close. Default duplicate behavior is **Skip**. Uploads are sent in groups of 50 automatically; do not write that as a limit the photographer has to manage. The storage sentence does not include a gigabyte number; leave plan sizes out of this article. Do not mention the 15,000 px processing cap.
 - Cross-links: /guides/media-folders/overview, /guides/media-folders/sort
 - Sources:
   - diamond-app/src/pages/projects/project/project-content/upload-photo-folder/UploadPhotosPage.jsx
@@ -140,6 +140,7 @@ Media folders live only inside a project's Content tab: the left sidebar row **M
 - The gallery toolbar picker labeled **Media folder** / **Media folders**: owned by Galleries
 - Plan gigabyte tables: the UI only says storage is full or bandwidth is used up
 - The 25-folder cap as a per-plan limit: it is fixed per project
+- The 15,000 px processing cap: a safety ceiling above a normal camera file (`PhotoRules.MAX_WIDTH` / `MAX_HEIGHT`). Do not mention it. The 100 MB file size stays
 
 ## Open questions
 - What **Date** sorts by. The field is `creationDate`, which defaults to now on the photo model, and the switch-to-auto dialog mentions both upload date and creation date. The menu only shows **Date**. The article should keep the label **Date** until product confirms whether that is the camera date.

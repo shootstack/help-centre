@@ -22,7 +22,7 @@ Sources reviewed: <date>, diamond-app <short commit>, diamond-server <short comm
   - <H2>
   - <H2>
 - UI strings (spelling reference, verbatim): **New**, **Create project**, ...
-- Limits to mention: <number + exact message> or "none"   (counts, sizes, quotas; field validation such as name length goes under Do not document)
+- Limits to mention: <number + exact message> or "none"   (counts, sizes, quotas a photographer can hit in normal use; field validation such as name length, and workspace-wide safety caps, go under Do not document)
 - Cross-links: <other sections this article names but does not document>
 - Sources:
   - <path>

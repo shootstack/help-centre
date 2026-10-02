@@ -54,7 +54,12 @@ assets/
 
 - No images embedded from external CDNs in articles.
 - No screenshots containing real client names, emails, or photos. Use demo
-  workspace data.
+  workspace data. Any email address a reader can see is `demo@shootstack.com`,
+  not a personal address and not another invented address such as
+  `jessica@shootstack.com` or `noura@shootstack.com`. Other demo contacts
+  already named `demo+…@shootstack.com` may stay when a list needs more than
+  one row. If a stored record still has a different address, rewrite that
+  response for the capture. Do not save the rewrite back to the workspace.
 - Do not add a top-level `icons/` or `images/` folder. Both live under `assets/`.
 - `.gitignore` excludes stray root `dark.svg` / `light.svg`; logos belong
   under `assets/logo/`.

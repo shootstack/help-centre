@@ -19,7 +19,12 @@
                 {
                     "group": "Guides",
                     "pages": [
-                        "guides/introduction/overview",
+                        "guides/introduction/overview"
+                    ]
+                },
+                {
+                    "group": "Gallery delivery",
+                    "pages": [
                         {
                             "group": "Projects",
                             "icon": "/assets/icons/album-01.svg",
@@ -65,7 +70,12 @@
                                 "guides/gallery-shares/downloads",
                                 "guides/gallery-shares/reviews"
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "group": "Contact management",
+                    "pages": [
                         {
                             "group": "Contacts",
                             "icon": "/assets/icons/user-account.svg",
@@ -78,6 +88,24 @@
                                 "guides/contacts/files"
                             ]
                         },
+                        {
+                            "group": "Emails",
+                            "icon": "/assets/icons/mail-01.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/emails/overview",
+                                "guides/emails/send",
+                                "guides/emails/find",
+                                "guides/emails/activity",
+                                "guides/emails/create-templates",
+                                "guides/emails/use-templates"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "group": "Productivity",
+                    "pages": [
                         {
                             "group": "Notes",
                             "icon": "/assets/icons/file-empty-02.svg",
@@ -97,6 +125,55 @@
                                 "guides/tasks/overview",
                                 "guides/tasks/complete",
                                 "guides/tasks/filter"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "group": "Settings",
+                    "pages": [
+                        {
+                            "group": "Personal settings",
+                            "icon": "/assets/icons/user-02.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/personal-settings/overview",
+                                "guides/personal-settings/profile",
+                                "guides/personal-settings/language-region",
+                                "guides/personal-settings/appearance",
+                                "guides/personal-settings/notifications"
+                            ]
+                        },
+                        {
+                            "group": "Workspace settings",
+                            "icon": "/assets/icons/settings-02.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/workspace-settings/overview",
+                                "guides/workspace-settings/general",
+                                "guides/workspace-settings/plans",
+                                "guides/workspace-settings/billing",
+                                "guides/workspace-settings/usage"
+                            ]
+                        },
+                        {
+                            "group": "Branding settings",
+                            "icon": "/assets/icons/swatch.svg",
+                            "expanded": false,
+                            "pages": [
+                                "guides/branding-settings/overview",
+                                "guides/branding-settings/logo",
+                                "guides/branding-settings/color-palettes",
+                                "guides/branding-settings/watermarks",
+                                {
+                                    "group": "Business details",
+                                    "expanded": false,
+                                    "pages": [
+                                        "guides/branding-settings/contact-info",
+                                        "guides/branding-settings/social-media",
+                                        "guides/branding-settings/legal-info"
+                                    ]
+                                }
                             ]
                         }
                     ]

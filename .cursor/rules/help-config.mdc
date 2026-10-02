@@ -46,12 +46,19 @@ Navigation has three tabs and two shapes:
 ```
 
 - Academy and Troubleshooting use a flat `pages` list. Guides nests one
-  `group` per core feature inside a single wrapper group, with
-  `expanded: false`, so each section collapses in the sidebar. Introduction
-  is a single page in that wrapper, not a group. A top-level group cannot
-  collapse, so do not add feature groups beside the wrapper. Overview page
-  first. `interaction.drilldown` stays `false` so opening a group does not
-  navigate.
+  `group` per core feature inside a wrapper group, with `expanded: false`,
+  so each section collapses in the sidebar. Introduction is a single page
+  in the first wrapper, not a group. A top-level group cannot collapse, so
+  feature groups stay nested. Overview page first. `interaction.drilldown`
+  stays `false` so opening a group does not navigate.
+- The first wrapper is `Guides` and its header stays hidden in `style.css`.
+  It holds Introduction only. The visible small titles are `Gallery delivery`
+  (Projects, Media folders, Galleries, Gallery shares), `Contact management`
+  (Contacts, Emails), `Productivity` (Notes, Tasks), and `Settings`.
+  Settings stays an empty `pages` list until the workspace, branding, and
+  account settings articles exist. Mintlify omits that group, so `sidebar.js`
+  draws the title until the list has a page. A new group goes in the wrapper
+  it belongs to.
 - Page entries are paths without extension. Every `.mdx` outside `.mintignore`
   must appear here or it is a hidden page.
 - Redirects go in `config/site.json` as `{ "source", "destination" }` and are
