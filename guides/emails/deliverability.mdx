@@ -1,0 +1,91 @@
+---
+title: Troubleshoot email delivery
+sidebarTitle: Delivery
+description: Find out why a gallery email didn't reach your client, and keep your emails out of spam.
+---
+
+Shootstack checks every address before sending, but a valid address can still bounce or land in spam. This page explains what Shootstack does for you, what each status means, and what you can do about it.
+
+## How Shootstack sends your emails
+
+Your gallery emails arrive from your workspace name, so your client recognizes the sender right away. Replies go to your business contact email, or to your account email if you haven't added one. See [Update contact info](/guides/branding-settings/contact-info) and [Change your workspace name and icon](/guides/workspace-settings/general).
+
+You don't set up anything technical. Shootstack handles the sending setup, and checks each address when you send.
+
+## Check an address before you send
+
+When you type an address in **To** while composing, Shootstack checks it and warns you under the field if something looks off. A warning can mean the address can't receive mail, the mailbox is full, or it looks like a temporary, no-reply, or shared address. If the address looks mistyped, a suggestion appears beside it.
+
+Hover the icon on a contact's **Email** field to see the same check result for a saved contact.
+
+<Frame>
+  <img className="dark:hidden block" src="/assets/images/guides/emails/deliverability-check-1.webp" alt="Compose gallery share email dialog with a warning under the To field" />
+  <img className="hidden dark:block" src="/assets/images/guides/emails/deliverability-check-1-dark.webp" alt="Compose gallery share email dialog with a warning under the To field" />
+</Frame>
+
+<div className="mt-8">
+  <Frame>
+    <img className="dark:hidden block" src="/assets/images/guides/emails/deliverability-check-2.webp" alt="Contact Email field with the verification icon tooltip" />
+    <img className="hidden dark:block" src="/assets/images/guides/emails/deliverability-check-2-dark.webp" alt="Contact Email field with the verification icon tooltip" />
+  </Frame>
+</div>
+
+If the address can't receive mail, or its owner marked a gallery email as spam before, Shootstack doesn't send the email. It appears in the history as Blocked instead.
+
+## What each status means
+
+Find the status in the **Status** column or under **Email events**. See [Check email activity](/guides/emails/activity).
+
+- Waiting means Shootstack created the email and hasn't sent it yet.
+- Sent means the email left Shootstack. It doesn't confirm delivery yet.
+- Delayed means delivery hit a temporary problem, such as a full inbox. Delivery is still being tried, so check again later.
+- Delivered means it reached the inbox.
+- Opened means your client opened it.
+- Clicked means your client clicked the gallery link inside it.
+- Bounced means your client's email provider sent the email back.
+- Complained means the recipient marked it as spam.
+- Undeliverable means the send failed before delivery.
+- Blocked means Shootstack didn't send the email.
+
+<Note>
+Opened and Clicked aren't always tracked, due to privacy settings on your client's email, so their absence doesn't mean your client ignored the email.
+</Note>
+
+## When an email bounces or is blocked
+
+A spam complaint stops Shootstack from sending to the address. So does a bounce where your client's email provider rejects the address for good, for example because it doesn't exist. Later emails to the address show Blocked and aren't sent.
+
+If delivery keeps hitting a temporary problem, such as a full inbox, the email can also end up Bounced. Shootstack doesn't block the address, so you can send the gallery again later.
+
+If the next email to the address shows Blocked, ask your client for another address and update it on the contact. See [Edit a contact](/guides/contacts/details).
+
+## Keep your emails out of spam
+
+Even a valid address can land in spam. A few habits help your gallery emails reach the inbox.
+
+Tell your clients to expect an email from your workspace name around delivery day. If it doesn't arrive, ask them to check spam and promotions.
+
+Write a **Subject** that names the shoot, so your client recognizes it. Write a few personal sentences in the message itself. The email already carries a cover photo and a gallery button, so a message with no text looks like only images to spam filters.
+
+Skip all caps, strings of exclamation marks, and sales words like free, winner, act now, or guarantee. Use few links, and don't use link shorteners.
+
+Email only clients who expect to hear from you. Shootstack emails are for your own clients and their galleries.
+
+## Spam policy
+
+Shootstack actively monitors for spam complaints and acts on each one.
+
+Each complaint blocks that address and sends you a notice about it. After repeated complaints, Shootstack pauses email sending for the workspace. When sending is paused, **Email sending paused** appears when you try to send.
+
+<Frame>
+  <img className="dark:hidden block" src="/assets/images/guides/emails/deliverability-policy-1.webp" alt="Email sending paused dialog" />
+  <img className="hidden dark:block" src="/assets/images/guides/emails/deliverability-policy-1-dark.webp" alt="Email sending paused dialog" />
+</Frame>
+
+If sending is paused for your workspace, contact customer support to restore access.
+
+## Related
+
+- [Check email activity](/guides/emails/activity)
+- [Send a gallery share email](/guides/emails/send)
+- [Edit a contact](/guides/contacts/details)

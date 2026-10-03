@@ -93,6 +93,7 @@
                                 "guides/emails/send",
                                 "guides/emails/find",
                                 "guides/emails/activity",
+                                "guides/emails/deliverability",
                                 "guides/emails/create-templates",
                                 "guides/emails/use-templates"
                             ]
@@ -180,7 +181,8 @@
             "tab": "Troubleshooting",
             "icon": "/assets/icons/message-question.svg",
             "pages": [
-                "troubleshooting/index"
+                "troubleshooting/index",
+                "troubleshooting/email-not-received"
             ]
         }
     ]

@@ -99,7 +99,33 @@ The app sidebar **Emails** opens the workspace **Gallery shares** email-history 
   - diamond-server/src/services/gallery-share-email-service.js
   - diamond-app/public/locales/en/features/gallery-share-email.json, pages/gallery-share-email.json
 
-### 5. Create email templates
+### 5. Troubleshoot email delivery
+- File: guides/emails/deliverability.mdx
+- sidebarTitle: Delivery
+- description: Find out why a gallery email didn't reach your client, and keep your emails out of spam.
+- Reader goal: Understand what happened to an email, and keep gallery emails out of spam.
+- H2 outline:
+  - How Shootstack sends your emails
+  - Check an address before you send
+  - What each status means
+  - When an email bounces or is blocked
+  - Keep your emails out of spam
+  - Spam policy
+- UI strings (spelling reference, verbatim): sidebar **Emails**, tab **Gallery shares**, compose **To**, **Compose email**, sheet **Share gallery**, dialog **Compose gallery share email**, **Send email**, **Subject**, column **Status**, detail **Gallery share email**, **Email events**, **Preview**, contact field **Email**, paused dialog **Email sending paused** / **OK**
+- Limits to mention: none
+- Writer notes: No **Steps** in this article; it links to Activity for where to find the status and to Send for the compose flow instead of repeating them. Statuses stay in plain words, never bold. The sender address notify@gallery.shootstack.site and the workspace-name sender come from diamond-server (`src/lib/resend/workspace-service.js`); Reply-To is the Business details contact email or the owner's account email. Undeliverable and spam-reported addresses are not sent and appear as Blocked; risky and unknown still send (`gallery-share-email-service.js`). Do not say that other warnings still send. A complaint or a permanent bounce adds the address to the cross-workspace blocked list; the list can't be edited in the app. `email.delivery_delayed` shows Delayed and does not block the address. Every `email.bounced` shows Bounced, but only a `Permanent` bounce (or one with a missing or unknown `bounce.type`) blocks the address. `Transient`, `Temporary`, and `Undetermined` bounces, such as MailboxFull, leave it open (`gallery-share-email-helpers.js`; `suppressed-email-helpers.js`; Resend bounce webhook). The app has one Bounced badge, so do not tell the reader to look up the bounce type; a following Blocked email is the sign of a permanent rejection. Say "repeated spam complaints" without a number, matching the paused dialog. The blocked-address fix is asking the client for another address; offer no support review. Content advice is tailored to the sent layout (workspace name, cover photo, gallery name, message, **View gallery** button in `GalleryShareEmailPreview.jsx`).
+- Cross-links: /guides/emails/activity, /guides/emails/send, /guides/contacts/details, /guides/branding-settings/contact-info, /guides/workspace-settings/general; /troubleshooting/email-not-received
+- Sources:
+  - diamond-server/src/lib/resend/workspace-service.js, src/lib/resend/shared.js
+  - diamond-server/src/services/gallery-share-email-service.js, src/services/suppressed-email-service.js, src/services/workspace-service.js
+  - diamond-server/src/helpers/gallery-share-email-helpers.js, src/helpers/workspace-helpers.js
+  - diamond-server/src/models/suppressed-email-model.js, src/models/workspace-model.js, src/models/gallery-share-email-model.js
+  - diamond-app/src/components/gallery-share-email/GalleryShareEmailPreview.jsx
+  - diamond-app/src/components/contact/ContactEmailVerificationIcon.jsx, src/components/contact/ContactAutocomplete.jsx
+  - diamond-app/src/layouts/dialogs/EmailDisabledDialog.jsx
+  - diamond-app/public/locales/en/features/gallery-share-email.json, features/contact.json, layouts/dialogs.json
+
+### 6. Create email templates
 - File: guides/emails/create-templates.mdx
 - sidebarTitle: Create templates
 - description: Create a reusable email message, edit its title and body, and remove templates you no longer need.
@@ -124,7 +150,7 @@ The app sidebar **Emails** opens the workspace **Gallery shares** email-history 
   - diamond-server/src/services/email-template-service.js
   - diamond-app/public/locales/en/pages/root-emails.json, pages/email-templates.json, pages/email-template.json, features/email-template.json, features/common.json
 
-### 6. Use email templates
+### 7. Use email templates
 - File: guides/emails/use-templates.mdx
 - sidebarTitle: Use templates
 - description: Insert a saved message into an empty email or save a new message to reuse later.
@@ -143,6 +169,12 @@ The app sidebar **Emails** opens the workspace **Gallery shares** email-history 
   - diamond-app/public/locales/en/features/gallery-share-email.json, features/email-template.json
 
 ## Do not document
+- Removing an address from the blocked list. No app route deletes a suppression; the fix is asking the client for another address (diamond-server/src/services/suppressed-email-service.js).
+- That a blocked address is blocked in every workspace, or that it can show Blocked the first time you email it. The suppression list is global, but that is an internal detail (diamond-server/src/models/suppressed-email-model.js).
+- Turning email sending back on in the app. A paused workspace is restored through support only (diamond-app/src/layouts/dialogs/EmailDisabledDialog.jsx).
+- The complaint threshold number. Say "repeated spam complaints", matching the paused dialog.
+- An unsubscribe link in gallery share emails. The template has no List-Unsubscribe header or unsubscribe link (diamond-server/src/lib/resend/shared.js).
+- A "Risky" label. Risky addresses show the same valid icon and tooltip as verified ones (diamond-app/src/components/contact/ContactEmailVerificationIcon.jsx).
 - Sending, resending, scheduling, editing, or deleting an email from the workspace history. The workspace header has only search on **Gallery shares**, and the detail is read-only (diamond-app/src/pages/emails/(root)/_layouts/HeaderLayout.jsx; diamond-app/src/pages/emails/gallery-share-emails/gallery-share-email/(root)/GalleryShareEmailPage.jsx).
 - A global **Compose email** or **New** action on the workspace **Gallery shares** tab. Composition starts from a gallery or gallery share (diamond-app/src/pages/emails/(root)/_layouts/HeaderLayout.jsx; diamond-app/src/pages/projects/project/gallery-shares/gallery-share/gallery-share-emails/_layouts/ToolbarLayout.jsx).
 - **Learn more** as a working action in either empty state; those buttons have no handler (diamond-app/src/components/gallery-share-email/GalleryShareEmailInfiniteTable.jsx; diamond-app/src/components/email-template/EmailTemplateInfiniteGrid.jsx).
@@ -175,6 +207,9 @@ Capture a light and dark version of each screen. The dark filename adds `-dark` 
 - `/assets/images/guides/emails/find-filter-1.webp`: Email history toolbar with **Filter** highlighted.
 - `/assets/images/guides/emails/find-sort-1.webp`: Email history sort menu showing field and order choices.
 - `/assets/images/guides/emails/activity-status-1.webp`: Email history row with its status badge highlighted.
+- `/assets/images/guides/emails/deliverability-check-1.webp`: **Compose gallery share email** dialog with a warning under **To**.
+- `/assets/images/guides/emails/deliverability-check-2.webp`: Contact **Email** field with the verification icon tooltip.
+- `/assets/images/guides/emails/deliverability-policy-1.webp`: **Email sending paused** dialog.
 - `/assets/images/guides/emails/activity-events-1.webp`: Email detail showing the **Email events** timeline.
 - `/assets/images/guides/emails/activity-preview-1.webp`: Email detail showing the **Preview** section.
 - `/assets/images/guides/emails/create-templates-create-1.webp`: **Templates** tab with **New** highlighted.
