@@ -218,7 +218,7 @@ function checkPlaceholder(lines, start, section, slug, report) {
   }
   const expected = `/assets/images/guides/${section}/${slug}-`;
   if (!src.startsWith(expected)) report(start + 1, `screenshot path "${src}" should start with "${expected}"`);
-  if (!/\.png$/.test(src)) report(start + 1, 'screenshot path should end in .png');
+  if (!/\.webp$/.test(src)) report(start + 1, 'screenshot path should end in .webp');
   if (!/alt="[^"]+"/.test(block)) report(start + 1, 'screenshot placeholder without alt text');
 }
 

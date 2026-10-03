@@ -19,8 +19,8 @@ Open **<Sidebar entry>** in the workspace menu to see every <object> in your wor
 
 {/* TODO screenshot: <page> overview
 <Frame>
-  <img className="block dark:hidden" src="/assets/images/guides/<section>/overview-page-1.png" alt="<What is visible>" />
-  <img className="hidden dark:block" src="/assets/images/guides/<section>/overview-page-1-dark.png" alt="<What is visible>" />
+  <img className="block dark:hidden" src="/assets/images/guides/<section>/overview-page-1.webp" alt="<What is visible>" />
+  <img className="hidden dark:block" src="/assets/images/guides/<section>/overview-page-1-dark.webp" alt="<What is visible>" />
 </Frame>
 */}
 
@@ -36,8 +36,8 @@ Open **<Sidebar entry>** in the workspace menu to see every <object> in your wor
     Click **<New button>**.
     {/* TODO screenshot: <Page> with <New button> highlighted
     <Frame>
-      <img className="block dark:hidden" src="/assets/images/guides/<section>/overview-create-1.png" alt="<What is visible>" />
-      <img className="hidden dark:block" src="/assets/images/guides/<section>/overview-create-1-dark.png" alt="<What is visible>" />
+      <img className="block dark:hidden" src="/assets/images/guides/<section>/overview-create-1.webp" alt="<What is visible>" />
+      <img className="hidden dark:block" src="/assets/images/guides/<section>/overview-create-1-dark.webp" alt="<What is visible>" />
     </Frame>
     */}
   </Step>
@@ -120,8 +120,8 @@ description: <One sentence, at most 20 words, on what the reader gets done. No b
     <One action, bold labels. Optional second sentence: why, or what you see.>
     {/* TODO screenshot: <screen and control>
     <Frame>
-      <img className="block dark:hidden" src="/assets/images/guides/<section>/<article>-<task>-1.png" alt="<What is visible>" />
-      <img className="hidden dark:block" src="/assets/images/guides/<section>/<article>-<task>-1-dark.png" alt="<What is visible>" />
+      <img className="block dark:hidden" src="/assets/images/guides/<section>/<article>-<task>-1.webp" alt="<What is visible>" />
+      <img className="hidden dark:block" src="/assets/images/guides/<section>/<article>-<task>-1-dark.webp" alt="<What is visible>" />
     </Frame>
     */}
   </Step>
@@ -156,10 +156,10 @@ description: <One sentence, at most 20 words, on what the reader gets done. No b
 ```mdx
 {/* TODO screenshot: <screen> with <control> highlighted
 <Frame>
-  <img className="block dark:hidden" src="/assets/images/guides/<section>/<article>-<task>-<n>.png" alt="<What is visible>" />
-  <img className="hidden dark:block" src="/assets/images/guides/<section>/<article>-<task>-<n>-dark.png" alt="<What is visible>" />
+  <img className="block dark:hidden" src="/assets/images/guides/<section>/<article>-<task>-<n>.webp" alt="<What is visible>" />
+  <img className="hidden dark:block" src="/assets/images/guides/<section>/<article>-<task>-<n>-dark.webp" alt="<What is visible>" />
 </Frame>
 */}
 ```
 
-To publish a screenshot: save both PNGs at those paths, remove the comment markers and the `TODO` line. Nothing else changes.
+To publish a screenshot: save both WebP files at those paths, remove the comment markers and the `TODO` line. Nothing else changes.

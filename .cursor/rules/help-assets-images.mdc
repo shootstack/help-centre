@@ -22,9 +22,9 @@ assets/
 ├── icons/
 │   └── <hugeicon-name>.svg    # album-01.svg is Album01Icon, the Projects sidebar icon
 └── images/
-    └── <tab>/<section>/<article>-<task>-<n>.png
-        # assets/images/guides/projects/overview-create-1.png
-        # assets/images/guides/projects/overview-create-1-dark.png
+    └── <tab>/<section>/<article>-<task>-<n>.webp
+        # assets/images/guides/projects/overview-create-1.webp
+        # assets/images/guides/projects/overview-create-1-dark.webp
 ```
 
 ## Patterns
@@ -39,11 +39,11 @@ assets/
   Reference them as `/assets/icons/<name>.svg` on navigation, cards, and page `icon`
   fields. Mintlify's built-in chrome stays Lucide; only icons you set
   explicitly use this folder.
-- Screenshots are PNG, captured from `https://diamond.shootstack.com` at desktop width
+- Screenshots are lossy WebP at quality 90, captured from `https://diamond.shootstack.com` at desktop width
   in both light and dark appearance, cropped to the relevant panel, with the
   target control visible. Keep them under roughly 2500 px wide.
-- File name encodes where it is used: `<article>-<task>-<n>.png` for light and
-  `<article>-<task>-<n>-dark.png` for dark, so a rename of the article renames
+- File name encodes where it is used: `<article>-<task>-<n>.webp` for light and
+  `<article>-<task>-<n>-dark.webp` for dark, so a rename of the article renames
   both images.
 - Reference both from MDX inside one `<Frame>`. The light image uses
   `className="block dark:hidden"`. The dark image uses

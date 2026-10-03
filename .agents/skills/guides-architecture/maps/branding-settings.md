@@ -301,67 +301,67 @@ Verification: guide lint passed with zero warnings; all bold controls/screens ma
 
 ## Screenshots to capture
 
-Each entry needs the listed light PNG and a matching `-dark.png` version. All are commented placeholders. Use demo workspace data.
+Each entry needs the listed light WebP and a matching `-dark.webp` version. All are commented placeholders. Use demo workspace data.
 
 ### Branding settings
-- `/assets/images/guides/branding-settings/overview-open-1.png`: App sidebar with the workspace-name menu open and Branding settings highlighted.
-- `/assets/images/guides/branding-settings/overview-open-2.png`: Branding settings page with the Logo tab selected.
-- `/assets/images/guides/branding-settings/overview-find-1.png`: Branding settings with all six tabs visible.
-- `/assets/images/guides/branding-settings/overview-return-1.png`: Settings sidebar header with the Settings back button highlighted.
+- `/assets/images/guides/branding-settings/overview-open-1.webp`: App sidebar with the workspace-name menu open and Branding settings highlighted.
+- `/assets/images/guides/branding-settings/overview-open-2.webp`: Branding settings page with the Logo tab selected.
+- `/assets/images/guides/branding-settings/overview-find-1.webp`: Branding settings with all six tabs visible.
+- `/assets/images/guides/branding-settings/overview-return-1.webp`: Settings sidebar header with the Settings back button highlighted.
 
 ### Upload your logos
-- `/assets/images/guides/branding-settings/logo-open-1.png`: Workspace menu with Branding settings highlighted.
-- `/assets/images/guides/branding-settings/logo-open-2.png`: Branding settings with Logo and both logo cards visible.
-- `/assets/images/guides/branding-settings/logo-light-1.png`: Logo card with Upload logo highlighted.
-- `/assets/images/guides/branding-settings/logo-dark-1.png`: Logo for dark backgrounds with Upload logo highlighted.
-- `/assets/images/guides/branding-settings/logo-remove-1.png`: Logo card with Remove logo highlighted.
-- `/assets/images/guides/branding-settings/logo-remove-2.png`: Delete logo with Delete highlighted.
+- `/assets/images/guides/branding-settings/logo-open-1.webp`: Workspace menu with Branding settings highlighted.
+- `/assets/images/guides/branding-settings/logo-open-2.webp`: Branding settings with Logo and both logo cards visible.
+- `/assets/images/guides/branding-settings/logo-light-1.webp`: Logo card with Upload logo highlighted.
+- `/assets/images/guides/branding-settings/logo-dark-1.webp`: Logo for dark backgrounds with Upload logo highlighted.
+- `/assets/images/guides/branding-settings/logo-remove-1.webp`: Logo card with Remove logo highlighted.
+- `/assets/images/guides/branding-settings/logo-remove-2.webp`: Delete logo with Delete highlighted.
 
 ### Create color palettes
-- `/assets/images/guides/branding-settings/color-palettes-create-1.png`: Workspace-name menu with Branding settings highlighted.
-- `/assets/images/guides/branding-settings/color-palettes-create-2.png`: Color palettes tab with Create color palette highlighted.
-- `/assets/images/guides/branding-settings/color-palettes-create-3.png`: Create color palette dialog with the Brand color picker open.
-- `/assets/images/guides/branding-settings/color-palettes-edit-1.png`: Custom color palette row with its menu open.
-- `/assets/images/guides/branding-settings/color-palettes-edit-2.png`: Update color palette dialog with Name and color fields highlighted.
-- `/assets/images/guides/branding-settings/color-palettes-delete-1.png`: Delete color palette confirmation showing the palette name and Delete button.
+- `/assets/images/guides/branding-settings/color-palettes-create-1.webp`: Workspace-name menu with Branding settings highlighted.
+- `/assets/images/guides/branding-settings/color-palettes-create-2.webp`: Color palettes tab with Create color palette highlighted.
+- `/assets/images/guides/branding-settings/color-palettes-create-3.webp`: Create color palette dialog with the Brand color picker open.
+- `/assets/images/guides/branding-settings/color-palettes-edit-1.webp`: Custom color palette row with its menu open.
+- `/assets/images/guides/branding-settings/color-palettes-edit-2.webp`: Update color palette dialog with Name and color fields highlighted.
+- `/assets/images/guides/branding-settings/color-palettes-delete-1.webp`: Delete color palette confirmation showing the palette name and Delete button.
 
 ### Create watermarks
-- `/assets/images/guides/branding-settings/watermarks-open-1.png`: Workspace-name menu with Branding settings highlighted.
-- `/assets/images/guides/branding-settings/watermarks-open-2.png`: Branding settings with Watermarks highlighted.
-- `/assets/images/guides/branding-settings/watermarks-create-1.png`: Watermarks page with Create watermark highlighted.
-- `/assets/images/guides/branding-settings/watermarks-create-2.png`: Create watermark dialog with Name highlighted.
-- `/assets/images/guides/branding-settings/watermarks-create-3.png`: Named watermark in Create watermark dialog.
-- `/assets/images/guides/branding-settings/watermarks-create-4.png`: Watermarks list showing newly created custom watermark.
-- `/assets/images/guides/branding-settings/watermarks-upload-1.png`: Custom watermark row menu with Edit highlighted.
-- `/assets/images/guides/branding-settings/watermarks-upload-2.png`: Update watermark dialog with Upload watermark highlighted.
-- `/assets/images/guides/branding-settings/watermarks-upload-3.png`: Update watermark dialog showing the uploaded image.
-- `/assets/images/guides/branding-settings/watermarks-adjust-1.png`: Update watermark dialog with Position menu open.
-- `/assets/images/guides/branding-settings/watermarks-adjust-2.png`: Update watermark dialog with Scale landscape highlighted.
-- `/assets/images/guides/branding-settings/watermarks-adjust-3.png`: Update watermark dialog with Scale portrait highlighted.
-- `/assets/images/guides/branding-settings/watermarks-adjust-4.png`: Update watermark dialog with Opacity highlighted.
-- `/assets/images/guides/branding-settings/watermarks-adjust-5.png`: Update watermark dialog with Update watermark highlighted.
-- `/assets/images/guides/branding-settings/watermarks-delete-1.png`: Custom watermark row menu with Delete highlighted.
-- `/assets/images/guides/branding-settings/watermarks-delete-2.png`: Delete watermark dialog with watermark name and Delete highlighted.
+- `/assets/images/guides/branding-settings/watermarks-open-1.webp`: Workspace-name menu with Branding settings highlighted.
+- `/assets/images/guides/branding-settings/watermarks-open-2.webp`: Branding settings with Watermarks highlighted.
+- `/assets/images/guides/branding-settings/watermarks-create-1.webp`: Watermarks page with Create watermark highlighted.
+- `/assets/images/guides/branding-settings/watermarks-create-2.webp`: Create watermark dialog with Name highlighted.
+- `/assets/images/guides/branding-settings/watermarks-create-3.webp`: Named watermark in Create watermark dialog.
+- `/assets/images/guides/branding-settings/watermarks-create-4.webp`: Watermarks list showing newly created custom watermark.
+- `/assets/images/guides/branding-settings/watermarks-upload-1.webp`: Custom watermark row menu with Edit highlighted.
+- `/assets/images/guides/branding-settings/watermarks-upload-2.webp`: Update watermark dialog with Upload watermark highlighted.
+- `/assets/images/guides/branding-settings/watermarks-upload-3.webp`: Update watermark dialog showing the uploaded image.
+- `/assets/images/guides/branding-settings/watermarks-adjust-1.webp`: Update watermark dialog with Position menu open.
+- `/assets/images/guides/branding-settings/watermarks-adjust-2.webp`: Update watermark dialog with Scale landscape highlighted.
+- `/assets/images/guides/branding-settings/watermarks-adjust-3.webp`: Update watermark dialog with Scale portrait highlighted.
+- `/assets/images/guides/branding-settings/watermarks-adjust-4.webp`: Update watermark dialog with Opacity highlighted.
+- `/assets/images/guides/branding-settings/watermarks-adjust-5.webp`: Update watermark dialog with Update watermark highlighted.
+- `/assets/images/guides/branding-settings/watermarks-delete-1.webp`: Custom watermark row menu with Delete highlighted.
+- `/assets/images/guides/branding-settings/watermarks-delete-2.webp`: Delete watermark dialog with watermark name and Delete highlighted.
 
 ### Update contact info
-- `/assets/images/guides/branding-settings/contact-info-open-1.png`: Workspace-name menu with Branding settings highlighted.
-- `/assets/images/guides/branding-settings/contact-info-open-2.png`: Branding settings on Contact info with the three fields visible.
-- `/assets/images/guides/branding-settings/contact-info-update-1.png`: Contact info fields with a business email entered and focus in another field.
-- `/assets/images/guides/branding-settings/contact-info-clear-1.png`: Contact info with the clear icon on a filled Email field highlighted.
+- `/assets/images/guides/branding-settings/contact-info-open-1.webp`: Workspace-name menu with Branding settings highlighted.
+- `/assets/images/guides/branding-settings/contact-info-open-2.webp`: Branding settings on Contact info with the three fields visible.
+- `/assets/images/guides/branding-settings/contact-info-update-1.webp`: Contact info fields with a business email entered and focus in another field.
+- `/assets/images/guides/branding-settings/contact-info-clear-1.webp`: Contact info with the clear icon on a filled Email field highlighted.
 
 ### Add social media links
-- `/assets/images/guides/branding-settings/social-media-add-1.png`: Workspace menu with Branding settings highlighted.
-- `/assets/images/guides/branding-settings/social-media-add-2.png`: Social media tab with Your social media fields visible.
-- `/assets/images/guides/branding-settings/social-media-add-3.png`: Social media settings with a username entered in Instagram.
-- `/assets/images/guides/branding-settings/social-media-remove-1.png`: Instagram field with the clear icon highlighted.
-- `/assets/images/guides/branding-settings/social-media-links-1.png`: Shared gallery footer with social media icons highlighted.
+- `/assets/images/guides/branding-settings/social-media-add-1.webp`: Workspace menu with Branding settings highlighted.
+- `/assets/images/guides/branding-settings/social-media-add-2.webp`: Social media tab with Your social media fields visible.
+- `/assets/images/guides/branding-settings/social-media-add-3.webp`: Social media settings with a username entered in Instagram.
+- `/assets/images/guides/branding-settings/social-media-remove-1.webp`: Instagram field with the clear icon highlighted.
+- `/assets/images/guides/branding-settings/social-media-links-1.webp`: Shared gallery footer with social media icons highlighted.
 
 ### Add legal links
-- `/assets/images/guides/branding-settings/legal-info-add-1.png`: Workspace-name menu with Branding settings highlighted.
-- `/assets/images/guides/branding-settings/legal-info-add-2.png`: Branding settings with Legal info highlighted.
-- `/assets/images/guides/branding-settings/legal-info-add-3.png`: Legal info tab with Your legal info fields visible.
-- `/assets/images/guides/branding-settings/legal-info-add-4.png`: Your legal info with a policy-page URL entered.
-- `/assets/images/guides/branding-settings/legal-info-remove-1.png`: Your legal info with an empty Privacy policy field.
-- `/assets/images/guides/branding-settings/legal-info-links-1.png`: Shared gallery footer with policy links highlighted.
+- `/assets/images/guides/branding-settings/legal-info-add-1.webp`: Workspace-name menu with Branding settings highlighted.
+- `/assets/images/guides/branding-settings/legal-info-add-2.webp`: Branding settings with Legal info highlighted.
+- `/assets/images/guides/branding-settings/legal-info-add-3.webp`: Legal info tab with Your legal info fields visible.
+- `/assets/images/guides/branding-settings/legal-info-add-4.webp`: Your legal info with a policy-page URL entered.
+- `/assets/images/guides/branding-settings/legal-info-remove-1.webp`: Your legal info with an empty Privacy policy field.
+- `/assets/images/guides/branding-settings/legal-info-links-1.webp`: Shared gallery footer with policy links highlighted.
 
-Total: 47 light/dark pairs (94 PNGs).
+Total: 47 light/dark pairs (94 WebP files).

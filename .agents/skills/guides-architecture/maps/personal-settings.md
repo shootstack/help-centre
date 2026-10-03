@@ -195,25 +195,25 @@ Remaining non-screenshot TODO: verify which timezone the notification service us
 
 ## Screenshots to capture
 
-Each entry needs the listed light PNG and a matching `-dark.png` version. These 11 pairs are commented placeholders; no screenshots have been captured in this writing task.
+Each entry needs the listed light WebP and a matching `-dark.webp` version. These 11 pairs are commented placeholders; no screenshots have been captured in this writing task.
 
 ### Overview
-- `/assets/images/guides/personal-settings/overview-open-1.png`: Workspace menu with Personal settings highlighted.
-- `/assets/images/guides/personal-settings/overview-open-2.png`: Personal settings page with General selected and profile details visible.
+- `/assets/images/guides/personal-settings/overview-open-1.webp`: Workspace menu with Personal settings highlighted.
+- `/assets/images/guides/personal-settings/overview-open-2.webp`: Personal settings page with General selected and profile details visible.
 
 ### Profile
-- `/assets/images/guides/personal-settings/profile-open-1.png`: Workspace menu with Personal settings highlighted.
-- `/assets/images/guides/personal-settings/profile-open-2.png`: General settings with profile details visible.
+- `/assets/images/guides/personal-settings/profile-open-1.webp`: Workspace menu with Personal settings highlighted.
+- `/assets/images/guides/personal-settings/profile-open-2.webp`: General settings with profile details visible.
 
 ### Language and region
-- `/assets/images/guides/personal-settings/language-region-open-1.png`: Workspace menu with Personal settings highlighted.
-- `/assets/images/guides/personal-settings/language-region-open-2.png`: General page with Language & region and Timezone visible.
+- `/assets/images/guides/personal-settings/language-region-open-1.webp`: Workspace menu with Personal settings highlighted.
+- `/assets/images/guides/personal-settings/language-region-open-2.webp`: General page with Language & region and Timezone visible.
 
 ### Appearance
-- `/assets/images/guides/personal-settings/appearance-theme-1.png`: Workspace menu with Personal settings highlighted.
-- `/assets/images/guides/personal-settings/appearance-theme-2.png`: Settings sidebar with Appearance highlighted under Personal.
-- `/assets/images/guides/personal-settings/appearance-theme-3.png`: Appearance page with the Theme section highlighted.
+- `/assets/images/guides/personal-settings/appearance-theme-1.webp`: Workspace menu with Personal settings highlighted.
+- `/assets/images/guides/personal-settings/appearance-theme-2.webp`: Settings sidebar with Appearance highlighted under Personal.
+- `/assets/images/guides/personal-settings/appearance-theme-3.webp`: Appearance page with the Theme section highlighted.
 
 ### Notifications
-- `/assets/images/guides/personal-settings/notifications-channels-1.png`: Workspace menu with Personal settings highlighted.
-- `/assets/images/guides/personal-settings/notifications-channels-2.png`: Settings sidebar with Notifications selected under Personal.
+- `/assets/images/guides/personal-settings/notifications-channels-1.webp`: Workspace menu with Personal settings highlighted.
+- `/assets/images/guides/personal-settings/notifications-channels-2.webp`: Settings sidebar with Notifications selected under Personal.

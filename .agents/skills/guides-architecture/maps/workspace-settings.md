@@ -224,24 +224,24 @@ The generated app help catalog added exactly five entries and preserved all 49 e
 
 ## Screenshots to capture
 
-Each entry needs the listed light PNG and a matching `-dark.png` version. These pages are simple settings screens, so each article keeps a workspace-menu shot and one page shot. Name, icon, plan, billing, and usage controls stay on that page shot. Crop, delete, and billing-portal dialogs are not separate shots.
+Each entry needs the listed light WebP and a matching `-dark.webp` version. These pages are simple settings screens, so each article keeps a workspace-menu shot and one page shot. Name, icon, plan, billing, and usage controls stay on that page shot. Crop, delete, and billing-portal dialogs are not separate shots.
 
 ### Overview
-- `/assets/images/guides/workspace-settings/overview-open-1.png`: App sidebar with the workspace-name menu open and Workspace settings highlighted.
-- `/assets/images/guides/workspace-settings/overview-open-2.png`: Workspace settings page with General selected in the Workspace sidebar group.
+- `/assets/images/guides/workspace-settings/overview-open-1.webp`: App sidebar with the workspace-name menu open and Workspace settings highlighted.
+- `/assets/images/guides/workspace-settings/overview-open-2.webp`: Workspace settings page with General selected in the Workspace sidebar group.
 
 ### General
-- `/assets/images/guides/workspace-settings/general-open-1.png`: Workspace menu with Workspace settings highlighted.
-- `/assets/images/guides/workspace-settings/general-open-2.png`: Workspace settings with the name and icon controls visible.
+- `/assets/images/guides/workspace-settings/general-open-1.webp`: Workspace menu with Workspace settings highlighted.
+- `/assets/images/guides/workspace-settings/general-open-2.webp`: Workspace settings with the name and icon controls visible.
 
 ### Plans
-- `/assets/images/guides/workspace-settings/plans-open-1.png`: App sidebar with the workspace-name menu open and Workspace settings highlighted.
-- `/assets/images/guides/workspace-settings/plans-open-3.png`: Plans page with the plan comparison visible.
+- `/assets/images/guides/workspace-settings/plans-open-1.webp`: App sidebar with the workspace-name menu open and Workspace settings highlighted.
+- `/assets/images/guides/workspace-settings/plans-open-3.webp`: Plans page with the plan comparison visible.
 
 ### Billing
-- `/assets/images/guides/workspace-settings/billing-open-1.png`: App sidebar with the workspace-name menu open and Workspace settings highlighted.
-- `/assets/images/guides/workspace-settings/billing-open-3.png`: Billing page with the subscription card and its dates visible.
+- `/assets/images/guides/workspace-settings/billing-open-1.webp`: App sidebar with the workspace-name menu open and Workspace settings highlighted.
+- `/assets/images/guides/workspace-settings/billing-open-3.webp`: Billing page with the subscription card and its dates visible.
 
 ### Usage
-- `/assets/images/guides/workspace-settings/usage-open-1.png`: Workspace menu with Workspace settings highlighted.
-- `/assets/images/guides/workspace-settings/usage-refresh-1.png`: Current usage card with Refresh and the usage rows visible.
+- `/assets/images/guides/workspace-settings/usage-open-1.webp`: Workspace menu with Workspace settings highlighted.
+- `/assets/images/guides/workspace-settings/usage-refresh-1.webp`: Current usage card with Refresh and the usage rows visible.

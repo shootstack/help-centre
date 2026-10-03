@@ -161,28 +161,28 @@ The app sidebar **Emails** opens the workspace **Gallery shares** email-history 
 
 ## Screenshots to capture
 
-Capture a light and dark version of each screen. The dark filename adds `-dark` before `.png`.
+Capture a light and dark version of each screen. The dark filename adds `-dark` before `.webp`.
 
-- `/assets/images/guides/emails/overview-page-1.png`: Emails page with **Gallery shares** selected and email history visible.
-- `/assets/images/guides/emails/overview-open-1.png`: Email history with a **Gallery share email** detail panel open.
-- `/assets/images/guides/emails/send-new-1.png`: Gallery toolbar menu with **Compose email** highlighted.
-- `/assets/images/guides/emails/send-new-2.png`: **Share gallery** sheet on **Email**, showing recipient, subject, and message fields.
-- `/assets/images/guides/emails/send-new-3.png`: **Share gallery** sheet on **Overview** with **Send email** highlighted.
-- `/assets/images/guides/emails/send-existing-1.png`: Existing share's **Emails** tab with **Compose email** highlighted.
-- `/assets/images/guides/emails/send-existing-2.png`: **Compose gallery share email** dialog with **Send email** highlighted.
-- `/assets/images/guides/emails/find-search-1.png`: Workspace **Gallery shares** tab with the search icon highlighted.
-- `/assets/images/guides/emails/find-search-2.png`: Email search results showing subject, recipient, and gallery.
-- `/assets/images/guides/emails/find-filter-1.png`: Email history toolbar with **Filter** highlighted.
-- `/assets/images/guides/emails/find-sort-1.png`: Email history sort menu showing field and order choices.
-- `/assets/images/guides/emails/activity-status-1.png`: Email history row with its status badge highlighted.
-- `/assets/images/guides/emails/activity-events-1.png`: Email detail showing the **Email events** timeline.
-- `/assets/images/guides/emails/activity-preview-1.png`: Email detail showing the **Preview** section.
-- `/assets/images/guides/emails/create-templates-create-1.png`: **Templates** tab with **New** highlighted.
-- `/assets/images/guides/emails/create-templates-edit-1.png`: **Edit template** with title, message editor, and save status.
-- `/assets/images/guides/emails/create-templates-search-1.png`: **Templates** header with the search icon highlighted.
-- `/assets/images/guides/emails/create-templates-sort-1.png`: Template sort menu showing field and order choices.
-- `/assets/images/guides/emails/create-templates-delete-1.png`: **Delete email template** confirmation with **Delete** highlighted.
-- `/assets/images/guides/emails/use-templates-insert-1.png`: Email composer with **Insert email template** highlighted.
-- `/assets/images/guides/emails/use-templates-insert-2.png`: Template picker showing saved messages.
-- `/assets/images/guides/emails/use-templates-save-1.png`: Email composer with **Save as email template** highlighted.
-- `/assets/images/guides/emails/use-templates-save-2.png`: **Save email template** dialog with prefilled title and content.
+- `/assets/images/guides/emails/overview-page-1.webp`: Emails page with **Gallery shares** selected and email history visible.
+- `/assets/images/guides/emails/overview-open-1.webp`: Email history with a **Gallery share email** detail panel open.
+- `/assets/images/guides/emails/send-new-1.webp`: Gallery toolbar menu with **Compose email** highlighted.
+- `/assets/images/guides/emails/send-new-2.webp`: **Share gallery** sheet on **Email**, showing recipient, subject, and message fields.
+- `/assets/images/guides/emails/send-new-3.webp`: **Share gallery** sheet on **Overview** with **Send email** highlighted.
+- `/assets/images/guides/emails/send-existing-1.webp`: Existing share's **Emails** tab with **Compose email** highlighted.
+- `/assets/images/guides/emails/send-existing-2.webp`: **Compose gallery share email** dialog with **Send email** highlighted.
+- `/assets/images/guides/emails/find-search-1.webp`: Workspace **Gallery shares** tab with the search icon highlighted.
+- `/assets/images/guides/emails/find-search-2.webp`: Email search results showing subject, recipient, and gallery.
+- `/assets/images/guides/emails/find-filter-1.webp`: Email history toolbar with **Filter** highlighted.
+- `/assets/images/guides/emails/find-sort-1.webp`: Email history sort menu showing field and order choices.
+- `/assets/images/guides/emails/activity-status-1.webp`: Email history row with its status badge highlighted.
+- `/assets/images/guides/emails/activity-events-1.webp`: Email detail showing the **Email events** timeline.
+- `/assets/images/guides/emails/activity-preview-1.webp`: Email detail showing the **Preview** section.
+- `/assets/images/guides/emails/create-templates-create-1.webp`: **Templates** tab with **New** highlighted.
+- `/assets/images/guides/emails/create-templates-edit-1.webp`: **Edit template** with title, message editor, and save status.
+- `/assets/images/guides/emails/create-templates-search-1.webp`: **Templates** header with the search icon highlighted.
+- `/assets/images/guides/emails/create-templates-sort-1.webp`: Template sort menu showing field and order choices.
+- `/assets/images/guides/emails/create-templates-delete-1.webp`: **Delete email template** confirmation with **Delete** highlighted.
+- `/assets/images/guides/emails/use-templates-insert-1.webp`: Email composer with **Insert email template** highlighted.
+- `/assets/images/guides/emails/use-templates-insert-2.webp`: Template picker showing saved messages.
+- `/assets/images/guides/emails/use-templates-save-1.webp`: Email composer with **Save as email template** highlighted.
+- `/assets/images/guides/emails/use-templates-save-2.webp`: **Save email template** dialog with prefilled title and content.

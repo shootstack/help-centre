@@ -54,7 +54,7 @@ Pick the skeleton in [templates.md](templates.md) (`overview` or `task`). The sk
 
 ### 4. Add screenshot placeholders
 
-Add one placeholder under each step where a screenshot would show the control, and under single-click actions that are hard to find. Use the `## Placeholder snippet` in [templates.md](templates.md); the path convention is in `help-guides.mdc` and the alt-text rule in `help-mdx-copy.mdc`. Comment-only placeholders keep `mint validate` and `mint broken-links` green until the PNG exists.
+Add one placeholder under each step where a screenshot would show the control, and under single-click actions that are hard to find. Use the `## Placeholder snippet` in [templates.md](templates.md); the path convention is in `help-guides.mdc` and the alt-text rule in `help-mdx-copy.mdc`. Comment-only placeholders keep `mint validate` and `mint broken-links` green until the WebP file exists.
 
 ### 5. Register in navigation
 
