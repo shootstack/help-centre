@@ -55,8 +55,8 @@ or why it matters for the client). Otherwise go straight to the steps.
     Click **New**.
     {/* TODO screenshot: Projects header with New highlighted
     <Frame>
-      <img className="block dark:hidden" src="/assets/images/guides/projects/overview-create-1.png" alt="Projects page header with the New button" />
-      <img className="hidden dark:block" src="/assets/images/guides/projects/overview-create-1-dark.png" alt="Projects page header with the New button" />
+      <img className="block dark:hidden" src="/assets/images/guides/projects/overview-create-1.webp" alt="Projects page header with the New button" />
+      <img className="hidden dark:block" src="/assets/images/guides/projects/overview-create-1-dark.webp" alt="Projects page header with the New button" />
     </Frame>
     */}
   </Step>
@@ -88,7 +88,7 @@ A project name can be up to 64 characters.
   callouts.
 - `## Related` closes the page with 2-4 root-relative links
   (`/guides/projects/favorites`). Skip the section if nothing exists yet.
-- Screenshot paths: `assets/images/guides/<section>/<article>-<task>-<n>.png`.
+- Screenshot paths: `assets/images/guides/<section>/<article>-<task>-<n>.webp`.
 - Budgets: Overview about 500 words, task article about 350. If over, cut
   prose, not steps.
 - No tables of options.

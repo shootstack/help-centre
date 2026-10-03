@@ -24,7 +24,7 @@ help-centre/
 │   ├── logo/
 │   ├── icons/                # stroke-rounded Hugeicons, same set as diamond-app
 │   ├── fonts/                # Noto Sans Variable (same files as diamond-app), not Google Fonts
-│   └── images/               # screenshots: <tab>/<section>/<article>-<task>-<n>.png and -dark.png
+│   └── images/               # screenshots: <tab>/<section>/<article>-<task>-<n>.webp and -dark.webp
 ├── index.mdx                 # home page (mode: custom)
 ├── style.css, academy.css    # theme overrides
 ├── search.js                 # wires the home search button
