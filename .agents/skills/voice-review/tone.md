@@ -181,6 +181,7 @@ The same situations come up in every section. Copy the sentence and swap the `<.
 | Storage full | `If your photo storage is full, free up space by deleting photos you no longer need, or upgrade your plan.` |
 | Keyboard shortcut (Tip) | `Press **<Key>** <where> to <do what>.` |
 | Handing off to another section | `<One sentence naming the feature.> See [<Article>](/guides/<section>/<slug>).` |
+| Reach support | `Open **Help**, then click **Chat with support**.` |
 
 ## Words
 

@@ -2,58 +2,58 @@
    Settings title in config/navigation/index.json would not render. Insert
    that title on the Guides sidebar until the group has pages. */
 (function () {
-  var TITLE = 'Settings';
+    const TITLE = 'Settings';
 
-  function headerText(header) {
-    return (header.textContent || '').trim();
-  }
-
-  function ensureSettingsTitle() {
-    var headers = document.querySelectorAll('#sidebar-content .sidebar-group-header');
-    var hasGalleryDelivery = false;
-    var hasRealSettings = false;
-
-    headers.forEach(function (header) {
-      if (header.closest('[data-settings-title]')) return;
-      var text = headerText(header);
-      if (text === 'Gallery delivery') hasGalleryDelivery = true;
-      if (text === TITLE) hasRealSettings = true;
-    });
-
-    var placeholder = document.querySelector('[data-settings-title]');
-
-    if (!hasGalleryDelivery || hasRealSettings) {
-      placeholder?.remove();
-      return;
+    function headerText(header) {
+        return (header.textContent || '').trim();
     }
 
-    if (placeholder) return;
+    function ensureSettingsTitle() {
+        const headers = document.querySelectorAll('#sidebar-content .sidebar-group-header');
+        let hasGalleryDelivery = false;
+        let hasRealSettings = false;
 
-    var sections = document.querySelectorAll('#navigation-items .mt-6');
-    var last = sections[sections.length - 1];
-    if (!last) return;
+        headers.forEach(function (header) {
+            if (header.closest('[data-settings-title]')) return;
+            const text = headerText(header);
+            if (text === 'Gallery delivery') hasGalleryDelivery = true;
+            if (text === TITLE) hasRealSettings = true;
+        });
 
-    var block = document.createElement('div');
-    block.className = last.className;
-    block.setAttribute('data-settings-title', '');
+        const placeholder = document.querySelector('[data-settings-title]');
 
-    var header = document.createElement('div');
-    header.className = 'sidebar-group-header';
+        if (!hasGalleryDelivery || hasRealSettings) {
+            placeholder?.remove();
+            return;
+        }
 
-    var title = document.createElement('h3');
-    title.className = 'sidebar-title';
+        if (placeholder) return;
 
-    var span = document.createElement('span');
-    span.textContent = TITLE;
+        const sections = document.querySelectorAll('#navigation-items .mt-6');
+        const last = sections[sections.length - 1];
+        if (!last) return;
 
-    title.appendChild(span);
-    header.appendChild(title);
-    block.appendChild(header);
-    last.after(block);
-  }
+        const block = document.createElement('div');
+        block.className = last.className;
+        block.setAttribute('data-settings-title', '');
 
-  ensureSettingsTitle();
+        const header = document.createElement('div');
+        header.className = 'sidebar-group-header';
 
-  var root = document.getElementById('navigation-items') || document.body;
-  new MutationObserver(ensureSettingsTitle).observe(root, { childList: true, subtree: true });
+        const title = document.createElement('h3');
+        title.className = 'sidebar-title';
+
+        const span = document.createElement('span');
+        span.textContent = TITLE;
+
+        title.appendChild(span);
+        header.appendChild(title);
+        block.appendChild(header);
+        last.after(block);
+    }
+
+    ensureSettingsTitle();
+
+    const root = document.getElementById('navigation-items') || document.body;
+    new MutationObserver(ensureSettingsTitle).observe(root, { childList: true, subtree: true });
 })();

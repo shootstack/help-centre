@@ -1,153 +1,56 @@
 ---
 title: Home
-description: Video lessons, step-by-step guides, and answers for Shootstack.
+description: Learn how to organize your shoots, deliver galleries, and stay in touch with your clients in Shootstack.
 icon: /assets/icons/home-01.svg
 mode: custom
 ---
 
-<div className="flex flex-col gap-14 mx-auto px-4 py-12 lg:py-16 w-full max-w-5xl">
-  <div className="flex flex-col items-center gap-12">
-    <div className="flex flex-col gap-1 w-full max-w-lg">
-      <h1 className="font-semibold text-gray-900 dark:text-gray-50 text-4xl text-center tracking-tight">
-        How can we help?
-      </h1>
-      <p className="mt-2 text-gray-600 dark:text-gray-400 text-base text-center text-balance">
-        Search for video lessons, step-by-step guides, and answers.
-      </p>
+import { AcademyVideo } from "/snippets/academy-video.jsx";
+import { HomeAcademyFeature } from "/snippets/home-academy.jsx";
+import { HomeGuideGrid } from "/snippets/home-guide-grid.jsx";
+import { homeGuides, homeSections } from "/snippets/home-content.jsx";
+
+<div className="mx-auto px-6 sm:px-10 w-full max-w-6xl text-gray-900 dark:text-gray-50 help-home not-prose">
+  <section className="flex flex-col items-center text-center home-intro" aria-labelledby="welcome-title">
+    <h1 id="welcome-title" className="font-medium home-title">Shootstack Help Center</h1>
+    <p className="text-gray-600 dark:text-gray-400 home-intro-copy">
+      Learn how to organize your shoots, deliver galleries, and stay in touch with your clients in Shootstack.
+    </p>
+    <button type="button" data-search-trigger className="flex items-center gap-3 bg-gray-50 dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 rounded-full text-gray-500 dark:text-gray-400 text-left home-search">
+      <Icon src="/assets/icons/search-01.svg" size={18} />
+      <span className="flex-1">Search the Help Center</span>
+      <span aria-hidden="true" className="text-xs home-search-shortcut">⌘K</span>
+    </button>
+
+    <div role="navigation" className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 home-shortcuts" aria-label="Help Center sections">
+      {homeSections.map((section) => (
+        <a key={section.href} href={section.href} className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 home-shortcut">
+          <Icon src={section.icon} size={16} />
+          {section.label}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section className="home-section" aria-labelledby="academy-title">
+    <div className="flex justify-between items-end gap-6 home-section-heading">
+      <h2 id="academy-title" className="font-medium home-heading">Watch and follow along</h2>
+      <a href="/academy" className="hidden sm:inline-flex items-center gap-2 home-text-link text-gray-600 dark:text-gray-400">
+        Explore the Academy <Icon src="/assets/icons/arrow-right-02.svg" size={16} />
+      </a>
+    </div>
+    <HomeAcademyFeature
+      renderVideo={(props) => <AcademyVideo {...props} teaser />}
+      icon={<Icon src="/assets/icons/arrow-right-02.svg" size={18} />}
+    />
+  </section>
+
+  <section className="home-section" aria-labelledby="guides-title">
+    <div className="home-section-heading">
+      <h2 id="guides-title" className="font-medium home-heading">Find the guide for what you're doing</h2>
+      <p className="text-gray-600 dark:text-gray-400 home-section-description">Step-by-step guides for each part of Shootstack, from your first project to your workspace settings.</p>
     </div>
 
-    <div className="flex flex-col gap-4 w-full max-w-lg">
-      <div className="flex sm:flex-row flex-col sm:items-stretch gap-2.5 w-full">
-        <div className="flex-1 w-full min-w-0 kb-search-entry">
-          <button
-            type="button"
-            data-search-trigger
-            className="flex justify-between items-center gap-2 bg-gray-50 dark:bg-white/[0.04] shadow-none pr-3 pl-4 rounded-full ring-1 ring-gray-100 hover:ring-gray-200 dark:hover:ring-white/15 dark:ring-1 dark:ring-white/[0.08] w-full h-11 font-normal text-gray-500 hover:text-gray-500 dark:hover:text-white/50 dark:text-white/50 text-sm text-left truncate leading-6 cursor-pointer pointer-events-auto"
-          >
-            <div className="flex flex-1 items-center gap-2 min-w-0">
-              <Icon
-                src="/assets/icons/search-01.svg"
-                size={14}
-                className="text-gray-700 dark:text-gray-400 shrink-0"
-              />
-              <div className="min-w-0 font-normal text-gray-500 hover:text-gray-500 dark:hover:text-white/50 dark:text-white/50 truncate">
-                Search for articles
-              </div>
-            </div>
-            <span className="flex-none font-semibold text-gray-500 hover:text-gray-500 dark:hover:text-white/50 dark:text-white/50 text-xs">
-              ⌘K
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <Columns cols={3}>
-    <Card title="Academy" icon="/assets/icons/graduation-cap.svg" href="/academy">
-      Short video lessons are coming soon.
-    </Card>
-    <Card title="Guides" icon="/assets/icons/book-open-01.svg" href="/guides/introduction/overview">
-      Step-by-step guides for every core feature.
-    </Card>
-    <Card title="Troubleshooting" icon="/assets/icons/message-question.svg" href="/troubleshooting">
-      Answers to common questions.
-    </Card>
-  </Columns>
-
-  ---
-
-  <div className="items-start gap-10 grid lg:grid-cols-2">
-    <div className="flex flex-col gap-3">
-      <h2 className="font-semibold text-gray-900 dark:text-gray-50 text-4xl tracking-tight">
-        Get started with Shootstack.
-      </h2>
-      <p className="text-gray-600 dark:text-gray-400 text-base">
-        Follow a shoot from the first project to the link you send your client.
-      </p>
-    </div>
-
-    <ol className="flex flex-col m-0 p-0 divide-y divide-gray-200 dark:divide-white/10 list-none">
-      <li>
-        <a
-          href="/guides/introduction/overview"
-          className="flex items-start gap-4 py-4 text-inherit no-underline"
-        >
-          <span className="flex justify-center items-center border border-gray-200 dark:border-white/15 rounded-full size-8 text-gray-500 dark:text-gray-400 text-sm shrink-0">
-            1
-          </span>
-          <span className="flex flex-col gap-1">
-            <span className="font-medium text-gray-900 dark:text-gray-50">What is Shootstack</span>
-            <span className="text-gray-600 dark:text-gray-400 text-sm">
-              What Shootstack is, who it is for, and how a shoot moves through it.
-            </span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="/guides/projects/overview"
-          className="flex items-start gap-4 py-4 text-inherit no-underline"
-        >
-          <span className="flex justify-center items-center border border-gray-200 dark:border-white/15 rounded-full size-8 text-gray-500 dark:text-gray-400 text-sm shrink-0">
-            2
-          </span>
-          <span className="flex flex-col gap-1">
-            <span className="font-medium text-gray-900 dark:text-gray-50">Create your first project</span>
-            <span className="text-gray-600 dark:text-gray-400 text-sm">
-              A project holds one shoot, from the first upload to the gallery your client receives.
-            </span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="/guides/media-folders/upload"
-          className="flex items-start gap-4 py-4 text-inherit no-underline"
-        >
-          <span className="flex justify-center items-center border border-gray-200 dark:border-white/15 rounded-full size-8 text-gray-500 dark:text-gray-400 text-sm shrink-0">
-            3
-          </span>
-          <span className="flex flex-col gap-1">
-            <span className="font-medium text-gray-900 dark:text-gray-50">Upload your photos</span>
-            <span className="text-gray-600 dark:text-gray-400 text-sm">
-              Add the photos from a shoot to a media folder.
-            </span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="/guides/galleries/design"
-          className="flex items-start gap-4 py-4 text-inherit no-underline"
-        >
-          <span className="flex justify-center items-center border border-gray-200 dark:border-white/15 rounded-full size-8 text-gray-500 dark:text-gray-400 text-sm shrink-0">
-            4
-          </span>
-          <span className="flex flex-col gap-1">
-            <span className="font-medium text-gray-900 dark:text-gray-50">Design your gallery</span>
-            <span className="text-gray-600 dark:text-gray-400 text-sm">
-              Choose how a gallery looks to your clients.
-            </span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="/guides/gallery-shares/overview"
-          className="flex items-start gap-4 py-4 text-inherit no-underline"
-        >
-          <span className="flex justify-center items-center border border-gray-200 dark:border-white/15 rounded-full size-8 text-gray-500 dark:text-gray-400 text-sm shrink-0">
-            5
-          </span>
-          <span className="flex flex-col gap-1">
-            <span className="font-medium text-gray-900 dark:text-gray-50">Share your gallery</span>
-            <span className="text-gray-600 dark:text-gray-400 text-sm">
-              Send your client a link once the photos and design are in place.
-            </span>
-          </span>
-        </a>
-      </li>
-    </ol>
-  </div>
+    <HomeGuideGrid guides={homeGuides} />
+  </section>
 </div>

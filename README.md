@@ -14,6 +14,9 @@ See the [CLI install docs](https://www.mintlify.com/docs/cli/install).
 
 ```text
 help-centre/
+├── .vscode/settings.json     # tab size 4, Prettier, ESLint (same editor setup as diamond-app)
+├── .prettierrc               # Prettier, tab width 4
+├── eslint.config.js          # ESLint flat config for scripts and snippets
 ├── docs.json                 # Mintlify entry shell
 ├── config/                   # site configuration ($ref from docs.json)
 │   ├── branding.json
@@ -24,9 +27,11 @@ help-centre/
 │   ├── logo/
 │   ├── icons/                # stroke-rounded Hugeicons, same set as diamond-app
 │   ├── fonts/                # Noto Sans Variable (same files as diamond-app), not Google Fonts
-│   └── images/               # screenshots: <tab>/<section>/<article>-<task>-<n>.webp and -dark.webp
+│   ├── images/               # screenshots: <tab>/<section>/<article>-<task>-<n>.webp and -dark.webp; home/ for home page cards
+│   └── videos/academy/       # local preview video and English caption track
 ├── index.mdx                 # home page (mode: custom)
-├── style.css, academy.css    # theme overrides
+├── style.css, academy.css    # theme overrides and Academy media
+├── home.css                  # home page layout
 ├── search.js                 # wires the home search button
 ├── sidebar.js                # empty Settings title; Mintlify drops a group with no pages
 ├── academy/                  # video lessons, generated from snippets/academy-lessons.js
@@ -37,7 +42,7 @@ help-centre/
 │   ├── galleries/
 │   └── gallery-shares/
 ├── troubleshooting/          # question-and-answer articles
-├── snippets/                 # academy-lessons.js catalog, academy-grid.jsx
+├── snippets/                 # academy catalog and grid; home content, preview, and guide grid
 ├── scripts/                  # sync-academy.mjs, sync-app-help.mjs, lint-guides.mjs
 ├── .agents/
 │   └── skills/               # canonical skills (Agent Skills layout, read by Cursor and other agents)
@@ -57,6 +62,7 @@ Skills live in `.agents/skills/` so any agent that follows the [Agent Skills](ht
 
 - Guides: plan a feature section with the `guides-architecture` skill (writes `.agents/skills/guides-architecture/maps/<section>.md`), then write each article with the `guides-article` skill. Both verify labels and limits against the diamond-app code before writing.
 - Academy: edit `snippets/academy-lessons.js`, run `npm run sync-academy`, then write the lesson body.
+  The catalog can also set `thumbnail`, `thumbnailDark`, and `preview` for lesson cards. The first lesson is a mock preview: a silent 12-second montage of existing demo screenshots in `assets/videos/academy/`, with an English caption track. Replace it with the recorded walkthrough when the Academy is ready.
 - Troubleshooting: one question per page, added to that tab's `pages` list.
 - In-app Help drawer: run `npm run sync-app-help` after adding a page or changing a title, description, or path. It writes every article to `../diamond-app/src/integrations/help-centre/helpCentreArticles.json`, which you commit in diamond-app. Which articles each app page shows is chosen in diamond-app's `helpCentreRoutes.js`.
 - Tone of voice: helpful, professional, calm, supportive, natural. `.agents/skills/voice-review/tone.md` is the single definition, with examples and the standard phrasings; `.cursor/rules/help-mdx-copy.mdc` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). After writing any page, run the `voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
@@ -67,8 +73,11 @@ See `AGENTS.md` for terminology and `.cursor/rules/` for per-layer conventions.
 
 ```bash
 npm i -g mint
+npm install
 npm run dev
 ```
+
+`npm install` is for ESLint and Prettier. `npm run lint` checks `scripts/`, `snippets/`, and the root site scripts.
 
 Open `http://localhost:3333`.
 

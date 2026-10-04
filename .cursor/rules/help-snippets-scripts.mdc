@@ -17,7 +17,7 @@ maintenance scripts wired through `package.json`.
 snippets/<name>.js      # data catalogs: named export, plain objects
 snippets/<name>.jsx     # presentational components: named export, props in, JSX out
 scripts/<verb>-<noun>.mjs
-package.json            # scripts: sync-academy, sync-app-help, lint-guides, dev, validate, broken-links, a11y
+package.json            # scripts: sync-academy, sync-app-help, lint, lint-guides, dev, validate, broken-links, a11y
 ```
 
 ## App help catalog
@@ -55,6 +55,9 @@ import { AcademyGrid } from "/snippets/academy-grid.jsx";
 
 - A snippet exists when the same content or component appears on more than
   one page, or when a script generates from it. One-off layout stays inline.
+  The home page is the exception: its content and cards live in
+  `snippets/home-*` so `index.mdx` stays a short composition. See
+  `help-home-theme.mdc`.
 - Components are arrow functions, Tailwind classes with `dark:` variants,
   `not-prose` on custom grids so Mintlify's prose styles do not leak in.
 - Scripts are ESM (`.mjs`), import from `node:` modules, resolve paths from
@@ -70,5 +73,6 @@ import { AcademyGrid } from "/snippets/academy-grid.jsx";
 - Snippets have no side effects and no fetches. Mintlify renders them at
   build time.
 - Scripts never touch `.mdx` body copy outside a marked region.
-- No dependencies in `package.json` beyond what a script needs; the site
-  itself is built by the `mint` CLI installed globally.
+- No runtime dependencies in `package.json`. The site is built by the `mint`
+  CLI installed globally. ESLint and Prettier are devDependencies, matching
+  diamond-app's editor setup.

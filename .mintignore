@@ -15,6 +15,13 @@ drafts/
 .codegraph/
 
 # Repo instructions and tooling. A root AGENTS.md is served at /agents.md.
+# eslint.config.js is editor tooling, not a site script. Mintlify loads every
+# other root .js file.
 AGENTS.md
 skills-lock.json
 package.json
+package-lock.json
+eslint.config.js
+
+# The Academy catalog is consumed by sync-academy, not as a browser script.
+snippets/academy-lessons.js

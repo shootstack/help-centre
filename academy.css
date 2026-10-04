@@ -1,30 +1,67 @@
 /* Mintlify paints .dark .link with a light bottom border. Keep the card outline even. */
 .dark a.academy-card,
 .dark a.academy-card:hover {
-  border-bottom-color: color-mix(in oklab, white 10%, transparent) !important;
+    border-bottom-color: color-mix(in oklab, white 10%, transparent) !important;
 }
 
 .dark a.academy-card:hover {
-  border-bottom-color: color-mix(in oklab, white 20%, transparent) !important;
+    border-bottom-color: color-mix(in oklab, white 20%, transparent) !important;
 }
 
 /* Tertiary text: diamond-app Text variant tertiary is muted-foreground at 80%. */
 .academy-duration {
-  color: color-mix(in oklch, oklch(0.552 0.016 285.938) 80%, transparent);
+    color: color-mix(in oklch, oklch(0.552 0.016 285.938) 80%, transparent);
 }
 
 /* Sidebar duration is the lesson tag, written from snippets/academy-lessons.js. */
 a[href^='/academy/'] .nav-tag-pill-text {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  border-radius: 0;
-  color: color-mix(in oklch, oklch(0.552 0.016 285.938) 80%, transparent);
-  font-weight: 400;
-  font-size: inherit;
-  line-height: inherit;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: normal;
-  text-transform: none;
-  white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    color: color-mix(in oklch, oklch(0.552 0.016 285.938) 80%, transparent);
+    font-weight: 400;
+    font-size: inherit;
+    line-height: inherit;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+/* Shared Academy media: the linked home teaser and the controlled lesson player. */
+.academy-teaser {
+    min-height: 23rem;
+    background: #29282e;
+}
+.academy-teaser-link {
+    height: 100%;
+    min-height: inherit;
+}
+.academy-teaser-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 62% center;
+}
+.academy-lesson-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #18181b;
+}
+.academy-preview-notice {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+}
+@media (max-width: 767px) {
+    .academy-teaser {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+    }
+    .academy-teaser-link {
+        min-height: 100%;
+    }
 }

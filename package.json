@@ -7,9 +7,18 @@
         "sync-app-help": "node scripts/sync-app-help.mjs",
         "dev": "node scripts/sync-academy.mjs && mint dev --port 3333",
         "dev:open": "node scripts/sync-academy.mjs && mint dev --port 3333",
+        "lint": "eslint .",
         "lint-guides": "node scripts/lint-guides.mjs",
         "validate": "node scripts/sync-academy.mjs --check && node scripts/sync-app-help.mjs --check && node scripts/lint-guides.mjs && mint validate",
         "broken-links": "mint broken-links",
         "a11y": "mint a11y"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "eslint": "^10.8.1",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-unused-imports": "^4.4.1",
+        "globals": "^17.11.0",
+        "prettier": "^3.9.6"
     }
 }

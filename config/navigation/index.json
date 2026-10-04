@@ -4,9 +4,7 @@
         {
             "tab": "Academy",
             "icon": "/assets/icons/graduation-cap.svg",
-            "pages": [
-                "academy/index"
-            ]
+            "pages": ["academy/index", "academy/from-shoot-to-gallery"]
         },
         {
             "tab": "Guides",
@@ -14,9 +12,7 @@
             "groups": [
                 {
                     "group": "Guides",
-                    "pages": [
-                        "guides/introduction/overview"
-                    ]
+                    "pages": ["guides/introduction/overview"]
                 },
                 {
                     "group": "Gallery delivery",
@@ -25,11 +21,7 @@
                             "group": "Projects",
                             "icon": "/assets/icons/album-01.svg",
                             "expanded": false,
-                            "pages": [
-                                "guides/projects/overview",
-                                "guides/projects/status",
-                                "guides/projects/favorites"
-                            ]
+                            "pages": ["guides/projects/overview", "guides/projects/status", "guides/projects/favorites"]
                         },
                         {
                             "group": "Media folders",
@@ -118,11 +110,7 @@
                             "group": "Tasks",
                             "icon": "/assets/icons/checkmark-square-02.svg",
                             "expanded": false,
-                            "pages": [
-                                "guides/tasks/overview",
-                                "guides/tasks/complete",
-                                "guides/tasks/filter"
-                            ]
+                            "pages": ["guides/tasks/overview", "guides/tasks/complete", "guides/tasks/filter"]
                         }
                     ]
                 },
@@ -180,10 +168,7 @@
         {
             "tab": "Troubleshooting",
             "icon": "/assets/icons/message-question.svg",
-            "pages": [
-                "troubleshooting/index",
-                "troubleshooting/email-not-received"
-            ]
+            "pages": ["troubleshooting/index", "troubleshooting/email-not-received"]
         }
     ]
 }

@@ -20,6 +20,7 @@ Sources reviewed: 2026-09-26, diamond-app 702f16c5, diamond-server 1d901c6
   - Delete a project
   - Inside a project
 - UI strings (spelling reference, verbatim): **Projects**, **New**, **Create project**, **Name**, **Enter project name**, **Open**, **Rename**, **Enter new project name**, **Rename project to**, **Choose photo**, **Upload cover photo**, **Change focal point**, **Done**, **Search project...**, **Delete**, **Delete project**, "Are you sure? This will delete this project and all its photos and galleries. This action cannot be undone.", tabs **Content**, **Gallery shares**, **Tasks**, **Notes**, **Activity**
+- Writer notes: An open project is an overlay. The header close control is an unlabeled X at the top left and returns to **Projects**. **Back to projects** is the load-error action, not the normal close.
 - Limits to mention: none. Name max 64 characters (`MAX_NAME`) is field validation. Search runs at 2+ characters.
 - Cross-links: /guides/projects/status, /guides/projects/favorites; tabs point to Media folders, Galleries, Gallery shares, Tasks, Notes sections when they exist
 - Sources:
@@ -64,6 +65,7 @@ Sources reviewed: 2026-09-26, diamond-app 702f16c5, diamond-server 1d901c6
   - Open a favorite project
   - Remove a project from favorites
 - UI strings (spelling reference, verbatim): **Add to favorites**, **Remove from favorites**, sidebar group **Favorite projects**, sidebar row tooltip **Remove from favorites**, filter **Is favorite**. The stars on the card preview and project header have no tooltip; the strings **Add favorite** / **Remove favorite** belong to an unused variant.
+- Writer notes: Hovering the project name on a **Projects** card opens a preview; the star in that preview adds or removes the favorite. The star beside the name inside the project does the same. The sidebar row only removes a favorite.
 - Limits to mention: 10 favorites: "You can favorite up to 10 projects"
 - Cross-links: /guides/projects/overview, /guides/projects/status
 - Sources:

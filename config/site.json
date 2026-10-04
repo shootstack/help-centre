@@ -6,10 +6,7 @@
         "eyebrows": "breadcrumbs"
     },
     "contextual": {
-        "options": [
-            "copy",
-            "view"
-        ]
+        "options": ["copy", "view"]
     },
     "navbar": {
         "primary": {

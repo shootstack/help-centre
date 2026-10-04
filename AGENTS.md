@@ -24,5 +24,5 @@ Run the `voice-review` skill on every page you write or rewrite.
 ## Content boundaries
 
 - Customer-facing help only. Do not add OpenAPI specs or endpoint reference pages.
-- Link to the Shootstack app and [support@shootstack.com](mailto:support@shootstack.com).
+- Link to the Shootstack app. To reach support, tell the reader to open **Help** and click **Chat with support**. Do not publish support@shootstack.com.
 - Do not invent product behavior. If a flow is unclear, ask.

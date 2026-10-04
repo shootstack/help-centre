@@ -2,9 +2,13 @@
 description: Home page and theme override conventions: index.mdx custom layout, root CSS overrides, and search.js entry hooks
 globs:
   - index.mdx
+  - home.css
   - style.css
   - academy.css
   - search.js
+  - snippets/home-content.jsx
+  - snippets/home-academy.jsx
+  - snippets/home-guide-grid.jsx
 ---
 
 # Home Page and Theme Conventions
@@ -16,23 +20,39 @@ Mintlify loads every root-level `.css` and `.js` file automatically, so
 ## Structure
 
 ```text
-index.mdx      # mode: custom; search entry, three tab cards, "Get started" list
-style.css      # app shell colors, topbar pills, sidebar tweaks (theme.css overrides)
-academy.css    # Academy card outline and sidebar duration tag
-search.js      # wires data-search-trigger to Mintlify's own search button
-sidebar.js     # empty Settings sidebar title; Mintlify drops a group with no pages
+index.mdx                      # mode: custom; composes the intro, preview, and guide grid
+snippets/home-content.jsx      # section links and guide cards
+snippets/home-academy.jsx      # Academy preview player
+snippets/home-guide-grid.jsx   # guide cards
+style.css                      # app shell colors, topbar pills, sidebar tweaks (theme.css overrides)
+home.css                       # home layout, scoped to .help-home
+academy.css                    # Academy card outline and sidebar duration tag
+search.js                      # wires data-search-trigger to Mintlify's own search button
+sidebar.js                     # empty Settings sidebar title; Mintlify drops a group with no pages
 ```
 
 ## Patterns
 
 - `index.mdx` uses Tailwind utilities with `dark:` variants for every color.
-  Icons come from the built-in `<Icon icon="..." />` (Lucide).
+  Icons are Hugeicons from `assets/icons/`, set with
+  `<Icon src="/assets/icons/<name>.svg" />`. No Lucide names.
 - The custom search button carries `data-search-trigger`; `search.js`
   forwards clicks to Mintlify's `#search-bar-entry` (and its `-mobile`
   variant).
-- The "Get started" list walks through one shoot: what Shootstack is,
-  create a project, upload photos, design a gallery, then share it.
-  Update the links when those articles move.
+- `index.mdx` only composes the page. A snippet cannot import another
+  snippet, and a capitalized tag inside a snippet is read as a Mintlify
+  component, so `HomeAcademyFeature` receives `renderVideo` and an `icon`
+  element from the page. Keep helpers inside the exported component;
+  Mintlify drops other declarations in a snippet file. These snippets are
+  home-only.
+- Guide cards come from `homeGuides` in `snippets/home-content.jsx`, one per
+  Guides sidebar group.
+  Each card links to an overview article and shows the same screen as that
+  article's first screenshot, from `assets/images/home/<card>.webp` (and
+  `-dark`), inside a 1px border with `noZoom`. The images come from the
+  `corner` template in `diamond-screenshots` (`recipes/help-centre/home.mjs`);
+  recapture them there instead of cropping in CSS.
+- Use `<div role="navigation">` for link rows; Mintlify drops `<nav>` from MDX.
 - CSS overrides target Mintlify's stable ids and classes
   (`#content-container`, `.nav-logo`, `#search-bar-entry`) and use
   `!important` only where the theme already sets the property. Keep a comment
@@ -48,3 +68,4 @@ sidebar.js     # empty Settings sidebar title; Mintlify drops a group with no pa
 - No DOM changes in `search.js` other than click forwarding. Do not replace
   Mintlify's search.
 - Do not add a third root JS file without a comment explaining what it hooks.
+  `eslint.config.js` is editor tooling and is listed in `.mintignore`.

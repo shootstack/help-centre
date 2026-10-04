@@ -1,15 +1,27 @@
 ---
 title: Academy
 sidebarTitle: Overview
-description: Short video lessons are coming soon.
+description: Watch a preview of how a shoot comes together in Shootstack, with full video lessons coming soon.
 mode: wide
 ---
 
 import { AcademyGrid } from "/snippets/academy-grid.jsx";
 
+Watch the preview to see how a shoot moves from a project to a shared gallery. Full video lessons are coming soon.
+
 {/* Written from snippets/academy-lessons.js. Run npm run sync-academy after editing the catalog. */}
 {/* academy-lessons:start */}
-export const academyLessons = [];
+export const academyLessons = [
+  {
+    slug: "from-shoot-to-gallery",
+    title: "From your shoot to a shared gallery",
+    description: "Preview how projects, photos, and galleries fit together before you send a gallery to a client.",
+    duration: "0:12",
+    thumbnail: "/assets/images/guides/galleries/design-open-1.webp",
+    thumbnailDark: "/assets/images/guides/galleries/design-open-1-dark.webp",
+    preview: true,
+  },
+];
 
 {/* academy-lessons:end */}
 

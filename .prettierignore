@@ -1,0 +1,7 @@
+node_modules
+assets
+.cursor
+.agents
+skills-lock.json
+**/*.md
+**/*.mdx

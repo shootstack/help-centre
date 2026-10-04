@@ -22,9 +22,10 @@ assets/
 ├── icons/
 │   └── <hugeicon-name>.svg    # album-01.svg is Album01Icon, the Projects sidebar icon
 └── images/
-    └── <tab>/<section>/<article>-<task>-<n>.webp
-        # assets/images/guides/projects/overview-create-1.webp
-        # assets/images/guides/projects/overview-create-1-dark.webp
+    ├── <tab>/<section>/<article>-<task>-<n>.webp
+    │   # assets/images/guides/projects/overview-create-1.webp
+    │   # assets/images/guides/projects/overview-create-1-dark.webp
+    └── home/<card>.webp   # home page guide cards, e.g. home/gallery-delivery.webp
 ```
 
 ## Patterns

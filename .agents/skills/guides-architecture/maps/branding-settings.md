@@ -293,7 +293,7 @@ Two descriptions changed during drafting from the approved map drafts. The brief
 - Color palettes: before "Create reusable colors for gallery buttons, covers, and cover text."; after "Create reusable colors for your galleries, then edit or remove palettes you no longer use."
 - Contact info: before "Keep your business email, phone number, and website up to date."; after "Keep the contact details for your photography business up to date."
 
-One non-screenshot TODO remains in Contact info: confirm the intended client-facing placement of the three business contact fields. The page documents saving and clearing the fields and makes no client-visibility claim. File-format hints and deletion-reference behavior remain product questions in this map; no unsupported restriction, replacement, or retroactive photo effect appears in the articles. The other six pages have no factual TODOs.
+Contact info no longer carries an article comment. The open question stays here: confirm the intended client-facing placement of Website, Email, and Phone before adding a visibility claim. The page documents saving and clearing the fields and makes no client-visibility claim. File-format hints and deletion-reference behavior remain product questions in this map; no unsupported restriction, replacement, or retroactive photo effect appears in the articles. The other six pages have no factual TODOs.
 
 The Branding sidebar icon is copied from the app's SwatchIcon, with the existing asset color and SVG conventions. Screenshot placeholders remain commented; no screenshots were captured. No commit or deployment was made.
 
