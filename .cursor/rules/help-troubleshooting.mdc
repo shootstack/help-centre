@@ -18,38 +18,63 @@ troubleshooting/
 └── <question-slug>.mdx       # kebab-case, from the question's key nouns
 ```
 
-- Pages are a flat `pages` list under the Troubleshooting tab in
-  `config/navigation/index.json`, `troubleshooting/index` first.
+- Pages sit in top-level `groups` under the Troubleshooting tab in
+  `config/navigation/index.json`. The first group is `Troubleshooting` and
+  holds `troubleshooting/index` only; its repeated tab heading stays hidden
+  through the existing sidebar styles. The remaining groups match the
+  overview's topic headings and keep every question visible.
 - `title` is the question in plain words, sentence case, question mark
   optional (`Why can't my client download photos`).
 - `description` is the one-sentence answer or the cause.
+
+## Overview
+
+- `index.mdx` lists every question article under short topic headings that
+  match what a photographer is doing, such as viewing or downloading photos.
+- Use one `<Card>` per question, with the article's title, a local icon, and
+  a short description of what the answer helps with. List each question once.
+- Keep the sidebar's topic names, question membership, and order aligned
+  with the overview. When adding a question article, add it to the matching
+  sidebar group and add its card to the matching topic on the overview too.
 
 ## Patterns
 
 ```mdx
 ---
 title: Why can't my client download photos
-description: Downloads are off for the gallery share, or the PIN was not entered.
+description: Downloads are off for the gallery share, or the download limit has been reached.
 ---
 
-<Accordion title="Downloads are turned off for this share">
-  Open the gallery share, then **Settings**. Turn on **Downloads**.
-</Accordion>
+Start by checking the gallery share's download settings.
 
-<Accordion title="The client did not enter the download PIN">
-  ...
-</Accordion>
+## Downloads are turned off for the gallery share
 
-## Related
+Turn on the download option your client needs in the gallery share.
 
-- [Gallery shares overview](/guides/gallery-shares/overview)
+<Card title="Allow downloads" icon="/assets/icons/sent.svg" href="/guides/gallery-shares/downloads">
+  Choose what your clients can download from a gallery share.
+</Card>
+
+## The download limit has been reached
+
+Raise the relevant limit in the gallery share's download settings.
+
 ```
 
-- Lead with the most common cause. One `<Accordion>` per cause; the title is
-  the cause, the body is the fix in one to three sentences.
-- A single-cause article skips `<Accordion>` and answers in prose.
-- Point to the Guides article for the full steps instead of repeating
-  them.
+- Start with a short introduction explaining what to check. Lead with the
+  most common cause, then use one visible `##` heading per cause and a fix in
+  one to three sentences. Keep the main checks visible without `<Accordion>`.
+- A single-cause article answers directly in prose, with headings only when
+  they help explain the answer.
+- Point to the Guides article for the full steps with a `<Card>` instead of
+  repeating them. Give the card the article's title, a local icon, and a short
+  sentence explaining what the reader can do there.
+- Put a card in the relevant section, after the answer. For a single-cause
+  article, put cards after the answer prose. Avoid repeating the same guide
+  card across nearby sections. Use the same title and icon whenever linking
+  to the same article.
+- Do not use inline article links or a `## Related` bullet list. Do not
+  repeat cards in a footer when they already appear beside the relevant cause.
 - End with how to reach support when the fix does not apply:
   Open **Help**, then click **Chat with support**. Do not publish an email address.
 

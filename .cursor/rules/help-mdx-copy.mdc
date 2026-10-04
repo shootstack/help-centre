@@ -64,8 +64,8 @@ Quote UI text only when the reader must recognize it on screen to continue.
 | Limit or constraint with a number | `<Note>` |
 | Destructive action, placed directly before the step | `<Warning>` |
 | Shortcut or faster path that exists in code | `<Tip>` |
-| Links to sibling pages | `<Card>` or a `## Related` list |
-| One question, one answer | `<Accordion>` (Troubleshooting only) |
+| Links to sibling pages | `<Card>` in Troubleshooting; `<Card>` or a `## Related` list elsewhere |
+| Troubleshooting causes and fixes | Visible `##` headings with short answer paragraphs |
 | Screenshot | `<Frame>` with a light `<img className="block dark:hidden">` and a dark `<img className="hidden dark:block">` |
 
 Do not use `<Info>`, `<Check>`, `<Tabs>`, `<CodeGroup>`, `<Expandable>`, or

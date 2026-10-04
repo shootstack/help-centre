@@ -28,7 +28,7 @@ style.css                      # app shell colors, topbar pills, sidebar tweaks 
 home.css                       # home layout, scoped to .help-home
 academy.css                    # Academy card outline and sidebar duration tag
 search.js                      # wires data-search-trigger to Mintlify's own search button
-sidebar.js                     # empty Settings sidebar title; Mintlify drops a group with no pages
+sidebar.js                     # Settings title when that group has no pages; external-link footer
 ```
 
 ## Patterns
@@ -39,6 +39,10 @@ sidebar.js                     # empty Settings sidebar title; Mintlify drops a 
 - The custom search button carries `data-search-trigger`; `search.js`
   forwards clicks to Mintlify's `#search-bar-entry` (and its `-mobile`
   variant).
+- `sidebar.js` inserts the empty Settings title, and a footer of external
+  links in `.almond-nav-bottom-section` above the theme switch. Add a link
+  in the `EXTERNAL_LINKS` list there. The footer link style lives in
+  `style.css`.
 - `index.mdx` only composes the page. A snippet cannot import another
   snippet, and a capitalized tag inside a snippet is read as a Mintlify
   component, so `HomeAcademyFeature` receives `renderVideo` and an `icon`

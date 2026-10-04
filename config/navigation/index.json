@@ -168,7 +168,28 @@
         {
             "tab": "Troubleshooting",
             "icon": "/assets/icons/message-question.svg",
-            "pages": ["troubleshooting/index", "troubleshooting/email-not-received"]
+            "groups": [
+                {
+                    "group": "Troubleshooting",
+                    "pages": ["troubleshooting/index"]
+                },
+                {
+                    "group": "Uploading photos",
+                    "pages": ["troubleshooting/uploads-failing"]
+                },
+                {
+                    "group": "Viewing photos",
+                    "pages": ["troubleshooting/gallery-no-photos", "troubleshooting/gallery-image-quality"]
+                },
+                {
+                    "group": "Downloading photos",
+                    "pages": ["troubleshooting/client-photo-downloads"]
+                },
+                {
+                    "group": "Email delivery",
+                    "pages": ["troubleshooting/email-not-received"]
+                }
+            ]
         }
     ]
 }

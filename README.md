@@ -21,7 +21,7 @@ help-centre/
 ├── config/                   # site configuration ($ref from docs.json)
 │   ├── branding.json
 │   ├── site.json             # navbar, footer, seo, redirects
-│   └── navigation/           # Academy, Guides (collapsible groups), Troubleshooting
+│   └── navigation/           # Academy, Guides (collapsible feature groups), Troubleshooting (topics)
 ├── assets/
 │   ├── favicon.svg
 │   ├── logo/
@@ -33,7 +33,7 @@ help-centre/
 ├── style.css, academy.css    # theme overrides and Academy media
 ├── home.css                  # home page layout
 ├── search.js                 # wires the home search button
-├── sidebar.js                # empty Settings title; Mintlify drops a group with no pages
+├── sidebar.js                # Settings title when that group has no pages; external-link footer
 ├── academy/                  # video lessons, generated from snippets/academy-lessons.js
 ├── guides/                   # step-by-step guides, one folder per core feature
 │   ├── introduction/
@@ -63,7 +63,7 @@ Skills live in `.agents/skills/` so any agent that follows the [Agent Skills](ht
 - Guides: plan a feature section with the `guides-architecture` skill (writes `.agents/skills/guides-architecture/maps/<section>.md`), then write each article with the `guides-article` skill. Both verify labels and limits against the diamond-app code before writing.
 - Academy: edit `snippets/academy-lessons.js`, run `npm run sync-academy`, then write the lesson body.
   The catalog can also set `thumbnail`, `thumbnailDark`, and `preview` for lesson cards. The first lesson is a mock preview: a silent 12-second montage of existing demo screenshots in `assets/videos/academy/`, with an English caption track. Replace it with the recorded walkthrough when the Academy is ready.
-- Troubleshooting: one question per page, added to that tab's `pages` list.
+- Troubleshooting: one question per page. Keep Overview first, then group questions in the sidebar by the same topics and order as `troubleshooting/index.mdx`.
 - In-app Help drawer: run `npm run sync-app-help` after adding a page or changing a title, description, or path. It writes every article to `../diamond-app/src/integrations/help-centre/helpCentreArticles.json`, which you commit in diamond-app. Which articles each app page shows is chosen in diamond-app's `helpCentreRoutes.js`.
 - Tone of voice: helpful, professional, calm, supportive, natural. `.agents/skills/voice-review/tone.md` is the single definition, with examples and the standard phrasings; `.cursor/rules/help-mdx-copy.mdc` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). After writing any page, run the `voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
 
