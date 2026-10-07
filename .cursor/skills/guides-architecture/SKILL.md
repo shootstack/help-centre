@@ -1,6 +1,6 @@
 ---
 name: guides-architecture
-description: Decides which Guides help-centre articles a Shootstack core feature needs (Projects, Media folders, Galleries, Gallery shares, Contacts, Tasks, Notes, Workspace, Branding). Reads the diamond-app and diamond-server code for that feature with parallel explore subagents, applies fixed decision rules, and writes an approved article map to maps/<section>.md in this skill that the guides-article skill consumes. Use when planning a new Guides section, auditing an existing one against the current UI, or when asked "which help articles do we need for X".
+description: Decides which photographer Guides articles a feature needs, researched from diamond-app and diamond-server, and writes a per-feature article map. Use when planning a Guides section, auditing it against the current UI, or deciding which articles a feature needs.
 disable-model-invocation: true
 ---
 

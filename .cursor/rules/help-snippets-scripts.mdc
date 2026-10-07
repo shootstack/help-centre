@@ -22,10 +22,10 @@ package.json            # scripts: sync-academy, sync-app-help, lint, lint-guide
 
 ## App help catalog
 
-`npm run sync-app-help` writes every page in `config/navigation/index.json` to
+`npm run sync-app-help` writes every photographer page in `config/navigation/index.json` to
 `../diamond-app/src/integrations/help-centre/helpCentreArticles.json`; commit
-that file in diamond-app. Help-centre does not decide which articles each app
-page shows: diamond-app picks them by key in `helpCentreRoutes.js`.
+that file in diamond-app. Help-centre does not decide which articles each app page shows:
+diamond-app picks them by key in `helpCentreRoutes.js`.
 
 ```json
 "guides/projects/overview": {

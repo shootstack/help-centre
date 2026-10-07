@@ -8,7 +8,7 @@ globs:
 
 `troubleshooting/` holds question-and-answer articles. Each article answers one
 question a photographer types into search. Copy mechanics are in
-`help-mdx-copy.mdc`; tone of voice in `.agents/skills/voice-review/tone.md`.
+`help-mdx-copy.mdc`; tone of voice in `../diamond-translate/projects/help-centre/tone.md`.
 
 ## Structure
 

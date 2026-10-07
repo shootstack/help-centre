@@ -2,9 +2,8 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// Mechanical checks for guides/**/*.mdx so the voice and shape rules in
-// .cursor/rules/help-mdx-copy.mdc and help-guides.mdc do not drift.
-// Exit 1 on any error. Budgets are warnings.
+// Mechanical checks for guides/**/*.mdx so the voice
+// and shape rules do not drift. Exit 1 on any error. Budgets are warnings.
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const guidesDir = path.join(root, 'guides');
@@ -17,13 +16,13 @@ const bannedPhrases = [
     [/it'?s important to note/i, 'filler ("it\'s important to note")'],
     [/\b(simply|easily|seamless(ly)?|powerful|robust)\b/i, 'marketing or editorializing word'],
     [/\bjust\b/i, 'editorializing ("just")'],
-    [/\b(album|collection|client area)s?\b/i, 'non-Diamond term: use Gallery, Media folder, Gallery share'],
-    [/\bthe user\b/i, '"the user": talk to the photographer as "you"'],
     [/\b(entity|entities|schema|atom|endpoint)\b/i, 'technical noun'],
     [/\bAPI\b/, 'technical noun (API)'],
     [/\bthere is no \*\*/i, 'describes what a dialog lacks: leave it out'],
     [/→|->/, 'arrow chain: write the path as a sentence or as steps'],
     [/\u2014/, 'em dash (U+2014): use a period, comma, or colon'],
+    [/\b(album|collection|client area)s?\b/i, 'non-Diamond term: use Gallery, Media folder, Gallery share'],
+    [/\bthe user\b/i, '"the user": talk to the photographer as "you"'],
 ];
 
 const softPhrases = [
@@ -50,9 +49,7 @@ const budgets = { overview: 550, task: 400 };
 const problems = [];
 const warnings = [];
 
-for (const file of listMdx(guidesDir)) {
-    lintFile(file);
-}
+for (const file of listMdx(guidesDir)) lintFile(file);
 
 for (const w of warnings) console.warn(`warning ${w}`);
 for (const p of problems) console.error(`error   ${p}`);
@@ -171,7 +168,8 @@ function lintFile(file) {
         if (afterRelated) {
             if (/^- \[/.test(trimmed)) {
                 relatedLinks++;
-                if (!/\]\(\/guides\//.test(trimmed)) report(n, 'Related link must be root-relative (/guides/...)');
+                if (!trimmed.includes('](/guides/'))
+                    report(n, 'Related link must be root-relative (/guides/...)');
             }
             continue;
         }

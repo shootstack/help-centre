@@ -13,7 +13,7 @@ globs:
 `academy/` holds video lessons. The catalog in `snippets/academy-lessons.js`
 owns lesson order, titles, descriptions, and durations; `npm run sync-academy`
 writes everything derived from it. Copy mechanics are in `help-mdx-copy.mdc`;
-tone of voice in `.agents/skills/voice-review/tone.md`.
+tone of voice in `../diamond-translate/projects/help-centre/tone.md`.
 
 ## Structure
 
@@ -36,7 +36,8 @@ Add or change a lesson:
 2. Run `npm run sync-academy`. It stubs a missing `academy/<slug>.mdx`,
    rewrites `title`, `description`, and `tag` in every lesson's frontmatter,
    regenerates the `academy-lessons:start` / `end` block in `academy/index.mdx`,
-   and rewrites the Academy `pages` list.
+   and rewrites the Academy `pages` list. The script finds that tab on the
+   root `tabs` array.
 3. Write the lesson body below the frontmatter: the video embed, then
    `## What you will learn` as three short bullets.
 

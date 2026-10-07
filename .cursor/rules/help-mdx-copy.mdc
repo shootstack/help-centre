@@ -1,17 +1,17 @@
 ---
-description: Copy mechanics for every MDX page in help-centre: frontmatter, terminology, bold labels, what stays out, components, links. Tone of voice is defined in .agents/skills/voice-review/tone.md
+description: Copy mechanics for every MDX page in help-centre: frontmatter, terminology, bold labels, what stays out, components, links. Tone of voice is defined in ../diamond-translate/projects/help-centre/tone.md
 globs:
   - "**/*.mdx"
 ---
 
 # MDX Copy Conventions
 
-Every page is read by a photographer, usually mid-task. Write for scanning, not
-for reading front to back. This file is the mechanics every page follows. How
-a page sounds is defined once, in `.agents/skills/voice-review/tone.md`; run
-the `voice-review` skill on every page you write or rewrite. Tab-specific
-shapes live in `help-guides.mdc`, `help-academy.mdc`, and
-`help-troubleshooting.mdc`.
+Photographer pages are read by a photographer, usually mid-task. Write for
+scanning, not for reading front to back. This file is the mechanics those
+pages follow. How a page sounds is defined in
+`../diamond-translate/projects/help-centre/tone.md`; run the `voice-review` skill on every
+page you write or rewrite. Tab-specific shapes live in `help-guides.mdc`,
+`help-academy.mdc`, and `help-troubleshooting.mdc`.
 
 ## Frontmatter
 
@@ -82,7 +82,8 @@ API components. No code blocks in customer articles.
 
 ## Boundaries
 
-- No invented behavior. Every action, label, and limit traces to
-  `diamond-app` or `diamond-server` code, or to a locale string.
+- No invented behavior. Every action, label, and limit on a photographer
+  page traces to `diamond-app` or `diamond-server` code, or to a locale
+  string.
 - No `{/* TODO */}` left without a note of what is unverified.
 - No OpenAPI, endpoint, or developer content anywhere in this repo.

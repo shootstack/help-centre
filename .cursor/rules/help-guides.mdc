@@ -2,7 +2,7 @@
 description: Guides tab conventions: one collapsible sidebar group per core feature, Overview first, step-by-step task articles
 globs:
   - guides/**/*.mdx
-  - .agents/skills/guides-architecture/maps/**/*.md
+  - .agents/skills/guides-architecture/maps/*.md
 ---
 
 # Guides Layer Conventions
@@ -11,7 +11,7 @@ globs:
 feature, one folder per group, one article per job. Plan a section with the
 `guides-architecture` skill; write an article with the
 `guides-article` skill. Copy mechanics are in `help-mdx-copy.mdc`; tone of
-voice in `.agents/skills/voice-review/tone.md`.
+voice in `../diamond-translate/projects/help-centre/tone.md`.
 
 ## Structure
 
@@ -116,6 +116,8 @@ than Settings fails `mint validate`. Moving a page adds a redirect in
 
 - No article for a capability that is not in the diamond-app UI. Check the
   group's "Do not document" list before adding one.
+- A photographer article may name what the client sees in one sentence.
+  It does not walk the client's screen.
 - No duplication of another group's feature: name it and link it.
 - No Q&A `<Accordion>` or video embeds here; those belong to Troubleshooting
   and Academy.

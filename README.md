@@ -35,7 +35,7 @@ help-centre/
 ├── search.js                 # wires the home search button
 ├── sidebar.js                # Settings title when that group has no pages; external-link footer
 ├── academy/                  # video lessons, generated from snippets/academy-lessons.js
-├── guides/                   # step-by-step guides, one folder per core feature
+├── guides/                   # photographer guides, one folder per core feature
 │   ├── introduction/
 │   ├── projects/
 │   ├── media-folders/
@@ -43,13 +43,14 @@ help-centre/
 │   └── gallery-shares/
 ├── troubleshooting/          # question-and-answer articles
 ├── snippets/                 # academy catalog and grid; home content, preview, and guide grid
-├── scripts/                  # sync-academy.mjs, sync-app-help.mjs, lint-guides.mjs
+├── scripts/                  # sync-academy.mjs, sync-app-help.mjs, lint-guides.mjs, i18n-audit.mjs
 ├── .agents/
 │   └── skills/               # canonical skills (Agent Skills layout, read by Cursor and other agents)
 │       ├── guides-architecture/
 │       │   └── maps/         # per-feature article briefs, e.g. projects.md
 │       ├── guides-article/
-│       ├── voice-review/     # tone guide (tone.md) + fresh-reader review for any MDX page
+│       ├── help-i18n/        # page keys, Mintlify language contract, i18n:audit report
+│       ├── voice-review/     # reads tone.md from diamond-translate/projects/help-centre/
 │       └── mintlify*/        # vendored Mintlify skills
 └── .cursor/
     ├── rules/                # help-*.mdc layer conventions (auto-attach by glob)
@@ -64,8 +65,8 @@ Skills live in `.agents/skills/` so any agent that follows the [Agent Skills](ht
 - Academy: edit `snippets/academy-lessons.js`, run `npm run sync-academy`, then write the lesson body.
   The catalog can also set `thumbnail`, `thumbnailDark`, and `preview` for lesson cards. The first lesson is a mock preview: a silent 12-second montage of existing demo screenshots in `assets/videos/academy/`, with an English caption track. Replace it with the recorded walkthrough when the Academy is ready.
 - Troubleshooting: one question per page. Keep Overview first, then group questions in the sidebar by the same topics and order as `troubleshooting/index.mdx`.
-- In-app Help drawer: run `npm run sync-app-help` after adding a page or changing a title, description, or path. It writes every article to `../diamond-app/src/integrations/help-centre/helpCentreArticles.json`, which you commit in diamond-app. Which articles each app page shows is chosen in diamond-app's `helpCentreRoutes.js`.
-- Tone of voice: helpful, professional, calm, supportive, natural. `.agents/skills/voice-review/tone.md` is the single definition, with examples and the standard phrasings; `.cursor/rules/help-mdx-copy.mdc` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). After writing any page, run the `voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
+- In-app Help drawer: run `npm run sync-app-help` after adding a photographer page or changing a title, description, or path. It writes every navigation page to `../diamond-app/src/integrations/help-centre/helpCentreArticles.json`, which you commit in diamond-app. Which articles each app page shows is chosen in diamond-app's `helpCentreRoutes.js`.
+- Tone of voice: helpful, professional, calm, supportive, natural. `../diamond-translate/projects/help-centre/tone.md` is the single definition, with examples and the standard phrasings; `.cursor/rules/help-mdx-copy.mdc` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). Translation goes through diamond-translate (`help-translations.mdc`). After writing any page, run the `voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
 
 See `AGENTS.md` for terminology and `.cursor/rules/` for per-layer conventions.
 
@@ -84,7 +85,6 @@ Open `http://localhost:3333`.
 | Project | Port |
 | --- | --- |
 | diamond-app | 3000 |
-| diamond-site | 3001 |
 | help-centre (this repo) | 3333 |
 
 ## Validate

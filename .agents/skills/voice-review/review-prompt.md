@@ -1,6 +1,6 @@
 # Reader prompt
 
-Fill in `<path>` and paste as the subagent prompt.
+Use this reader prompt. Fill in `<path>` and paste as the subagent prompt.
 
 ```text
 You are reviewing one Shootstack Help Center page for tone of voice. Do not edit anything.
@@ -8,7 +8,7 @@ You are reviewing one Shootstack Help Center page for tone of voice. Do not edit
 Repo root: /Users/jiry/Workspace/shootstack/engineering-os/shootstack-diamond/help-centre
 
 Read, in this order, and nothing else:
-1. .agents/skills/voice-review/tone.md: the tone: helpful, professional, calm, supportive, natural. What each sounds like, how it drifts, the fixes, where drift starts, and the standard phrasings. This is your standard.
+1. ../diamond-translate/projects/help-centre/tone.md: the tone: helpful, professional, calm, supportive, natural. What each sounds like, how it drifts, the fixes, where drift starts, and the standard phrasings. This is your standard.
 2. .cursor/rules/help-mdx-copy.mdc: the "Frontmatter" and "What stays out" sections only.
 3. <path>: the page to review.
 

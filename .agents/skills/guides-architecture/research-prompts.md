@@ -1,6 +1,6 @@
 # Research prompts
 
-Three `explore` subagent prompts. Launch all three in one message. Replace every `<...>` placeholder. Set thoroughness to `medium`; use `very thorough` for large domains (Gallery, Gallery share).
+Launch prompts A, B, and C below in one message. Replace every `<...>` placeholder. Set thoroughness to `medium`; use `very thorough` for large domains (Gallery or Gallery share).
 
 Shared preamble for each prompt:
 
@@ -77,6 +77,4 @@ Report:
 3. Tabs or sections inside one <object> and a one-line purpose for each.
 4. Related domains that appear here but are owned elsewhere (tasks, notes,
    galleries) so the map cross-links instead of documenting them.
-5. Any viewer-side surface in ../diamond-site for this feature (yes/no; if yes,
-   which route).
 ```

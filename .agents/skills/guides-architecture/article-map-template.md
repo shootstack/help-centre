@@ -1,6 +1,6 @@
 # Article map template
 
-Write to `maps/<section>.md` in this skill. Keep every article block complete; the `guides-article` skill reads it as its brief.
+Write one map in this skill. The `guides-article` skill reads it as its brief. Write it to `maps/<section>.md`.
 
 The "UI strings" block is a spelling reference so the writer copies labels verbatim. It is not a list of things the article must mention; toasts, statuses, and error strings belong there for accuracy but stay out of the article.
 

@@ -1,0 +1,24 @@
+---
+description: English help copy is written in help-centre. Translated pages are not. Translation belongs to diamond-translate.
+globs: "**/*.mdx"
+alwaysApply: true
+---
+
+# Translations
+
+Write English here. Follow the help-centre
+[rules, tone, and terminology](../../../diamond-translate/projects/help-centre/)
+in diamond-translate, layered over its shared ones. Pages follow `tone.md`.
+
+Page keys, navigation, the Mintlify language contract, and `npm run i18n:audit`
+are the [`help-i18n` skill](../../.agents/skills/help-i18n/SKILL.md).
+
+Do not write Dutch, German, French, or any later language pages, navigation, or
+snippets in this repo. help-centre has no languages configured yet. Bold UI
+labels in a translation come from diamond-app for that language,
+not from a paraphrase written here.
+
+Previews, translated pages, and coverage are
+[diamond-translate](../../../diamond-translate/AGENTS.md). When a change adds,
+changes, moves, or removes English pages, end with a
+[`Handoff: copy`](../../../diamond-translate/AGENTS.md#handoff-copy) block.

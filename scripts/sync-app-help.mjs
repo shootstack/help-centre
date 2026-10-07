@@ -45,6 +45,8 @@ function collectNavigationPages(navigation) {
         }
     };
 
+    walk(navigation.pages);
+    for (const group of navigation.groups || []) walk(group.pages);
     for (const tab of navigation.tabs || []) {
         walk(tab.pages);
         for (const group of tab.groups || []) walk(group.pages);

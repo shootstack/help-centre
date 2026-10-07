@@ -17,13 +17,13 @@ globs:
 docs.json                      # name, description, favicon, $ref navigation + site
 config/site.json               # styling, contextual, navbar, footer, seo, redirects, interaction, $ref branding
 config/branding.json           # theme, colors, logo, fonts, icons, background, appearance
-config/navigation/index.json   # tabs: Academy, Guides, Troubleshooting
+config/navigation/index.json   # three root tabs
 .mintignore                    # drafts, tooling, and local indexes (not published)
 ```
 
 ## Patterns
 
-Navigation has three tabs and two shapes:
+Navigation has three root tabs and two shapes:
 
 ```json
 { "tab": "Academy", "icon": "graduation-cap", "pages": ["academy/index", "academy/introduction"] }
