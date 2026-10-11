@@ -62,7 +62,7 @@ export default [
         },
     },
     {
-        files: ['search.js', 'sidebar.js'],
+        files: ['search.js', 'sidebar.js', 'locale.js'],
         languageOptions: {
             sourceType: 'script',
             globals: globals.browser,

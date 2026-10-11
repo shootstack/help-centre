@@ -21,7 +21,7 @@ help-centre/
 ├── config/                   # site configuration ($ref from docs.json)
 │   ├── branding.json
 │   ├── site.json             # navbar, footer, seo, redirects
-│   └── navigation/           # Academy, Guides (collapsible feature groups), Troubleshooting (topics)
+│   └── navigation/           # en (default), nl, de, fr; tabs and groups per language
 ├── assets/
 │   ├── favicon.svg
 │   ├── logo/
@@ -34,6 +34,7 @@ help-centre/
 ├── home.css                  # home page layout
 ├── search.js                 # wires the home search button
 ├── sidebar.js                # Settings title when that group has no pages; external-link footer
+├── locale.js                 # home-page language dropdown beside the navbar logo
 ├── academy/                  # video lessons, generated from snippets/academy-lessons.js
 ├── guides/                   # photographer guides, one folder per core feature
 │   ├── introduction/
@@ -42,7 +43,10 @@ help-centre/
 │   ├── galleries/
 │   └── gallery-shares/
 ├── troubleshooting/          # question-and-answer articles
-├── snippets/                 # academy catalog and grid; home content, preview, and guide grid
+├── nl/                       # Dutch home, guides, and troubleshooting pages
+├── de/                       # German home, guides, and troubleshooting pages
+├── fr/                       # French home, guides, and troubleshooting pages
+├── snippets/                 # academy catalog and grid; shared home components and home-content[-<lng>].jsx data
 ├── scripts/                  # sync-academy.mjs, sync-app-help.mjs, lint-guides.mjs, i18n-audit.mjs
 ├── .agents/
 │   └── skills/               # canonical skills (Agent Skills layout, read by Cursor and other agents)
@@ -65,10 +69,29 @@ Skills live in `.agents/skills/` so any agent that follows the [Agent Skills](ht
 - Academy: edit `snippets/academy-lessons.js`, run `npm run sync-academy`, then write the lesson body.
   The catalog can also set `thumbnail`, `thumbnailDark`, and `preview` for lesson cards. The first lesson is a mock preview: a silent 12-second montage of existing demo screenshots in `assets/videos/academy/`, with an English caption track. Replace it with the recorded walkthrough when the Academy is ready.
 - Troubleshooting: one question per page. Keep Overview first, then group questions in the sidebar by the same topics and order as `troubleshooting/index.mdx`.
-- In-app Help drawer: run `npm run sync-app-help` after adding a photographer page or changing a title, description, or path. It writes every navigation page to `../diamond-app/src/integrations/help-centre/helpCentreArticles.json`, which you commit in diamond-app. Which articles each app page shows is chosen in diamond-app's `helpCentreRoutes.js`.
+- In-app Help drawer: run `npm run sync-app-help` after adding a photographer page or changing an English or translated title, description, or path. It writes English entries with a `translations` map of localized titles, descriptions, and URLs to `../diamond-app/src/integrations/help-centre/helpCentreArticles.json`, which you commit in diamond-app. Only translated pages in the language navigation are included. Which articles each app page shows is chosen in diamond-app's `helpCentreRoutes.js`; the drawer uses the app language and falls back to English when an article has no translation.
 - Tone of voice: helpful, professional, calm, supportive, natural. `../diamond-translate/projects/help-centre/tone.md` is the single definition, with examples and the standard phrasings; `.cursor/rules/help-mdx-copy.mdc` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). Translation goes through diamond-translate (`help-translations.mdc`). After writing any page, run the `voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
 
 See `AGENTS.md` for terminology and `.cursor/rules/` for per-layer conventions.
+
+## Languages
+
+`config/navigation/index.json` defines Mintlify's language switcher for English
+(`en`, the default), Dutch (`nl`), German (`de`), and French (`fr`). English keeps
+the full Academy, Guides, and Troubleshooting navigation and its existing URLs.
+Dutch, German, and French mirror every Guides and Troubleshooting article.
+Each language starts with a visible home tab so `/`, `/nl`, `/de`, and `/fr`
+resolve to their home pages. Leave the logo URL unset so Mintlify returns to the
+current language's home page. Custom home pages show a language dropdown beside
+the navbar logo because they have no sidebar language picker. Add translated
+pages to the matching language entry; translation work belongs to diamond-translate.
+
+Academy syncing uses English navigation. Academy lessons remain English while
+they are work in progress; localized home pages translate the preview text and
+controls but link to the English lesson. Home cards use per-language data with
+localized guide links, and shared components receive translated preview copy.
+The in-app Help catalog syncs all configured languages. `npm run i18n:audit`
+checks full page-tree parity, so the missing Academy mirrors remain expected findings.
 
 ## Development
 

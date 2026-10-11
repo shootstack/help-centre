@@ -164,16 +164,19 @@ function lessonsExport(lessons) {
 
 function withAcademyPages(jsonText, lessonPages) {
     const data = JSON.parse(jsonText);
-    const academy = (data.tabs || []).find((tab) => tab.tab === 'Academy');
+    const englishNavigation = data.languages ? data.languages.find((entry) => entry.language === 'en') : data;
+    const academy = (englishNavigation?.tabs || []).find((tab) => tab.tab === 'Academy');
     if (!academy) throw new Error('Academy tab not found in config/navigation/index.json');
 
     const desired = ['academy/index', ...lessonPages];
     if (JSON.stringify(academy.pages) === JSON.stringify(desired)) return jsonText;
 
-    const block = `[\n${desired.map((page) => `                "${page}"`).join(',\n')}\n            ]`;
-    const pattern = /("tab": "Academy"[\s\S]*?"pages": )\[[\s\S]*?\]/;
+    const pattern = /^([ \t]*)"tab": "Academy"[\s\S]*?"pages": (\[[\s\S]*?\])/m;
     if (!pattern.test(jsonText)) {
         throw new Error('Could not find Academy pages in config/navigation/index.json');
     }
-    return jsonText.replace(pattern, `$1${block}`);
+    return jsonText.replace(pattern, (match, indent, pages) => {
+        const block = `[\n${desired.map((page) => `${indent}    "${page}"`).join(',\n')}\n${indent}]`;
+        return `${match.slice(0, -pages.length)}${block}`;
+    });
 }

@@ -1,4 +1,4 @@
-export const AcademyVideo = ({ src, poster, href, label, teaser = false, captions, videoRef, onPlay, onPause }) => {
+export const AcademyVideo = ({ src, poster, href, label, teaser = false, captions, videoRef, onPlay, onPause, fallbackText }) => {
     const video = (
         <video
             ref={videoRef}
@@ -15,7 +15,7 @@ export const AcademyVideo = ({ src, poster, href, label, teaser = false, caption
             onPlay={onPlay}
             onPause={onPause}>
             {captions && <track kind='captions' src={captions} srcLang='en' label='English' default />}
-            Your browser doesn't support video. Open the related guides below to follow the steps.
+            {fallbackText || "Your browser doesn't support video. Open the related guides below to follow the steps."}
         </video>
     );
 

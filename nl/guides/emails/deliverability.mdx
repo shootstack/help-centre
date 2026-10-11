@@ -1,0 +1,97 @@
+---
+title: Problemen met mailbezorging oplossen
+sidebarTitle: Bezorging
+description: Ontdek waarom een galerijmail je klant niet heeft bereikt en voorkom dat je mails in spam belanden.
+---
+
+Shootstack controleert elk adres voordat je een mail verstuurt, maar ook bij een geldig adres kan een mail worden teruggestuurd of in spam belanden. Deze pagina legt uit wat Shootstack voor je doet, wat elke status betekent en wat je zelf kunt doen.
+
+## Hoe Shootstack je mails verstuurt
+
+Je galerijmails hebben de naam van je workspace als afzender, zodat je klant de afzender meteen herkent. Antwoorden gaan naar je zakelijke mailadres, of naar het mailadres van je account als je geen zakelijk mailadres hebt toegevoegd. Zie [Contactgegevens bijwerken](/nl/guides/branding-settings/contact-info) en [De naam en het icoon van je workspace wijzigen](/nl/guides/workspace-settings/general).
+
+Je hoeft niets technisch in te stellen. Shootstack regelt de instellingen voor het versturen en controleert elk adres wanneer je een mail verstuurt.
+
+## Een adres controleren voordat je een mail verstuurt
+
+Als je tijdens het opstellen een adres in **Aan** typt, controleert Shootstack het en krijg je onder het veld een waarschuwing als er iets niet lijkt te kloppen. Een waarschuwing kan betekenen dat het adres geen mails kan ontvangen, dat de mailbox vol is of dat het op een tijdelijk, no-reply- of gedeeld adres lijkt.
+
+Als het adres een typefout lijkt te bevatten, verschijnt ernaast een suggestie.
+
+Beweeg je muis over het icoon bij het veld **Mailadres** van een contact om hetzelfde controleresultaat voor een opgeslagen contact te zien.
+
+<Frame>
+  <img className="dark:hidden block" src="/assets/images/guides/emails/deliverability-check-1.webp" alt="Venster voor het opstellen van een galerijmail met een waarschuwing onder het veld Aan" />
+  <img className="hidden dark:block" src="/assets/images/guides/emails/deliverability-check-1-dark.webp" alt="Venster voor het opstellen van een galerijmail met een waarschuwing onder het veld Aan" />
+</Frame>
+
+<div className="mt-8">
+  <Frame>
+    <img className="dark:hidden block" src="/assets/images/guides/emails/deliverability-check-2.webp" alt="Veld Mailadres van een contact met de tooltip van het verificatie-icoon" />
+    <img className="hidden dark:block" src="/assets/images/guides/emails/deliverability-check-2-dark.webp" alt="Veld Mailadres van een contact met de tooltip van het verificatie-icoon" />
+  </Frame>
+</div>
+
+Als het adres geen mails kan ontvangen of de eigenaar eerder een galerijmail als spam heeft gemeld, verstuurt Shootstack de mail niet. In de geschiedenis verschijnt de mail dan als Geblokkeerd.
+
+## Wat elke status betekent
+
+Je vindt de status in de kolom **Status** of onder **Mailactiviteit**. Zie [Mailactiviteit bekijken](/nl/guides/emails/activity).
+
+- In afwachting betekent dat Shootstack de mail heeft aangemaakt en nog niet heeft verstuurd.
+- Verstuurd betekent dat de mail Shootstack heeft verlaten. De bezorging is daarmee nog niet bevestigd.
+- Vertraagd betekent dat de bezorging op een tijdelijk probleem is gestuit, zoals een volle inbox. Er worden nog pogingen gedaan om de mail te bezorgen, dus kijk later nog eens.
+- Afgeleverd betekent dat de mail de inbox heeft bereikt.
+- Geopend betekent dat je klant de mail heeft geopend.
+- Aangeklikt betekent dat je klant op de galerijlink in de mail heeft geklikt.
+- Teruggestuurd betekent dat de mailprovider van je klant de mail heeft teruggestuurd.
+- Als spam gemeld betekent dat de ontvanger de mail als spam heeft gemeld.
+- Niet afleverbaar betekent dat het versturen is mislukt voordat de mail werd bezorgd.
+- Geblokkeerd betekent dat Shootstack de mail niet heeft verstuurd.
+
+<Note>
+Geopend en Aangeklikt worden door de privacyinstellingen voor de mail van je klant niet altijd bijgehouden. Als deze statussen ontbreken, betekent dat dus niet dat je klant de mail heeft genegeerd.
+</Note>
+
+## Als een mail wordt teruggestuurd of geblokkeerd
+
+Na een spammelding verstuurt Shootstack geen mails meer naar het adres. Dat gebeurt ook als een mail wordt teruggestuurd omdat de mailprovider van je klant het adres blijvend afwijst, bijvoorbeeld omdat het niet bestaat. Latere mails naar het adres krijgen de status Geblokkeerd en worden niet verstuurd.
+
+Als de bezorging steeds op een tijdelijk probleem stuit, zoals een volle inbox, kan de mail ook de status Teruggestuurd krijgen. Shootstack blokkeert het adres niet, dus je kunt de galerij later opnieuw versturen.
+
+Als de volgende mail naar het adres de status Geblokkeerd krijgt, vraag je klant dan om een ander adres en werk het bij op het contact. Zie [Een contact bewerken](/nl/guides/contacts/details).
+
+## Voorkomen dat je mails in spam belanden
+
+Ook bij een geldig adres kan een mail in spam belanden. Een paar gewoontes helpen je galerijmails de inbox te bereiken.
+
+Vertel je klanten dat ze rond de dag van levering een mail kunnen verwachten met de naam van je workspace als afzender. Als de mail niet aankomt, vraag ze dan om spam en promoties te controleren.
+
+Vul bij **Onderwerp** in om welke shoot het gaat, zodat je klant de mail herkent.
+
+Schrijf in het bericht zelf een paar persoonlijke zinnen. De mail bevat al een coverfoto en een galerijknop, dus een bericht zonder tekst lijkt voor spamfilters alleen uit afbeeldingen te bestaan.
+
+Vermijd tekst in alleen hoofdletters, reeksen uitroeptekens en verkoopwoorden zoals gratis, winnaar, reageer nu of garantie. Gebruik weinig links en geen linkverkorters.
+
+Mail alleen klanten die een bericht van je verwachten. Shootstack-mails zijn bedoeld voor je eigen klanten en hun galerijen.
+
+## Spambeleid
+
+Shootstack houdt spammeldingen actief in de gaten en onderneemt actie bij elke melding.
+
+Elke spammelding blokkeert het adres en je ontvangt daarover een bericht.
+
+Na herhaalde meldingen pauzeert Shootstack het versturen van mails voor de workspace. Als je een mail probeert te versturen, verschijnt **Mails versturen gepauzeerd**.
+
+<Frame>
+  <img className="dark:hidden block" src="/assets/images/guides/emails/deliverability-policy-1.webp" alt="Venster Mails versturen gepauzeerd" />
+  <img className="hidden dark:block" src="/assets/images/guides/emails/deliverability-policy-1-dark.webp" alt="Venster Mails versturen gepauzeerd" />
+</Frame>
+
+Als het versturen voor je workspace is gepauzeerd, open dan **Help** en klik op **Chat met support** om weer mails te kunnen versturen.
+
+## Gerelateerde artikelen
+
+- [Mailactiviteit bekijken](/nl/guides/emails/activity)
+- [Een galerij per mail versturen](/nl/guides/emails/send)
+- [Een contact bewerken](/nl/guides/contacts/details)

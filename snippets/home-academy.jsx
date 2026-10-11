@@ -1,11 +1,11 @@
-export const HomeAcademyFeature = ({ renderVideo, icon }) => {
+export const HomeAcademyFeature = ({ renderVideo, icon, copy }) => {
     const videoRef = useRef(null);
     const [playing, setPlaying] = useState(false);
     const preview = {
         src: '/assets/videos/academy/from-shoot-to-gallery-preview.mp4',
         poster: '/assets/images/guides/galleries/design-open-1.webp',
         href: '/academy/from-shoot-to-gallery',
-        label: 'Watch the Academy preview: From your shoot to a shared gallery',
+        label: copy?.label || 'Watch the Academy preview: From your shoot to a shared gallery',
     };
 
     useEffect(() => {
@@ -38,23 +38,23 @@ export const HomeAcademyFeature = ({ renderVideo, icon }) => {
                     <button
                         type='button'
                         className='home-video-toggle'
-                        aria-label={playing ? 'Pause Academy preview' : 'Play Academy preview'}
+                        aria-label={playing ? (copy?.pauseLabel || 'Pause Academy preview') : (copy?.playLabel || 'Play Academy preview')}
                         onClick={togglePlayback}>
-                        {playing ? 'Pause preview' : 'Play preview'}
+                        {playing ? (copy?.pause || 'Pause preview') : (copy?.play || 'Play preview')}
                     </button>
                 </div>
                 <h3 className='font-medium home-feature-title'>
-                    From your shoot
+                    {copy?.titleStart || 'From your shoot'}
                     <br />
-                    to a shared gallery
+                    {copy?.titleEnd || 'to a shared gallery'}
                 </h3>
                 <p className='text-gray-600 dark:text-gray-400'>
-                    See how projects, photos, and galleries fit together before you send a gallery to a client.
+                    {copy?.description || 'See how projects, photos, and galleries fit together before you send a gallery to a client.'}
                 </p>
                 <a
                     href={preview.href}
                     className='inline-flex items-center gap-2 font-medium text-gray-900 dark:text-gray-50 home-watch-link'>
-                    Watch the preview
+                    {copy?.watch || 'Watch the preview'}
                     {icon}
                 </a>
             </div>

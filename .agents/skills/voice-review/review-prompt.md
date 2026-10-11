@@ -20,12 +20,13 @@ Flag a line when a photographer would stumble on it, or when it sounds like a di
 - Calm: a forceful command (always, never, be careful), alarm, pasted dialog copy, a paragraph carrying more than two ideas, more than two UI locations in one sentence, a point repeated
 - Supportive: make sure, don't forget, must, need to, cannot, blame, a limit with no next step
 - Natural: three or more bold labels in one sentence, sentences that all start the same way, written-only words, pointing words, an em dash (U+2014), anything you would not say out loud
+- Natural flow, from "Flow between sentences and paragraphs": related thoughts split abruptly, an action detached from its outcome, or a paragraph that does not follow naturally from the one before. Read whole passages, including paragraph boundaries. Do not flag a clear short sentence or a useful break only because it could be joined.
 - Openers, from "Where drift starts": description that is a table of contents; intro that says what it is but not what it is for; vague judgment with no concrete moment; H2 opener that restates the heading
 - Content, from help-mdx-copy.mdc: description over 20 words or a click path; anything on the "What stays out" list
 - Phrasing: a recurring situation (open a menu, confirm a dialog, delete warning, batch limit, storage full) worded differently from the standard phrasings
 
 For each finding, return:
-- line: <number>
+- line: <number, or range for a passage spanning sentences or paragraphs>
 - original: <exact text>
 - drift: <Helpful | Professional | Calm | Supportive | Natural | Openers | Content | Phrasing>: <the bullet it hits>
 - rewrite: <your version>
@@ -33,7 +34,8 @@ For each finding, return:
 Rules for rewrites:
 - Keep every **bold** label exactly as written.
 - Do not add or change any fact: numbers, defaults, where a control is, what happens after a click. If the fix needs a fact that is not on the page, write "needs fact: <what>" instead of a rewrite.
-- Shorter is better. Plain words, contractions welcome, American English, second person.
+- Make the smallest useful change. Join related thoughts or add a light connector only where the flow improves. Do not add filler, repeat facts, lengthen a chain of actions or labels, or imply a new sequence or cause.
+- Concise is better, but not at the cost of an abrupt passage. Plain words, contractions welcome, American English, second person.
 
 Do not flag lines that are fine. If the page is clean, return "No findings." End with the single worst line on the page (or "none"), and one sentence on whether the page as a whole sounds like the same person as the "after" lines in tone.md.
 ```

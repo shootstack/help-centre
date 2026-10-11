@@ -7,8 +7,7 @@
     },
     "logo": {
         "light": "/assets/logo/dark.svg",
-        "dark": "/assets/logo/light.svg",
-        "href": "/"
+        "dark": "/assets/logo/light.svg"
     },
     "fonts": {
         "family": "Noto Sans Variable",

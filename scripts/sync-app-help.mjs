@@ -13,7 +13,15 @@ if (!existsSync(appRoot)) {
     process.exit(0);
 }
 
-const pages = collectNavigationPages(JSON.parse(readFileSync(navigationPath, 'utf8')));
+const navigation = JSON.parse(readFileSync(navigationPath, 'utf8'));
+const englishNavigation = navigation.languages
+    ? navigation.languages.find((entry) => entry.language === 'en')
+    : navigation;
+if (!englishNavigation) throw new Error('English navigation not found in config/navigation/index.json');
+const pages = collectNavigationPages(englishNavigation);
+const localizedPages = (navigation.languages || [])
+    .filter(({ language }) => language !== 'en')
+    .map((entry) => ({ language: entry.language, pages: new Set(collectNavigationPages(entry)) }));
 const articles = Object.fromEntries(pages.map((page) => [page, toArticle(page)]));
 
 const next = `${JSON.stringify(articles, null, 4)}\n`;
@@ -56,6 +64,18 @@ function collectNavigationPages(navigation) {
 }
 
 function toArticle(page) {
+    const article = readArticle(page);
+    const translations = {};
+
+    for (const { language, pages } of localizedPages) {
+        const localizedPage = `${language}/${page}`;
+        if (pages.has(localizedPage)) translations[language] = readArticle(localizedPage);
+    }
+
+    return Object.keys(translations).length ? { ...article, translations } : article;
+}
+
+function readArticle(page) {
     const { title, description } = readFrontmatter(page);
     if (!title) throw new Error(`Missing title in ${page}.mdx`);
 

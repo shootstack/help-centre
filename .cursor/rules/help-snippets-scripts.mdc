@@ -31,15 +31,25 @@ diamond-app picks them by key in `helpCentreRoutes.js`.
 "guides/projects/overview": {
   "title": "Projects",
   "description": "Create a project for each shoot, ...",
-  "href": "/guides/projects/overview"
+  "href": "/guides/projects/overview",
+  "translations": {
+    "nl": {
+      "title": "Projecten",
+      "description": "Maak een project voor elke shoot, ...",
+      "href": "/nl/guides/projects/overview"
+    }
+  }
 }
 ```
 
-- The key is the page path. Title and description come from page frontmatter.
+- The key is the English page path. Title and description come from page frontmatter.
+  `translations` contains each configured language's navigable mirror, with its
+  localized title, description, and href. Missing mirrors fall back to English in
+  the app; Academy currently has no translations. Generated copy is never edited here.
   `href` drops a trailing `/index`, so `academy/index` links to `/academy`.
 - The script fails on missing page files and missing titles. `--check` skips
   with a warning when `../diamond-app` is not checked out.
-- Re-run the sync after adding a page or changing a title, description, or
+- Re-run the sync after adding a page or changing an English or translated title, description, or
   path. Renaming or removing a page drops its key; update `helpCentreRoutes.js`
   in diamond-app when a picked article goes away.
 

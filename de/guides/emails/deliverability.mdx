@@ -1,0 +1,97 @@
+---
+title: Probleme mit der E-Mail-Zustellung beheben
+sidebarTitle: Zustellung
+description: Finde heraus, warum eine Galerie-E-Mail deinen Kunden nicht erreicht hat und wie du vermeidest, dass deine E-Mails im Spamordner landen.
+---
+
+Shootstack prüft jede Adresse vor dem Versand. Doch auch bei einer gültigen Adresse kann eine E-Mail zurückkommen oder im Spamordner landen. Diese Seite erklärt, was Shootstack für dich übernimmt, was jeder Status bedeutet und was du tun kannst.
+
+## So versendet Shootstack deine E-Mails
+
+Deine Galerie-E-Mails kommen mit dem Namen deines Arbeitsbereichs als Absender an, damit dein Kunde den Absender sofort erkennt. Antworten gehen an deine geschäftliche E-Mail-Adresse oder an die E-Mail-Adresse deines Kontos, wenn du keine geschäftliche Adresse hinzugefügt hast. Siehe [Kontaktinformationen aktualisieren](/de/guides/branding-settings/contact-info) und [Namen und Symbol deines Arbeitsbereichs ändern](/de/guides/workspace-settings/general).
+
+Du brauchst nichts Technisches einzurichten. Shootstack übernimmt die Einrichtung für den Versand und prüft jede Adresse, wenn du eine E-Mail sendest.
+
+## Eine Adresse vor dem Versand prüfen
+
+Wenn du beim Verfassen eine Adresse in **An** eingibst, prüft Shootstack sie und zeigt unter dem Feld eine Warnung, wenn etwas nicht zu stimmen scheint. Eine Warnung kann bedeuten, dass die Adresse keine E-Mails empfangen kann, das Postfach voll ist oder die Adresse wie eine temporäre, No-Reply- oder gemeinsam genutzte Adresse aussieht.
+
+Wenn die Adresse einen Tippfehler zu enthalten scheint, erscheint daneben ein Vorschlag.
+
+Bewege den Mauszeiger über das Symbol am Feld **E-Mail-Adresse** eines gespeicherten Kontakts, um dasselbe Prüfergebnis zu sehen.
+
+<Frame>
+  <img className="dark:hidden block" src="/assets/images/guides/emails/deliverability-check-1.webp" alt="Dialog zum Verfassen einer Galerie-E-Mail mit einer Warnung unter dem Feld An" />
+  <img className="hidden dark:block" src="/assets/images/guides/emails/deliverability-check-1-dark.webp" alt="Dialog zum Verfassen einer Galerie-E-Mail mit einer Warnung unter dem Feld An" />
+</Frame>
+
+<div className="mt-8">
+  <Frame>
+    <img className="dark:hidden block" src="/assets/images/guides/emails/deliverability-check-2.webp" alt="Feld E-Mail-Adresse eines Kontakts mit dem Tooltip des Prüfsymbols" />
+    <img className="hidden dark:block" src="/assets/images/guides/emails/deliverability-check-2-dark.webp" alt="Feld E-Mail-Adresse eines Kontakts mit dem Tooltip des Prüfsymbols" />
+  </Frame>
+</div>
+
+Wenn die Adresse keine E-Mails empfangen kann oder ihr Inhaber zuvor eine Galerie-E-Mail als Spam gemeldet hat, sendet Shootstack die E-Mail nicht. Sie erscheint stattdessen im Verlauf als Blockiert.
+
+## Was jeder Status bedeutet
+
+Du findest den Status in der Spalte **Status** oder unter **E-Mail-Aktivität**. Siehe [E-Mail-Aktivität prüfen](/de/guides/emails/activity).
+
+- Wartet bedeutet, dass Shootstack die E-Mail erstellt und noch nicht gesendet hat.
+- Gesendet bedeutet, dass die E-Mail Shootstack verlassen hat. Die Zustellung ist damit noch nicht bestätigt.
+- Verzögert bedeutet, dass bei der Zustellung ein vorübergehendes Problem aufgetreten ist, etwa ein volles Postfach. Die Zustellung wird weiter versucht, also schau später noch einmal nach.
+- Zugestellt bedeutet, dass die E-Mail im Posteingang angekommen ist.
+- Geöffnet bedeutet, dass dein Kunde die E-Mail geöffnet hat.
+- Angeklickt bedeutet, dass dein Kunde auf den Galerielink in der E-Mail geklickt hat.
+- Zurückgewiesen bedeutet, dass der E-Mail-Anbieter deines Kunden die E-Mail zurückgeschickt hat.
+- Als Spam gemeldet bedeutet, dass der Empfänger die E-Mail als Spam markiert hat.
+- Nicht zustellbar bedeutet, dass der Versand vor der Zustellung fehlgeschlagen ist.
+- Blockiert bedeutet, dass Shootstack die E-Mail nicht gesendet hat.
+
+<Note>
+Geöffnet und Angeklickt werden wegen der Datenschutzeinstellungen für die E-Mails deines Kunden nicht immer erfasst. Wenn diese Status fehlen, bedeutet das also nicht, dass dein Kunde die E-Mail ignoriert hat.
+</Note>
+
+## Wenn eine E-Mail zurückkommt oder blockiert wird
+
+Eine Spam-Meldung führt dazu, dass Shootstack nicht mehr an die Adresse sendet. Dasselbe gilt, wenn eine E-Mail zurückkommt, weil der E-Mail-Anbieter deines Kunden die Adresse dauerhaft ablehnt, etwa weil sie nicht existiert. Spätere E-Mails an die Adresse erhalten den Status Blockiert und werden nicht gesendet.
+
+Wenn bei der Zustellung immer wieder ein vorübergehendes Problem auftritt, etwa ein volles Postfach, kann die E-Mail ebenfalls den Status Zurückgewiesen erhalten. Shootstack blockiert die Adresse nicht, sodass du die Galerie später erneut senden kannst.
+
+Wenn die nächste E-Mail an die Adresse den Status Blockiert zeigt, frage deinen Kunden nach einer anderen Adresse und aktualisiere sie beim Kontakt. Siehe [Einen Kontakt bearbeiten](/de/guides/contacts/details).
+
+## So vermeidest du, dass deine E-Mails im Spamordner landen
+
+Auch bei einer gültigen Adresse kann eine E-Mail im Spamordner landen. Ein paar Gewohnheiten helfen deinen Galerie-E-Mails, den Posteingang zu erreichen.
+
+Sage deinen Kunden, dass sie rund um den Liefertag eine E-Mail erwarten können. Als Absender sehen sie den Namen deines Arbeitsbereichs. Wenn die E-Mail nicht ankommt, bitte sie, im Spamordner und im Bereich für Werbung nachzusehen.
+
+Nenne im **Betreff** das Shooting, damit dein Kunde die E-Mail erkennt.
+
+Schreibe ein paar persönliche Sätze in die Nachricht selbst. Die E-Mail enthält bereits ein Titelbild und eine Galerie-Schaltfläche. Für Spamfilter sieht eine Nachricht ohne Text deshalb so aus, als bestünde sie nur aus Bildern.
+
+Vermeide Text in Großbuchstaben, Reihen von Ausrufezeichen und Werbewörter wie gratis, Gewinner, jetzt handeln oder Garantie. Verwende wenige Links und keine Linkverkürzer.
+
+Sende E-Mails nur an Kunden, die eine Nachricht von dir erwarten. Shootstack-E-Mails sind für deine eigenen Kunden und ihre Galerien gedacht.
+
+## Spam-Richtlinie
+
+Shootstack überwacht Spam-Meldungen aktiv und reagiert auf jede einzelne.
+
+Jede Spam-Meldung blockiert die Adresse und du erhältst eine Benachrichtigung darüber.
+
+Nach wiederholten Meldungen pausiert Shootstack den E-Mail-Versand für den Arbeitsbereich. Wenn du versuchst, eine E-Mail zu senden, erscheint **E-Mail-Versand pausiert**.
+
+<Frame>
+  <img className="dark:hidden block" src="/assets/images/guides/emails/deliverability-policy-1.webp" alt="Dialog E-Mail-Versand pausiert" />
+  <img className="hidden dark:block" src="/assets/images/guides/emails/deliverability-policy-1-dark.webp" alt="Dialog E-Mail-Versand pausiert" />
+</Frame>
+
+Wenn der Versand für deinen Arbeitsbereich pausiert ist, öffne **Hilfe** und klicke auf **Mit dem Support chatten**, um wieder E-Mails senden zu können.
+
+## Weitere Artikel
+
+- [E-Mail-Aktivität prüfen](/de/guides/emails/activity)
+- [Eine Galerie per E-Mail senden](/de/guides/emails/send)
+- [Einen Kontakt bearbeiten](/de/guides/contacts/details)

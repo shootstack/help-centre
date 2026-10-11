@@ -1,0 +1,57 @@
+---
+title: Home
+description: Ontdek hoe je shoots organiseert, galerijen deelt en contact houdt met je klanten in Shootstack.
+icon: /assets/icons/home-01.svg
+mode: custom
+---
+
+import { AcademyVideo } from "/snippets/academy-video.jsx";
+import { HomeAcademyFeature } from "/snippets/home-academy.jsx";
+import { HomeGuideGrid } from "/snippets/home-guide-grid.jsx";
+import { homeAcademy, homeGuides, homeSections } from "/snippets/home-content-nl.jsx";
+
+<div className="mx-auto px-6 sm:px-10 w-full max-w-6xl text-gray-900 dark:text-gray-50 help-home not-prose">
+  <section className="flex flex-col items-center text-center home-intro" aria-labelledby="welcome-title">
+    <h1 id="welcome-title" className="font-medium home-title">Shootstack Helpcentrum</h1>
+    <p className="text-gray-600 dark:text-gray-400 home-intro-copy">
+      Ontdek hoe je shoots organiseert, galerijen deelt en contact houdt met je klanten in Shootstack.
+    </p>
+    <button type="button" data-search-trigger className="flex items-center gap-3 bg-gray-50 dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 rounded-full text-gray-500 dark:text-gray-400 text-left home-search">
+      <Icon src="/assets/icons/search-01.svg" size={18} />
+      <span className="flex-1">Zoek in het Helpcentrum</span>
+      <span aria-hidden="true" className="text-xs home-search-shortcut">⌘K</span>
+    </button>
+
+    <div role="navigation" className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 home-shortcuts" aria-label="Onderdelen van het Helpcentrum">
+      {homeSections.map((section) => (
+        <a key={section.href} href={section.href} className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 home-shortcut">
+          <Icon src={section.icon} size={16} />
+          {section.label}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section className="home-section" aria-labelledby="academy-title">
+    <div className="flex justify-between items-end gap-6 home-section-heading">
+        <h2 id="academy-title" className="font-medium home-heading">Kijk mee en volg de stappen</h2>
+      <a href="/academy" className="hidden sm:inline-flex items-center gap-2 home-text-link text-gray-600 dark:text-gray-400">
+        Ontdek de Academy <Icon src="/assets/icons/arrow-right-02.svg" size={16} />
+      </a>
+    </div>
+    <HomeAcademyFeature
+      copy={homeAcademy}
+      renderVideo={(props) => <AcademyVideo {...props} fallbackText={homeAcademy.videoFallback} teaser />}
+      icon={<Icon src="/assets/icons/arrow-right-02.svg" size={18} />}
+    />
+  </section>
+
+  <section className="home-section" aria-labelledby="guides-title">
+    <div className="home-section-heading">
+      <h2 id="guides-title" className="font-medium home-heading">Vind de guide voor je volgende stap</h2>
+      <p className="text-gray-600 dark:text-gray-400 home-section-description">Stapsgewijze guides voor elk onderdeel van Shootstack, van je eerste project tot je workspace instellingen.</p>
+    </div>
+
+    <HomeGuideGrid guides={homeGuides} />
+  </section>
+</div>

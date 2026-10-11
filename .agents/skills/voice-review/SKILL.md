@@ -1,6 +1,6 @@
 ---
 name: voice-review
-description: Reviews a photographer Help Center page for a natural, consistent tone against tone.md, checks sibling phrasing, and applies rewrites without changing UI labels or product facts.
+description: Reviews photographer Help Center pages for natural tone and flow between sentences and paragraphs against tone.md, checks sibling phrasing, and applies light rewrites without changing UI labels or product facts.
 disable-model-invocation: true
 ---
 
@@ -27,7 +27,7 @@ Progress:
 
 ### 1. Read the tone guide
 
-Read [tone.md](../../../../diamond-translate/projects/help-centre/tone.md) in full. You triage against it; the reader reads with it.
+Read [tone.md](../../../../diamond-translate/projects/help-centre/tone.md) in full, including "Flow between sentences and paragraphs". You triage against it; the reader reads with it. Review whole passages as well as individual lines, so an abrupt sentence or paragraph break is visible.
 
 ### 2. Launch one fresh reader per page
 
@@ -37,11 +37,12 @@ For more than eight pages, give one subagent per section and list every page pat
 
 ### 3. Triage the findings
 
-Each finding is a line number, the original text, the quality it drifts from, and a rewrite. Accept a rewrite when:
+Each finding is a line number, the original text, the quality it drifts from, and a rewrite. A flow finding may span adjacent sentences or paragraphs; review and apply it as one passage. Accept a rewrite when:
 
 - Every bold label is still verbatim.
 - No fact changed: numbers, defaults, where a control is, what happens after a click. Dropping a reference fact from `## What stays out` in `help-mdx-copy.mdc` is fine; dropping a limit, a location, or a step is not.
-- It is shorter or reads more like a person, not only different.
+- It is shorter or reads more like a person, not only different. For flow findings, compare the passage before and after: the connection should be easier to follow without adding filler, repetition, or a new implied sequence or cause.
+- It makes the smallest useful change. Keep clear short sentences, paragraph breaks, and scannable steps where they already work; do not join every sentence or add a transition to every paragraph.
 
 Reject stylistic swaps that fix nothing. When a finding is right but the rewrite changes a fact, write your own fix from the facts already on the page. When the fix needs a fact that is not on the page, leave the sentence and add `{/* TODO: ... */}`.
 
@@ -63,4 +64,4 @@ Report per page: findings grouped by quality, how many you applied, the before/a
 - Voice only. No new sections, steps, screenshots, or links.
 - No fact comes from the reader or from you. Only the page, the code, and the locale strings are sources.
 - Do not touch generated regions (`{/* <name>:start */}` to `{/* <name>:end */}`).
-- Do not edit `tone.md` to fit a page. If a page argues for a new rule, tell the user.
+- Do not edit `tone.md` to fit a page. Update it when the user explicitly asks to record a voice preference; otherwise, if a page argues for a new rule, tell the user.

@@ -1,193 +1,829 @@
 {
     "directory": "card",
-    "tabs": [
+    "languages": [
         {
-            "tab": "Academy",
-            "icon": "/assets/icons/graduation-cap.svg",
-            "pages": ["academy/index", "academy/from-shoot-to-gallery"]
-        },
-        {
-            "tab": "Guides",
-            "icon": "/assets/icons/book-open-01.svg",
-            "groups": [
+            "language": "en",
+            "default": true,
+            "tabs": [
                 {
-                    "group": "Guides",
-                    "pages": ["guides/introduction/overview"]
+                    "tab": "Home",
+                    "pages": ["index"]
                 },
                 {
-                    "group": "Gallery delivery",
-                    "pages": [
-                        {
-                            "group": "Projects",
-                            "icon": "/assets/icons/album-01.svg",
-                            "expanded": false,
-                            "pages": ["guides/projects/overview", "guides/projects/status", "guides/projects/favorites"]
-                        },
-                        {
-                            "group": "Media folders",
-                            "icon": "/assets/icons/folder-01.svg",
-                            "expanded": false,
-                            "pages": [
-                                "guides/media-folders/overview",
-                                "guides/media-folders/upload",
-                                "guides/media-folders/sort",
-                                "guides/media-folders/view",
-                                "guides/media-folders/download",
-                                "guides/media-folders/organize"
-                            ]
-                        },
-                        {
-                            "group": "Galleries",
-                            "icon": "/assets/icons/dashboard-square-02.svg",
-                            "expanded": false,
-                            "pages": [
-                                "guides/galleries/overview",
-                                "guides/galleries/folders",
-                                "guides/galleries/design",
-                                "guides/galleries/cover"
-                            ]
-                        },
-                        {
-                            "group": "Gallery shares",
-                            "icon": "/assets/icons/sent.svg",
-                            "expanded": false,
-                            "pages": [
-                                "guides/gallery-shares/overview",
-                                "guides/gallery-shares/security",
-                                "guides/gallery-shares/favorites",
-                                "guides/gallery-shares/downloads",
-                                "guides/gallery-shares/reviews"
-                            ]
-                        }
-                    ]
+                    "tab": "Academy",
+                    "icon": "/assets/icons/graduation-cap.svg",
+                    "pages": ["academy/index", "academy/from-shoot-to-gallery"]
                 },
                 {
-                    "group": "Contact management",
-                    "pages": [
+                    "tab": "Guides",
+                    "icon": "/assets/icons/book-open-01.svg",
+                    "groups": [
                         {
-                            "group": "Contacts",
-                            "icon": "/assets/icons/user-account.svg",
-                            "expanded": false,
-                            "pages": [
-                                "guides/contacts/overview",
-                                "guides/contacts/details",
-                                "guides/contacts/filter",
-                                "guides/contacts/favorites",
-                                "guides/contacts/files"
-                            ]
+                            "group": "Guides",
+                            "pages": ["guides/introduction/overview"]
                         },
                         {
-                            "group": "Emails",
-                            "icon": "/assets/icons/mail-01.svg",
-                            "expanded": false,
+                            "group": "Gallery delivery",
                             "pages": [
-                                "guides/emails/overview",
-                                "guides/emails/send",
-                                "guides/emails/find",
-                                "guides/emails/activity",
-                                "guides/emails/deliverability",
-                                "guides/emails/create-templates",
-                                "guides/emails/use-templates"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "group": "Productivity",
-                    "pages": [
-                        {
-                            "group": "Notes",
-                            "icon": "/assets/icons/file-empty-02.svg",
-                            "expanded": false,
-                            "pages": [
-                                "guides/notes/overview",
-                                "guides/notes/write",
-                                "guides/notes/templates",
-                                "guides/notes/filter"
-                            ]
-                        },
-                        {
-                            "group": "Tasks",
-                            "icon": "/assets/icons/checkmark-square-02.svg",
-                            "expanded": false,
-                            "pages": ["guides/tasks/overview", "guides/tasks/complete", "guides/tasks/filter"]
-                        }
-                    ]
-                },
-                {
-                    "group": "Settings",
-                    "pages": [
-                        {
-                            "group": "Personal settings",
-                            "icon": "/assets/icons/user-02.svg",
-                            "expanded": false,
-                            "pages": [
-                                "guides/personal-settings/overview",
-                                "guides/personal-settings/profile",
-                                "guides/personal-settings/language-region",
-                                "guides/personal-settings/appearance",
-                                "guides/personal-settings/notifications"
-                            ]
-                        },
-                        {
-                            "group": "Workspace settings",
-                            "icon": "/assets/icons/settings-02.svg",
-                            "expanded": false,
-                            "pages": [
-                                "guides/workspace-settings/overview",
-                                "guides/workspace-settings/general",
-                                "guides/workspace-settings/plans",
-                                "guides/workspace-settings/billing",
-                                "guides/workspace-settings/usage"
-                            ]
-                        },
-                        {
-                            "group": "Branding settings",
-                            "icon": "/assets/icons/swatch.svg",
-                            "expanded": false,
-                            "pages": [
-                                "guides/branding-settings/overview",
-                                "guides/branding-settings/logo",
-                                "guides/branding-settings/color-palettes",
-                                "guides/branding-settings/watermarks",
                                 {
-                                    "group": "Business details",
+                                    "group": "Projects",
+                                    "icon": "/assets/icons/album-01.svg",
                                     "expanded": false,
                                     "pages": [
-                                        "guides/branding-settings/contact-info",
-                                        "guides/branding-settings/social-media",
-                                        "guides/branding-settings/legal-info"
+                                        "guides/projects/overview",
+                                        "guides/projects/status",
+                                        "guides/projects/favorites"
+                                    ]
+                                },
+                                {
+                                    "group": "Media folders",
+                                    "icon": "/assets/icons/folder-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "guides/media-folders/overview",
+                                        "guides/media-folders/upload",
+                                        "guides/media-folders/sort",
+                                        "guides/media-folders/view",
+                                        "guides/media-folders/download",
+                                        "guides/media-folders/organize"
+                                    ]
+                                },
+                                {
+                                    "group": "Galleries",
+                                    "icon": "/assets/icons/dashboard-square-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "guides/galleries/overview",
+                                        "guides/galleries/folders",
+                                        "guides/galleries/design",
+                                        "guides/galleries/cover"
+                                    ]
+                                },
+                                {
+                                    "group": "Gallery shares",
+                                    "icon": "/assets/icons/sent.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "guides/gallery-shares/overview",
+                                        "guides/gallery-shares/security",
+                                        "guides/gallery-shares/favorites",
+                                        "guides/gallery-shares/downloads",
+                                        "guides/gallery-shares/reviews"
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "group": "Contact management",
+                            "pages": [
+                                {
+                                    "group": "Contacts",
+                                    "icon": "/assets/icons/user-account.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "guides/contacts/overview",
+                                        "guides/contacts/details",
+                                        "guides/contacts/filter",
+                                        "guides/contacts/favorites",
+                                        "guides/contacts/files"
+                                    ]
+                                },
+                                {
+                                    "group": "Emails",
+                                    "icon": "/assets/icons/mail-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "guides/emails/overview",
+                                        "guides/emails/send",
+                                        "guides/emails/find",
+                                        "guides/emails/activity",
+                                        "guides/emails/deliverability",
+                                        "guides/emails/create-templates",
+                                        "guides/emails/use-templates"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Productivity",
+                            "pages": [
+                                {
+                                    "group": "Notes",
+                                    "icon": "/assets/icons/file-empty-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "guides/notes/overview",
+                                        "guides/notes/write",
+                                        "guides/notes/templates",
+                                        "guides/notes/filter"
+                                    ]
+                                },
+                                {
+                                    "group": "Tasks",
+                                    "icon": "/assets/icons/checkmark-square-02.svg",
+                                    "expanded": false,
+                                    "pages": ["guides/tasks/overview", "guides/tasks/complete", "guides/tasks/filter"]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Settings",
+                            "pages": [
+                                {
+                                    "group": "Personal settings",
+                                    "icon": "/assets/icons/user-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "guides/personal-settings/overview",
+                                        "guides/personal-settings/profile",
+                                        "guides/personal-settings/language-region",
+                                        "guides/personal-settings/appearance",
+                                        "guides/personal-settings/notifications"
+                                    ]
+                                },
+                                {
+                                    "group": "Workspace settings",
+                                    "icon": "/assets/icons/settings-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "guides/workspace-settings/overview",
+                                        "guides/workspace-settings/general",
+                                        "guides/workspace-settings/plans",
+                                        "guides/workspace-settings/billing",
+                                        "guides/workspace-settings/usage"
+                                    ]
+                                },
+                                {
+                                    "group": "Branding settings",
+                                    "icon": "/assets/icons/swatch.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "guides/branding-settings/overview",
+                                        "guides/branding-settings/logo",
+                                        "guides/branding-settings/color-palettes",
+                                        "guides/branding-settings/watermarks",
+                                        {
+                                            "group": "Business details",
+                                            "expanded": false,
+                                            "pages": [
+                                                "guides/branding-settings/contact-info",
+                                                "guides/branding-settings/social-media",
+                                                "guides/branding-settings/legal-info"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tab": "Troubleshooting",
+                    "icon": "/assets/icons/message-question.svg",
+                    "groups": [
+                        {
+                            "group": "Troubleshooting",
+                            "pages": ["troubleshooting/index"]
+                        },
+                        {
+                            "group": "Uploading photos",
+                            "pages": ["troubleshooting/uploads-failing"]
+                        },
+                        {
+                            "group": "Viewing photos",
+                            "pages": [
+                                "troubleshooting/gallery-no-photos",
+                                "troubleshooting/gallery-image-quality",
+                                "troubleshooting/watermark-removal"
+                            ]
+                        },
+                        {
+                            "group": "Downloading photos",
+                            "pages": ["troubleshooting/client-photo-downloads"]
+                        },
+                        {
+                            "group": "Email delivery",
+                            "pages": ["troubleshooting/email-not-received"]
                         }
                     ]
                 }
             ]
         },
         {
-            "tab": "Troubleshooting",
-            "icon": "/assets/icons/message-question.svg",
-            "groups": [
+            "language": "nl",
+            "tabs": [
                 {
-                    "group": "Troubleshooting",
-                    "pages": ["troubleshooting/index"]
+                    "tab": "Home",
+                    "pages": ["nl/index"]
                 },
                 {
-                    "group": "Uploading photos",
-                    "pages": ["troubleshooting/uploads-failing"]
+                    "tab": "Guides",
+                    "icon": "/assets/icons/book-open-01.svg",
+                    "groups": [
+                        {
+                            "group": "Guides",
+                            "pages": ["nl/guides/introduction/overview"]
+                        },
+                        {
+                            "group": "Galerijen opleveren",
+                            "pages": [
+                                {
+                                    "group": "Projecten",
+                                    "icon": "/assets/icons/album-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/projects/overview",
+                                        "nl/guides/projects/status",
+                                        "nl/guides/projects/favorites"
+                                    ]
+                                },
+                                {
+                                    "group": "Media mappen",
+                                    "icon": "/assets/icons/folder-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/media-folders/overview",
+                                        "nl/guides/media-folders/upload",
+                                        "nl/guides/media-folders/sort",
+                                        "nl/guides/media-folders/view",
+                                        "nl/guides/media-folders/download",
+                                        "nl/guides/media-folders/organize"
+                                    ]
+                                },
+                                {
+                                    "group": "Galerijen",
+                                    "icon": "/assets/icons/dashboard-square-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/galleries/overview",
+                                        "nl/guides/galleries/folders",
+                                        "nl/guides/galleries/design",
+                                        "nl/guides/galleries/cover"
+                                    ]
+                                },
+                                {
+                                    "group": "Galerijlinks",
+                                    "icon": "/assets/icons/sent.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/gallery-shares/overview",
+                                        "nl/guides/gallery-shares/security",
+                                        "nl/guides/gallery-shares/favorites",
+                                        "nl/guides/gallery-shares/downloads",
+                                        "nl/guides/gallery-shares/reviews"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Contactbeheer",
+                            "pages": [
+                                {
+                                    "group": "Contacten",
+                                    "icon": "/assets/icons/user-account.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/contacts/overview",
+                                        "nl/guides/contacts/details",
+                                        "nl/guides/contacts/filter",
+                                        "nl/guides/contacts/favorites",
+                                        "nl/guides/contacts/files"
+                                    ]
+                                },
+                                {
+                                    "group": "Mails",
+                                    "icon": "/assets/icons/mail-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/emails/overview",
+                                        "nl/guides/emails/send",
+                                        "nl/guides/emails/find",
+                                        "nl/guides/emails/activity",
+                                        "nl/guides/emails/deliverability",
+                                        "nl/guides/emails/create-templates",
+                                        "nl/guides/emails/use-templates"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Productiviteit",
+                            "pages": [
+                                {
+                                    "group": "Notities",
+                                    "icon": "/assets/icons/file-empty-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/notes/overview",
+                                        "nl/guides/notes/write",
+                                        "nl/guides/notes/templates",
+                                        "nl/guides/notes/filter"
+                                    ]
+                                },
+                                {
+                                    "group": "Taken",
+                                    "icon": "/assets/icons/checkmark-square-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/tasks/overview",
+                                        "nl/guides/tasks/complete",
+                                        "nl/guides/tasks/filter"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Instellingen",
+                            "pages": [
+                                {
+                                    "group": "Persoonlijke instellingen",
+                                    "icon": "/assets/icons/user-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/personal-settings/overview",
+                                        "nl/guides/personal-settings/profile",
+                                        "nl/guides/personal-settings/language-region",
+                                        "nl/guides/personal-settings/appearance",
+                                        "nl/guides/personal-settings/notifications"
+                                    ]
+                                },
+                                {
+                                    "group": "Workspace instellingen",
+                                    "icon": "/assets/icons/settings-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/workspace-settings/overview",
+                                        "nl/guides/workspace-settings/general",
+                                        "nl/guides/workspace-settings/plans",
+                                        "nl/guides/workspace-settings/billing",
+                                        "nl/guides/workspace-settings/usage"
+                                    ]
+                                },
+                                {
+                                    "group": "Branding instellingen",
+                                    "icon": "/assets/icons/swatch.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "nl/guides/branding-settings/overview",
+                                        "nl/guides/branding-settings/logo",
+                                        "nl/guides/branding-settings/color-palettes",
+                                        "nl/guides/branding-settings/watermarks",
+                                        {
+                                            "group": "Bedrijfsgegevens",
+                                            "expanded": false,
+                                            "pages": [
+                                                "nl/guides/branding-settings/contact-info",
+                                                "nl/guides/branding-settings/social-media",
+                                                "nl/guides/branding-settings/legal-info"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "group": "Viewing photos",
-                    "pages": ["troubleshooting/gallery-no-photos", "troubleshooting/gallery-image-quality"]
+                    "tab": "Probleemoplossing",
+                    "icon": "/assets/icons/message-question.svg",
+                    "groups": [
+                        {
+                            "group": "Probleemoplossing",
+                            "pages": ["nl/troubleshooting/index"]
+                        },
+                        {
+                            "group": "Foto’s uploaden",
+                            "pages": ["nl/troubleshooting/uploads-failing"]
+                        },
+                        {
+                            "group": "Foto’s bekijken",
+                            "pages": [
+                                "nl/troubleshooting/gallery-no-photos",
+                                "nl/troubleshooting/gallery-image-quality",
+                                "nl/troubleshooting/watermark-removal"
+                            ]
+                        },
+                        {
+                            "group": "Foto’s downloaden",
+                            "pages": ["nl/troubleshooting/client-photo-downloads"]
+                        },
+                        {
+                            "group": "Mailbezorging",
+                            "pages": ["nl/troubleshooting/email-not-received"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "de",
+            "tabs": [
+                {
+                    "tab": "Startseite",
+                    "pages": ["de/index"]
                 },
                 {
-                    "group": "Downloading photos",
-                    "pages": ["troubleshooting/client-photo-downloads"]
+                    "tab": "Anleitungen",
+                    "icon": "/assets/icons/book-open-01.svg",
+                    "groups": [
+                        {
+                            "group": "Anleitungen",
+                            "pages": ["de/guides/introduction/overview"]
+                        },
+                        {
+                            "group": "Galerien bereitstellen",
+                            "pages": [
+                                {
+                                    "group": "Projekte",
+                                    "icon": "/assets/icons/album-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/projects/overview",
+                                        "de/guides/projects/status",
+                                        "de/guides/projects/favorites"
+                                    ]
+                                },
+                                {
+                                    "group": "Medienordner",
+                                    "icon": "/assets/icons/folder-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/media-folders/overview",
+                                        "de/guides/media-folders/upload",
+                                        "de/guides/media-folders/sort",
+                                        "de/guides/media-folders/view",
+                                        "de/guides/media-folders/download",
+                                        "de/guides/media-folders/organize"
+                                    ]
+                                },
+                                {
+                                    "group": "Galerien",
+                                    "icon": "/assets/icons/dashboard-square-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/galleries/overview",
+                                        "de/guides/galleries/folders",
+                                        "de/guides/galleries/design",
+                                        "de/guides/galleries/cover"
+                                    ]
+                                },
+                                {
+                                    "group": "Galerielinks",
+                                    "icon": "/assets/icons/sent.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/gallery-shares/overview",
+                                        "de/guides/gallery-shares/security",
+                                        "de/guides/gallery-shares/favorites",
+                                        "de/guides/gallery-shares/downloads",
+                                        "de/guides/gallery-shares/reviews"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Kontaktverwaltung",
+                            "pages": [
+                                {
+                                    "group": "Kontakte",
+                                    "icon": "/assets/icons/user-account.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/contacts/overview",
+                                        "de/guides/contacts/details",
+                                        "de/guides/contacts/filter",
+                                        "de/guides/contacts/favorites",
+                                        "de/guides/contacts/files"
+                                    ]
+                                },
+                                {
+                                    "group": "E-Mails",
+                                    "icon": "/assets/icons/mail-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/emails/overview",
+                                        "de/guides/emails/send",
+                                        "de/guides/emails/find",
+                                        "de/guides/emails/activity",
+                                        "de/guides/emails/deliverability",
+                                        "de/guides/emails/create-templates",
+                                        "de/guides/emails/use-templates"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Produktivität",
+                            "pages": [
+                                {
+                                    "group": "Notizen",
+                                    "icon": "/assets/icons/file-empty-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/notes/overview",
+                                        "de/guides/notes/write",
+                                        "de/guides/notes/templates",
+                                        "de/guides/notes/filter"
+                                    ]
+                                },
+                                {
+                                    "group": "Aufgaben",
+                                    "icon": "/assets/icons/checkmark-square-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/tasks/overview",
+                                        "de/guides/tasks/complete",
+                                        "de/guides/tasks/filter"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Einstellungen",
+                            "pages": [
+                                {
+                                    "group": "Persönliche Einstellungen",
+                                    "icon": "/assets/icons/user-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/personal-settings/overview",
+                                        "de/guides/personal-settings/profile",
+                                        "de/guides/personal-settings/language-region",
+                                        "de/guides/personal-settings/appearance",
+                                        "de/guides/personal-settings/notifications"
+                                    ]
+                                },
+                                {
+                                    "group": "Arbeitsbereichseinstellungen",
+                                    "icon": "/assets/icons/settings-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/workspace-settings/overview",
+                                        "de/guides/workspace-settings/general",
+                                        "de/guides/workspace-settings/plans",
+                                        "de/guides/workspace-settings/billing",
+                                        "de/guides/workspace-settings/usage"
+                                    ]
+                                },
+                                {
+                                    "group": "Branding-Einstellungen",
+                                    "icon": "/assets/icons/swatch.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "de/guides/branding-settings/overview",
+                                        "de/guides/branding-settings/logo",
+                                        "de/guides/branding-settings/color-palettes",
+                                        "de/guides/branding-settings/watermarks",
+                                        {
+                                            "group": "Unternehmensangaben",
+                                            "expanded": false,
+                                            "pages": [
+                                                "de/guides/branding-settings/contact-info",
+                                                "de/guides/branding-settings/social-media",
+                                                "de/guides/branding-settings/legal-info"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "group": "Email delivery",
-                    "pages": ["troubleshooting/email-not-received"]
+                    "tab": "Fehlerbehebung",
+                    "icon": "/assets/icons/message-question.svg",
+                    "groups": [
+                        {
+                            "group": "Fehlerbehebung",
+                            "pages": ["de/troubleshooting/index"]
+                        },
+                        {
+                            "group": "Fotos hochladen",
+                            "pages": ["de/troubleshooting/uploads-failing"]
+                        },
+                        {
+                            "group": "Fotos ansehen",
+                            "pages": [
+                                "de/troubleshooting/gallery-no-photos",
+                                "de/troubleshooting/gallery-image-quality",
+                                "de/troubleshooting/watermark-removal"
+                            ]
+                        },
+                        {
+                            "group": "Fotos herunterladen",
+                            "pages": ["de/troubleshooting/client-photo-downloads"]
+                        },
+                        {
+                            "group": "E-Mail-Zustellung",
+                            "pages": ["de/troubleshooting/email-not-received"]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "fr",
+            "tabs": [
+                {
+                    "tab": "Accueil",
+                    "pages": ["fr/index"]
+                },
+                {
+                    "tab": "Guides",
+                    "icon": "/assets/icons/book-open-01.svg",
+                    "groups": [
+                        {
+                            "group": "Guides",
+                            "pages": ["fr/guides/introduction/overview"]
+                        },
+                        {
+                            "group": "Livraison des galeries",
+                            "pages": [
+                                {
+                                    "group": "Projets",
+                                    "icon": "/assets/icons/album-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/projects/overview",
+                                        "fr/guides/projects/status",
+                                        "fr/guides/projects/favorites"
+                                    ]
+                                },
+                                {
+                                    "group": "Dossiers médias",
+                                    "icon": "/assets/icons/folder-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/media-folders/overview",
+                                        "fr/guides/media-folders/upload",
+                                        "fr/guides/media-folders/sort",
+                                        "fr/guides/media-folders/view",
+                                        "fr/guides/media-folders/download",
+                                        "fr/guides/media-folders/organize"
+                                    ]
+                                },
+                                {
+                                    "group": "Galeries",
+                                    "icon": "/assets/icons/dashboard-square-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/galleries/overview",
+                                        "fr/guides/galleries/folders",
+                                        "fr/guides/galleries/design",
+                                        "fr/guides/galleries/cover"
+                                    ]
+                                },
+                                {
+                                    "group": "Liens de galerie",
+                                    "icon": "/assets/icons/sent.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/gallery-shares/overview",
+                                        "fr/guides/gallery-shares/security",
+                                        "fr/guides/gallery-shares/favorites",
+                                        "fr/guides/gallery-shares/downloads",
+                                        "fr/guides/gallery-shares/reviews"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Gestion des contacts",
+                            "pages": [
+                                {
+                                    "group": "Contacts",
+                                    "icon": "/assets/icons/user-account.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/contacts/overview",
+                                        "fr/guides/contacts/details",
+                                        "fr/guides/contacts/filter",
+                                        "fr/guides/contacts/favorites",
+                                        "fr/guides/contacts/files"
+                                    ]
+                                },
+                                {
+                                    "group": "E-mails",
+                                    "icon": "/assets/icons/mail-01.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/emails/overview",
+                                        "fr/guides/emails/send",
+                                        "fr/guides/emails/find",
+                                        "fr/guides/emails/activity",
+                                        "fr/guides/emails/deliverability",
+                                        "fr/guides/emails/create-templates",
+                                        "fr/guides/emails/use-templates"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Productivité",
+                            "pages": [
+                                {
+                                    "group": "Notes",
+                                    "icon": "/assets/icons/file-empty-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/notes/overview",
+                                        "fr/guides/notes/write",
+                                        "fr/guides/notes/templates",
+                                        "fr/guides/notes/filter"
+                                    ]
+                                },
+                                {
+                                    "group": "Tâches",
+                                    "icon": "/assets/icons/checkmark-square-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/tasks/overview",
+                                        "fr/guides/tasks/complete",
+                                        "fr/guides/tasks/filter"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "group": "Paramètres",
+                            "pages": [
+                                {
+                                    "group": "Paramètres personnels",
+                                    "icon": "/assets/icons/user-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/personal-settings/overview",
+                                        "fr/guides/personal-settings/profile",
+                                        "fr/guides/personal-settings/language-region",
+                                        "fr/guides/personal-settings/appearance",
+                                        "fr/guides/personal-settings/notifications"
+                                    ]
+                                },
+                                {
+                                    "group": "Paramètres de l’espace de travail",
+                                    "icon": "/assets/icons/settings-02.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/workspace-settings/overview",
+                                        "fr/guides/workspace-settings/general",
+                                        "fr/guides/workspace-settings/plans",
+                                        "fr/guides/workspace-settings/billing",
+                                        "fr/guides/workspace-settings/usage"
+                                    ]
+                                },
+                                {
+                                    "group": "Identité visuelle",
+                                    "icon": "/assets/icons/swatch.svg",
+                                    "expanded": false,
+                                    "pages": [
+                                        "fr/guides/branding-settings/overview",
+                                        "fr/guides/branding-settings/logo",
+                                        "fr/guides/branding-settings/color-palettes",
+                                        "fr/guides/branding-settings/watermarks",
+                                        {
+                                            "group": "Informations sur l’entreprise",
+                                            "expanded": false,
+                                            "pages": [
+                                                "fr/guides/branding-settings/contact-info",
+                                                "fr/guides/branding-settings/social-media",
+                                                "fr/guides/branding-settings/legal-info"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "tab": "Dépannage",
+                    "icon": "/assets/icons/message-question.svg",
+                    "groups": [
+                        {
+                            "group": "Dépannage",
+                            "pages": ["fr/troubleshooting/index"]
+                        },
+                        {
+                            "group": "Importer des photos",
+                            "pages": ["fr/troubleshooting/uploads-failing"]
+                        },
+                        {
+                            "group": "Voir les photos",
+                            "pages": [
+                                "fr/troubleshooting/gallery-no-photos",
+                                "fr/troubleshooting/gallery-image-quality",
+                                "fr/troubleshooting/watermark-removal"
+                            ]
+                        },
+                        {
+                            "group": "Télécharger des photos",
+                            "pages": ["fr/troubleshooting/client-photo-downloads"]
+                        },
+                        {
+                            "group": "Réception des e-mails",
+                            "pages": ["fr/troubleshooting/email-not-received"]
+                        }
+                    ]
                 }
             ]
         }
