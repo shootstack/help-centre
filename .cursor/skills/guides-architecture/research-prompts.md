@@ -45,8 +45,8 @@ Explore:
 - src/core/<domain>*/  (schemas, hooks, constants; look for enums such as Status, SortBy)
 - src/constants/rules.js and src/constants/regex.js
 - public/locales/en/schemas/<domain>*.json
-- ../diamond-server/src/helpers/<domain>-helpers.js (seeded entity fields: filter names, options, default sort)
-- ../diamond-server/src/models/<domain>-model.js (hard caps)
+- ../../../engineering-os/shootstack-diamond/diamond-server/src/helpers/<domain>-helpers.js (seeded entity fields: filter names, options, default sort)
+- ../../../engineering-os/shootstack-diamond/diamond-server/src/models/<domain>-model.js (hard caps)
 
 Report:
 1. Every limit with its number and the user-facing message shown when it is hit

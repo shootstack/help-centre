@@ -2,7 +2,7 @@
 description: Guides tab conventions: one collapsible sidebar group per core feature, Overview first, step-by-step task articles
 globs:
   - guides/**/*.mdx
-  - .agents/skills/guides-architecture/maps/*.md
+  - .cursor/skills/guides-architecture/maps/*.md
 ---
 
 # Guides Layer Conventions
@@ -11,7 +11,7 @@ globs:
 feature, one folder per group, one article per job. Plan a section with the
 `guides-architecture` skill; write an article with the
 `guides-article` skill. Copy mechanics are in `help-mdx-copy.mdc`; tone of
-voice in `../diamond-translate/projects/help-centre/tone.md`.
+voice in `../../../tools-os/diamond-translate/projects/help-centre/tone.md`.
 
 ## Structure
 
@@ -32,7 +32,7 @@ guides/
 - Task articles have `title: <Verb + object>` (`Upload photos`) and a one- or
   two-word `sidebarTitle`.
 - 3-6 articles per group. Above that, propose a nested group.
-- `.agents/skills/guides-architecture/maps/<section>.md` is the approved
+- `.cursor/skills/guides-architecture/maps/<section>.md` is the approved
   article map for a group. It is mint-ignored and is the brief every article
   in that group follows.
 

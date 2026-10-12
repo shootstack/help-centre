@@ -2,15 +2,17 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSy
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { findProject } from './find-project.mjs';
+
 // Key-health engine for the help-i18n skill. The page path is the key. Checks
 // page-tree parity for every configured language (exit 1 on drift) and reports
 // bold UI labels that do not match an English string in diamond-app. Writes
-// .agents/skills/help-i18n/docs/_generated/STATE.md.
+// .cursor/skills/help-i18n/docs/_generated/STATE.md.
 // Tone, terminology, and translation coverage are checked in diamond-translate.
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const navigationPath = path.join(root, 'config/navigation/index.json');
-const stateFile = path.join(root, '.agents/skills/help-i18n/docs/_generated/STATE.md');
+const stateFile = path.join(root, '.cursor/skills/help-i18n/docs/_generated/STATE.md');
 const defaultLanguage = 'en';
 
 const labelSources = [
@@ -116,7 +118,8 @@ function checkStrayLanguageDirs(languageTrees) {
 }
 
 function checkBoldLabels({ dirs, project }) {
-    const localeDir = path.resolve(root, `../${project}/public/locales/en`);
+    const projectRoot = findProject(project, root);
+    const localeDir = projectRoot ? path.join(projectRoot, 'public/locales/en') : '';
     const present = dirs.filter((dir) => existsSync(path.join(root, dir)));
     if (!present.length) {
         return { project, summary: `no ${dirs.join(', ')} pages`, findings: [], empty: 'No pages to check.' };

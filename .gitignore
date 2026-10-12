@@ -7,8 +7,9 @@ node_modules
 !.env.example
 
 # Code intelligence (local-only)
-.claude
+.claude/settings.local.json
 .gitnexus
 .codegraph
 
 .DS_Store
+.agent-sync-backup/

@@ -6,7 +6,7 @@
 drafts/
 *.draft.mdx
 
-# Cursor rules and skill stubs (not published pages); .agents/ is ignored by default
+# Agent rules and skills (not published pages); .claude/ and .agents/ are ignored by default
 .cursor/
 
 # Local code indexes. Git does not track them, but mint dev serves the working
@@ -18,6 +18,8 @@ drafts/
 # eslint.config.js is editor tooling, not a site script. Mintlify loads every
 # other root .js file.
 AGENTS.md
+CLAUDE.md
+.mcp.json
 skills-lock.json
 package.json
 package-lock.json

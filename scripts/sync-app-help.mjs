@@ -2,16 +2,19 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { findProject } from './find-project.mjs';
+
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const check = process.argv.includes('--check');
 const navigationPath = path.join(root, 'config/navigation/index.json');
-const appRoot = path.resolve(root, '../diamond-app');
-const outputPath = path.join(appRoot, 'src/integrations/help-centre/helpCentreArticles.json');
+const appRoot = findProject('diamond-app', root);
 
-if (!existsSync(appRoot)) {
-    console.warn(`Skipping app help sync: ${path.relative(root, appRoot)} is not checked out.`);
+if (!appRoot || !existsSync(appRoot)) {
+    console.warn('Skipping app help sync: diamond-app is not checked out in the Shootstack workspace (company-os/registry.json).');
     process.exit(0);
 }
+
+const outputPath = path.join(appRoot, 'src/integrations/help-centre/helpCentreArticles.json');
 
 const navigation = JSON.parse(readFileSync(navigationPath, 'utf8'));
 const englishNavigation = navigation.languages

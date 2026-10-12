@@ -4,12 +4,13 @@ Group: Workspace settings
 Slug: guides/workspace-settings/
 Sources reviewed: 2026-10-01, diamond-app 58e04146, diamond-server 40635e9, diamond-site 9ff5fa8
 Status: Approved by the user, written, and voice-reviewed on 2026-10-01. Validation and broken-link checks passed.
+Contact custom-fields orientation refreshed: 2026-10-11, diamond-app 95056817, diamond-server 457fbbe; article-specific research and a fresh voice review completed.
 
 ## Scope and article decisions
 
 This group covers **General**, **Plans**, and **Billing** under **Workspace** in the settings sidebar. Open it from the workspace name at the top of the app sidebar, then **Workspace settings**. The routes are `/settings/workspace`, `/settings/plans`, and `/settings/billing`. General has the page title **Workspace settings**. The new group belongs inside the existing **Settings** navigation wrapper when its articles are written.
 
-**Branding** is excluded at the user's request because it will have its own sidebar group. **Custom fields** is excluded at the user's request because it is not in production, even though it appears in the reviewed development source. Personal settings belongs to the existing Personal settings group.
+**Branding** is excluded at the user's request because it will have its own sidebar group. **Contact custom fields** was released and documented on 2026-10-11 at `/guides/contacts/custom-fields`. Field management belongs to Contacts; this overview links to it without duplicating its workflow. Personal settings belongs to the existing Personal settings group.
 
 Five articles fit the 3–6 article convention. Overview provides orientation. Workspace name and icon form one job on General; the icon has upload, crop, and removal dialogs. Plans has its own comparison and checkout workflow. Subscription management has status information and billing-portal entry points on Billing. Current usage has a separate card, its own Refresh control, and plan-dependent limits, so it receives its own article.
 
@@ -31,10 +32,10 @@ Research used three parallel read-only inventories and current source files to c
   - Find the setting you need
   - Return to your workspace
   - Related
-- UI strings (spelling reference, verbatim): **Workspace settings**, **Settings**, **Workspace**, **General**, **Plans**, **Billing**, **Your unique domain**; description "This can't be changed."
+- UI strings (spelling reference, verbatim): **Custom fields**, **Contact**, **Workspace settings**, **Settings**, **Workspace**, **General**, **Plans**, **Billing**, **Your unique domain**; description "This can't be changed."
 - Limits to mention: none
-- Writer notes: Start from the workspace name at the top of the app sidebar and choose **Workspace settings**. Distinguish **General** under Workspace from General under Personal. Give a short list: General for workspace name and icon, Plans for comparison and choosing a subscription, Billing for subscription details, billing management, and current usage. General also shows the existing unique domain as a read-only value; a one-line explanation is enough. The Settings header returns to the app's home destination, currently Projects, rather than the previous page. Briefly name Branding as separately owned and add its link only when that group exists. Do not describe a workspace switcher or creation/deletion workflow. Link the four task articles rather than repeating their steps.
-- Cross-links: /guides/workspace-settings/general, /guides/workspace-settings/plans, /guides/workspace-settings/billing, /guides/workspace-settings/usage. Personal settings and the future Branding group can be named in orientation; link Branding only after it exists.
+- Writer notes: Start from the workspace name at the top of the app sidebar and choose **Workspace settings**. Distinguish **General** under Workspace from General under Personal. Give a short list: General for workspace name and icon, Plans for comparison and choosing a subscription, Billing for subscription details, billing management, and current usage. General also shows the existing unique domain as a read-only value; a one-line explanation is enough. The Settings header returns to the app's home destination, currently Projects, rather than the previous page. Briefly name Branding as separately owned and add its link only when that group exists. Link Contact under Custom fields to /guides/contacts/custom-fields, which owns field definitions. Do not describe a workspace switcher or creation/deletion workflow. Link the four task articles rather than repeating their steps.
+- Cross-links: /guides/workspace-settings/general, /guides/workspace-settings/plans, /guides/workspace-settings/billing, /guides/workspace-settings/usage, /guides/contacts/custom-fields. Personal settings and the future Branding group can be named in orientation; link Branding only after it exists.
 - Sources:
   - diamond-app/src/layouts/app/components/AppNavigation.jsx
   - diamond-app/src/layouts/app/components/WorkspaceSettingsMenu.jsx
@@ -171,7 +172,7 @@ Research used three parallel read-only inventories and current source files to c
 ## Do not document
 
 - **Branding settings:** out of scope by user instruction. Logos, color palettes, watermarks, contact information, social information, and legal information belong to the future Branding group. Checked `diamond-app/src/pages/settings/branding/` and `diamond-app/src/layouts/settings/components/SettingsNavigation.jsx`.
-- **Custom fields:** out of scope by user instruction because they are not in production. Do not include the development sidebar's Contact custom fields in this map. Checked `diamond-app/src/layouts/settings/components/SettingsNavigation.jsx` and `diamond-app/src/pages/settings/entity/`.
+- **Contact custom field management:** owned by Contacts at `/guides/contacts/custom-fields` following the 2026-10-11 release. The Workspace settings overview links Contact under Custom fields; do not duplicate create/edit/delete instructions. Project custom fields are not part of this release. Checked `diamond-app/src/layouts/settings/components/SettingsNavigation.jsx` and `diamond-app/src/pages/settings/entity/contact/`.
 - **Personal profile, language/region, appearance, and notifications:** owned by Personal settings. Cross-link that group rather than duplicating it. Checked `diamond-app/src/layouts/settings/components/SettingsNavigation.jsx` and the existing `maps/personal-settings.md`.
 - **Create, switch, or delete a workspace; invite or manage members; change the workspace region:** no corresponding settings or workspace-menu UI found in `diamond-app/src/layouts/`, `src/pages/`, `src/components/`, `src/core/workspace/`, and `src/api/workspace/`. Server member models or administrative cleanup scripts do not establish an end-user workflow. General's Delete dialog removes the icon only.
 - **Set, edit, or replace the unique domain; connect a custom domain:** General renders a disabled, read-only domain preview. Claiming the Shootstack subdomain is an onboarding workflow, not a settings action. Checked `diamond-app/src/components/workspace/WorkspaceSlugPreview.jsx`, `CreateWorkspaceSlug.jsx`, `src/pages/onboarding/workspace/_layouts/WorkspaceLayout.jsx`, and `src/core/app/appProvider.jsx`.
