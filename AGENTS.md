@@ -6,7 +6,7 @@
 - Pages are MDX files with YAML frontmatter
 - `docs.json` is the Mintlify entry shell. Site settings live in `config/` (`branding.json`, `site.json`, `navigation/`). Favicon, logo, icons, and screenshots live in `assets/`
 - The Help Center serves photographers, with three root tabs in `config/navigation/index.json`: Academy (video lessons), Guides (step-by-step guides), and Troubleshooting (question-and-answer articles). Guides lists Introduction as a single page, then one collapsible sidebar `group` per core feature (Projects, Media folders, ...) with an Overview article first; pages live in `guides/<section>/`. Plan a section with the `guides-architecture` skill and write each article with the `guides-article` skill (both in `.cursor/skills/`, linked into `.claude/skills/` and `.agents/skills/`). Add Troubleshooting articles to that tab's `pages` list. Add or change an Academy lesson in `snippets/academy-lessons.js`, run `npm run sync-academy`, then write the lesson body. Do not hand-edit the Academy overview list, sidebar times, or Academy page order.
-- The diamond-app Help drawer reads a catalog of every photographer article. Run `npm run sync-app-help` after adding a page or changing a title, description, or path; it writes `../../../engineering-os/shootstack-diamond/diamond-app/src/integrations/help-centre/helpCentreArticles.json`. Which articles each app path shows is picked in diamond-app's `src/integrations/help-centre/helpCentreRoutes.js`, not here.
+- The diamond-app Help drawer reads a catalog of every photographer article. Run `npm run sync-app-help` after adding a page or changing a title, description, or path; it writes `../../../engineering-os/projects/shootstack-diamond/diamond-app/src/integrations/help-centre/helpCentreArticles.json`. Which articles each app path shows is picked in diamond-app's `src/integrations/help-centre/helpCentreRoutes.js`, not here.
 - Layer conventions live in `.cursor/rules/`; the "Agent setup" section at the end of this file lists each rule with its globs. Match the local layer pattern before inventing structure. When you add a top-level folder, script, rule, or skill, update the file layout in `README.md` in the same change.
 - Run `npm run dev` (port **3333**) to preview
 - Run `npm run validate` and `npm run broken-links` before committing
@@ -15,7 +15,7 @@
 
 The reader is a photographer, usually mid-task. These files own the writing, and nothing else restates them:
 
-- Tone of voice (helpful, professional, calm, supportive, natural): `../../../tools-os/diamond-translate/projects/help-centre/tone.md`. The single definition, with examples and the standard phrasings every photographer article reuses.
+- Tone of voice (helpful, professional, calm, supportive, natural): `../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md`. The single definition, with examples and the standard phrasings every photographer article reuses.
 - Copy mechanics (frontmatter, Diamond terminology, bold UI labels, what stays out, components, links): `.cursor/rules/help-mdx-copy.mdc`.
 - Page shape per tab: `help-guides.mdc`, `help-academy.mdc`, `help-troubleshooting.mdc`.
 - Translation: English is written here. Target languages go through the `diamond-translate` workspace in tools-os — see `help-translations.mdc`. Page keys, the Mintlify language contract, and `npm run i18n:audit` are the `help-i18n` skill.
@@ -51,7 +51,7 @@ Cursor applies these from `.cursor/rules/` and Claude Code from `.claude/rules/`
 - `drafts/**/*`, `**/*.draft.mdx`: [`help-drafts`](.cursor/rules/help-drafts.mdc). Unpublished page conventions for help-centre/drafts/ and *.draft.mdx: Mintlify ignores these until a page is ready
 - `guides/**/*.mdx`, `.cursor/skills/guides-architecture/maps/*.md`: [`help-guides`](.cursor/rules/help-guides.mdc). Guides tab conventions: one collapsible sidebar group per core feature, Overview first, step-by-step task articles
 - `index.mdx`, `home.css`, `style.css`, `academy.css`, `search.js`, `snippets/home-content.jsx`, `snippets/home-academy.jsx`, `snippets/home-guide-grid.jsx`: [`help-home-theme`](.cursor/rules/help-home-theme.mdc). Home page and theme override conventions: index.mdx custom layout, root CSS overrides, and search.js entry hooks
-- `**/*.mdx`: [`help-mdx-copy`](.cursor/rules/help-mdx-copy.mdc). Copy mechanics for every MDX page in help-centre: frontmatter, terminology, bold labels, what stays out, components, links. Tone of voice is defined in ../../../tools-os/diamond-translate/projects/help-centre/tone.md
+- `**/*.mdx`: [`help-mdx-copy`](.cursor/rules/help-mdx-copy.mdc). Copy mechanics for every MDX page in help-centre: frontmatter, terminology, bold labels, what stays out, components, links. Tone of voice is defined in ../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md
 - `snippets/**/*`, `scripts/**/*.mjs`, `package.json`: [`help-snippets-scripts`](.cursor/rules/help-snippets-scripts.mdc). Reusable snippet and maintenance script conventions for help-centre/snippets/ and help-centre/scripts/
 - `troubleshooting/**/*.mdx`: [`help-troubleshooting`](.cursor/rules/help-troubleshooting.mdc). Troubleshooting tab conventions: one question per article, answered directly, linking to the Guides steps
 

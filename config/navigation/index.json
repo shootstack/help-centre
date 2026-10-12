@@ -83,6 +83,7 @@
                                     "pages": [
                                         "guides/contacts/overview",
                                         "guides/contacts/details",
+                                        "guides/contacts/custom-fields",
                                         "guides/contacts/filter",
                                         "guides/contacts/favorites",
                                         "guides/contacts/files"

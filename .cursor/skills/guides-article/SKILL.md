@@ -29,7 +29,7 @@ Progress:
 
 ### 1. Resolve inputs and brief
 
-Read the article block in the brief. Read `../../../tools-os/diamond-translate/projects/help-centre/tone.md` in full: the five qualities, where drift starts, and the standard phrasings you will copy into the draft. Read one existing article in the same group (or `guides/media-folders/overview.mdx`) to match depth.
+Read the article block in the brief. Read `../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md` in full: the five qualities, where drift starts, and the standard phrasings you will copy into the draft. Read one existing article in the same group (or `guides/media-folders/overview.mdx`) to match depth.
 
 The brief's "UI strings (spelling reference)" list is exactly that, not a checklist. A label goes in the article because the reader clicks it, not because it is on the list.
 

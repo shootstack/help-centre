@@ -19,8 +19,8 @@ to diamond-translate.
 ## Does not own
 
 Tone, terminology, previews, target-language pages, and translation coverage.
-These live in [diamond-translate](../../../../../../tools-os/diamond-translate/AGENTS.md): the
-project's [rules, tone, and terminology](../../../../../../tools-os/diamond-translate/projects/help-centre/)
+These live in [diamond-translate](../../../../../../tools-os/projects/diamond-translate/AGENTS.md): the
+project's [rules, tone, and terminology](../../../../../../tools-os/projects/diamond-translate/projects/help-centre/)
 layered over the shared ones. See the `help-translations` rule. The
 `guides-article`, `guides-architecture`, and `voice-review` skills own page
 writing and structure.
@@ -46,7 +46,7 @@ writing and structure.
 ## Handoff
 
 When English pages were added, changed, moved, or removed, end the task with a
-[`Handoff: copy`](../../../../../../tools-os/diamond-translate/AGENTS.md#handoff-copy) block
+[`Handoff: copy`](../../../../../../tools-os/projects/diamond-translate/AGENTS.md#handoff-copy) block
 listing every affected page as `<page path>` (for example `guides/projects/overview`).
 Do not translate here.
 

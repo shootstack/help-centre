@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Every photographer page should sound like the same person: a colleague who knows Shootstack, explaining it to a photographer over their shoulder. Helpful, professional, calm, supportive, natural. The writer knows the code, so their own sentences always make sense to them. This review hands the page to a reader who has only the tone guide and the page, then aligns the page with its siblings.
 
-[tone.md](../../../../../../tools-os/diamond-translate/projects/help-centre/tone.md) defines the five qualities, how each drifts, and the fixes. It is the standard for this review and for writing.
+[tone.md](../../../../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md) defines the five qualities, how each drifts, and the fixes. It is the standard for this review and for writing.
 
 ## Inputs
 
@@ -27,7 +27,7 @@ Progress:
 
 ### 1. Read the tone guide
 
-Read [tone.md](../../../../../../tools-os/diamond-translate/projects/help-centre/tone.md) in full, including "Flow between sentences and paragraphs". You triage against it; the reader reads with it. Review whole passages as well as individual lines, so an abrupt sentence or paragraph break is visible.
+Read [tone.md](../../../../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md) in full, including "Flow between sentences and paragraphs". You triage against it; the reader reads with it. Review whole passages as well as individual lines, so an abrupt sentence or paragraph break is visible.
 
 ### 2. Launch one fresh reader per page
 

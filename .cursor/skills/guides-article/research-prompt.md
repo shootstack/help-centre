@@ -5,7 +5,7 @@ One `explore` subagent per article. Replace every `<...>`. Scope it to the jobs 
 ```
 Thoroughness: medium. Read-only; do NOT edit files.
 
-Repo: /Users/jiry/Workspace/shootstack/engineering-os/shootstack-diamond/diamond-app
+Repo: /Users/jiry/Workspace/shootstack/engineering-os/projects/shootstack-diamond/diamond-app
 (React 19 gallery-management app for photographers, product name "Shootstack").
 Sibling repo for server rules: .../shootstack-diamond/diamond-server
 

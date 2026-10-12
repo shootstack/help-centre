@@ -3,7 +3,7 @@
 # Translations
 
 Write English here. Follow the help-centre
-[rules, tone, and terminology](../../../../../tools-os/diamond-translate/projects/help-centre/)
+[rules, tone, and terminology](../../../../../tools-os/projects/diamond-translate/projects/help-centre/)
 in diamond-translate, layered over its shared ones. Pages follow `tone.md`.
 
 Page keys, navigation, the Mintlify language contract, and `npm run i18n:audit`
@@ -15,6 +15,6 @@ labels in a translation come from diamond-app for that language,
 not from a paraphrase written here.
 
 Previews, translated pages, and coverage are
-[diamond-translate](../../../../../tools-os/diamond-translate/AGENTS.md). When a change adds,
+[diamond-translate](../../../../../tools-os/projects/diamond-translate/AGENTS.md). When a change adds,
 changes, moves, or removes English pages, end with a
-[`Handoff: copy`](../../../../../tools-os/diamond-translate/AGENTS.md#handoff-copy) block.
+[`Handoff: copy`](../../../../../tools-os/projects/diamond-translate/AGENTS.md#handoff-copy) block.

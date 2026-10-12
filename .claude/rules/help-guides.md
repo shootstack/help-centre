@@ -11,7 +11,7 @@ paths:
 feature, one folder per group, one article per job. Plan a section with the
 `guides-architecture` skill; write an article with the
 `guides-article` skill. Copy mechanics are in `help-mdx-copy.mdc`; tone of
-voice in `../../../tools-os/diamond-translate/projects/help-centre/tone.md`.
+voice in `../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md`.
 
 ## Structure
 
