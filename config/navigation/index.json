@@ -286,6 +286,7 @@
                                     "pages": [
                                         "nl/guides/contacts/overview",
                                         "nl/guides/contacts/details",
+                                        "nl/guides/contacts/custom-fields",
                                         "nl/guides/contacts/filter",
                                         "nl/guides/contacts/favorites",
                                         "nl/guides/contacts/files"
@@ -492,6 +493,7 @@
                                     "pages": [
                                         "de/guides/contacts/overview",
                                         "de/guides/contacts/details",
+                                        "de/guides/contacts/custom-fields",
                                         "de/guides/contacts/filter",
                                         "de/guides/contacts/favorites",
                                         "de/guides/contacts/files"
@@ -698,6 +700,7 @@
                                     "pages": [
                                         "fr/guides/contacts/overview",
                                         "fr/guides/contacts/details",
+                                        "fr/guides/contacts/custom-fields",
                                         "fr/guides/contacts/filter",
                                         "fr/guides/contacts/favorites",
                                         "fr/guides/contacts/files"
