@@ -10,7 +10,7 @@ const navigationPath = path.join(root, 'config/navigation/index.json');
 const appRoot = findProject('diamond-app', root);
 
 if (!appRoot || !existsSync(appRoot)) {
-    console.warn('Skipping app help sync: diamond-app is not checked out in the Shootstack workspace (company-os/registry.json).');
+    console.warn('Skipping app help sync: diamond-app is not checked out in the Shootstack workspace (registry.json).');
     process.exit(0);
 }
 
