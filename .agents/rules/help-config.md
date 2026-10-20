@@ -1,0 +1,84 @@
+---
+description: Site configuration conventions: docs.json is a thin shell that $refs config/ for branding, site settings, and navigation
+globs:
+  - docs.json
+  - config/**/*.json
+  - .mintignore
+alwaysApply: false
+---
+
+# Config Layer Conventions
+
+`docs.json` is the Mintlify entry point and stays a shell. Real settings live in
+`config/` and are pulled in with `$ref`.
+
+## Structure
+
+```text
+docs.json                      # name, description, favicon, $ref navigation + site
+config/site.json               # styling, contextual, navbar, footer, seo, redirects, interaction, $ref branding
+config/branding.json           # theme, colors, logo, fonts, icons, background, appearance
+config/navigation/index.json   # three root tabs
+.mintignore                    # drafts, tooling, and local indexes (not published)
+```
+
+## Patterns
+
+Navigation has three root tabs and two shapes:
+
+```json
+{ "tab": "Academy", "icon": "graduation-cap", "pages": ["academy/index", "academy/introduction"] }
+```
+
+```json
+{
+  "tab": "Guides",
+  "icon": "book-open",
+  "groups": [
+    {
+      "group": "Guides",
+      "pages": [
+        "guides/introduction/overview",
+        { "group": "Projects", "expanded": false, "pages": ["guides/projects/overview", "guides/projects/status"] }
+      ]
+    }
+  ]
+}
+```
+
+- Academy uses a flat `pages` list. Guides nests one `group` per core
+  feature inside a wrapper group, with `expanded: false`,
+  so each section collapses in the sidebar. Introduction is a single page
+  in the first wrapper, not a group. A top-level group cannot collapse, so
+  feature groups stay nested. Overview page first. `interaction.drilldown`
+  stays `false` so opening a group does not navigate.
+- Troubleshooting uses top-level `groups`: `Troubleshooting` holds its
+  Overview page first, then the visible topics match `troubleshooting/index.mdx`:
+  `Uploading photos`, `Viewing photos`, `Downloading photos`, and `Email delivery`.
+  Each question appears once in its matching group, in the same order as the
+  overview cards.
+- The first wrapper in each grouped tab repeats the tab name and its header
+  stays hidden in `style.css`. In Guides it holds Introduction only. The
+  visible small titles are `Gallery delivery`
+  (Projects, Media folders, Galleries, Gallery shares), `Contact management`
+  (Contacts, Emails), `Productivity` (Notes, Tasks), and `Settings`.
+  Settings stays an empty `pages` list until the workspace, branding, and
+  account settings articles exist. Mintlify omits that group, so `sidebar.js`
+  draws the title until the list has a page. The same script pins external
+  links, starting with Homepage, in the sidebar bottom section.
+  A new group goes in the wrapper it belongs to.
+- Page entries are paths without extension. Every `.mdx` outside `.mintignore`
+  must appear here or it is a hidden page.
+- Redirects go in `config/site.json` as `{ "source", "destination" }` and are
+  added whenever a page path changes.
+- `branding.json` keeps `icons.library` on `lucide` for Mintlify's own chrome.
+  Icons you choose (tabs, cards, page icons) are paths under `/assets/icons/`.
+- `seo.indexing` stays `navigable`; hidden pages are not indexed.
+
+## Boundaries
+
+- Do not put navigation, colors, or navbar content directly in `docs.json`.
+- Do not hand-edit the Academy `pages` list; `npm run sync-academy` owns it.
+- Never create `mint.json`; it is deprecated.
+- Custom domain, preview settings, and GitHub app wiring are dashboard tasks,
+  not config edits.

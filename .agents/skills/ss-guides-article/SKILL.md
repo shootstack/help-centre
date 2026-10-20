@@ -12,7 +12,7 @@ Write one article. One article, one job. If the section has no article map yet, 
 
 - Section and slug, for example `projects`, `overview`.
 - Type: `overview` (first article of a group) or `task` (one job).
-- Brief: `maps/<section>.md` for the section. Take `title`, `sidebarTitle`, H2 outline, and cross-links from it. Its `description` is a draft: rewrite it to the frontmatter rule in `help-mdx-copy.mdc` and update the map to match.
+- Brief: `maps/<section>.md` for the section. Take `title`, `sidebarTitle`, H2 outline, and cross-links from it. Its `description` is a draft: rewrite it to the frontmatter rule in `help-mdx-copy.md` and update the map to match.
 
 ## Workflow
 
@@ -29,7 +29,7 @@ Progress:
 
 ### 1. Resolve inputs and brief
 
-Read the article block in the brief. Read `../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md` in full: the five qualities, where drift starts, and the standard phrasings you will copy into the draft. Read one existing article in the same group (or `guides/media-folders/overview.mdx`) to match depth.
+Read the article block in the brief. Read `../../../../translate/projects/help-centre/tone.md` in full: the five qualities, where drift starts, and the standard phrasings you will copy into the draft. Read one existing article in the same group (or `guides/media-folders/overview.mdx`) to match depth.
 
 The brief's "UI strings (spelling reference)" list is exactly that, not a checklist. A label goes in the article because the reader clicks it, not because it is on the list.
 
@@ -43,7 +43,7 @@ The research output is a fact sheet, not an outline. Use it to spell labels, con
 
 ### 3. Write from the template
 
-Pick the skeleton in [templates.md](templates.md). Use `overview` or `task`. The skeletons carry the shape from `help-guides.mdc`; fill the slots, delete the sections the feature does not have. While drafting:
+Pick the skeleton in [templates.md](templates.md). Use `overview` or `task`. The skeletons carry the shape from `help-guides.md`; fill the slots, delete the sections the feature does not have. While drafting:
 
 - Order H2s the way a photographer meets them: create, open, change, delete.
 - Copy the standard phrasings from `tone.md`. Swap the `<...>` parts.
@@ -52,7 +52,7 @@ Pick the skeleton in [templates.md](templates.md). Use `overview` or `task`. The
 
 ### 4. Add screenshot placeholders
 
-Add one placeholder under each step where a screenshot would show the control, and under single-click actions that are hard to find. Use the `## Placeholder snippet` in [templates.md](templates.md). Paths are in `help-guides.mdc`. Comment-only placeholders keep `mint validate` and `mint broken-links` green until the WebP file exists. Still list them in the report.
+Add one placeholder under each step where a screenshot would show the control, and under single-click actions that are hard to find. Use the `## Placeholder snippet` in [templates.md](templates.md). Paths are in `help-guides.md`. Comment-only placeholders keep `mint validate` and `mint broken-links` green until the WebP file exists. Still list them in the report.
 
 ### 5. Register in navigation
 

@@ -64,7 +64,7 @@ Merge the three inventories, then decide:
 
 ### 4. Write the article map
 
-Write the map in this skill using [article-map-template.md](article-map-template.md). Maps go to `maps/<section>.md`. Each `description` becomes the published search snippet. Write it to the frontmatter rule in `.cursor/rules/help-mdx-copy.mdc`: the outcome in plain words, at most 20 words, with no click path and no list of every H2. `.cursor/` is in `.mintignore`, so nothing here is published. Slug the section the way the UI labels it, kebab-case (`media-folders`, not `photo-folders`).
+Write the map in this skill using [article-map-template.md](article-map-template.md). Maps go to `maps/<section>.md`. Each `description` becomes the published search snippet. Write it to the frontmatter rule in `.agents/rules/help-mdx-copy.md`: the outcome in plain words, at most 20 words, with no click path and no list of every H2. `.cursor/` is in `.mintignore`, so nothing here is published. Slug the section the way the UI labels it, kebab-case (`media-folders`, not `photo-folders`).
 
 ### 5. Present for approval
 

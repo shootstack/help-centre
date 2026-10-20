@@ -1,0 +1,89 @@
+---
+description: Reusable snippet and maintenance script conventions for help-centre/snippets/ and help-centre/scripts/
+globs:
+  - snippets/**/*
+  - scripts/**/*.mjs
+  - package.json
+alwaysApply: false
+---
+
+# Snippets and Scripts Conventions
+
+`snippets/` holds MDX-importable data and components. `scripts/` holds Node
+maintenance scripts wired through `package.json`.
+
+## Structure
+
+```text
+snippets/<name>.js      # data catalogs: named export, plain objects
+snippets/<name>.jsx     # presentational components: named export, props in, JSX out
+scripts/<verb>-<noun>.mjs
+package.json            # scripts: sync-academy, sync-app-help, lint, lint-guides, dev, validate, broken-links, a11y
+```
+
+## App help catalog
+
+`npm run sync-app-help` writes every photographer page in `config/navigation/index.json` to
+`../../../engineering-os/projects/shootstack-diamond/diamond-app/src/integrations/help-centre/helpCentreArticles.json`; commit
+that file in diamond-app. Help-centre does not decide which articles each app page shows:
+diamond-app picks them by key in `helpCentreRoutes.js`.
+
+```json
+"guides/projects/overview": {
+  "title": "Projects",
+  "description": "Create a project for each shoot, ...",
+  "href": "/guides/projects/overview",
+  "translations": {
+    "nl": {
+      "title": "Projecten",
+      "description": "Maak een project voor elke shoot, ...",
+      "href": "/nl/guides/projects/overview"
+    }
+  }
+}
+```
+
+- The key is the English page path. Title and description come from page frontmatter.
+  `translations` contains each configured language's navigable mirror, with its
+  localized title, description, and href. Missing mirrors fall back to English in
+  the app; Academy currently has no translations. Generated copy is never edited here.
+  `href` drops a trailing `/index`, so `academy/index` links to `/academy`.
+- The script fails on missing page files and missing titles. `--check` skips
+  with a warning when `../../../engineering-os/projects/shootstack-diamond/diamond-app` is not checked out.
+- Re-run the sync after adding a page or changing an English or translated title, description, or
+  path. Renaming or removing a page drops its key; update `helpCentreRoutes.js`
+  in diamond-app when a picked article goes away.
+
+## Patterns
+
+Snippets are imported with a root path and a named export:
+
+```mdx
+import { AcademyGrid } from "/snippets/academy-grid.jsx";
+
+<AcademyGrid lessons={academyLessons} />
+```
+
+- A snippet exists when the same content or component appears on more than
+  one page, or when a script generates from it. One-off layout stays inline.
+  The home page is the exception: its content and cards live in
+  `snippets/home-*` so `index.mdx` stays a short composition. See
+  `help-home-theme.md`.
+- Components are arrow functions, Tailwind classes with `dark:` variants,
+  `not-prose` on custom grids so Mintlify's prose styles do not leak in.
+- Scripts are ESM (`.mjs`), import from `node:` modules, resolve paths from
+  the repo root, and support `--check` when they write files so
+  `npm run validate` can fail on stale output.
+- Scripts that write generated regions mark them with paired MDX comments
+  (`{/* <name>:start */}` / `{/* <name>:end */}`) and rewrite only that region.
+- Every script is exposed as an `npm run` entry; do not document raw `node`
+  invocations elsewhere.
+
+## Boundaries
+
+- Snippets have no side effects and no fetches. Mintlify renders them at
+  build time.
+- Scripts never touch `.mdx` body copy outside a marked region.
+- No runtime dependencies in `package.json`. The site is built by the `mint`
+  CLI installed globally. ESLint and Prettier are devDependencies, matching
+  diamond-app's editor setup.

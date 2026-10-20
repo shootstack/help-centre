@@ -7,12 +7,12 @@ import { findProject } from './find-project.mjs';
 // Key-health engine for the ss-help-i18n skill. The page path is the key. Checks
 // page-tree parity for every configured language (exit 1 on drift) and reports
 // bold UI labels that do not match an English string in diamond-app. Writes
-// .cursor/skills/ss-help-i18n/docs/_generated/STATE.md.
+// .agents/skills/ss-help-i18n/docs/_generated/STATE.md.
 // Tone, terminology, and translation coverage are checked in diamond-translate.
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const navigationPath = path.join(root, 'config/navigation/index.json');
-const stateFile = path.join(root, '.cursor/skills/ss-help-i18n/docs/_generated/STATE.md');
+const stateFile = path.join(root, '.agents/skills/ss-help-i18n/docs/_generated/STATE.md');
 const defaultLanguage = 'en';
 
 const labelSources = [

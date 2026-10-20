@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Every photographer page should sound like the same person: a colleague who knows Shootstack, explaining it to a photographer over their shoulder. Helpful, professional, calm, supportive, natural. The writer knows the code, so their own sentences always make sense to them. This review hands the page to a reader who has only the tone guide and the page, then aligns the page with its siblings.
 
-[tone.md](../../../../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md) defines the five qualities, how each drifts, and the fixes. It is the standard for this review and for writing.
+[tone.md](../../../../translate/projects/help-centre/tone.md) defines the five qualities, how each drifts, and the fixes. It is the standard for this review and for writing.
 
 ## Inputs
 
@@ -27,7 +27,7 @@ Progress:
 
 ### 1. Read the tone guide
 
-Read [tone.md](../../../../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md) in full, including "Flow between sentences and paragraphs". You triage against it; the reader reads with it. Review whole passages as well as individual lines, so an abrupt sentence or paragraph break is visible.
+Read [tone.md](../../../../translate/projects/help-centre/tone.md) in full, including "Flow between sentences and paragraphs". You triage against it; the reader reads with it. Review whole passages as well as individual lines, so an abrupt sentence or paragraph break is visible.
 
 ### 2. Launch one fresh reader per page
 
@@ -40,7 +40,7 @@ For more than eight pages, give one subagent per section and list every page pat
 Each finding is a line number, the original text, the quality it drifts from, and a rewrite. A flow finding may span adjacent sentences or paragraphs; review and apply it as one passage. Accept a rewrite when:
 
 - Every bold label is still verbatim.
-- No fact changed: numbers, defaults, where a control is, what happens after a click. Dropping a reference fact from `## What stays out` in `help-mdx-copy.mdc` is fine; dropping a limit, a location, or a step is not.
+- No fact changed: numbers, defaults, where a control is, what happens after a click. Dropping a reference fact from `## What stays out` in `help-mdx-copy.md` is fine; dropping a limit, a location, or a step is not.
 - It is shorter or reads more like a person, not only different. For flow findings, compare the passage before and after: the connection should be easier to follow without adding filler, repetition, or a new implied sequence or cause.
 - It makes the smallest useful change. Keep clear short sentences, paragraph breaks, and scannable steps where they already work; do not join every sentence or add a transition to every paragraph.
 

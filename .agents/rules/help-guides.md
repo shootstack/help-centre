@@ -1,0 +1,124 @@
+---
+description: Guides tab conventions: one collapsible sidebar group per core feature, Overview first, step-by-step task articles
+globs:
+  - guides/**/*.mdx
+  - .agents/skills/ss-guides-architecture/maps/*.md
+alwaysApply: false
+---
+
+# Guides Layer Conventions
+
+`guides/` holds step-by-step guides. One collapsible sidebar group per core
+feature, one folder per group, one article per job. Plan a section with the
+`ss-guides-architecture` skill; write an article with the
+`ss-guides-article` skill. Copy mechanics are in `help-mdx-copy.md`; tone of
+voice in `../../../translate/projects/help-centre/tone.md`.
+
+## Structure
+
+```text
+guides/
+├── introduction/
+│   └── overview.mdx          # What is Shootstack
+├── projects/
+│   ├── overview.mdx          # always first: what it is + create/open/rename/delete
+│   ├── status.mdx            # one job per follow-up article
+│   └── favorites.mdx
+└── <section>/                # kebab-case of the UI label (media-folders, not photo-folders)
+```
+
+- Folder name is the plural UI label in kebab-case. The group name in
+  navigation is the same label in sentence case.
+- `overview.mdx` has `title: <Feature>` and `sidebarTitle: Overview`.
+- Task articles have `title: <Verb + object>` (`Upload photos`) and a one- or
+  two-word `sidebarTitle`.
+- 3-6 articles per group. Above that, propose a nested group.
+- `.agents/skills/ss-guides-architecture/maps/<section>.md` is the approved
+  article map for a group. It is mint-ignored and is the brief every article
+  in that group follows.
+
+## Patterns
+
+Overview shape, in this order: intro (what it is, where it lives, what a
+photographer uses it for), create, open, rename, other single-click changes,
+delete, "Inside a …" list of sub-surfaces owned by other groups, `## Related`.
+
+Task article shape: one or two intro sentences (what the job is for and when
+you do it), one H2 per job, `## Related`. Open an H2 with one sentence only
+when it tells the reader something the heading doesn't (when in the shoot,
+or why it matters for the client). Otherwise go straight to the steps.
+
+```mdx
+## Create a project
+
+<Steps>
+  <Step title="Start a new project">
+    Click **New**.
+    {/* TODO screenshot: Projects header with New highlighted
+    <Frame>
+      <img className="block dark:hidden" src="/assets/images/guides/projects/overview-create-1.webp" alt="Projects page header with the New button" />
+      <img className="hidden dark:block" src="/assets/images/guides/projects/overview-create-1-dark.webp" alt="Projects page header with the New button" />
+    </Frame>
+    */}
+  </Step>
+  <Step title="Name the project">
+    In **Name**, enter the project name.
+  </Step>
+</Steps>
+
+<Note>
+A project name can be up to 64 characters.
+</Note>
+```
+
+- `<Steps>` for two or more clicks; at most 5 steps; one action per step in
+  one or two sentences, where the second says why or what you see.
+  `Step title` names the action, not the location.
+- Single-click actions are one sentence of prose.
+- `<Note>` holds one limit, its number, and what to do about it. Only limits
+  a photographer plans around: how many, how big, how often (25 folders per
+  project, 500 photos per batch, 100 MB per file). Skip field validation such
+  as name length or allowed characters. Skip a safety cap a photographer
+  will not reach in normal use, such as thousands of notes, projects,
+  contacts, or tasks, a large template or file collection, or a 15,000-pixel
+  side.
+  No quoted error messages.
+- `<Warning>` sits directly above the delete `<Steps>` and says in plain
+  words what is deleted and that it can't be undone. Never paste the dialog.
+- `<Tip>` only for a shortcut or faster path that exists in code. No other
+  callouts.
+- `## Related` closes the page with 2-4 root-relative links
+  (`/guides/projects/favorites`). Skip the section if nothing exists yet.
+- Screenshot paths: `assets/images/guides/<section>/<article>-<task>-<n>.webp`.
+- Budgets: Overview about 500 words, task article about 350. If over, cut
+  prose, not steps.
+- No tables of options.
+- `npm run lint-guides` (also part of `npm run validate`) enforces the
+  mechanical side of these rules: banned words, bold statuses, quoted
+  messages in a `<Note>`, missing delete `<Warning>`, step counts, screenshot
+  paths, sentence-case headings, the `## Related` link count, and the
+  `description` length and shape. Whether it sounds natural is checked by the
+  `ss-voice-review` skill, not the lint.
+
+## Navigation
+
+Register every page in the matching nested `group` in
+`config/navigation/index.json`, with `expanded: false`, Overview first,
+then sidebar order from the article map. Introduction stays in the `Guides`
+wrapper. `Gallery delivery` holds Projects, Media folders, Galleries, and
+Gallery shares. `Contact management` holds Contacts and Emails.
+`Productivity` holds Notes and Tasks. `Settings` is the empty wrapper for
+workspace, branding, and account settings. Add a new group inside the
+wrapper it belongs to when its first article exists. An empty group other
+than Settings fails `mint validate`. Moving a page adds a redirect in
+`config/site.json`.
+
+## Boundaries
+
+- No article for a capability that is not in the diamond-app UI. Check the
+  group's "Do not document" list before adding one.
+- A photographer article may name what the client sees in one sentence.
+  It does not walk the client's screen.
+- No duplication of another group's feature: name it and link it.
+- No Q&A `<Accordion>` or video embeds here; those belong to Troubleshooting
+  and Academy.

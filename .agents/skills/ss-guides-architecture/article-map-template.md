@@ -16,7 +16,7 @@ Sources reviewed: <date>, diamond-app <short commit>, diamond-server <short comm
 ### 1. <Title>
 - File: guides/<section>/<slug>.mdx
 - sidebarTitle: Overview
-- description: <one sentence, at most 20 words, the outcome in a photographer's words; no bold, arrows, or click path: see help-mdx-copy.mdc Frontmatter>
+- description: <one sentence, at most 20 words, the outcome in a photographer's words; no bold, arrows, or click path: see help-mdx-copy.md Frontmatter>
 - Reader goal: <one sentence>
 - H2 outline:
   - <H2>

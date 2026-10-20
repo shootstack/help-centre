@@ -61,4 +61,4 @@ Authorized rollout only — never a side effect of translation work.
 ## Related
 
 - [key-patterns.md](key-patterns.md) — what each page and label must look like.
-- [diamond-translate](../../../../../../../tools-os/projects/diamond-translate/AGENTS.md) — wording, terminology, translated pages, and coverage.
+- [diamond-translate](../../../../../translate/AGENTS.md) — wording, terminology, translated pages, and coverage.

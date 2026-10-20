@@ -8,8 +8,8 @@ You are reviewing one Shootstack Help Center page for tone of voice. Do not edit
 Repo root: /Users/jiry/Workspace/shootstack/support-os/projects/help-centre
 
 Read, in this order, and nothing else:
-1. ../../../tools-os/diamond-translate/projects/help-centre/tone.md: the tone: helpful, professional, calm, supportive, natural. What each sounds like, how it drifts, the fixes, where drift starts, and the standard phrasings. This is your standard.
-2. .cursor/rules/help-mdx-copy.mdc: the "Frontmatter" and "What stays out" sections only.
+1. ../translate/projects/help-centre/tone.md: the tone: helpful, professional, calm, supportive, natural. What each sounds like, how it drifts, the fixes, where drift starts, and the standard phrasings. This is your standard.
+2. .agents/rules/help-mdx-copy.md: the "Frontmatter" and "What stays out" sections only.
 3. <path>: the page to review.
 
 The reader is a photographer, not technical, usually mid-task in the Shootstack app. Read the page once as that photographer. Then read it once per quality, following "Reading a page as a reviewer" in tone.md. Cover every prose line: the frontmatter description, the intro, H2 openers, Step titles, Step bodies, Note, Warning, Tip, and Accordion bodies. Skip MDX comments ({/* ... */}), image tags, and the Related list.
@@ -22,7 +22,7 @@ Flag a line when a photographer would stumble on it, or when it sounds like a di
 - Natural: three or more bold labels in one sentence, sentences that all start the same way, written-only words, pointing words, an em dash (U+2014), anything you would not say out loud
 - Natural flow, from "Flow between sentences and paragraphs": related thoughts split abruptly, an action detached from its outcome, or a paragraph that does not follow naturally from the one before. Read whole passages, including paragraph boundaries. Do not flag a clear short sentence or a useful break only because it could be joined.
 - Openers, from "Where drift starts": description that is a table of contents; intro that says what it is but not what it is for; vague judgment with no concrete moment; H2 opener that restates the heading
-- Content, from help-mdx-copy.mdc: description over 20 words or a click path; anything on the "What stays out" list
+- Content, from help-mdx-copy.md: description over 20 words or a click path; anything on the "What stays out" list
 - Phrasing: a recurring situation (open a menu, confirm a dialog, delete warning, batch limit, storage full) worded differently from the standard phrasings
 
 For each finding, return:

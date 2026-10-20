@@ -1,0 +1,90 @@
+---
+description: Copy mechanics for every MDX page in help-centre: frontmatter, terminology, bold labels, what stays out, components, links. Tone of voice is defined in ../../../translate/projects/help-centre/tone.md
+globs:
+  - **/*.mdx
+alwaysApply: false
+---
+
+# MDX Copy Conventions
+
+Photographer pages are read by a photographer, usually mid-task. Write for
+scanning, not for reading front to back. This file is the mechanics those
+pages follow. How a page sounds is defined in
+`../../../translate/projects/help-centre/tone.md`; run the `ss-voice-review` skill on every
+page you write or rewrite. Tab-specific shapes live in `help-guides.md`,
+`help-academy.md`, and `help-troubleshooting.md`.
+
+## Frontmatter
+
+- `title` is required. `description` is one sentence stating what the reader
+  can do afterwards; it is the sidebar tooltip and the search snippet. Write
+  the outcome in plain words, at most 20 words. No bold, no arrows, no click
+  path, no list of every section (`Send a client a link to one gallery, then
+  rename, copy, or delete that link.`).
+- `sidebarTitle` when the sidebar needs a shorter label (`Overview`, `Status`).
+- `mode: wide` only for grid pages (Academy overview); `mode: custom` only
+  for the home page.
+
+## Grammar and terminology
+
+- Second person, present tense, active voice. `You` does the action;
+  `Shootstack` is the actor for system behavior (`Shootstack opens the project`).
+- American English. Sentence case for headings and titles. No emoji.
+- Diamond terms only: Gallery, Media folder, Project, Workspace, Contact,
+  Photo, Favorites, Gallery share. Never album, collection, or client area.
+- UI labels in **bold**, copied verbatim from `diamond-app/public/locales/en`.
+  Never paraphrase a button. Bold is for controls the reader clicks and the
+  screen or dialog they are on. Not for statuses, toasts, or messages.
+- `npm run lint-guides` rejects filler (`in order to`), editorializing
+  (`simply`, `just`), marketing words, `the user`, non-Diamond terms, and
+  arrow chains. Everything else about wording is in `tone.md`.
+
+## What stays out
+
+Research returns every string the UI can show. Most of it is reference, not
+content. Leave out:
+
+- Success toasts (`Folder deleted successfully`) and transient statuses
+  (`Pending`, `Uploading`, `Finished`).
+- Button labels that change state (`the button now reads **Sorted by Name**`).
+- Empty-state copy, unless the reader must click something in it.
+- Verbatim error strings. State the limit and what to do instead:
+  `You can copy up to 500 photos at a time. For a bigger set, copy it in a
+  few rounds.`
+- Field validation (name length, allowed characters). Nobody plans a shoot
+  around a 64-character name. Limits worth a `<Note>` are counts, sizes, and
+  quotas.
+
+Quote UI text only when the reader must recognize it on screen to continue.
+
+## Components
+
+| Need | Use |
+|---|---|
+| Two or more clicks in order | `<Steps>` with `<Step title="Action">` |
+| Limit or constraint with a number | `<Note>` |
+| Destructive action, placed directly before the step | `<Warning>` |
+| Shortcut or faster path that exists in code | `<Tip>` |
+| Links to sibling pages | `<Card>` in Troubleshooting; `<Card>` or a `## Related` list elsewhere |
+| Troubleshooting causes and fixes | Visible `##` headings with short answer paragraphs |
+| Screenshot | `<Frame>` with a light `<img className="block dark:hidden">` and a dark `<img className="hidden dark:block">` |
+
+Do not use `<Info>`, `<Check>`, `<Tabs>`, `<CodeGroup>`, `<Expandable>`, or
+API components. No code blocks in customer articles.
+
+## Links and images
+
+- Internal links are root-relative without extension:
+  `/guides/projects/overview`. Never `../` or full URLs for internal pages.
+- Images live in `assets/images/<tab>/<section>/` and always carry `alt` text that
+  describes what is visible.
+- A screenshot that does not exist yet is a commented `<Frame>` block starting
+  with `{/* TODO screenshot:` so `mint broken-links` stays green.
+
+## Boundaries
+
+- No invented behavior. Every action, label, and limit on a photographer
+  page traces to `diamond-app` or `diamond-server` code, or to a locale
+  string.
+- No `{/* TODO */}` left without a note of what is unverified.
+- No OpenAPI, endpoint, or developer content anywhere in this repo.

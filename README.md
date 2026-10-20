@@ -48,8 +48,8 @@ help-centre/
 ├── fr/                       # French home, guides, and troubleshooting pages
 ├── snippets/                 # academy catalog and grid; shared home components and home-content[-<lng>].jsx data
 ├── scripts/                  # sync-academy.mjs, sync-app-help.mjs, lint-guides.mjs, i18n-audit.mjs
-├── .cursor/
-│   ├── rules/                # help-*.mdc layer conventions (auto-attach by glob)
+├── .agents/
+│   ├── rules/                # help-*.md layer conventions (auto-attach by glob)
 │   └── skills/               # canonical skills (Agent Skills layout)
 │       ├── ss-guides-architecture/
 │       │   └── maps/         # per-feature article briefs, e.g. projects.md
@@ -57,21 +57,21 @@ help-centre/
 │       ├── ss-help-i18n/        # page keys, Mintlify language contract, i18n:audit report
 │       ├── ss-voice-review/     # reads tone.md from diamond-translate/projects/help-centre/
 │       └── mintlify*/        # vendored Mintlify skills
-└── .claude/, .agents/        # links and generated rules for Claude Code and Codex
+└── .claude/, .cursor/        # generated rules and links for Claude Code and Cursor
 ```
 
-`.cursor/` and the hand-written part of `AGENTS.md` are the source of truth for every agent. `company-os/agent-kit/agent-sync.mjs` links each skill into `.claude/skills/` and `.agents/skills/`, generates `.claude/rules/` from `.cursor/rules/`, and keeps `CLAUDE.md` and the generated section of `AGENTS.md` current. Edit `.cursor/`, then run `node ../../../company-os/agent-kit/agent-sync.mjs sync .`.
+`.agents/` and the hand-written part of `AGENTS.md` are the source of truth for every agent. The workspace `projects/agent-kit/agent-sync.mjs` links each skill into `.claude/skills/`, generates `.claude/rules/` and `.cursor/rules/` from `.agents/rules/`, and keeps `CLAUDE.md` and the generated section of `AGENTS.md` current. Edit `.agents/`, then run `node projects/agent-kit/agent-sync.mjs sync projects/help-centre` from the workspace root.
 
 ## Writing articles
 
-- Guides: plan a feature section with the `ss-guides-architecture` skill (writes `.cursor/skills/ss-guides-architecture/maps/<section>.md`), then write each article with the `ss-guides-article` skill. Both verify labels and limits against the diamond-app code before writing.
+- Guides: plan a feature section with the `ss-guides-architecture` skill (writes `.agents/skills/ss-guides-architecture/maps/<section>.md`), then write each article with the `ss-guides-article` skill. Both verify labels and limits against the diamond-app code before writing.
 - Academy: edit `snippets/academy-lessons.js`, run `npm run sync-academy`, then write the lesson body.
   The catalog can also set `thumbnail`, `thumbnailDark`, and `preview` for lesson cards. The first lesson is a mock preview: a silent 12-second montage of existing demo screenshots in `assets/videos/academy/`, with an English caption track. Replace it with the recorded walkthrough when the Academy is ready.
 - Troubleshooting: one question per page. Keep Overview first, then group questions in the sidebar by the same topics and order as `troubleshooting/index.mdx`.
 - In-app Help drawer: run `npm run sync-app-help` after adding a photographer page or changing an English or translated title, description, or path. It writes English entries with a `translations` map of localized titles, descriptions, and URLs to `../../../engineering-os/projects/shootstack-diamond/diamond-app/src/integrations/help-centre/helpCentreArticles.json`, which you commit in diamond-app. Only translated pages in the language navigation are included. Which articles each app page shows is chosen in diamond-app's `helpCentreRoutes.js`; the drawer uses the app language and falls back to English when an article has no translation.
-- Tone of voice: helpful, professional, calm, supportive, natural. `../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md` is the single definition, with examples and the standard phrasings; `.cursor/rules/help-mdx-copy.mdc` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). Translation goes through diamond-translate (`help-translations.mdc`). After writing any page, run the `ss-voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
+- Tone of voice: helpful, professional, calm, supportive, natural. `../translate/projects/help-centre/tone.md` is the single definition, with examples and the standard phrasings; `.agents/rules/help-mdx-copy.md` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). Translation goes through diamond-translate (`help-translations.md`). After writing any page, run the `ss-voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
 
-See `AGENTS.md` for terminology and `.cursor/rules/` for per-layer conventions.
+See `AGENTS.md` for terminology and `.agents/rules/` for per-layer conventions.
 
 ## Languages
 

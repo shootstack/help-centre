@@ -54,4 +54,4 @@ and the writing skills.
 
 - [setup.md](setup.md) — Mintlify language contract.
 - [_generated/STATE.md](_generated/STATE.md) — the live key-health report.
-- [help-centre rules, tone, and terminology](../../../../../../../tools-os/projects/diamond-translate/projects/help-centre/) — wording.
+- [help-centre rules, tone, and terminology](../../../../../translate/projects/help-centre/) — wording.
