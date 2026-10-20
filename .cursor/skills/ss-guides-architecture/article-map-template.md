@@ -1,6 +1,6 @@
 # Article map template
 
-Write one map in this skill. The `guides-article` skill reads it as its brief. Write it to `maps/<section>.md`.
+Write one map in this skill. The `ss-guides-article` skill reads it as its brief. Write it to `maps/<section>.md`.
 
 The "UI strings" block is a spelling reference so the writer copies labels verbatim. It is not a list of things the article must mention; toasts, statuses, and error strings belong there for accuracy but stay out of the article.
 

@@ -2,15 +2,15 @@
 description: Guides tab conventions: one collapsible sidebar group per core feature, Overview first, step-by-step task articles
 globs:
   - guides/**/*.mdx
-  - .cursor/skills/guides-architecture/maps/*.md
+  - .cursor/skills/ss-guides-architecture/maps/*.md
 ---
 
 # Guides Layer Conventions
 
 `guides/` holds step-by-step guides. One collapsible sidebar group per core
 feature, one folder per group, one article per job. Plan a section with the
-`guides-architecture` skill; write an article with the
-`guides-article` skill. Copy mechanics are in `help-mdx-copy.mdc`; tone of
+`ss-guides-architecture` skill; write an article with the
+`ss-guides-article` skill. Copy mechanics are in `help-mdx-copy.mdc`; tone of
 voice in `../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md`.
 
 ## Structure
@@ -32,7 +32,7 @@ guides/
 - Task articles have `title: <Verb + object>` (`Upload photos`) and a one- or
   two-word `sidebarTitle`.
 - 3-6 articles per group. Above that, propose a nested group.
-- `.cursor/skills/guides-architecture/maps/<section>.md` is the approved
+- `.cursor/skills/ss-guides-architecture/maps/<section>.md` is the approved
   article map for a group. It is mint-ignored and is the brief every article
   in that group follows.
 
@@ -97,7 +97,7 @@ A project name can be up to 64 characters.
   messages in a `<Note>`, missing delete `<Warning>`, step counts, screenshot
   paths, sentence-case headings, the `## Related` link count, and the
   `description` length and shape. Whether it sounds natural is checked by the
-  `voice-review` skill, not the lint.
+  `ss-voice-review` skill, not the lint.
 
 ## Navigation
 

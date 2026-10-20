@@ -1,12 +1,12 @@
 ---
-name: guides-article
+name: ss-guides-article
 description: Writes one photographer Guides article (MDX) in the step-by-step pattern, researched from diamond-app, and registers it in the Guides tab. Use for a feature Overview or a task guide.
 disable-model-invocation: true
 ---
 
 # Guides article
 
-Write one article. One article, one job. If the section has no article map yet, run `guides-architecture` first or confirm scope with the user.
+Write one article. One article, one job. If the section has no article map yet, run `ss-guides-architecture` first or confirm scope with the user.
 
 ## Inputs
 
@@ -62,7 +62,7 @@ If the article replaces an older page at a different path, add a redirect in `co
 
 ### 6. Voice review
 
-Run the `voice-review` skill (`.agents/skills/voice-review/SKILL.md`) on the article. Its reviewer has not seen your research. Pages are read as a photographer. Apply the rewrites you agree with. Keep labels verbatim and facts unchanged. If a rewrite needs a fact you have not verified, leave the sentence and add a `{/* TODO: ... */}`.
+Run the `ss-voice-review` skill (`.agents/skills/ss-voice-review/SKILL.md`) on the article. Its reviewer has not seen your research. Pages are read as a photographer. Apply the rewrites you agree with. Keep labels verbatim and facts unchanged. If a rewrite needs a fact you have not verified, leave the sentence and add a `{/* TODO: ... */}`.
 
 ### 7. Verify and report
 
@@ -78,7 +78,7 @@ npm run broken-links
 - [ ] Every bold label is a control or screen and appears verbatim in the locale JSON path returned by research. Labels come from diamond-app.
 - [ ] Every action traces to a component path in the research output
 - [ ] Every limit quotes the number from code, and says what to do about it
-- [ ] `voice-review` ran and every finding is applied or consciously kept
+- [ ] `ss-voice-review` ran and every finding is applied or consciously kept
 - [ ] No documented control is in the brief's "Do not document" list
 - [ ] Page is in the correct nested group, Overview first.
 

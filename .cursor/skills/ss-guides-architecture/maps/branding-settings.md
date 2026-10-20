@@ -272,7 +272,7 @@ Three parallel research passes checked controls and English labels, limits and s
 
 These questions affect excluded claims, not the approved seven-article structure. All seven articles were written within the verified boundaries above.
 
-## Writing and voice-review report
+## Writing and ss-voice-review report
 
 The user approved all seven articles and parallel writing on 2026-10-01. Each article received a new article-specific explore pass before drafting. Seven fresh readers each reviewed only the tone guide, the copy exclusions, and their assigned page, without research, map, or sibling context. All seven pages are registered under Settings > Branding settings, Overview first; Contact info, Social media, and Legal info are nested under Business details.
 

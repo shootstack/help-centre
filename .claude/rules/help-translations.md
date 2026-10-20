@@ -7,7 +7,7 @@ Write English here. Follow the help-centre
 in diamond-translate, layered over its shared ones. Pages follow `tone.md`.
 
 Page keys, navigation, the Mintlify language contract, and `npm run i18n:audit`
-are the [`help-i18n` skill](../skills/help-i18n/SKILL.md).
+are the [`ss-help-i18n` skill](../skills/ss-help-i18n/SKILL.md).
 
 Do not write Dutch, German, French, or any later language pages, navigation, or
 snippets in this repo. help-centre has no languages configured yet. Bold UI

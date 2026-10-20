@@ -1,9 +1,9 @@
 ---
-name: help-i18n
+name: ss-help-i18n
 description: Implement help-centre i18n structure — the Mintlify `navigation.languages` contract, page paths as keys, frontmatter fields, bold UI labels sourced from diamond-app locales, snippets, and key health with `npm run i18n:audit`. Use when adding, moving, or removing pages, wiring navigation for a language, or checking that bold labels match product English. English wording follows diamond-translate; translated pages are written only there.
 ---
 
-# help-i18n
+# ss-help-i18n
 
 The i18n implementation of help-centre: how English pages are keyed, wired into
 navigation, and checked so a language can be added later. Wording itself belongs
@@ -22,7 +22,7 @@ Tone, terminology, previews, target-language pages, and translation coverage.
 These live in [diamond-translate](../../../../../../tools-os/projects/diamond-translate/AGENTS.md): the
 project's [rules, tone, and terminology](../../../../../../tools-os/projects/diamond-translate/projects/help-centre/)
 layered over the shared ones. See the `help-translations` rule. The
-`guides-article`, `guides-architecture`, and `voice-review` skills own page
+`ss-guides-article`, `ss-guides-architecture`, and `ss-voice-review` skills own page
 writing and structure.
 
 ## References

@@ -1,12 +1,12 @@
 ---
-name: guides-architecture
+name: ss-guides-architecture
 description: Decides which photographer Guides articles a feature needs, researched from diamond-app and diamond-server, and writes a per-feature article map. Use when planning a Guides section, auditing it against the current UI, or deciding which articles a feature needs.
 disable-model-invocation: true
 ---
 
 # Guides architecture
 
-Produce the article map for one Guides sidebar group. Output is a plan file, not articles. Writing articles is the `guides-article` skill.
+Produce the article map for one Guides sidebar group. Output is a plan file, not articles. Writing articles is the `ss-guides-article` skill.
 
 Reference model: Hyperline docs. One collapsible sidebar group per feature, 3-6 articles, first article `sidebarTitle: Overview`, follow-ups are one job each with a verb title.
 
@@ -68,7 +68,7 @@ Write the map in this skill using [article-map-template.md](article-map-template
 
 ### 5. Present for approval
 
-Show the group name, the ordered article list with one-line descriptions, and the "Do not document" list. Ask before handing off. Once approved, run `guides-article` once per article, in sidebar order,.
+Show the group name, the ordered article list with one-line descriptions, and the "Do not document" list. Ask before handing off. Once approved, run `ss-guides-article` once per article, in sidebar order,.
 
 ## Boundaries
 

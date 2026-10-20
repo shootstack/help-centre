@@ -174,7 +174,7 @@ Research used current source files to verify the app's stale graph results. The 
 
 ## Writing and voice review record
 
-All five articles were written on 2026-10-01 using a fresh, source-backed research pass for each article. Each article then had a separate fresh voice-review reader who saw only the tone guide, copy rules, and that page.
+All five articles were written on 2026-10-01 using a fresh, source-backed research pass for each article. Each article then had a separate fresh ss-voice-review reader who saw only the tone guide, copy rules, and that page.
 
 | Page | Reader findings by quality | Applied |
 | --- | --- | --- |

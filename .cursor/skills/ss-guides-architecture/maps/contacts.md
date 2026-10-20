@@ -195,7 +195,7 @@ Do not expand this release into project custom fields, Academy, Troubleshooting,
 ## Open questions
 - none
 
-## Custom fields release: writing and voice-review report
+## Custom fields release: writing and ss-voice-review report
 
 The new guide and four existing article updates were implemented from current app/server code. Each page had an article-specific research pass, and five fresh readers reviewed only the tone guide, copy exclusions, and their assigned page.
 

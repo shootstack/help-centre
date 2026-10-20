@@ -1,5 +1,5 @@
 ---
-name: voice-review
+name: ss-voice-review
 description: Reviews photographer Help Center pages for natural tone and flow between sentences and paragraphs against tone.md, checks sibling phrasing, and applies light rewrites without changing UI labels or product facts.
 disable-model-invocation: true
 ---
@@ -55,7 +55,7 @@ Do this yourself; the reader does not see other pages.
 
 ### 5. Apply, lint, report
 
-Apply the accepted rewrites. If a `description` changed, update the matching `description:` in the article map: `.agents/skills/guides-architecture/maps/<section>.md` for a guide. Run `npm run lint-guides` for Guides, `npm run validate` for Academy or Troubleshooting.
+Apply the accepted rewrites. If a `description` changed, update the matching `description:` in the article map: `.agents/skills/ss-guides-architecture/maps/<section>.md` for a guide. Run `npm run lint-guides` for Guides, `npm run validate` for Academy or Troubleshooting.
 
 Report per page: findings grouped by quality, how many you applied, the before/after of every changed `description` and intro, and any `TODO` you left.
 

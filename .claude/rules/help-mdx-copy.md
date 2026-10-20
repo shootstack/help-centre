@@ -9,7 +9,7 @@ paths:
 Photographer pages are read by a photographer, usually mid-task. Write for
 scanning, not for reading front to back. This file is the mechanics those
 pages follow. How a page sounds is defined in
-`../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md`; run the `voice-review` skill on every
+`../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md`; run the `ss-voice-review` skill on every
 page you write or rewrite. Tab-specific shapes live in `help-guides.mdc`,
 `help-academy.mdc`, and `help-troubleshooting.mdc`.
 

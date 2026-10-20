@@ -192,7 +192,7 @@ Research used three parallel read-only inventories and current source files to c
 These questions affect the excluded claims, not the five-page structure. The approved articles were written within the boundaries above.
 
 
-## Writing and voice-review report
+## Writing and ss-voice-review report
 
 The user approved all five articles and parallel writing on 2026-10-01. Each article had a refreshed, article-specific explore research pass. Five fresh readers each reviewed only the tone guide, the copy exclusions, and their assigned page. All five pages are registered under Settings > Workspace settings, Overview first.
 

@@ -51,11 +51,11 @@ help-centre/
 ├── .cursor/
 │   ├── rules/                # help-*.mdc layer conventions (auto-attach by glob)
 │   └── skills/               # canonical skills (Agent Skills layout)
-│       ├── guides-architecture/
+│       ├── ss-guides-architecture/
 │       │   └── maps/         # per-feature article briefs, e.g. projects.md
-│       ├── guides-article/
-│       ├── help-i18n/        # page keys, Mintlify language contract, i18n:audit report
-│       ├── voice-review/     # reads tone.md from diamond-translate/projects/help-centre/
+│       ├── ss-guides-article/
+│       ├── ss-help-i18n/        # page keys, Mintlify language contract, i18n:audit report
+│       ├── ss-voice-review/     # reads tone.md from diamond-translate/projects/help-centre/
 │       └── mintlify*/        # vendored Mintlify skills
 └── .claude/, .agents/        # links and generated rules for Claude Code and Codex
 ```
@@ -64,12 +64,12 @@ help-centre/
 
 ## Writing articles
 
-- Guides: plan a feature section with the `guides-architecture` skill (writes `.cursor/skills/guides-architecture/maps/<section>.md`), then write each article with the `guides-article` skill. Both verify labels and limits against the diamond-app code before writing.
+- Guides: plan a feature section with the `ss-guides-architecture` skill (writes `.cursor/skills/ss-guides-architecture/maps/<section>.md`), then write each article with the `ss-guides-article` skill. Both verify labels and limits against the diamond-app code before writing.
 - Academy: edit `snippets/academy-lessons.js`, run `npm run sync-academy`, then write the lesson body.
   The catalog can also set `thumbnail`, `thumbnailDark`, and `preview` for lesson cards. The first lesson is a mock preview: a silent 12-second montage of existing demo screenshots in `assets/videos/academy/`, with an English caption track. Replace it with the recorded walkthrough when the Academy is ready.
 - Troubleshooting: one question per page. Keep Overview first, then group questions in the sidebar by the same topics and order as `troubleshooting/index.mdx`.
 - In-app Help drawer: run `npm run sync-app-help` after adding a photographer page or changing an English or translated title, description, or path. It writes English entries with a `translations` map of localized titles, descriptions, and URLs to `../../../engineering-os/projects/shootstack-diamond/diamond-app/src/integrations/help-centre/helpCentreArticles.json`, which you commit in diamond-app. Only translated pages in the language navigation are included. Which articles each app page shows is chosen in diamond-app's `helpCentreRoutes.js`; the drawer uses the app language and falls back to English when an article has no translation.
-- Tone of voice: helpful, professional, calm, supportive, natural. `../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md` is the single definition, with examples and the standard phrasings; `.cursor/rules/help-mdx-copy.mdc` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). Translation goes through diamond-translate (`help-translations.mdc`). After writing any page, run the `voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
+- Tone of voice: helpful, professional, calm, supportive, natural. `../../../tools-os/projects/diamond-translate/projects/help-centre/tone.md` is the single definition, with examples and the standard phrasings; `.cursor/rules/help-mdx-copy.mdc` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). Translation goes through diamond-translate (`help-translations.mdc`). After writing any page, run the `ss-voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
 
 See `AGENTS.md` for terminology and `.cursor/rules/` for per-layer conventions.
 
