@@ -9,7 +9,7 @@ paths:
 Photographer pages are read by a photographer, usually mid-task. Write for
 scanning, not for reading front to back. This file is the mechanics those
 pages follow. How a page sounds is defined in
-`../../../translate/projects/help-centre/tone.md`; run the `ss-voice-review` skill on every
+`teams/marketing/brand/voice/surfaces/help-centre.md` (from the Shootstack workspace root); run the `ss-voice-review` skill on every
 page you write or rewrite. Tab-specific shapes live in `help-guides.md`,
 `help-academy.md`, and `help-troubleshooting.md`.
 
@@ -36,7 +36,7 @@ page you write or rewrite. Tab-specific shapes live in `help-guides.md`,
   screen or dialog they are on. Not for statuses, toasts, or messages.
 - `npm run lint-guides` rejects filler (`in order to`), editorializing
   (`simply`, `just`), marketing words, `the user`, non-Diamond terms, and
-  arrow chains. Everything else about wording is in `tone.md`.
+  arrow chains. Everything else about wording is in `help-centre.md`.
 
 ## What stays out
 

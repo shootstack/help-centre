@@ -7,7 +7,7 @@ Shared preamble for each prompt:
 ```
 Thoroughness: medium. Read-only; do NOT edit files.
 
-Repo: /Users/jiry/Workspace/shootstack/engineering-os/projects/shootstack-diamond/diamond-app
+Repo: diamond-app (`../diamond-app` from this repo)
 (React 19 gallery-management app for photographers, product name "Shootstack").
 Sibling repo for server rules: .../shootstack-diamond/diamond-server
 
@@ -45,8 +45,8 @@ Explore:
 - src/core/<domain>*/  (schemas, hooks, constants; look for enums such as Status, SortBy)
 - src/constants/rules.js and src/constants/regex.js
 - public/locales/en/schemas/<domain>*.json
-- ../../../engineering-os/shootstack-diamond/diamond-server/src/helpers/<domain>-helpers.js (seeded entity fields: filter names, options, default sort)
-- ../../../engineering-os/shootstack-diamond/diamond-server/src/models/<domain>-model.js (hard caps)
+- ../diamond-server/src/helpers/<domain>-helpers.js (seeded entity fields: filter names, options, default sort)
+- ../diamond-server/src/models/<domain>-model.js (hard caps)
 
 Report:
 1. Every limit with its number and the user-facing message shown when it is hit

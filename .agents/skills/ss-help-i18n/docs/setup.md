@@ -44,7 +44,8 @@ nl/guides/projects/overview.mdx     # nl
 | `npm run sync-academy` | Writes the Academy lesson list into `academy/index.mdx` from navigation. |
 | `npm run lint-guides` | English voice and shape linter for photographer guides. |
 
-Tone, terminology, and translated-page coverage are checked in diamond-translate.
+Tone and terminology are defined in the Shootstack voice
+(`teams/marketing/brand/voice/`); diamond-translate checks them and translated-page coverage.
 
 ## Adding a runtime language
 
@@ -61,4 +62,4 @@ Authorized rollout only — never a side effect of translation work.
 ## Related
 
 - [key-patterns.md](key-patterns.md) — what each page and label must look like.
-- [diamond-translate](../../../../../translate/AGENTS.md) — wording, terminology, translated pages, and coverage.
+- diamond-translate (`tools/translate/AGENTS.md`) — translated pages and coverage. Wording and terminology: the Shootstack voice (`teams/marketing/brand/voice/`).

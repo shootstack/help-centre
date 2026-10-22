@@ -23,7 +23,7 @@ package.json            # scripts: sync-academy, sync-app-help, lint, lint-guide
 ## App help catalog
 
 `npm run sync-app-help` writes every photographer page in `config/navigation/index.json` to
-`../../../engineering-os/projects/shootstack-diamond/diamond-app/src/integrations/help-centre/helpCentreArticles.json`; commit
+`src/integrations/help-centre/helpCentreArticles.json` in diamond-app (found by id in the workspace `registry.json`, normally `projects/diamond-app`); commit
 that file in diamond-app. Help-centre does not decide which articles each app page shows:
 diamond-app picks them by key in `helpCentreRoutes.js`.
 
@@ -48,7 +48,7 @@ diamond-app picks them by key in `helpCentreRoutes.js`.
   the app; Academy currently has no translations. Generated copy is never edited here.
   `href` drops a trailing `/index`, so `academy/index` links to `/academy`.
 - The script fails on missing page files and missing titles. `--check` skips
-  with a warning when `../../../engineering-os/projects/shootstack-diamond/diamond-app` is not checked out.
+  with a warning when diamond-app is not checked out.
 - Re-run the sync after adding a page or changing an English or translated title, description, or
   path. Renaming or removing a page drops its key; update `helpCentreRoutes.js`
   in diamond-app when a picked article goes away.

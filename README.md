@@ -55,12 +55,12 @@ help-centre/
 │       │   └── maps/         # per-feature article briefs, e.g. projects.md
 │       ├── ss-guides-article/
 │       ├── ss-help-i18n/        # page keys, Mintlify language contract, i18n:audit report
-│       ├── ss-voice-review/     # reads tone.md from diamond-translate/projects/help-centre/
+│       ├── ss-voice-review/     # reads the help-centre voice from teams/marketing/brand/voice/
 │       └── mintlify*/        # vendored Mintlify skills
 └── .claude/, .cursor/        # generated rules and links for Claude Code and Cursor
 ```
 
-`.agents/` and the hand-written part of `AGENTS.md` are the source of truth for every agent. The workspace `projects/agent-kit/agent-sync.mjs` links each skill into `.claude/skills/`, generates `.claude/rules/` and `.cursor/rules/` from `.agents/rules/`, and keeps `CLAUDE.md` and the generated section of `AGENTS.md` current. Edit `.agents/`, then run `node projects/agent-kit/agent-sync.mjs sync projects/help-centre` from the workspace root.
+`.agents/` and the hand-written part of `AGENTS.md` are the source of truth for every agent. The workspace `tools/agent-kit/agent-sync.mjs` links each skill into `.claude/skills/`, generates `.claude/rules/` and `.cursor/rules/` from `.agents/rules/`, and keeps `CLAUDE.md` and the generated section of `AGENTS.md` current. Edit `.agents/`, then run `node tools/agent-kit/agent-sync.mjs sync projects/help-centre` from the workspace root.
 
 ## Writing articles
 
@@ -68,8 +68,8 @@ help-centre/
 - Academy: edit `snippets/academy-lessons.js`, run `npm run sync-academy`, then write the lesson body.
   The catalog can also set `thumbnail`, `thumbnailDark`, and `preview` for lesson cards. The first lesson is a mock preview: a silent 12-second montage of existing demo screenshots in `assets/videos/academy/`, with an English caption track. Replace it with the recorded walkthrough when the Academy is ready.
 - Troubleshooting: one question per page. Keep Overview first, then group questions in the sidebar by the same topics and order as `troubleshooting/index.mdx`.
-- In-app Help drawer: run `npm run sync-app-help` after adding a photographer page or changing an English or translated title, description, or path. It writes English entries with a `translations` map of localized titles, descriptions, and URLs to `../../../engineering-os/projects/shootstack-diamond/diamond-app/src/integrations/help-centre/helpCentreArticles.json`, which you commit in diamond-app. Only translated pages in the language navigation are included. Which articles each app page shows is chosen in diamond-app's `helpCentreRoutes.js`; the drawer uses the app language and falls back to English when an article has no translation.
-- Tone of voice: helpful, professional, calm, supportive, natural. `../translate/projects/help-centre/tone.md` is the single definition, with examples and the standard phrasings; `.agents/rules/help-mdx-copy.md` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). Translation goes through diamond-translate (`help-translations.md`). After writing any page, run the `ss-voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
+- In-app Help drawer: run `npm run sync-app-help` after adding a photographer page or changing an English or translated title, description, or path. It writes English entries with a `translations` map of localized titles, descriptions, and URLs to `src/integrations/help-centre/helpCentreArticles.json` in diamond-app (found by id in the workspace `registry.json`, normally `projects/diamond-app`), which you commit in diamond-app. Only translated pages in the language navigation are included. Which articles each app page shows is chosen in diamond-app's `helpCentreRoutes.js`; the drawer uses the app language and falls back to English when an article has no translation.
+- Tone of voice: helpful, professional, calm, supportive, natural. `teams/marketing/brand/voice/surfaces/help-centre.md` in the Shootstack workspace is the single definition, with examples and the standard phrasings; `.agents/rules/help-mdx-copy.md` holds the copy mechanics (frontmatter, terminology, bold labels, what stays out). Translation goes through diamond-translate (`help-translations.md`). After writing any page, run the `ss-voice-review` skill. It has a fresh subagent read the page as a photographer, checks consistency with sibling articles, and applies rewrites.
 
 See `AGENTS.md` for terminology and `.agents/rules/` for per-layer conventions.
 

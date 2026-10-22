@@ -5,8 +5,8 @@ The canonical structure for help-centre pages as translatable units. The audit
 update this doc and `scripts/i18n-audit.mjs` together, then regenerate
 [_generated/STATE.md](_generated/STATE.md).
 
-Wording rules — reader voice, page shape, terminology — live in diamond-translate
-and the writing skills.
+Wording rules — reader voice, page shape, terminology — live in
+the Shootstack voice (`teams/marketing/brand/voice/`) and the writing skills.
 
 ## Page path is the key
 
@@ -54,4 +54,4 @@ and the writing skills.
 
 - [setup.md](setup.md) — Mintlify language contract.
 - [_generated/STATE.md](_generated/STATE.md) — the live key-health report.
-- [help-centre rules, tone, and terminology](../../../../../translate/projects/help-centre/) — wording.
+- help-centre voice and translation rules (`teams/marketing/brand/voice/surfaces/help-centre.md`, `tools/translate/projects/help-centre/`) — wording.

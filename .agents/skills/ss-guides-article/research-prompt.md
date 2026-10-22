@@ -5,7 +5,7 @@ One `explore` subagent per article. Replace every `<...>`. Scope it to the jobs 
 ```
 Thoroughness: medium. Read-only; do NOT edit files.
 
-Repo: /Users/jiry/Workspace/shootstack/engineering-os/projects/shootstack-diamond/diamond-app
+Repo: diamond-app (`../diamond-app` from this repo)
 (React 19 gallery-management app for photographers, product name "Shootstack").
 Sibling repo for server rules: .../shootstack-diamond/diamond-server
 
@@ -21,7 +21,7 @@ Explore:
 - src/pages/**  files that render them (grep for the component names)
 - src/layouts/app/  if a sidebar entry or shortcut is involved
 - public/locales/en/features/<domain>*.json, pages/*.json, layouts/*.json, schemas/*.json
-- ../../../engineering-os/shootstack-diamond/diamond-server/src/helpers/<domain>-helpers.js for seeded filter or sort fields, if relevant
+- ../diamond-server/src/helpers/<domain>-helpers.js for seeded filter or sort fields, if relevant
 
 For each job, report in order:
 1. Purpose: one line on why a photographer does this, taken from UI copy

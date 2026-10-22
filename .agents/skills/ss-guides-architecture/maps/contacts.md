@@ -214,7 +214,7 @@ All five findings were applied. Every description was retained and matches its a
 
 Other existing intros are unchanged. The new guide's intro is: “Custom fields keep extra information about your clients alongside their contact details. Create a field once for your workspace, then fill it in on each contact.”
 
-Recurring menu, confirmation, deletion, and limit phrasing was checked against Contacts siblings and tone.md. Labels, limits, actions, option-removal effects, and saving behavior were retained. There are no factual TODOs; only the screenshot placeholders below.
+Recurring menu, confirmation, deletion, and limit phrasing was checked against Contacts siblings and the help-centre voice surface. Labels, limits, actions, option-removal effects, and saving behavior were retained. There are no factual TODOs; only the screenshot placeholders below.
 
 The new guide is third in the six-page Contacts group, after Details and before Filter. The generated diamond-app help catalog adds one entry and preserves existing entries. Translation content remains in diamond-translate's workflow. The i18n audit reports nine missing mirrors: six pre-existing Academy mirrors plus the new guide in nl, de, and fr. The changed existing translations also need a copy handoff. The only guide-lint warning is the pre-existing 635-word Emails deliverability article.
 

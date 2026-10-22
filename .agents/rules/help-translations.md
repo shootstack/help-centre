@@ -8,8 +8,9 @@ alwaysApply: true
 # Translations
 
 Write English here. Follow the help-centre
-[rules, tone, and terminology](../../../translate/projects/help-centre/)
-in diamond-translate, layered over its shared ones. Pages follow `tone.md`.
+voice and translation rules (`teams/marketing/brand/voice/surfaces/help-centre.md`, `tools/translate/projects/help-centre/`)
+layered over the central voice and the shared translation rules. Paths in
+backticks are from the Shootstack workspace root. Pages follow `help-centre.md`.
 
 Page keys, navigation, the Mintlify language contract, and `npm run i18n:audit`
 are the [`ss-help-i18n` skill](../skills/ss-help-i18n/SKILL.md).
@@ -20,6 +21,6 @@ labels in a translation come from diamond-app for that language,
 not from a paraphrase written here.
 
 Previews, translated pages, and coverage are
-[diamond-translate](../../../translate/AGENTS.md). When a change adds,
+diamond-translate (`tools/translate/AGENTS.md`). When a change adds,
 changes, moves, or removes English pages, end with a
-[`Handoff: copy`](../../../translate/AGENTS.md#handoff-copy) block.
+`Handoff: copy` block (format in `tools/translate/AGENTS.md`).

@@ -19,9 +19,9 @@ to diamond-translate.
 ## Does not own
 
 Tone, terminology, previews, target-language pages, and translation coverage.
-These live in [diamond-translate](../../../../translate/AGENTS.md): the
-project's [rules, tone, and terminology](../../../../translate/projects/help-centre/)
-layered over the shared ones. See the `help-translations` rule. The
+Tone and terminology: the `help-centre` surface of the Shootstack voice
+(`teams/marketing/brand/voice/surfaces/help-centre.md`), layered over the central voice.
+Previews, target wording, and coverage: diamond-translate (`tools/translate/projects/help-centre/`). See the `help-translations` rule. The
 `ss-guides-article`, `ss-guides-architecture`, and `ss-voice-review` skills own page
 writing and structure.
 
@@ -46,7 +46,7 @@ writing and structure.
 ## Handoff
 
 When English pages were added, changed, moved, or removed, end the task with a
-[`Handoff: copy`](../../../../translate/AGENTS.md#handoff-copy) block
+`Handoff: copy` block (format in `tools/translate/AGENTS.md`)
 listing every affected page as `<page path>` (for example `guides/projects/overview`).
 Do not translate here.
 

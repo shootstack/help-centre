@@ -9,7 +9,7 @@ alwaysApply: false
 
 `troubleshooting/` holds question-and-answer articles. Each article answers one
 question a photographer types into search. Copy mechanics are in
-`help-mdx-copy.md`; tone of voice in `../../../translate/projects/help-centre/tone.md`.
+`help-mdx-copy.md`; tone of voice in `teams/marketing/brand/voice/surfaces/help-centre.md`.
 
 ## Structure
 

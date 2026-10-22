@@ -28,7 +28,7 @@ Progress:
 
 ### 1. Map the feature to code surfaces
 
-Find repo roots by id in `registry.json`: `diamond-app` is `../../../engineering-os/projects/shootstack-diamond/diamond-app` and `diamond-server` is `../../../engineering-os/projects/shootstack-diamond/diamond-server` from this repo.
+Find repo roots by id in the workspace `registry.json`: `diamond-app` is `projects/diamond-app` and `diamond-server` is `projects/diamond-server` from the workspace root (`../diamond-app` and `../diamond-server` from this repo).
 
 | Surface | Path | What it tells you |
 |---|---|---|

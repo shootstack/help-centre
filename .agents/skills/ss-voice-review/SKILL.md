@@ -1,6 +1,6 @@
 ---
 name: ss-voice-review
-description: Reviews photographer Help Center pages for natural tone and flow between sentences and paragraphs against tone.md, checks sibling phrasing, and applies light rewrites without changing UI labels or product facts.
+description: Reviews photographer Help Center pages for natural tone and flow between sentences and paragraphs against the help-centre voice, checks sibling phrasing, and applies light rewrites without changing UI labels or product facts.
 disable-model-invocation: true
 ---
 
@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Every photographer page should sound like the same person: a colleague who knows Shootstack, explaining it to a photographer over their shoulder. Helpful, professional, calm, supportive, natural. The writer knows the code, so their own sentences always make sense to them. This review hands the page to a reader who has only the tone guide and the page, then aligns the page with its siblings.
 
-[tone.md](../../../../translate/projects/help-centre/tone.md) defines the five qualities, how each drifts, and the fixes. It is the standard for this review and for writing.
+The help-centre voice, `teams/marketing/brand/voice/surfaces/help-centre.md` in the Shootstack workspace, defines the five qualities, how each drifts, and the fixes. It is the standard for this review and for writing.
 
 ## Inputs
 
@@ -27,7 +27,7 @@ Progress:
 
 ### 1. Read the tone guide
 
-Read [tone.md](../../../../translate/projects/help-centre/tone.md) in full, including "Flow between sentences and paragraphs". You triage against it; the reader reads with it. Review whole passages as well as individual lines, so an abrupt sentence or paragraph break is visible.
+Read `teams/marketing/brand/voice/surfaces/help-centre.md` in full, including "Flow between sentences and paragraphs". You triage against it; the reader reads with it. Review whole passages as well as individual lines, so an abrupt sentence or paragraph break is visible.
 
 ### 2. Launch one fresh reader per page
 
@@ -50,7 +50,7 @@ Reject stylistic swaps that fix nothing. When a finding is right but the rewrite
 
 Do this yourself; the reader does not see other pages.
 
-- Recurring moments use the sentences in `### Standard phrasings`. Photographer pages use the table in `tone.md`. Align any that differ.
+- Recurring moments use the sentences in `### Standard phrasings`. Photographer pages use the table in `help-centre.md`. Align any that differ.
 - Read the section's `overview.mdx` (for an overview, one task article in the same group). Compare intro, H2 openers, and step bodies. If the page is clipped where the sibling explains, or the other way round, move the page toward the guide, not toward the sibling's flaws. Note sibling lines that drift too; fix them only if the user asked for the section.
 
 ### 5. Apply, lint, report
@@ -64,4 +64,4 @@ Report per page: findings grouped by quality, how many you applied, the before/a
 - Voice only. No new sections, steps, screenshots, or links.
 - No fact comes from the reader or from you. Only the page, the code, and the locale strings are sources.
 - Do not touch generated regions (`{/* <name>:start */}` to `{/* <name>:end */}`).
-- Do not edit `tone.md` to fit a page. Update it when the user explicitly asks to record a voice preference; otherwise, if a page argues for a new rule, tell the user.
+- Do not edit `help-centre.md` to fit a page. Update it when the user explicitly asks to record a voice preference; otherwise, if a page argues for a new rule, tell the user.

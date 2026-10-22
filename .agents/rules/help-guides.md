@@ -12,7 +12,7 @@ alwaysApply: false
 feature, one folder per group, one article per job. Plan a section with the
 `ss-guides-architecture` skill; write an article with the
 `ss-guides-article` skill. Copy mechanics are in `help-mdx-copy.md`; tone of
-voice in `../../../translate/projects/help-centre/tone.md`.
+voice in `teams/marketing/brand/voice/surfaces/help-centre.md`.
 
 ## Structure
 

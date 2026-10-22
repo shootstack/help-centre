@@ -13,7 +13,7 @@ paths:
 `academy/` holds video lessons. The catalog in `snippets/academy-lessons.js`
 owns lesson order, titles, descriptions, and durations; `npm run sync-academy`
 writes everything derived from it. Copy mechanics are in `help-mdx-copy.md`;
-tone of voice in `../../../translate/projects/help-centre/tone.md`.
+tone of voice in `teams/marketing/brand/voice/surfaces/help-centre.md`.
 
 ## Structure
 

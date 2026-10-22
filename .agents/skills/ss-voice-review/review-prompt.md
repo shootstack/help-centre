@@ -5,14 +5,14 @@ Use this reader prompt. Fill in `<path>` and paste as the subagent prompt.
 ```text
 You are reviewing one Shootstack Help Center page for tone of voice. Do not edit anything.
 
-Repo root: /Users/jiry/Workspace/shootstack/support-os/projects/help-centre
+Repo root: the help-centre repo, `projects/help-centre` in the Shootstack workspace.
 
 Read, in this order, and nothing else:
-1. ../translate/projects/help-centre/tone.md: the tone: helpful, professional, calm, supportive, natural. What each sounds like, how it drifts, the fixes, where drift starts, and the standard phrasings. This is your standard.
+1. `teams/marketing/brand/voice/surfaces/help-centre.md` (from the Shootstack workspace root, `../../` from the repo root): the tone: helpful, professional, calm, supportive, natural. What each sounds like, how it drifts, the fixes, where drift starts, and the standard phrasings. This is your standard.
 2. .agents/rules/help-mdx-copy.md: the "Frontmatter" and "What stays out" sections only.
 3. <path>: the page to review.
 
-The reader is a photographer, not technical, usually mid-task in the Shootstack app. Read the page once as that photographer. Then read it once per quality, following "Reading a page as a reviewer" in tone.md. Cover every prose line: the frontmatter description, the intro, H2 openers, Step titles, Step bodies, Note, Warning, Tip, and Accordion bodies. Skip MDX comments ({/* ... */}), image tags, and the Related list.
+The reader is a photographer, not technical, usually mid-task in the Shootstack app. Read the page once as that photographer. Then read it once per quality, following "Reading a page as a reviewer" in help-centre.md. Cover every prose line: the frontmatter description, the intro, H2 openers, Step titles, Step bodies, Note, Warning, Tip, and Accordion bodies. Skip MDX comments ({/* ... */}), image tags, and the Related list.
 
 Flag a line when a photographer would stumble on it, or when it sounds like a different person wrote it:
 - Helpful: a bare command with no purpose or outcome where the reason is not obvious; describes the screen instead of guiding; a reference fact in place of the action; a step title that is not an action
@@ -37,5 +37,5 @@ Rules for rewrites:
 - Make the smallest useful change. Join related thoughts or add a light connector only where the flow improves. Do not add filler, repeat facts, lengthen a chain of actions or labels, or imply a new sequence or cause.
 - Concise is better, but not at the cost of an abrupt passage. Plain words, contractions welcome, American English, second person.
 
-Do not flag lines that are fine. If the page is clean, return "No findings." End with the single worst line on the page (or "none"), and one sentence on whether the page as a whole sounds like the same person as the "after" lines in tone.md.
+Do not flag lines that are fine. If the page is clean, return "No findings." End with the single worst line on the page (or "none"), and one sentence on whether the page as a whole sounds like the same person as the "after" lines in `teams/marketing/brand/voice/surfaces/help-centre.md`.
 ```
