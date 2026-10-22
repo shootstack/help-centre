@@ -84,7 +84,7 @@ A project name can be up to 64 characters.
   side.
   No quoted error messages.
 - `<Warning>` sits directly above the delete `<Steps>` and says in plain
-  words what is deleted and that it can't be undone. Never paste the dialog.
+  words what is deleted, then `This cannot be undone.` Never paste the dialog.
 - `<Tip>` only for a shortcut or faster path that exists in code. No other
   callouts.
 - `## Related` closes the page with 2-4 root-relative links

@@ -29,7 +29,7 @@ Progress:
 
 ### 1. Resolve inputs and brief
 
-Read the article block in the brief. Read `teams/marketing/brand/voice/surfaces/help-centre.md` (from the Shootstack workspace root) in full: the five qualities, where drift starts, and the standard phrasings you will copy into the draft. Read one existing article in the same group (or `guides/media-folders/overview.mdx`) to match depth.
+Read the article block in the brief. Read the core voice files (`voice.md`, `tone.md`, `mechanics.md`, and `naming.md` in `teams/marketing/brand/voice/`, from the Shootstack workspace root), then `surfaces/help-centre.md` in full: what differs, where drift starts, and the standard phrasings you will copy into the draft. Read one existing article in the same group (or `guides/media-folders/overview.mdx`) to match depth.
 
 The brief's "UI strings (spelling reference)" list is exactly that, not a checklist. A label goes in the article because the reader clicks it, not because it is on the list.
 
@@ -47,7 +47,7 @@ Pick the skeleton in [templates.md](templates.md). Use `overview` or `task`. The
 
 - Order H2s the way a photographer meets them: create, open, change, delete.
 - Copy the standard phrasings from `help-centre.md`. Swap the `<...>` parts.
-- Write the description, intro, and each H2 opener last, against `help-centre.md` `## Where drift starts`.
+- Write the description, intro, and each H2 opener last, against "Where drift starts" in `help-centre.md`.
 - Unverified detail: `{/* TODO: ... */}` in place, never a guess.
 
 ### 4. Add screenshot placeholders

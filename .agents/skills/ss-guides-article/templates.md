@@ -75,7 +75,7 @@ Open **<Sidebar entry>** in the workspace menu to see every <object> in your wor
 ## Delete a <object>
 
 <Warning>
-<What is deleted, in plain words. This can't be undone.>
+<What is deleted, in plain words. This cannot be undone.>
 </Warning>
 
 <Steps>

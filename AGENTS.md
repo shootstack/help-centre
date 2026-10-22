@@ -15,7 +15,7 @@
 
 The reader is a photographer, usually mid-task. These files own the writing, and nothing else restates them:
 
-- Tone of voice (helpful, professional, calm, supportive, natural): the help-centre surface of the Shootstack voice, `teams/marketing/brand/voice/surfaces/help-centre.md` from the workspace root (`../../teams/marketing/brand/voice/surfaces/help-centre.md` from here), owned by support. The single definition, with examples and the standard phrasings every photographer article reuses.
+- Tone of voice (Clear, Calm, Useful): the Shootstack voice in `teams/marketing/brand/voice/` from the workspace root (`../../teams/marketing/brand/voice/` from here). Read the core in order, `voice.md`, `tone.md`, `mechanics.md`, then `naming.md`, then the help-centre surface, `surfaces/help-centre.md`, owned by support. The surface is the single definition of what differs here, with examples and the standard phrasings every article reuses; pages for a client follow its "When the reader is a client" section.
 - Copy mechanics (frontmatter, Diamond terminology, bold UI labels, what stays out, components, links): `.agents/rules/help-mdx-copy.md`.
 - Page shape per tab: `help-guides.md`, `help-academy.md`, `help-troubleshooting.md`.
 - Translation: English is written here. Target languages go through diamond-translate in `tools/translate` — see `help-translations.md`. Page keys, the Mintlify language contract, and `npm run i18n:audit` are the `ss-help-i18n` skill.
